@@ -77,7 +77,7 @@ Slide N+1: CTA — Tell them what to do next
 - First line = hook (matches slide 1 hook)
 - Body = expand on carousel content (not repeat it)
 - End with question or micro-CTA
-- 5-10 relevant hashtags (in caption, not comments)
+- 5 hashtags max (in caption, not comments) — Instagram algorithm penalizes >5 since Dec 2025
 - Tag relevant accounts for reach
 
 ### Posting Cadence
@@ -124,7 +124,7 @@ Slide N+1: CTA — Tell them what to do next
 
 ### Caption Strategy
 - Short, punchy (TikTok truncates long captions)
-- Use 3-5 hashtags (mix broad + niche)
+- Use exactly 5 hashtags (2 broad + 2 niche + 1 branded) — TikTok caps at 5 since Aug 2025
 - Ask a question to drive comments
 - "Save this for later" — triggers save behavior
 
@@ -171,7 +171,7 @@ Slide N+1: CTA — Tell them what to do next
 - Share personal context/story behind the carousel
 - End with a question that invites expertise sharing
 - Tag relevant people/companies for reach
-- No hashtags needed (minimal LinkedIn impact)
+- 3-5 hashtags (industry-specific, not generic) — LinkedIn hashtags DO help discoverability in search
 - Add "♻️ Repost if you agree" for share signal
 
 ### Posting Cadence

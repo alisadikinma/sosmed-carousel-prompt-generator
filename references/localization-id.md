@@ -1,5 +1,25 @@
 # Indonesian Localization Rules
 
+## Integration Points
+
+This file is loaded when the Localization Trigger activates (see `SKILL.md` / `agents/carousel-prompt-generator.md`):
+
+| Trigger | Action |
+|---------|--------|
+| User speaks Bahasa Indonesia | Load this file before generating prompts |
+| User targets Indonesian audience | Load this file before generating prompts |
+| User mentions Indonesian holidays (Imlek, Lebaran, Natal) | Load this file + apply holiday section |
+| User mentions Indonesian locations | Apply Setting Conversion table |
+| Caption generation for Indonesian audience | Apply Bahasa caption conventions from `references/caption-copywriting.md` |
+
+**How this file integrates with other references:**
+- `references/creator-bible.md` — Creator description stays in English; this file localizes the surrounding content text
+- `references/carousel-rebranding.md` — Apply Setting Conversion when rebranding global carousels for Indonesian audience
+- `references/caption-copywriting.md` — Use Bahasa caption formulas and CTA phrases from this file
+- `references/platform-specs.md` — Platform specs remain the same; localization affects content, not technical specs
+
+---
+
 ## 1. Language Style
 
 ### Default: Casual Gen Z Bahasa
@@ -75,25 +95,133 @@
 ## 4. Holiday Localization
 
 ### Chinese New Year → Imlek
+
+**Color Palette:**
+| Color | Hex | Symbolism |
+|-------|-----|-----------|
+| Red | #C8102E | Joy, luck, prosperity |
+| Gold | #CC9900 | Wealth, fortune |
+| Crimson | #960316 | Deep celebration, tradition |
+
+- **Avoid:** White/black as dominant colors (mourning association)
+- **2026 Zodiac:** Fire Horse
+
+**Cultural Elements:**
 - Barongsai on poles, not just dragon dance
 - Dodol keranjang (nian gao), bak kwa
 - Kebaya encim (Peranakan dress)
 - Vihara/klenteng, not pagodas
-- Colors: red + gold (same universal)
+- Cap Go Meh parades in Singkawang
+- Tok panjang communal dinner
+- Sam Poo Kong Temple Semarang
+
+**Lighting:** Dramatic red-gold, paper lantern warmth
+
+**Prompt Keywords:** "vibrant red and gold tones, paper lantern glow, rich reds, golden highlights"
+
+---
 
 ### Eid al-Fitr → Lebaran
+
+**Color Palette:**
+| Color | Hex | Symbolism |
+|-------|-----|-----------|
+| Islamic Green | #009A0A | Faith, paradise |
+| White | #FFFFFF | Purity, forgiveness |
+| Gold | #CFB53B | Celebration, blessings |
+
+**Greeting Text:** "Selamat Hari Raya Idul Fitri" / "Mohon Maaf Lahir Batin"
+
+**Cultural Elements:**
 - Indonesian mosque = multi-tiered roofs (NOT Middle Eastern domes)
 - Ketupat + opor ayam + rendang
 - Mudik (mass homecoming)
 - Baju koko, batik, peci
 - Sungkeman (Javanese forgiveness ritual)
+- Takbiran night with bedug drums
+
+**Lighting:** Soft ethereal white-green, moonlit serenity
+
+**Prompt Keywords:** "soft ethereal lighting, diffused white light, moonlit glow, muted pastel greens"
+
+---
 
 ### Christmas → Natal
+
+**Color Palette:**
+| Color | Hex | Symbolism |
+|-------|-----|-----------|
+| Red | #BB2528 | Celebration, warmth |
+| Evergreen | #165B33 | Life, renewal |
+| Gold | #F8B229 | Star of Bethlehem, joy |
+| White | — | Peace, purity |
+| Silver | — | Elegance, starlight |
+
+**Cultural Elements:**
 - Tropical Christmas: palm trees, frangipani
 - NO snow — use glitter, tropical greenery
 - Handcrafted ornaments: wood, rattan, coconut shell
 - Nasi kuning tumpeng, lapis legit
 - Bamboo stars/torches tradition
+- Wayang kulit Nativity (Yogyakarta)
+- Klapertart
+
+**Lighting:** Warm golden glow, fairy light bokeh
+
+**Prompt Keywords:** "warm golden lighting, fairy light bokeh, fireplace glow, candlelight ambiance"
+
+---
+
+### Diwali
+
+**Color Palette:**
+| Color | Hex | Symbolism |
+|-------|-----|-----------|
+| Deep Red | #891E1B | Tradition, auspiciousness |
+| Marigold | #F79E1F | Sacred offering, celebration |
+| Gold | #FFDF00 | Prosperity, divine light |
+| Purple | #542182 | Royalty, spirituality |
+| Saffron | — | Sacred, purity |
+
+**Key Symbols:** Diyas (oil lamps), rangoli, marigold garlands, fireworks
+
+**Lighting:** Warm amber diya glow, festival sparkle
+
+**Prompt Keywords:** "warm golden diya glow, oil lamp lighting, fairy lights, amber illumination"
+
+---
+
+### Valentine's Day
+
+**Color Palette:**
+| Color | Hex | Symbolism |
+|-------|-----|-----------|
+| Wine | #5E081E | Deep passion, romance |
+| Rose Pink | #E24767 | Love, affection |
+| Blush | #E4CDD3 | Tenderness, softness |
+| Soft Gold | #D4AF37 | Elegance, luxury |
+
+**Lighting:** Soft romantic, rose-tinted, candlelight
+
+**Prompt Keywords:** "soft romantic lighting, rose-tinted warmth, intimate candlelight, dreamy soft focus"
+
+---
+
+### Thanksgiving
+
+**Color Palette:**
+| Color | Hex | Symbolism |
+|-------|-----|-----------|
+| Dark Red | #C1311C | Autumn harvest, warmth |
+| Pumpkin | #FF8039 | Harvest, abundance |
+| Seal Brown | #623004 | Earth, grounding |
+| Moss Green | #858453 | Nature, gratitude |
+
+**Lighting:** Autumn golden hour, harvest candlelight
+
+**Prompt Keywords:** "warm earth tones, amber and russet, golden afternoon light, autumn sunlight"
+
+---
 
 ## 5. Tone & Voice
 
@@ -112,3 +240,28 @@
 | "Share with a friend" | "Share ke temen yang perlu tau" |
 | "Comment below" | "Comment pendapat kamu" |
 | "Link in bio" | "Link di bio ya" |
+
+## 6. AI Bias Countermeasures
+
+When generating AI images for Indonesian content, actively counter these common bias patterns:
+
+| Bias Pattern | Countermeasure |
+|-------------|----------------|
+| Indonesian women → stereotypical headscarves | Include diverse appearance descriptors |
+| Middle Eastern men → always bearded/traditional | Specify contemporary styling |
+| Generic "Chinatown" for Imlek | Use Indonesian-specific landmarks and traditions |
+| Middle Eastern mosque for Indonesian Lebaran | Specify multi-tiered roof architecture |
+| Racial homogenization | Add specific ethnic/cultural context in prompt |
+
+**Rule:** Always include geographic + cultural context. "Indonesian Lebaran celebration in Javanese setting" NOT "Eid celebration."
+
+## 7. Cultural Authenticity Checklist
+
+Before publishing any localized content, verify the following:
+
+- [ ] Geographic context in prompt ("Indonesian Lebaran in Javanese setting" not generic "Eid")
+- [ ] Verify Arabic calligraphy / Chinese characters are correct
+- [ ] Show contemporary + traditional elements together
+- [ ] Diverse appearance within cultural group
+- [ ] Indonesian mosque = multi-tiered roofs, NOT Middle Eastern domes
+- [ ] Have imagery reviewed by community member before publishing

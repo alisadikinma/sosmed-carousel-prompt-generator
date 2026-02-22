@@ -50,7 +50,7 @@ Rembrandt lighting at 4:1 ratio, 3200K warm key from left.
 Kodak Portra 400, warm golden grade. Subtle atmospheric haze.
 
 Bottom 40% reserved for text overlay (dark gradient zone).
-9:16 vertical aspect. No text, no watermarks, no logos.
+[PLATFORM ASPECT] aspect. No text, no watermarks, no logos.
 Using facial identity from reference image: [face-ref.png].
 ```
 
@@ -65,7 +65,7 @@ Shot on [LENS]mm f/[APERTURE], [ANGLE]. [DEPTH OF FIELD].
 Kodak Portra 400, warm golden amber grade. [ATMOSPHERE].
 
 Bottom 35% reserved for text overlay (dark gradient zone).
-9:16 vertical aspect. No third-party branding, no watermarks.
+[PLATFORM ASPECT] aspect. No third-party branding, no watermarks.
 No creator face in this slide.
 ```
 
@@ -81,7 +81,7 @@ Warm-toned holographic interfaces. Enhanced but still warm color temperature.
 
 Both halves: same environment context.
 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
-9:16 vertical aspect. Bottom 30% dark gradient for text.
+[PLATFORM ASPECT] aspect. Bottom 30% dark gradient for text.
 Using facial identity from reference image: [face-ref.png].
 ```
 
@@ -97,7 +97,7 @@ Shot on 85mm f/2, shallow DOF. Butterfly lighting 2:1, 3500K golden.
 Kodak Portra 400, warm amber grade.
 
 Bottom 40% reserved for text overlay + social handles.
-9:16 vertical aspect. No text, no watermarks.
+[PLATFORM ASPECT] aspect. No text, no watermarks.
 Using facial identity from reference image: [face-ref.png].
 ```
 
@@ -114,7 +114,7 @@ For each slide, output a text specification sheet:
   - [User's brand icon] [position: centered top / on divider]
   - [User's handle] below icon [opacity: 30% / 100% for hook]
 - **Corner labels**: [series name / episode ID] (if applicable)
-- **SWIPE FOR MORE >**: Bottom center (all slides except CTA)
+- **SWIPE FOR MORE >**: Bottom center (slides 1-3 only)
 ```
 
 ## Step 5: Visual Continuity Checklist
@@ -130,6 +130,6 @@ Before delivering carousel set, verify:
 - [ ] All slides have dark gradient text zone (bottom 30-40%)
 - [ ] Brand icon placement specified for every slide
 - [ ] Handle specified for every slide
-- [ ] SWIPE FOR MORE on all slides except CTA
+- [ ] SWIPE FOR MORE on slides 1-3 only
 - [ ] Film stock consistently warm (Portra 400 / Vision3 500T)
-- [ ] 9:16 aspect ratio for all slides
+- [ ] Aspect ratio matches target platform (IG Feed 4:5, TikTok 9:16, LinkedIn 4:5)

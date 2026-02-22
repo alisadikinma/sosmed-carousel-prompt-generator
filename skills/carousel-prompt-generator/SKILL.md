@@ -36,11 +36,12 @@ Claude reads this SKILL.md directly and follows the workflow below.
 |------|-----------|
 | ANY prompt | `references/creator-bible.md` (ALWAYS) |
 | Carousel rebranding | + `references/carousel-rebranding.md` |
-| Platform choice | + `references/platform-specs.md` |
+| Platform choice / aspect ratio | + `references/platform-specs.md` |
 | Lighting/lens lookup | + `references/cinematography-lut.md` |
 | Prompt templates | + `references/prompt-formulas.md` |
 | Indonesian content | + `references/localization-id.md` |
 | Carousel best practices | + `references/carousel-best-practices.md` |
+| Caption/copywriting | + `references/caption-copywriting.md` |
 
 ---
 
@@ -67,9 +68,20 @@ Use the creator description VERBATIM in every creator-facing prompt.
 5. Text = post-production only — clean images with dark gradient text zones
 6. Accent color = user's brand color (default: Golden Yellow #F5A623)
 7. Default film stock = Kodak Portra 400 (warm golden, NOT cold)
-8. Aspect ratio = 9:16 vertical for all social content
+8. Aspect ratio = platform-specific. IG Feed/LinkedIn: 4:5, TikTok/Reels: 9:16 (see Platform Routing)
 9. Image size = 4K via Nano Banana Pro
 10. All prompts must pass WOW minimum score
+
+---
+
+## Localization Trigger
+
+If the user requests Indonesian content, speaks Bahasa, or targets Indonesian audience:
+1. Read `references/localization-id.md` BEFORE generating any prompts
+2. Apply setting conversions (Times Square → Bundaran HI, etc.)
+3. Apply language style (casual Gen Z Bahasa + English mix)
+4. Apply holiday adaptations if seasonal content
+5. Apply Bahasa caption rules from `references/caption-copywriting.md`
 
 ---
 
@@ -77,10 +89,9 @@ Use the creator description VERBATIM in every creator-facing prompt.
 
 | Parameter | Value |
 |-----------|-------|
-| Aspect Ratio | 9:16 vertical |
-| Image Resolution | 4K (Nano Banana Pro) |
-| Video Resolution | 1080p |
-| Frame Rate | 24fps |
+| Image Platform | Nano Banana Pro (exclusive) |
+| Image Resolution | 4K |
+| Aspect Ratio | Platform-specific (see Platform Routing) |
 | Default Film Stock | Kodak Portra 400 |
 | Default Grade | Warm golden amber |
 | Accent Color | User-defined (default: #F5A623) |
@@ -97,13 +108,13 @@ Use the creator description VERBATIM in every creator-facing prompt.
 5. OUTPUT text overlay guide per slide (post-production)
 6. VERIFY continuity checklist
 
-## Workflow: Fresh Content Production
+## Workflow: Fresh Carousel Production
 
-1. ANALYZE script/brief — identify segments, emotions, shot types
-2. ROUTE each segment to platform (read `references/platform-specs.md`)
-3. GENERATE prompt pairs: image (all visuals) + video (motion only)
+1. ANALYZE brief/topic — identify key messages, slide structure, emotions
+2. DETERMINE target platform and set aspect ratio (read `references/platform-specs.md`)
+3. GENERATE Nano Banana Pro prompt per slide
 4. SCORE each prompt via WOW gate
-5. OUTPUT continuity bible
+5. OUTPUT continuity checklist
 
 ## Workflow: Thumbnail Generation
 
@@ -111,13 +122,35 @@ Use the creator description VERBATIM in every creator-facing prompt.
 2. GENERATE prompt with: creator face 50-60%, exaggerated emotion, topic visual, text-safe zone
 3. SCORE WOW minimum 4/8
 
+## Workflow: Multi-Platform Export
+
+Generate platform-specific carousel prompts AND captions from a single brief.
+
+1. ANALYZE input brief/topic
+2. READ `references/platform-specs.md` + `references/carousel-best-practices.md` + `references/caption-copywriting.md`
+3. For EACH target platform, set:
+   - Aspect ratio: IG Feed 4:5, TikTok 9:16, LinkedIn 4:5
+   - Slide count: IG 7-10, TikTok 5-7, LinkedIn 5-8
+   - Content tone: IG visual-first, TikTok trend-driven, LinkedIn insight-led
+4. GENERATE full prompt set per platform (all slides)
+5. GENERATE caption per platform (hook + body + CTA + hashtags)
+6. SCORE each prompt via WOW gate
+7. VERIFY character limits: IG ≤2200, TikTok ≤4000, LinkedIn ≤3000
+8. OUTPUT all variants grouped by platform
+
 ---
 
 ## Platform Routing
 
 ```
-Image: Nano Banana Pro (primary) | DALL-E 3 (fallback)
-Video: VEO 3.1 (default, best lip-sync) | Sora 2 (physics, duration >8s)
+Image Generation: Nano Banana Pro (exclusive)
+
+Carousel Aspect Ratios:
+  Instagram Feed → 4:5 (1080x1350)
+  Instagram Reels → 9:16 (1080x1920)
+  TikTok → 9:16 (1080x1920)
+  LinkedIn → 4:5 (1080x1350) or 1:1 (1080x1080)
+  Default (unspecified) → 4:5 (1080x1350)
 ```
 
 ---
@@ -153,18 +186,68 @@ Type: Hook / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
 - Headline: "[TEXT]" — White bold condensed ALL CAPS
 - Accent: "[WORD]" — [User's accent color]
 - Branding: [user's brand icon] [position] + [user's handle]
-- SWIPE FOR MORE: yes/no
+- SWIPE FOR MORE: slides 1-3 only
 ### WOW: [N]/8
 ```
 
-### Video Segment
+### Multi-Platform Export
 ```
-## Segment [N]: [Description]
-Duration: [N]s | Platform: VEO 3.1
+# Multi-Platform Export: [Topic]
 
-### Image Prompt (Nano Banana Pro)
-[ALL visuals]
-### Video Prompt (VEO 3.1)
-[MOTION ONLY — no visual duplication]
-### WOW: [N]/8
+## Instagram Carousel (4:5 — 1080x1350, [N] slides)
+
+[Slide 1-N prompts in standard Carousel Slide format]
+
+### Instagram Caption ([N]/2,200 chars)
+**Hook (≤125 chars):**
+[Hook text]
+
+**Body:**
+[Body text]
+
+**CTA:**
+[CTA text]
+
+**Hashtags (5):**
+#tag1 #tag2 #tag3 #tag4 #tag5
+
+---
+
+## TikTok Carousel (9:16 — 1080x1920, [N] slides)
+
+[Slide 1-N prompts in standard Carousel Slide format]
+
+### TikTok Caption ([N]/4,000 chars)
+**Hook (≤100 chars):**
+[Hook text — casual Gen Z tone]
+
+**Body:**
+[SEO-optimized body text]
+
+**CTA:**
+[CTA text]
+
+**Hashtags (5):**
+#tag1 #tag2 #tag3 #tag4 #tag5
+
+---
+
+## LinkedIn Carousel (4:5 — 1080x1350, [N] slides)
+
+[Slide 1-N prompts in standard Carousel Slide format]
+
+### LinkedIn Caption ([N]/3,000 chars)
+**Hook (≤110 chars):**
+[Hook text — professional tone]
+
+**Body:**
+[Thought leadership body]
+
+**CTA:**
+[CTA text]
+
+🔗 [Link]
+
+**Hashtags (3-5):**
+#tag1 #tag2 #tag3
 ```
