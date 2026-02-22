@@ -1,0 +1,16 @@
+{
+  "name": "sosmed-carousel-prompt-generator",
+  "description": "Cinematic AI carousel prompt generator with WOW quality gate and platform-specific best practices",
+  "owner": {
+    "name": "Ali Sadikin",
+    "url": "https://github.com/alisadikinma"
+  },
+  "plugins": [
+    {
+      "name": "sosmed-carousel-prompt-generator",
+      "description": "1 skill + 1 agent + 7 reference docs for cinematic carousel content production (Instagram, TikTok, LinkedIn)",
+      "version": "1.0.0",
+      "source": "./"
+    }
+  ]
+}
