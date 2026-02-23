@@ -55,10 +55,15 @@ Single Brief → IG (4:5) + TikTok (9:16) + LinkedIn (4:5)
 
 ## Installation
 
-### Claude Code (via Plugin Marketplace)
+### From GitHub (Recommended)
 
-```
-/install-plugin alisadikinma/sosmed-carousel-prompt-generator
+```bash
+# Step 1: Add marketplace source
+claude plugins marketplace add https://github.com/alisadikinma/sosmed-carousel-prompt-generator
+
+# Step 2: Install plugin (choose scope)
+claude plugins install sosmed-carousel-prompt-generator --scope user    # All projects
+claude plugins install sosmed-carousel-prompt-generator --scope project # This project only
 ```
 
 ### Manual Installation
@@ -81,11 +86,13 @@ After installing, the skill auto-triggers when you mention carousels, thumbnails
 
 ## What's Inside
 
-### Skill
+### Skills
 
 | Skill | Triggers On |
 |---|---|
 | `carousel-prompt-generator` | carousel, thumbnail, rebrand, image generation, visual content, AI image, buat prompt, bikinin gambar |
+| `validate-references` | Cross-file consistency checker (SWIPE rules, hashtags, gradients, aspect ratios) |
+| `new-localization` | Scaffold new localization files + wire reference tables |
 
 ### Agent
 
@@ -103,8 +110,8 @@ After installing, the skill auto-triggers when you mention carousels, thumbnails
 | `cinematography-lut.md` | Lighting, lens, film stock, atmosphere, DP signatures |
 | `prompt-formulas.md` | Prompt templates, thumbnail template, quality checklists |
 | `localization-id.md` | Indonesian localization, holidays with color palettes, AI bias countermeasures |
-| `carousel-best-practices.md` | Carousel design and engagement best practices |
-| `caption-copywriting.md` | Caption formulas, character limits, hashtag strategy per platform |
+| `carousel-best-practices.md` | Carousel design, engagement benchmarks, TikTok Photo Mode, algorithm signals, cross-platform strategy |
+| `caption-copywriting.md` | Caption formulas, emotional triggers, CTA psychology, hashtag strategy, triple-layer TikTok SEO |
 
 ---
 
@@ -160,7 +167,7 @@ Creator face at 50-60% frame, exaggerated emotion, topic visual, text-safe zone.
 Generate platform-specific carousel prompts AND captions from a single brief. Automatically adapts aspect ratio (IG 4:5, TikTok 9:16, LinkedIn 4:5), slide count, content tone, and caption style per platform.
 
 ### Caption Copywriting
-Platform-aware captions with enforced character limits (IG 2200, TikTok 4000, LinkedIn 3000), truncation-safe hooks, and the 2-2-1 hashtag formula (2 broad + 2 niche + 1 branded).
+Platform-aware captions with enforced character limits (IG 2200, TikTok 4000, LinkedIn 3000), truncation-safe hooks, and the 2-2-1 hashtag formula (2 broad + 2 niche + 1 branded). Includes emotional trigger patterns per platform, CTA psychology (engagement ladder, micro-commitments, algorithm weight signals), TikTok triple-layer keyword SEO, and LinkedIn engagement bait avoidance.
 
 ### Indonesian Localization
 Automatic localization trigger when user speaks Bahasa or targets Indonesian audience. Includes setting conversions, holiday adaptations with color palettes, and AI bias countermeasures.
@@ -231,8 +238,12 @@ sosmed-carousel-prompt-generator/
 │   ├── plugin.json              # Plugin metadata
 │   └── marketplace.json         # Marketplace listing
 ├── skills/
-│   └── carousel-prompt-generator/
-│       └── SKILL.md             # Skill definition
+│   ├── carousel-prompt-generator/
+│   │   └── SKILL.md             # Main skill — carousel prompt generation
+│   ├── validate-references/
+│   │   └── SKILL.md             # Cross-file consistency checker
+│   └── new-localization/
+│       └── SKILL.md             # Scaffold new localizations
 ├── agents/
 │   └── carousel-prompt-generator.md  # Subagent definition
 ├── references/
@@ -267,7 +278,7 @@ Your face, your brand, your colors — injected verbatim into every prompt. The 
 
 ### Platform-Aware
 
-Instagram carousels, TikTok slideshows, LinkedIn posts — each has different specs, aspect ratios, and engagement patterns. Reference docs encode platform-specific best practices so prompts are optimized for where they'll actually be posted.
+Instagram carousels, TikTok Photo Mode carousels, LinkedIn document posts — each has different specs, aspect ratios, algorithm signals, and engagement patterns. Reference docs encode platform-specific best practices including IG's second-chance algorithm, TikTok's reverse-swipe signal, and LinkedIn's Depth Score so prompts and captions are optimized for where they'll actually be posted.
 
 ### Caption-Ready
 
