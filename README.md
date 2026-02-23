@@ -11,16 +11,17 @@ A Claude Code plugin that generates production-ready AI image prompts for carous
 | Generic AI prompts produce flat, lifeless carousel images | Users scroll past |
 | No consistent visual identity across slides | Brand looks amateur |
 | Rebranding third-party carousels means starting from scratch | Hours wasted per carousel |
-| Text baked into AI images looks terrible | Unusable output |
 | No quality standard — every prompt is a gamble | Inconsistent feed |
 | Different platform specs ignored | Wrong aspect ratios, suboptimal engagement |
 | Caption writing is a separate manual step | Workflow friction, inconsistent tone |
+| Factual claims in carousels go unverified | Credibility damage |
+| Agent generates everything without asking | Mismatched creative decisions |
 
 ## The Solution
 
-### 1. WOW Quality Gate
+### 1. WOW Quality Gate (8/8 Mandatory, Min 6/8)
 
-Every prompt is scored against 8 cinematic criteria before output:
+Every prompt is scored against 8 cinematic criteria — ALL must be present:
 
 | # | Factor | What It Catches |
 |---|--------|----------------|
@@ -33,23 +34,40 @@ Every prompt is scored against 8 cinematic criteria before output:
 | 7 | Texture Realism | Smooth, plastic-looking surfaces |
 | 8 | Cinematic Reference | No film stock or DP style anchor |
 
-**Minimums enforced:** Hook 5+, CTA 4+, Thumbnail 4+, Body 3+, B-Roll 3+. Below minimum = automatic revision.
+**Minimum 6/8 for ALL slide types.** Below minimum = automatic revision.
 
-### 2. Creator Identity System
+### 2. Text-in-Image Rendering
+
+All text (headlines, accent words, branding, SWIPE CTA) is described directly in the Nano Banana Pro prompt for in-image rendering. No more separate "post-production" step — you get complete slides.
+
+### 3. Creator Identity System
 
 Your physical description, brand handle, accent color, and brand icon are injected VERBATIM into every prompt — ensuring consistent AI-generated visuals across your entire content library.
 
-### 3. Multi-Platform Export
+### 4. Auto Captions for All Platforms
 
-Generate carousel prompts AND captions for all platforms from a single brief:
+Every carousel automatically generates captions for IG + TikTok + LinkedIn:
 
 ```
-Single Brief → IG (4:5) + TikTok (9:16) + LinkedIn (4:5)
-                ↓           ↓              ↓
-             Prompts     Prompts        Prompts
-             Caption     Caption        Caption
-             5 hashtags  5 hashtags     3-5 hashtags
+Single Brief → Carousel Prompts (text in-image)
+                    ↓
+             IG Caption (≤2200 chars, 5 hashtags)
+             TikTok Caption (≤4000 chars, 5 hashtags)
+             LinkedIn Caption (≤3000 chars, 3-5 hashtags)
 ```
+
+Default language: **Bahasa Indonesia**. English only when explicitly requested.
+
+### 5. Fact Verification
+
+All factual claims (statistics, data, quotes) are automatically web-searched and verified before prompt generation. Sources included in output.
+
+### 6. Interactive Slide Design
+
+The agent pauses and asks you about ambiguous creative decisions:
+- Human figures in B-Roll → "Use your face or keep anonymous?"
+- Profession-specific costumes → "Lab coat or your default blazer?"
+- Setting ambiguity → "Modern glass server room or industrial gritty?"
 
 ---
 
@@ -110,20 +128,20 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 
 | Agent | Purpose |
 |---|---|
-| `carousel-prompt-generator` | Subagent for batch carousel prompt work — reads reference docs, generates all prompts, writes output to file |
+| `carousel-prompt-generator` | Subagent for batch carousel prompt work — reads references, verifies facts, asks about ambiguities, generates prompts + captions, writes output |
 
 ### Reference Docs (8 files, read on-demand)
 
 | File | When Used |
 |---|---|
-| `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production |
+| `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
 | `carousel-rebranding.md` | Converting third-party carousels to your brand |
 | `platform-specs.md` | Nano Banana Pro specs, platform aspect ratios |
 | `cinematography-lut.md` | Lighting, lens, film stock, atmosphere, DP signatures |
-| `prompt-formulas.md` | Prompt templates, thumbnail template, quality checklists |
-| `localization-id.md` | Indonesian localization, holidays with color palettes, AI bias countermeasures |
-| `carousel-best-practices.md` | Carousel design, engagement benchmarks, TikTok Photo Mode, algorithm signals, cross-platform strategy |
-| `caption-copywriting.md` | Caption formulas, emotional triggers, CTA psychology, hashtag strategy, triple-layer TikTok SEO |
+| `prompt-formulas.md` | Prompt templates (text-in-image), quality checklists |
+| `localization-id.md` | Indonesian localization extras, holidays, AI bias countermeasures |
+| `carousel-best-practices.md` | Carousel design, engagement benchmarks, algorithm signals |
+| `caption-copywriting.md` | Caption formulas, emotional triggers, CTA psychology, hashtag strategy |
 
 ---
 
@@ -145,21 +163,23 @@ User Request
 [4a] FRESH CONTENT            [4b] REBRANDING
   Analyze brief/topic           Analyze source slides
   Set platform aspect ratio     Strip third-party branding
-  Generate prompts              Convert to user's brand
     |                                    |
     v                                    v
-[5] Score each prompt via WOW gate
-    |
-    ├── Below minimum? ──> REVISE
+[5] VERIFY FACTS — web-search all claims
     |
     v
-[6] Generate captions per platform (if multi-platform export)
+[6] INTERACTIVE DESIGN — ask about ambiguous slides
     |
     v
-[7] Output with text overlay guides
+[7] Generate prompts (text in-image, all 8 WOW elements)
+    |
+    ├── Below 6/8? ──> REVISE
     |
     v
-[8] Continuity checklist verification
+[8] Generate captions for all 3 platforms (Bahasa default)
+    |
+    v
+[9] Output with verified sources + continuity checklist
 ```
 
 ---
@@ -167,22 +187,25 @@ User Request
 ## Capabilities
 
 ### Carousel Image Prompts
-Generate cinematic Nano Banana Pro prompts for each carousel slide — Hook, Content, CTA — with proper creator face placement and brand consistency.
+Generate cinematic Nano Banana Pro prompts for each carousel slide — Hook, Content, CTA — with text rendered in-image, proper creator face placement, brand consistency, and all 8 WOW elements.
 
 ### Carousel Rebranding
 Upload any third-party carousel and get it fully converted to your brand: colors, lighting, style, branding elements. No third-party logos survive.
 
 ### Thumbnail Generation
-Creator face at 50-60% frame, exaggerated emotion, topic visual, text-safe zone. Optimized for click-through.
+Creator face at 50-60% frame, exaggerated emotion, topic visual, text rendered in-image. Optimized for click-through.
 
-### Multi-Platform Export
-Generate platform-specific carousel prompts AND captions from a single brief. Automatically adapts aspect ratio (IG 4:5, TikTok 9:16, LinkedIn 4:5), slide count, content tone, and caption style per platform.
+### Caption Copywriting (Auto, All Platforms)
+Captions generated by default for IG + TikTok + LinkedIn with every carousel. Platform-specific character limits, truncation-safe hooks, 2-2-1 hashtag formula, emotional triggers, CTA psychology, and TikTok triple-layer keyword SEO. Default language: Bahasa Indonesia.
 
-### Caption Copywriting
-Platform-aware captions with enforced character limits (IG 2200, TikTok 4000, LinkedIn 3000), truncation-safe hooks, and the 2-2-1 hashtag formula (2 broad + 2 niche + 1 branded). Includes emotional trigger patterns per platform, CTA psychology (engagement ladder, micro-commitments, algorithm weight signals), TikTok triple-layer keyword SEO, and LinkedIn engagement bait avoidance.
+### Fact Verification
+All factual claims (statistics, numbers, quotes) auto-verified via web search. Sources included per slide. Inaccurate claims flagged with corrections.
+
+### Interactive Slide Design
+Agent detects ambiguous slides and asks before generating — human figures (creator face or anonymous?), profession costumes, setting interpretations. Straightforward slides generated without asking.
 
 ### Indonesian Localization
-Automatic localization trigger when user speaks Bahasa or targets Indonesian audience. Includes setting conversions, holiday adaptations with color palettes, and AI bias countermeasures.
+Bahasa Indonesia is the default content language. Includes setting conversions, holiday adaptations with color palettes, and AI bias countermeasures.
 
 ---
 
@@ -193,14 +216,17 @@ These are non-negotiable across all generated prompts:
 | Rule | Enforcement |
 |---|---|
 | No third-party branding | Zero external badges, logos, or handles |
-| Brand icon + handle on every slide | User's brand always present |
-| Creator face placement | ONLY on Hook, CTA, Loop-end, Thumbnail |
-| Text is post-production | Clean images with dark gradient text zones |
+| Brand icon + handle on every slide | Rendered IN-IMAGE on every slide |
+| Creator face placement | Hook, CTA, Thumbnail always. B-Roll with humans: ask user |
+| Text rendered in-image | Headlines, accents, branding, SWIPE CTA — all in prompt |
 | Default film stock | Kodak Portra 400 (warm golden, not cold) |
 | Aspect ratio | Platform-specific: IG Feed 4:5, TikTok 9:16, LinkedIn 4:5 |
 | Image resolution | 4K via Nano Banana Pro |
-| Accent color | User-defined (default: Golden Yellow #F5A623) |
-| SWIPE FOR MORE | All slides except CTA |
+| WOW minimum | 6/8, all 8 elements mandatory |
+| Default language | Bahasa Indonesia (English only if user requests) |
+| Auto captions | All 3 platforms by default |
+| Fact verification | All claims web-verified before output |
+| SWIPE FOR MORE | "GESER UNTUK LANJUT >" on all slides except CTA |
 | Hashtags | Max 5 (IG/TikTok), 3-5 (LinkedIn) |
 
 ---
@@ -210,34 +236,33 @@ These are non-negotiable across all generated prompts:
 ### Carousel Slide
 
 ```
-## Slide [N]: [Topic]
+## Slide [N]: [TYPE] — [Topic]
 Type: Hook / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
 
 ### Nano Banana Pro Prompt
-[Full natural-language prompt, 40-120 words]
+[Full merged prompt: scene + cinematography + 8 WOW elements + text rendering + branding, 80-200 words]
 
-### Text Overlay (Post-Production)
-- Headline: "[TEXT]" — White bold condensed ALL CAPS
-- Accent: "[WORD]" — [User's accent color]
-- Branding: [brand icon] [position] + [handle]
-- SWIPE FOR MORE: all slides except CTA
+### Verified Fact
+"[Claim]" — ✓ Verified | Source: [URL]
 
 ### WOW: [N]/8
+✓ Lighting Drama | ✓ Depth Layers | ✓ Atmosphere | ✓ Color Contrast
+✓ Emotional Peak | ✓ Camera Intention | ✓ Texture Realism | ✓ Cinematic Ref
 ```
 
-### Multi-Platform Export
+### Captions (Auto-Generated)
 
 ```
-# Multi-Platform Export: [Topic]
+## Captions — All Platforms
 
-## Instagram Carousel (4:5 — 1080×1350, [N] slides)
-[Slide prompts + Caption with 5 hashtags]
+### Instagram Caption ([N]/2,200 chars)
+[Hook + Body + CTA + 5 Hashtags — Bahasa Indonesia]
 
-## TikTok Carousel (9:16 — 1080×1920, [N] slides)
-[Slide prompts + Caption with 5 hashtags]
+### TikTok Caption ([N]/4,000 chars)
+[Hook + Body + CTA + 5 Hashtags — casual Gen Z Bahasa]
 
-## LinkedIn Carousel (4:5 — 1080×1350, [N] slides)
-[Slide prompts + Caption with 3-5 hashtags]
+### LinkedIn Caption ([N]/3,000 chars)
+[Hook + Body + CTA + Link + 3-5 Hashtags — professional Bahasa]
 ```
 
 ---
@@ -262,11 +287,11 @@ sosmed-carousel-prompt-generator/
 ├── agents/
 │   └── carousel-prompt-generator.md  # Subagent definition
 ├── references/
-│   ├── creator-bible.md         # Creator identity + holidays
+│   ├── creator-bible.md         # Creator identity + brand-in-image + holidays
 │   ├── carousel-rebranding.md   # Rebranding conversion rules
 │   ├── platform-specs.md        # Nano Banana Pro + platform specs
 │   ├── cinematography-lut.md    # Lighting/lens/film stock LUT
-│   ├── prompt-formulas.md       # Prompt templates + checklists
+│   ├── prompt-formulas.md       # Prompt templates (text-in-image) + checklists
 │   ├── localization-id.md       # Indonesian localization
 │   ├── carousel-best-practices.md  # Design best practices
 │   └── caption-copywriting.md   # Caption formulas + hashtags
@@ -283,9 +308,9 @@ sosmed-carousel-prompt-generator/
 
 Every prompt is anchored in real cinematography — named lighting setups, specific lens choices, actual film stocks, cinematographer signatures. No "make it look cinematic" hand-waving.
 
-### Text is Post-Production
+### Complete Slides
 
-AI-generated text in images looks terrible. This plugin generates clean images with dark gradient zones designed for text overlay in your actual design tool.
+Text is rendered in the AI-generated image — headlines, accent words, branding, SWIPE CTA. You get a complete carousel slide, not a bare image that needs extensive post-production.
 
 ### Creator Consistency
 
@@ -293,11 +318,15 @@ Your face, your brand, your colors — injected verbatim into every prompt. The 
 
 ### Platform-Aware
 
-Instagram carousels, TikTok Photo Mode carousels, LinkedIn document posts — each has different specs, aspect ratios, algorithm signals, and engagement patterns. Reference docs encode platform-specific best practices including IG's second-chance algorithm, TikTok's reverse-swipe signal, and LinkedIn's Depth Score so prompts and captions are optimized for where they'll actually be posted.
+Instagram carousels, TikTok Photo Mode carousels, LinkedIn document posts — each has different specs, aspect ratios, algorithm signals, and engagement patterns. Reference docs encode platform-specific best practices so prompts and captions are optimized for where they'll actually be posted.
 
 ### Caption-Ready
 
-Captions aren't an afterthought. The multi-platform export workflow generates both prompts AND captions with platform-specific character limits, truncation-safe hooks, and the right hashtag count.
+Captions aren't an afterthought — they're generated by default for all 3 platforms with every carousel. Platform-specific character limits, truncation-safe hooks, and the right hashtag count.
+
+### Verified Facts
+
+Every factual claim is web-searched and verified before it goes into a prompt. Sources are cited. Inaccurate data is flagged and corrected.
 
 ---
 
