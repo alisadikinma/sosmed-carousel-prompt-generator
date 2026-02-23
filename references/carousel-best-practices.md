@@ -140,7 +140,7 @@ If a user scrolls past a carousel without engaging, **Instagram re-serves the sa
 | **Optimal 8-10 slides** for peak engagement | Peak reach observed around slide 13 |
 | Use 4:5 aspect ratio for feed carousels | Takes up more screen real estate than 1:1 |
 | Consistent color palette across all slides | Brand recognition + professional look |
-| "SWIPE →" indicator on all slides except CTA | Increases swipe-through rate by 20-30% |
+| "GESER UNTUK LANJUT >" rendered in-image on all slides except CTA | Increases swipe-through rate by 20-30% |
 | Number your slides ("3/8") | Creates completion drive |
 | Last slide = face + CTA | Personal connection converts |
 
@@ -361,11 +361,13 @@ Caption:  12-14pt, Light, Mixed case
 | **Icon + text** | Listicles, steps | Icon left, text right (or icon top, text bottom) |
 | **Data card** | Stats, numbers | Large number + context label |
 
-### Image Integration
+### Image Integration (Text Rendered IN-IMAGE)
 - Creator face: 40-60% of frame on Hook/CTA slides
-- B-roll: full frame, no creator face
-- Gradient overlay: bottom 30-40% for text readability
-- Consistent image style across all slides (same filter, same lighting)
+- B-roll: full frame, no creator face (unless user approves for scenes with human figures)
+- Gradient overlay: bottom 30-40% with text rendered directly in AI-generated image
+- All text (headlines, accents, branding, SWIPE CTA) is part of the Nano Banana Pro prompt — NOT post-production
+- Consistent image style across all slides (same filter, same lighting, same text styling)
+- Brand icon + @handle watermark rendered in every slide
 
 ---
 
@@ -377,7 +379,7 @@ Before publishing any carousel:
 - [ ] Each slide delivers ONE clear idea
 - [ ] Text is readable at phone size (zoom out test)
 - [ ] Brand colors/fonts consistent across all slides
-- [ ] "SWIPE FOR MORE >" on all slides except CTA
+- [ ] "GESER UNTUK LANJUT >" rendered in-image on all slides except CTA
 - [ ] Page numbers shown (LinkedIn)
 - [ ] CTA is clear and specific on last slide
 - [ ] Caption complements (not repeats) carousel content
