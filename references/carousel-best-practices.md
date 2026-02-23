@@ -340,11 +340,13 @@ If a user scrolls past a carousel without engaging, **Instagram re-serves the sa
 
 ### Typography Hierarchy
 ```
-HEADLINE: 28-36pt, Bold, ALL CAPS (accent color for power word)
-Subhead:  18-22pt, Semibold, Mixed case
-Body:     14-16pt, Regular, Mixed case
-Caption:  12-14pt, Light, Mixed case
+HEADLINE: 48-72pt, EXTRA BOLD / BLACK weight, ALL CAPS (accent color for power word)
+          — MUST dominate the gradient zone. Think billboard, not book.
+Subhead:  24-32pt, Bold, Mixed case
+Body:     16-20pt, Semibold, Mixed case
+Caption:  14-16pt, Regular, Mixed case
 ```
+**Key Rule:** Headlines must be MASSIVE and impactful. The text should feel like it's punching the viewer in the face. If the headline doesn't dominate the bottom 35-40% of the image, it's too small.
 
 ### Color Usage
 - **Background**: Dark (better readability, premium feel) or clean white
@@ -367,7 +369,7 @@ Caption:  12-14pt, Light, Mixed case
 - Gradient overlay: bottom 30-40% with text rendered directly in AI-generated image
 - All text (headlines, accents, branding, SWIPE CTA) is part of the Nano Banana Pro prompt — NOT post-production
 - Consistent image style across all slides (same filter, same lighting, same text styling)
-- Brand icon + @handle watermark rendered in every slide
+- Brand icon (top-right) + @handle watermark (CENTER of image, 30% opacity) rendered in every slide
 
 ---
 

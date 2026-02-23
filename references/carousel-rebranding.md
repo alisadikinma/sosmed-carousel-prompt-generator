@@ -9,7 +9,8 @@ For each uploaded carousel, extract:
 1. **Slide count** and sequence (Hook → Content → CTA)
 2. **Per-slide content**: topic, key data/stats, visual concept
 3. **Source style DNA**: color palette, typography, layout, branding elements
-4. **Third-party elements to REMOVE**: badges, logos, handles, watermarks
+4. **Source elements to REMOVE**: competitor badges, logos, handles, watermarks, **source category tags** (e.g., "TECHNOLOGY" badge — this is the source creator's branding, NOT a content category to keep)
+5. **Subject brands to KEEP**: logos/UI of the brand being DISCUSSED (Google, WhatsApp, etc.) — these provide essential context
 
 Output a content map:
 ```
@@ -25,11 +26,13 @@ Convert source style → user's brand style using this mapping:
 | Source accent color | → User's accent color |
 | Cold tech background | → Warm amber/golden environment |
 | Generic global setting | → Creator's locale context |
-| Third-party badge | → DELETE completely |
+| Source creator badge/watermark | → DELETE completely (competitor branding) |
+| **Subject brand** (Google, WhatsApp, etc.) | → **KEEP** — subject brand IS the context, must remain visible |
 | No creator face | → ADD face on Hook + CTA |
-| Generic branding | → User's brand icon + handle |
+| Source branding | → User's brand icon + handle (center watermark 30% opacity) |
 | Cold color grading | → Kodak Portra 400 warm look |
 | Blue HUD overlays | → Warm golden/amber HUD overlays |
+| Small/weak text overlay | → **MASSIVE billboard-scale text** in gradient zone |
 
 ### Color Temperature Shift Rules
 - Cold accent colors (blues, cyans) → shift to user's accent color
@@ -58,30 +61,42 @@ Using facial identity from reference image: [face-ref.png].
 ```
 A photorealistic cinematic [SHOT TYPE] of [TOPIC VISUAL CONCEPT].
 [SPECIFIC SCENE DESCRIPTION with culturally relevant context].
+[IF slide discusses a specific brand/product: include recognizable brand elements
+(logo, UI, interface, color scheme) of the SUBJECT for viewer context.
+Example: Google search bar visible, WhatsApp green chat UI, etc.]
 [WARM-TONED HUD/data overlay elements showing KEY STAT].
 
 Shot on [LENS]mm f/[APERTURE], [ANGLE]. [DEPTH OF FIELD].
 [LIGHTING PATTERN], [RATIO], [KELVIN — always warm side].
 Kodak Portra 400, warm golden amber grade. [ATMOSPHERE].
 
-Bottom 35% reserved for text overlay (dark gradient zone).
-[PLATFORM ASPECT] aspect. No third-party branding, no watermarks.
+Bottom 35% dark gradient zone with extremely large, bold, impactful condensed
+ALL CAPS text — MASSIVE billboard-scale, extra bold/black weight.
+[brand-icon.png] in top-right corner.
+"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
+"GESER UNTUK LANJUT >" in small white text at bottom center.
+[PLATFORM ASPECT] aspect. No competitor branding (subject brand required for context).
 No creator face in this slide.
 ```
 
-### Split-Panel Slide Template
+### Split-Panel / Comparison Slide Template
 ```
 A photorealistic split-panel composition divided vertically into two halves.
 
-LEFT HALF ("[LABEL A]"): [Current/old way scene] featuring [CREATOR].
+LEFT HALF ("[LABEL A IN BAHASA]"): [Current/old way scene] featuring [CREATOR].
 [Context-appropriate setting]. Natural warm daylight, Kodak Portra 400.
 
-RIGHT HALF ("[LABEL B]"): Same person in same location but [CONTRAST VERSION].
+RIGHT HALF ("[LABEL B IN BAHASA]"): Same person in same location but [CONTRAST VERSION].
 Warm-toned holographic interfaces. Enhanced but still warm color temperature.
 
 Both halves: same environment context.
 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
-[PLATFORM ASPECT] aspect. Bottom 30% dark gradient for text.
+Bottom 30% dark gradient zone with extremely large, bold, impactful condensed
+ALL CAPS text — MASSIVE billboard-scale, extra bold/black weight.
+[brand-icon.png] + "@[handle]" watermark in white at 30% opacity,
+placed ON the vertical center divider line between the two panels.
+"GESER UNTUK LANJUT >" in small white text at bottom center.
+[PLATFORM ASPECT] aspect. No competitor branding.
 Using facial identity from reference image: [face-ref.png].
 ```
 
@@ -107,12 +122,14 @@ For each slide, output a text specification sheet:
 
 ```
 ### Text Overlay — Slide [N]
-- **Main headline**: "[TEXT]" — White #FFFFFF, condensed bold, ALL CAPS
-- **Accent keyword(s)**: "[WORD]" — [User's accent color]
-- **Position**: Bottom 35%, centered
+- **Main headline**: "[TEXT]" — White #FFFFFF, EXTRA BOLD/BLACK weight condensed, ALL CAPS
+  - Font must be MASSIVE — billboard-scale, dominating gradient zone
+- **Accent keyword(s)**: "[WORD]" — [User's accent color], same massive size
+- **Position**: Bottom 35-40%, centered
 - **Branding**:
-  - [User's brand icon] [position: centered top / on divider]
-  - [User's handle] below icon [opacity: 30% / 100% for hook]
+  - [User's brand icon] top-right corner
+  - [User's @handle] CENTER of image, 30% opacity (ALL slides)
+- **Subject brand** (if applicable): [Brand logo/UI] visible in scene for context
 - **Corner labels**: [series name / episode ID] (if applicable)
 - **SWIPE FOR MORE >**: Bottom center (all slides except CTA)
 ```
@@ -123,13 +140,15 @@ Before delivering carousel set, verify:
 
 - [ ] ALL slides use consistent warm palette
 - [ ] Accent color is consistent throughout
-- [ ] NO third-party branding on ANY slide
+- [ ] NO competitor branding on ANY slide (source creator badges/watermarks removed)
+- [ ] Subject brand visible where required (Google logo for Google stats, WhatsApp UI for WhatsApp data, etc.)
 - [ ] Hook slide has creator face with exaggerated expression
 - [ ] CTA slide has creator face with warm confident expression
-- [ ] Content slides have NO creator face (unless split-panel)
-- [ ] All slides have dark gradient text zone (bottom 30-40%)
-- [ ] Brand icon placement specified for every slide
-- [ ] Handle specified for every slide
+- [ ] B-Roll with human faces = creator face ALWAYS included
+- [ ] B-Roll without humans = NO creator face
+- [ ] All slides have dark gradient text zone (bottom 30-40%) with MASSIVE billboard-scale text
+- [ ] Brand icon in top-right of every slide
+- [ ] @handle watermark CENTERED in image at 30% opacity on every slide
 - [ ] SWIPE FOR MORE on all slides except CTA
 - [ ] Film stock consistently warm (Portra 400 / Vision3 500T)
 - [ ] Aspect ratio matches target platform (IG Feed 4:5, TikTok 9:16, LinkedIn 4:5)

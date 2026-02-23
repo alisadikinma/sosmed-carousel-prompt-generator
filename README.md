@@ -2,7 +2,7 @@
 
 > Cinematic AI image prompt generator for social media carousels — every frame must trigger visceral "WOW".
 
-A Claude Code plugin that generates production-ready AI image prompts for carousel content across Instagram, TikTok, and LinkedIn. Built around a cinematography-first philosophy: if Deakins wouldn't light it and Fincher wouldn't approve the frame, it doesn't ship.
+A Claude Code plugin that generates production-ready AI image prompts for carousel content across Instagram, TikTok, and LinkedIn. Built around a cinematography-first philosophy with psychology-based hook science: if Deakins wouldn't light it and Fincher wouldn't approve the frame, it doesn't ship.
 
 ## The Problem
 
@@ -64,10 +64,24 @@ All factual claims (statistics, data, quotes) are automatically web-searched and
 
 ### 6. Interactive Slide Design
 
-The agent pauses and asks you about ambiguous creative decisions:
-- Human figures in B-Roll → "Use your face or keep anonymous?"
+The agent detects ambiguous creative decisions and asks before generating:
 - Profession-specific costumes → "Lab coat or your default blazer?"
 - Setting ambiguity → "Modern glass server room or industrial gritty?"
+
+**Note:** B-Roll with human figures automatically uses your creator face as the most prominent figure — no question needed.
+
+### 7. Psychology-Based Hook Science
+
+5 hook categories backed by research data (Backlinko 912M posts, Conductor, Outbrain 65K headlines, Kahneman loss aversion):
+- **Visual Shock** — pattern interrupt in <0.5s (+400% dopamine)
+- **Negative Bias** — loss aversion trigger (+63% CTR)
+- **Curiosity Gap** — open loop psychology (+41% retention)
+- **Relatability** — identity alignment (+91.7% engagement)
+- **Speed & Value** — ROI on attention (+36% CTR with numbers)
+
+### 8. Subject Brand Context
+
+When discussing a specific company (Google, WhatsApp, Tesla), their brand elements (logo, UI, color scheme) are included in the image. Without subject brand context, factual claims are meaningless to viewers.
 
 ---
 
@@ -130,11 +144,12 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 |---|---|
 | `carousel-prompt-generator` | Subagent for batch carousel prompt work — reads references, verifies facts, asks about ambiguities, generates prompts + captions, writes output |
 
-### Reference Docs (8 files, read on-demand)
+### Reference Docs (9 files, read on-demand)
 
 | File | When Used |
 |---|---|
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
+| `hook-science.md` | Hook slides — clickbait psychology, 5 hook categories, power words, scoring, engagement data |
 | `carousel-rebranding.md` | Converting third-party carousels to your brand |
 | `platform-specs.md` | Nano Banana Pro specs, platform aspect ratios |
 | `cinematography-lut.md` | Lighting, lens, film stock, atmosphere, DP signatures |
@@ -215,10 +230,10 @@ These are non-negotiable across all generated prompts:
 
 | Rule | Enforcement |
 |---|---|
-| No third-party branding | Zero external badges, logos, or handles |
-| Brand icon + handle on every slide | Rendered IN-IMAGE on every slide |
-| Creator face placement | Hook, CTA, Thumbnail always. B-Roll with humans: ask user |
-| Text rendered in-image | Headlines, accents, branding, SWIPE CTA — all in prompt |
+| No competitor branding | Zero competitor badges, logos, handles, or source category tags. Subject brand (Google, WhatsApp) KEPT for context |
+| Brand icon + handle on every slide | Icon top-right. @handle CENTER of image, 30% opacity. Vertical divider for split-panel |
+| Creator face placement | Hook, CTA, Thumbnail always. B-Roll with humans: ALWAYS (creator as most prominent figure) |
+| Text rendered in-image | Headlines (MASSIVE billboard-scale, extra bold), accents, branding, SWIPE CTA — all in prompt |
 | Default film stock | Kodak Portra 400 (warm golden, not cold) |
 | Aspect ratio | Platform-specific: IG Feed 4:5, TikTok 9:16, LinkedIn 4:5 |
 | Image resolution | 4K via Nano Banana Pro |
@@ -288,6 +303,7 @@ sosmed-carousel-prompt-generator/
 │   └── carousel-prompt-generator.md  # Subagent definition
 ├── references/
 │   ├── creator-bible.md         # Creator identity + brand-in-image + holidays
+│   ├── hook-science.md          # Hook psychology, 5 categories, power words, scoring
 │   ├── carousel-rebranding.md   # Rebranding conversion rules
 │   ├── platform-specs.md        # Nano Banana Pro + platform specs
 │   ├── cinematography-lut.md    # Lighting/lens/film stock LUT

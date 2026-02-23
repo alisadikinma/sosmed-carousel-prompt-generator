@@ -33,18 +33,28 @@ Prompt instruction: `"MANDATORY: maintain exact facial identity from reference i
 
 ### ALWAYS include (rendered IN-IMAGE):
 - Brand icon rendered in top-right corner of EVERY slide (part of AI prompt)
-- @handle watermark rendered in white below brand icon:
-  - Hook slide: 100% opacity
-  - Content slides: 30% opacity
-  - CTA slide: 100% opacity
+- @handle watermark rendered in **CENTER of image**, white text, **30% opacity** on ALL slides:
+  - Centered horizontally and vertically (acts as a subtle ownership mark across the entire image)
+  - 30% opacity ensures visibility without distracting from content
+  - This applies to ALL slide types (Hook, Content, CTA, Thumbnail)
 - "GESER UNTUK LANJUT >" rendered on all slides except CTA (20-30% engagement boost)
 - Category tag rendered above headline in accent color small caps
 - Corner labels where applicable: series name, episode number
 
+### Subject Brand Context (CRITICAL for B-Roll / Factual Slides)
+When a slide discusses a SPECIFIC company, product, or service (Google, WhatsApp, Tesla, etc.):
+- **MUST include recognizable brand elements** (logo, UI, color scheme, interface) of the SUBJECT being discussed
+- Without subject brand context, the informational claim has NO meaning to the viewer
+- Example: "99.000 pencarian/detik" → MUST show Google logo/search UI. Without it, the stat is meaningless
+- Example: "40 juta pesan/detik" → MUST show WhatsApp logo/chat UI. Without it, nobody knows what platform
+- Subject brand = the topic. Creator brand = your branding. Both coexist.
+
 ### NEVER include:
-- Third-party badges, brand logos, other handles
-- Other creator watermarks
+- **Competitor branding** that competes with the CREATOR's brand (other creator handles, rival brand watermarks)
+- **Source category tags** from original carousel (e.g., "TECHNOLOGY", "FINANCE" badges from the source) — these are the original creator's branding elements, NOT your content category
+- Other creator watermarks or handles
 - Generic stock branding elements
+- Brands unrelated to the slide's topic
 
 ### CTA Slide Additions (rendered IN-IMAGE):
 - Social handles (IG, TikTok, LinkedIn, etc.)
@@ -62,10 +72,13 @@ Prompt instruction: `"MANDATORY: maintain exact facial identity from reference i
 | Secondary accent | Soft gold | #D4AF37 |
 
 ### Typography (Rendered IN-IMAGE)
-- Headlines: Condensed bold sans-serif (Oswald / Bebas Neue family)
-- ALL CAPS for main headlines
-- Mixed case for subtitles/taglines
-- Text hierarchy: Large bold title > medium subtitle > small tagline
+- Headlines: Condensed **EXTRA BOLD / BLACK weight** sans-serif (Oswald Black / Bebas Neue Bold / Impact family)
+- ALL CAPS for main headlines — **MASSIVE SIZE, dominating bottom 35-40% of frame**
+- Headline font must be **significantly larger than typical** — think billboard-scale, not book-scale
+- Accent/keyword text = same massive size but in accent color for maximum punch
+- Mixed case for subtitles/taglines only
+- Text hierarchy: **MASSIVE bold title** > medium subtitle > small tagline
+- Prompt MUST specify: "extremely large, bold, impactful condensed ALL CAPS text" — not just "bold text"
 - **Default language: Bahasa Indonesia** (English only if user explicitly requests)
 
 ### Film Stock & Color Temperature
@@ -90,17 +103,19 @@ Prompt instruction: `"MANDATORY: maintain exact facial identity from reference i
 |------------|---------------|------------|-----------|
 | HOOK | YES (always) | Exaggerated (shock, curiosity, excitement) | CU/MCU |
 | Content body (no humans) | NO | — | B-roll topic visuals |
-| Content body (with humans) | ASK USER | Context-appropriate | Depends on scene |
+| Content body (with humans) | **YES (always)** | Context-appropriate | Depends on scene |
 | Split-panel (with creator) | YES | Context-appropriate | MS/MWS |
 | CTA | YES (always) | Warm, confident, inviting | MCU |
 | Thumbnail | YES (always) | Exaggerated curiosity gap | CU tight |
 
-### B-Roll with Human Figures — Interactive Rule
+### B-Roll with Human Figures — ALWAYS Use Creator Face
 When a B-Roll/content slide involves visible human figures (silhouettes, crowds, professionals, specific persons):
-1. **PAUSE** and ask the user: "Slide N shows [description]. Should this use your face (creator) or stay as anonymous figure?"
-2. If YES (creator face) → use creator description VERBATIM + add face reference
-3. If NO (anonymous) → keep as generic figure, no face reference
-4. If scene implies profession-specific clothing (lab coat, suit, hard hat) → also ask: "Should you wear [profession outfit] or your default wardrobe?"
+1. **ALWAYS** use the creator's face — no need to ask. Creator face MUST appear in any slide with human figures.
+2. Use creator description VERBATIM + add face reference
+3. **Crowd scenes**: Creator must be one of the **most prominent foreground figures** — clearly identifiable, not lost in the crowd. Place creator in center-foreground or left/right-foreground position, slightly larger/closer to camera than surrounding people.
+4. **Single/few person scenes**: Creator IS the primary subject.
+5. If scene implies profession-specific clothing (lab coat, suit, hard hat) → ask: "Should you wear [profession outfit] or your default wardrobe?"
+6. The ONLY B-Roll slides without creator face = slides with NO human figures at all (pure object/landscape/abstract visuals)
 
 ## 6. Wardrobe Defaults
 
@@ -234,20 +249,23 @@ All brand elements are rendered directly in the AI-generated image via the promp
 | Element | Position | Style | Slide Types |
 |---------|----------|-------|-------------|
 | Brand icon | Top-right corner | As-is from file | ALL slides |
-| @handle | Below brand icon | White text, condensed | ALL slides |
+| @handle watermark | **Center of image** | White text, 30% opacity | ALL slides |
 | Category tag | Centered above headline | Accent color, small caps | ALL slides |
-| Headline | Bottom gradient zone | White bold condensed ALL CAPS | ALL slides |
-| Accent words | Within headline | Accent color (default #F5A623) | ALL slides |
+| Headline | Bottom gradient zone | White **EXTRA BOLD** condensed ALL CAPS, **large font** | ALL slides |
+| Accent words | Within headline | Accent color (default #F5A623), **EXTRA BOLD** | ALL slides |
 | SWIPE CTA | Bottom center | "GESER UNTUK LANJUT >" white small | All EXCEPT CTA |
 | Social handles | CTA slide only | White, listed vertically | CTA only |
 
-### Opacity Rules
-| Slide Type | @handle Opacity | Brand Icon Opacity |
-|------------|----------------|-------------------|
-| Hook | 100% | 100% |
-| Content/B-Roll | 30% | 100% |
-| CTA | 100% | 100% |
-| Thumbnail | 100% | 100% |
+### Opacity & Position Rules
+| Slide Type | @handle Opacity | @handle Position | Brand Icon Opacity |
+|------------|----------------|-----------------|-------------------|
+| Hook | 30% | Center of image | 100% |
+| Content/B-Roll | 30% | Center of image | 100% |
+| Split-Panel / Comparison | 30% | **ON the vertical divider line** between panels | 100% |
+| CTA | 30% | Center of image | 100% |
+| Thumbnail | 30% | Center of image | 100% |
+
+**Split-Panel Special Rule:** For comparison/split-panel slides, the brand icon + @handle watermark is placed ON the vertical center divider that separates the two panels. This creates a natural branding integration that doesn't obstruct either panel's content.
 
 ### Language Default
 - All in-image text = **Bahasa Indonesia** by default

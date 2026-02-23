@@ -37,7 +37,7 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 | Headline | Bottom gradient zone | White #FFFFFF bold condensed ALL CAPS |
 | Accent words | Within headline | Accent color (default: Golden Yellow #F5A623) |
 | Brand icon | Top-right corner | Brand icon filename, every slide |
-| @handle watermark | Below brand icon | White, 100% opacity on Hook/CTA, 30% on content |
+| @handle watermark | **Center of image** | White, **30% opacity on ALL slides** |
 | SWIPE FOR MORE > | Bottom center | White small text, all slides EXCEPT CTA |
 | Slide counter | Optional | "3/10" format, small, top-left |
 
@@ -48,13 +48,23 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 
 ### Text Rendering Syntax in Prompt
 ```
-Bottom [N]% dark gradient zone with bold white condensed ALL CAPS text
+Bottom [N]% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
+Text must be MASSIVE — billboard-scale, dominating the gradient zone, extra bold/black weight.
 Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white [opacity]% below brand icon.
+"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 ["GESER UNTUK LANJUT >" in small white text at bottom center. | omit for CTA slide]
 ```
+
+### Subject Brand Context in Prompt
+When a slide discusses a specific company/product/service, the prompt MUST include:
+```
+[Subject brand logo/UI/interface] clearly visible in the scene, establishing context
+for the informational claim. Example: Google search interface visible on phone screen,
+WhatsApp chat UI with green accent, etc.
+```
+**Without subject brand context, factual claims about that brand are meaningless to viewers.**
 
 ---
 
@@ -74,14 +84,15 @@ Shot on [lens]mm f/[aperture], [angle], [depth of field].
 [Texture detail: natural skin texture with visible pores, fabric weave].
 [Cinematic DP reference: "Deakins motivated lighting" / "Fraser atmospheric texture" etc.].
 
-Bottom [N]% dark gradient zone with bold white condensed ALL CAPS text
+Bottom [N]% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
+Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
 Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white [100% for Hook/CTA]% below brand icon.
+"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 ["GESER UNTUK LANJUT >" in small white text at bottom center. | omit for CTA]
 
-[PLATFORM ASPECT] aspect ratio. No third-party branding.
+[PLATFORM ASPECT] aspect ratio. No competitor branding.
 MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 ```
 
@@ -89,6 +100,8 @@ MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 ```
 A photorealistic cinematic [shot type] of [subject/scene].
 [Detailed scene description]. [Context-specific elements].
+[IF slide discusses a specific brand/product: include recognizable brand elements
+(logo, UI, interface, color scheme) of the SUBJECT being discussed for viewer context.]
 [Foreground element] + [main subject] + [background depth layer].
 
 Shot on [lens]mm f/[aperture], [angle]. [Depth of field].
@@ -97,21 +110,24 @@ Shot on [lens]mm f/[aperture], [angle]. [Depth of field].
 [Texture detail: surface materials, environmental textures].
 [Cinematic DP reference].
 
-Bottom 35% dark gradient zone with bold white condensed ALL CAPS text
+Bottom 35% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
+Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
 Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white 30% opacity below brand icon.
+"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 "GESER UNTUK LANJUT >" in small white text at bottom center.
 
-[PLATFORM ASPECT] aspect ratio. No third-party branding, no watermarks.
+[PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand IS required for context).
 ```
 
-### Template — B-Roll with Human Figure (Creator Face Optional)
+### Template — B-Roll with Human Figure (Creator Face ALWAYS)
 ```
-A photorealistic cinematic [shot type] of [CREATOR DESCRIPTION VERBATIM / anonymous figure].
+A photorealistic cinematic [shot type] of [CREATOR DESCRIPTION VERBATIM] as a prominent figure in [scene].
 [Context-appropriate expression]. [Profession-specific wardrobe OR creator default wardrobe].
-[Scene description with human figure in context].
+[Scene description with creator clearly identifiable among other figures.
+For crowd scenes: creator in center-foreground, slightly closer to camera, clearly the most recognizable face.
+For single/few person scenes: creator IS the primary subject.]
 [Foreground element] + [subject] + [background depth layer].
 
 Shot on [lens]mm f/[aperture], [angle]. [Depth of field].
@@ -119,18 +135,19 @@ Shot on [lens]mm f/[aperture], [angle]. [Depth of field].
 [Film stock], [color grade]. [Atmosphere].
 [Texture detail]. [Cinematic DP reference].
 
-Bottom 35% dark gradient zone with bold white condensed ALL CAPS text
+Bottom 35% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
+Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
 Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white 30% opacity below brand icon.
+"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 "GESER UNTUK LANJUT >" in small white text at bottom center.
 
-[PLATFORM ASPECT] aspect ratio. No third-party branding.
-[IF creator face: MANDATORY: maintain exact facial identity from reference image: [face-ref.png].]
+[PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand IS required for context).
+MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 ```
 
-**NOTE:** When a B-Roll scene involves visible human figures, the agent MUST ask the user whether to use the creator's face or keep as anonymous figure. See Interactive Slide Design rules.
+**NOTE:** B-Roll with ANY visible human figures = creator face ALWAYS included (no need to ask). Creator must be the most prominent/identifiable figure. Only pure object/landscape B-Roll has no creator face.
 
 ### Template — Thumbnail
 ```
@@ -152,12 +169,13 @@ Kodak Vision3 500T, HIGH SATURATION, boosted contrast, vibrant teal-orange.
 Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
-Bottom 25% dark gradient zone with bold white condensed ALL CAPS text
+Bottom 25% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[JUDUL THUMBNAIL DALAM BAHASA]" with key words in [accent color hex].
+Text must be MASSIVE — billboard-scale, extra bold/black weight.
 [brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white 100% below brand icon.
+"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 
-[PLATFORM ASPECT] aspect ratio. No third-party branding.
+[PLATFORM ASPECT] aspect ratio. No competitor branding.
 MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 ```
 
@@ -177,13 +195,14 @@ Both halves: same environment context.
 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
 [Atmosphere: haze, particles, or environmental effect].
 
-Bottom 30% dark gradient zone with bold white condensed ALL CAPS text
+Bottom 30% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[HEADLINE IN BAHASA]" with accent words in [accent color hex].
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white below brand icon.
+Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
+[brand-icon.png] + "@[handle]" watermark in white at 30% opacity, placed ON the vertical
+center divider line between the two panels (not top-right — on the divider for split-panel).
 "GESER UNTUK LANJUT >" in small white text at bottom center.
 
-[PLATFORM ASPECT] aspect ratio.
+[PLATFORM ASPECT] aspect ratio. No competitor branding.
 MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 ```
 
