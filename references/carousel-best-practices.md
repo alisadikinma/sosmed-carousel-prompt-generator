@@ -9,11 +9,36 @@
 | **Ideal slides** | 7-10 | 5-8 | 8-12 |
 | **Aspect ratio** | 4:5 (feed) or 9:16 (Reels) | 9:16 | 4:5 or 1:1 |
 | **Resolution** | 1080x1350 (4:5) or 1080x1920 (9:16) | 1080x1920 | 1080x1350 (4:5) or 1080x1080 (1:1) |
+| **Min slides** | 1 | 4 | 1 |
 | **File format** | JPG/PNG (images) | JPG/PNG | PDF (recommended) or images |
+| **Mixed media** | Yes (photos + videos) | No (images only) | No (PDF pages only) |
 | **Text on image** | Yes, but < 20% for reach | Yes, bold + large | Yes, clean + professional |
-| **Auto-advance** | No (swipe only) | No (swipe only) | No (swipe only) |
+| **Auto-advance** | No (swipe only) | No (swipe only, Photo Mode) | No (swipe only) |
 | **CTA placement** | Last slide | Last slide | Last slide/page |
 | **Audio support** | Music overlay on carousel | Music overlay | No audio |
+
+### TikTok: Photo Mode vs Video Mode (CRITICAL)
+
+TikTok has **two distinct modes** when uploading multiple photos. This catches many creators off-guard:
+
+| Mode | Behavior | How to Access |
+|------|----------|--------------|
+| **Video Mode (Slideshow)** — DEFAULT | Auto-play with transitions synced to music, converts photos to video | Default after selecting photos + tap Next |
+| **Photo Mode (Carousel)** | Manual swipe, viewer controls pace | Must **switch at bottom of editor screen** after tap Next |
+
+**If your carousel uploads as a "video" — you're in Video Mode. Switch to Photo Mode explicitly.**
+
+| Spec | Value |
+|------|-------|
+| Recommended dimensions | 1080 x 1920 px (9:16) |
+| Text-heavy carousels | 1080 x 1350 px (4:5) — leaves gap below for caption display |
+| Music | Single track for entire carousel (cannot assign per-slide) |
+| Max single image | 20 MB |
+| Total carousel file | 500 MB |
+
+**Safe zones for text overlay (TikTok):**
+- **Top edge:** Keep text at least 150px from top (username/Following button overlap)
+- **Bottom edge:** Avoid bottom 300-400px (caption, music info, engagement buttons)
 
 ---
 
@@ -46,19 +71,73 @@ Slide N+1: CTA — Tell them what to do next
 
 ---
 
+## 2.5. Engagement Data & Benchmarks (2025-2026)
+
+### Carousel vs Other Formats
+
+| Platform | Carousel Engagement | vs Other Formats | Key Multiplier |
+|----------|-------------------|-----------------|---------------|
+| **Instagram** | 0.55-1.92% | 3.1x vs single image, +12% vs Reels | 95% higher save rate |
+| **TikTok** | 6.46% | +82% likes vs video, 2.9x comments vs video | +81% total engagements vs video |
+| **LinkedIn** | 6.60% | +596% vs text, +278% vs video | 2-3x more dwell time |
+
+### Instagram Mixed-Media Carousel Advantage
+
+| Carousel Type | Engagement Rate |
+|--------------|----------------|
+| **Mixed (images + video slides)** | **2.33%** |
+| Video-only carousel | 1.86% |
+| Image-only carousel | 1.80% |
+
+**Insight:** Starting with static hook, transitioning to video demos mid-carousel, then static CTA = optimal structure.
+
+### Slide-by-Slide Exit Rate Curve
+
+| Slide | Exit Rate | Cumulative Retention |
+|-------|-----------|---------------------|
+| 1 | 23.8% | 76.2% |
+| 3 | 18.5% | ~62% |
+| 4 | 15.7% | ~55% |
+| 9 | 13.3% | ~35-40% |
+| 15 | ~12.5% | ~25-30% |
+
+**Pattern:** Exit rates drop sharply after slide 1, then stabilize at 12-15% per slide from slide 4 onward. Users who survive first 3 slides are committed swipers. Engagement dips at slides 3-7 but recovers at slide 8+ — place a "mini-hook" or surprise in middle slides.
+
+### Platform Prioritization
+
+| Creator Goal | Prioritize |
+|---|---|
+| Maximum reach / new audiences | TikTok (carousel boost + dedicated photo feed) |
+| Community building / saves | Instagram (carousel-native, saves dominant) |
+| Professional authority / B2B | LinkedIn (6.60% engagement, thought leadership) |
+| Rapid growth (small creator) | TikTok first, then IG carousels |
+
+---
+
 ## 3. Instagram Carousel Best Practices
 
 ### Algorithm Signals
-- **Saves** are the #1 ranking signal for carousels (more than likes)
-- **Shares** are #2 — design for "tag a friend who needs this"
-- **Dwell time** matters — more slides = more time on post = better reach
+- **Watch time/dwell time** is the **#1 ranking factor** (confirmed by Adam Mosseri, Jan 2025)
+- **DM shares/sends** weighted 3-5x heavier than likes — #2 ranking factor
+- **Saves** weighted 3x heavier than likes — carousels have 95% higher save rate
 - **Completion rate** — Instagram tracks how many slides people swipe through
 - **Re-visits** — carousels that people come back to get boosted
+
+### Second-Chance Algorithm (IG Carousel Exclusive)
+If a user scrolls past a carousel without engaging, **Instagram re-serves the same post later — starting from slide 2**. No other format gets this treatment.
+
+**Implications:**
+- Carousels get **double impressions for free** — two chances to capture attention
+- **Slide 2 design is strategically critical** — it may be the first slide many users see
+- A 10-slide carousel keeps users engaged 30-60 seconds vs 5 seconds for a Reel
+- Session duration increases **27% longer** with carousel content
+- Follower growth is **41% stronger** with consistent carousel strategy
 
 ### Design Rules
 | Rule | Why |
 |------|-----|
 | First slide = no text-heavy design | Feed preview must be visually striking |
+| **Optimal 8-10 slides** for peak engagement | Peak reach observed around slide 13 |
 | Use 4:5 aspect ratio for feed carousels | Takes up more screen real estate than 1:1 |
 | Consistent color palette across all slides | Brand recognition + professional look |
 | "SWIPE →" indicator on all slides except CTA | Increases swipe-through rate by 20-30% |
@@ -90,22 +169,36 @@ Slide N+1: CTA — Tell them what to do next
 
 ## 4. TikTok Carousel Best Practices
 
-### Algorithm Signals
-- **Swipe completion rate** — most important metric
-- **Saves** — indicates high-value content
-- **Shares** — virality signal
-- **Comments** — engagement depth
-- **Time spent** — TikTok prioritizes content people linger on
+### Algorithm Signals (Specific Benchmarks)
+
+| Signal | Target Benchmark | Weight |
+|--------|-----------------|--------|
+| Swipe-through rate (slide 1→2) | **60%+** | Primary |
+| Dwell time per slide | 3-5 seconds | Primary |
+| **Reverse swipes** (swipe backward) | Any occurrence | **Primary (strongest signal)** |
+| Completion rate | 80%+ see all slides | Primary |
+| Saves | High = "high-value content" | Secondary |
+| Comments | Especially first hour after posting | Secondary |
+| New follows from post | — | Secondary |
+
+- TikTok now shows videos to **followers FIRST** (2026 change). If followers engage, it goes wider.
+- Completion rate for viral: **70%+** (up from 50% in 2024)
+- "Qualified Views" (2026 metric): views longer than 5 seconds count as quality views
+- **Long captions on carousels get 3x more views** (TikTok official guidance)
+- **On-slide text is NOW INDEXED** by TikTok search — use keywords on slides for SEO
+- TikTok has a **dedicated photo-only Explore feed** (launched early 2025) — carousel boost is active
 
 ### Design Rules
 | Rule | Why |
 |------|-----|
-| 9:16 ONLY — no exceptions | Native format, full-screen experience |
+| **Switch to Photo Mode** (not Video Mode) | Default is slideshow/auto-play. Photo Mode = swipeable carousel |
+| 9:16 preferred, 4:5 for text-heavy | 4:5 leaves gap below for caption, avoids overlap |
 | Bold text, large font (min 60px) | Readability on mobile |
 | High contrast colors | Stands out in fast-scrolling feed |
 | First slide = thumbnail in For You Page | Must compete with video thumbnails |
-| Keep slides to 5-8 | TikTok audience has shorter attention span |
+| Keep slides to 5-10 (sweet spot: 7) | Hook + 5 value slides + CTA |
 | Use trending sounds/music | Algorithm boost from audio signals |
+| Respect safe zones | 150px from top, 300-400px from bottom |
 
 ### Content Types That Perform Best
 1. **"POV" stories** — Relatable scenarios with photo narrative
@@ -133,8 +226,9 @@ Slide N+1: CTA — Tell them what to do next
 ## 5. LinkedIn Carousel Best Practices
 
 ### Algorithm Signals
-- **Dwell time** — LinkedIn heavily weights time spent reading
-- **Comments** (especially long, thoughtful ones)
+- **Dwell time** — LinkedIn heavily weights time spent reading (2-3x more for carousels)
+- **Depth Score** (2026) — replaced vanity engagement as primary distribution signal. Measures how much of your carousel viewers actually see, not just initial impressions.
+- **Comments** (especially long, thoughtful ones) — #1 distribution signal on LinkedIn
 - **Shares** to feed or DMs
 - **Profile visits** after viewing carousel
 - **Document downloads** — unique to LinkedIn PDF carousels
@@ -193,6 +287,8 @@ Slide N+1: CTA — Tell them what to do next
 | TikTok 9:16 | Instagram Reels 9:16 | Same format, adjust caption + hashtags |
 | LinkedIn PDF | Instagram 4:5 | More visual, less text, add "swipe →" |
 | LinkedIn PDF | TikTok 9:16 | Bold + colorful redesign, shorter, add music |
+
+**Warning:** Platforms detect and may bury directly cross-posted content, especially if aspect ratios don't match native specs or watermarks from other platforms are visible. Always re-export at correct dimensions and adapt captions per platform.
 
 ### Universal Design Principles
 1. **Text-safe zones** — Keep text in center 80% (avoid edges/corners cut off by UI)

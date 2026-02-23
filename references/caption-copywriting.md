@@ -35,6 +35,31 @@ Since late 2025, both Instagram and TikTok penalize hashtag spam. Less is more.
 - No generic filler (#love, #instagood, #fyp)
 - No more than 5 — platforms actively suppress >5 hashtag posts
 - No hashtag-first captions — hook first, hashtags at end
+- No same hashtag set on every post — rotate to avoid spam filters
+
+### The Hashtag Role Shift (2025-2026)
+
+Hashtags are now **topic labels for categorization**, NOT reach drivers. All 3 platforms moved to AI-powered semantic discovery.
+
+| Platform | Real Reach Driver | Hashtag Role |
+|----------|------------------|--------------|
+| Instagram | Caption keywords (+30% more reach than hashtag-heavy posts) | Topic labeling for search index |
+| TikTok | Caption keywords (+20-40% visibility boost) | Content categorization + search |
+| LinkedIn | Semantic AI reads full post text directly | SEO keyword for search only |
+
+**Key shifts:**
+- Instagram removed hashtag following (Dec 2024) and reduced algorithmic weight
+- LinkedIn removed hashtag following, "Talks About" section, and hashtag suggestions (late 2024)
+- TikTok indexes on-screen text via OCR — hashtags are secondary to caption keywords
+- Instagram captions now appear in Google search results (July 2025)
+
+### Avoiding Shadowban Triggers
+- Check each hashtag before posting — if search shows zero results, it may be restricted
+- Never use identical hashtag set on consecutive posts
+- Avoid bot-like behavior (mass follow/unfollow, copy-paste comments)
+- No cross-platform watermarks (IG deprioritizes TikTok watermarks and vice versa)
+- No irrelevant hashtags — causes algorithmic confusion + potential suppression
+- If shadowbanned: stop posting 48-72h, delete flagged content, clear cache, remove banned tags
 
 ---
 
@@ -133,7 +158,40 @@ HASHTAGS (3-5):
 
 ---
 
-## 4. Hook Templates Per Platform
+## 4. Emotional Triggers Per Platform
+
+| Trigger | Instagram | TikTok | LinkedIn |
+|---------|-----------|--------|----------|
+| **Curiosity gap** | "I tested 50 tools. Only 3 worked." | "No one tells you about..." | "After 5 years, here's what I learned:" |
+| **Vulnerability** | Personal story + lesson learned | Self-deprecating humor, oddly specific relatability | Professional failure story + framework |
+| **FOMO** | "Only available this week" | "Only 1% of people know..." | "The companies doing this are pulling ahead" |
+| **Hot take / Contrarian** | "Stop posting Reels. Here's why." | "Unpopular opinion: [bold claim]" | "Unpopular opinion: [industry take]" |
+| **Social proof** | Testimonials, before/after | "If you know, you know" | Data-backed insights, case studies |
+| **Aspiration** | Transformation stories | "I did X in just Y days" | Career journey, milestone sharing |
+
+### TikTok-Specific Language Patterns (Gen Z / Millennial)
+- **Lowercase aesthetic** — intentional lack of capitalization signals casualness
+- **Oddly specific relatability** — the more niche, the better it resonates ("When your brother tried to cut the line at Thanksgiving but you've lived off cottage cheese and salads for an entire year")
+- **Hyperbolic minimalism** — "This is everything" / "I'm deceased"
+- **Self-call-out** — "Not me [doing something relatable]..."
+- **Trailing emphasis** — "The way [thing happened]..."
+- **Ironic detachment** — self-aware humor about own habits
+- **Yellow font = vulnerable** — Gen Z color-coded system for deeply personal content
+
+### LinkedIn Engagement Bait — AVOID THESE
+LinkedIn's 2026 algorithm uses NLP to detect and **actively suppress engagement bait** (-60% reach penalty):
+- "Comment YES if you agree" — penalized
+- "Type 1 if you agree, 2 if you disagree" — penalized
+- "Like for A, Heart for B" (reaction polling) — penalized
+- Engagement pods (reciprocal patterns) — AI detects, applies shadowban
+
+**What works instead:** Naturally thought-provoking content that invites genuine professional responses. "What's your experience with X?" (acceptable) vs "Type 1 if you agree" (penalized).
+
+---
+
+## 5. Hook Templates Per Platform
+
+**The 3-Second Rule:** 84.3% of viral TikTok videos use psychological hook triggers within the first 3 seconds. Videos with 70-85% retention at 3 seconds receive 2.2x more total views.
 
 ### Instagram Hooks (≤125 chars)
 
@@ -154,6 +212,10 @@ HASHTAGS (3-5):
 | Ranking | "[N] [things] ranked worst to best" | "5 AI tools ranked worst to best" |
 | Challenge | "Try this and thank me later" | "Try this and thank me later" |
 | Relatable | "When you realize [relatable thing]..." | "When you realize AI can do your carousels..." |
+| Self-call-out | "Not me [doing something relatable]..." | "Not me spending 3 hours on a carousel..." |
+| Hyper-specific | "When [oddly specific scenario]..." | "When you open Canva for a 'quick edit' at 2am..." |
+| Identity | "Tell me you're [identity] without telling me" | "Tell me you're a content creator without telling me" |
+| Pipeline | "The [thing] to [other thing] pipeline is real" | "The 'just one more edit' to 3am pipeline is real" |
 
 ### LinkedIn Hooks (≤110 chars)
 
@@ -164,16 +226,63 @@ HASHTAGS (3-5):
 | Data | "[Company] just [did thing]. Here's what it means." | "Google just launched Gemini 3. Here's what it means." |
 | Contrarian | "Unpopular opinion: [take]" | "Unpopular opinion: Carousels outperform Reels." |
 | Story | "I [did thing]. The results surprised me." | "I replaced all my designs with AI. The results surprised me." |
+| Wish list | "[N] things I wish I knew about [topic]" | "5 things I wish I knew about AI content creation" |
 
 ---
 
-## 5. CTA Best Practices
+## 6. CTA Best Practices
 
-| Platform | Best CTA Types | Example |
-|----------|---------------|---------|
-| Instagram | Save + Share | "Save this for your next project. Share with a creator friend." |
-| TikTok | Comment + Save | "Which one surprised you most? Comment below. Save for later." |
-| LinkedIn | Comment + Repost | "What's your take? I'd love to hear from practitioners." |
+### CTA Psychology
+
+**Engagement Ladder** (lowest → highest commitment):
+```
+Like → Save → Comment → Share/DM Send → Follow
+```
+
+**Key principles:**
+- **One primary CTA per post** — single CTA = +371% clicks vs multiple CTAs. Multiple CTAs create decision fatigue.
+- **Micro-commitments** — small asks (poll tap, like) make users more likely to take bigger actions (comment, follow) due to consistency bias.
+- **Soft vs Hard CTA** — soft ("What's your experience?") for cold audiences; hard ("Comment GUIDE for the PDF") for warm audiences.
+- Posts with clear CTAs = **+25% CTR**. Posts without CTA = massive missed opportunity.
+- Carousel dual-CTA: **soft CTA mid-carousel + hard CTA on last slide**.
+
+### Algorithm Weight Signals Per Platform
+
+| Signal | Instagram | TikTok | LinkedIn |
+|--------|-----------|--------|----------|
+| DM shares/sends | **3-5x** heavier than likes | High weight | N/A |
+| Saves | **3x** heavier than likes | Strongest signal | "Depth Score" |
+| Comments | High value | High value (especially first hour) | **#1 distribution signal** |
+| Likes | Lowest weight | Moderate | Low (bait = -60% penalty) |
+| Watch/dwell time | **#1 ranking factor** (Mosseri Jan 2025) | Primary (70%+ completion for viral) | 2-3x more for carousels |
+
+### CTA by Goal
+
+| Goal | Best CTA Format | Data |
+|------|----------------|------|
+| **Comments** | "Comment [KEYWORD] for free [resource]" | +70% comments (IG), triggers DM automation |
+| **Comments** | Fill-in-the-blank: "My favorite ___ is ___" | Lowest barrier to entry |
+| **Comments** | "Agree or disagree: [bold claim]?" | Debate-driven, high volume |
+| **Comments** | "Which one would you pick?" | Simple choice = low friction |
+| **Saves** | "Save this for the next time you ___" | +30% reach lift, 3x algorithm weight |
+| **Shares** | "Send this to the person who handles ___" | 3-5x algorithm weight on IG |
+| **Follows** | "Follow for [specific value] every [frequency]" | Series content = +40-60% engagement |
+| **Follows (TikTok)** | Mid-roll CTA at 50% retention point | 3x more effective than end-of-video |
+| **Likes** | "Double tap if this resonates" | +11% engagement (IG only). Don't waste primary CTA on this |
+
+### Comment-to-DM Keyword CTA Funnel
+"Comment [KEYWORD] and I'll DM you the [resource]" — user comments keyword, automated DM (via ManyChat) delivers resource + captures email.
+- IG: ManyChat integration mature, auto-DM works
+- TikTok: viewer must message you first (auto-DM not fully supported yet)
+- Can double lead volume (1,000+ leads/month reported)
+
+### Platform-Specific CTA Rules
+
+| Platform | Do | Don't |
+|----------|-----|-------|
+| Instagram | Save + Share CTAs (highest algorithm weight) | Generic "like this post" |
+| TikTok | Question CTAs + "Save for later" | "PLEASE follow and share!" (desperate tone) |
+| LinkedIn | Open questions inviting expertise | "Comment YES if you agree" (-60% reach penalty) |
 
 ### CTA Phrases That Convert
 
@@ -183,11 +292,45 @@ HASHTAGS (3-5):
 | Save | "Save this for when you need it" | "Save post ini, penting!" |
 | Share | "Send this to someone who needs it" | "Share ke temen yang perlu tau" |
 | Comment | "Which tip was most useful?" | "Comment pendapat kamu" |
+| Comment keyword | "Comment GUIDE for the free checklist" | "Comment TEMPLATE buat dapetin gratis" |
 | Link | "Full guide → link in bio" | "Link di bio ya" |
+
+### Emoji Usage in CTAs
+
+| Platform | Recommended | Notes |
+|----------|-------------|-------|
+| Instagram | 3-5 relevant emojis per caption | +48% engagement. Use functional emojis (pointing, checkmarks) |
+| TikTok | 1-3 max | Minimal emoji culture. Text-based wit preferred |
+| LinkedIn | Sparingly, never in first line | Professional context. Functional only |
 
 ---
 
-## 6. Bahasa Indonesia Caption Conventions
+## 7. TikTok Triple-Layer Keyword SEO
+
+TikTok indexes 3 text layers simultaneously for content classification and search:
+
+| Layer | What It Is | SEO Weight |
+|-------|-----------|-----------|
+| **Caption text** | Description below video | Highest — first 3 words = primary SEO weight |
+| **On-screen text** | Text overlay on video/image | OCR-scanned within first 2-3 seconds |
+| **Spoken audio** | Voice in video | Transcribed and indexed automatically |
+
+**Strategy:** Use **different but related keywords** across all 3 layers to maximize keyword coverage.
+
+```
+Example:
+- Spoken: "morning routine"
+- On-screen text: "5am productivity hack"
+- Caption: "How I changed my morning for better focus"
+```
+
+- Place primary keyword within first 3 words of caption
+- Use 2-3 keywords naturally (avoid keyword stuffing)
+- 40% of Gen Z uses TikTok over Google for search — caption SEO matters
+
+---
+
+## 8. Bahasa Indonesia Caption Conventions
 
 When creating captions for Indonesian audience (triggered by `references/localization-id.md`):
 
@@ -227,7 +370,7 @@ HASHTAGS:
 
 ---
 
-## 7. Cross-Platform Caption Adaptation
+## 9. Cross-Platform Caption Adaptation
 
 When adapting the same carousel across platforms:
 
@@ -247,3 +390,6 @@ When adapting the same carousel across platforms:
 - [ ] CTA uses platform-native actions (save/share vs repost)
 - [ ] Character count within platform limit
 - [ ] Bahasa adaptation applied (if Indonesian content)
+- [ ] Single language per carousel — English OR Bahasa, never bilingual mix in headlines
+- [ ] No cross-platform watermarks (IG deprioritizes TikTok watermarks and vice versa)
+- [ ] Emoji density matches platform culture (3-5 IG, 1-3 TikTok, minimal LinkedIn)
