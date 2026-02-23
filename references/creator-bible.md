@@ -101,11 +101,15 @@ When a slide discusses a SPECIFIC company, product, or service (Google, WhatsApp
 
 | Slide Type | Creator Face? | Expression | Shot Type |
 |------------|---------------|------------|-----------|
-| HOOK | YES (always) | Exaggerated (shock, curiosity, excitement) | CU/MCU |
+| HOOK | YES (always) | Exaggerated — match hook category (see hook-science.md) | CU/MCU |
+| FORESHADOW (Slide 2) | YES (always) | Concerned urgency OR teasing "I know something" smirk | MCU |
 | Content body (no humans) | NO | — | B-roll topic visuals |
 | Content body (with humans) | **YES (always)** | Context-appropriate | Depends on scene |
 | Split-panel (with creator) | YES | Context-appropriate | MS/MWS |
-| CTA | YES (always) | Warm, confident, inviting | MCU |
+| CTA (Polarize) | YES (always) | Playful challenge, one eyebrow raised | MS |
+| CTA (Question) | YES (always) | Warm curiosity, direct eye contact, head tilt | CU |
+| CTA (Identity Tag) | YES (always) | Laughing warmth, nudging gesture | MWS |
+| CTA (Engagement Reward) | YES (always) | Generous excitement, presenting "gift" | MCU |
 | Thumbnail | YES (always) | Exaggerated curiosity gap | CU tight |
 
 ### B-Roll with Human Figures — ALWAYS Use Creator Face
@@ -134,6 +138,7 @@ All text is rendered IN-IMAGE via the Nano Banana Pro prompt (not post-productio
 | Slide Type | Gradient Zone | Prompt Instruction |
 |------------|--------------|-------------------|
 | Hook | Bottom 40% | "Bottom 40% dark gradient zone with bold white condensed ALL CAPS text reading..." |
+| Foreshadow | Bottom 35% | "Bottom 35% dark gradient zone with bold white condensed ALL CAPS text reading..." |
 | Content B-Roll | Bottom 35% | "Bottom 35% dark gradient zone with bold white condensed ALL CAPS text reading..." |
 | Split-Panel | Bottom 30% | "Bottom 30% dark gradient zone with bold white condensed ALL CAPS text reading..." |
 | CTA | Bottom 40% | "Bottom 40% dark gradient zone with bold white condensed ALL CAPS text reading..." |

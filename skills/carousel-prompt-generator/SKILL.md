@@ -154,23 +154,33 @@ The agent MUST pause and ask the user when ANY of these conditions are detected 
 1. ANALYZE source slides — extract topic, data, visual concept per slide
 2. IDENTIFY third-party elements to REMOVE
 3. **VERIFY** — web-search factual claims, confirm accuracy
-4. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
-5. CONVERT style to user's brand palette (warm, cinematic)
-6. GENERATE Nano Banana Pro prompt per slide (text rendered in-image)
-7. SCORE via WOW gate (min 6/8, all 8 mandatory)
-8. **GENERATE CAPTIONS** for all 3 platforms (IG + TikTok + LinkedIn)
-9. VERIFY continuity checklist
+4. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
+5. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
+6. CONVERT style to user's brand palette (warm, cinematic)
+7. **SCORE HOOK HEADLINE** — verify 3/5 on Hook Scoring Gate before generating hook prompt
+8. GENERATE Slide 1 (HOOK) — use Hook Slide template from `references/prompt-formulas.md`
+9. GENERATE Slide 2 (FORESHADOW, mandatory) — use Foreshadow template, select type matching topic
+10. GENERATE remaining slides — Nano Banana Pro prompts (text rendered in-image)
+11. GENERATE last slide (CTA) — select CTA visual type matching engagement goal
+12. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
+13. **GENERATE CAPTIONS** for all 3 platforms (IG + TikTok + LinkedIn)
+14. VERIFY continuity checklist
 
 ## Workflow: Fresh Carousel Production
 
 1. ANALYZE brief/topic — identify key messages, slide structure, emotions
 2. **VERIFY** — web-search each factual claim, collect sources
 3. DETERMINE target platform and set aspect ratio (read `references/platform-specs.md`)
-4. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
-5. GENERATE Nano Banana Pro prompt per slide (text rendered in-image, Bahasa default)
-6. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
-7. **GENERATE CAPTIONS** for all 3 platforms (IG + TikTok + LinkedIn)
-8. OUTPUT continuity checklist
+4. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
+5. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
+6. **SCORE HOOK HEADLINE** — verify 3/5 on Hook Scoring Gate before generating hook prompt
+7. GENERATE Slide 1 (HOOK) — use Hook Slide template from `references/prompt-formulas.md`
+8. GENERATE Slide 2 (FORESHADOW, mandatory) — use Foreshadow template, select type matching topic
+9. GENERATE remaining body slides — Nano Banana Pro prompts (text rendered in-image, Bahasa default)
+10. GENERATE last slide (CTA) — select CTA visual type matching engagement goal
+11. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
+12. **GENERATE CAPTIONS** for all 3 platforms (IG + TikTok + LinkedIn)
+13. OUTPUT continuity checklist
 
 ## Workflow: Thumbnail Generation
 
@@ -249,8 +259,11 @@ Platform: [Target] | Slides: [N] | Aspect: [ratio] | Language: [Bahasa Indonesia
 
 ---
 
-## Slide [N]: [TYPE] — [Slide Topic]
-Type: Hook / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
+## Slide [N]: [TYPE] — [Slide Topic] | Emotion: [BEAT] ([intensity]/6)
+Type: Hook / Foreshadow / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
+[For Hook: Hook Category: [category] | Headline Score: [N]/5]
+[For Foreshadow: Foreshadow Type: [Steps Tease / Fear Urgency / Quiz / Visual Tease]]
+[For CTA: CTA Type: [Polarize / Question / Identity Tag / Reward]]
 
 ### Nano Banana Pro Prompt
 [Full merged prompt: scene + cinematography + all 8 WOW elements + text rendering + branding, 80-200 words]
@@ -274,6 +287,13 @@ Note: [Any correction or nuance, if applicable]
 - [ ] ALL slides use consistent warm color palette
 - [ ] NO competitor branding on ANY slide (subject brand IS required where relevant)
 - [ ] Subject brand (logo/UI) visible on slides discussing that brand's stats/facts
+- [ ] Hook headline scored 3/5+ on Hook Scoring Gate
+- [ ] Hook visual matches hook category (expression + scene + lighting)
+- [ ] Slide 2 is FORESHADOW type (Steps Tease / Fear Urgency / Quiz / Visual Tease)
+- [ ] Foreshadow creates FOMO — viewer must swipe to resolve
+- [ ] Emotional arc plotted — each slide has assigned beat + intensity
+- [ ] Mini-hook present at slide 5-7 (re-engagement surprise)
+- [ ] CTA uses specific visual type (Polarize / Question / Identity Tag / Reward)
 - [ ] Hook + CTA have creator face
 - [ ] B-Roll with human figures = creator face as most prominent figure
 - [ ] B-Roll without humans = no creator face

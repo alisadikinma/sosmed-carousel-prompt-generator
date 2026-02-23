@@ -128,6 +128,8 @@ If ANY layer is weak, the hook fails.
 
 ## Hook Scoring Checklist (Evidence-Based)
 
+> **Prompt implementation:** For the Hook Headline Formula with pre-generation scoring gate, headline bank, and category→visual mapping, see `references/prompt-formulas.md` > "Hook Headline Formula" section.
+
 A strong carousel hook headline should have **minimum 3 of 5** features:
 
 | Feature | Impact | Example |
@@ -158,6 +160,8 @@ Every Hook slide must work on 3 layers:
 
 ### Foreshadow Strategy (Slide 2)
 
+> **Prompt implementation:** For the Foreshadow prompt template with 4 visual types, see `references/prompt-formulas.md` > "Template — Foreshadow Slide" section.
+
 Slide 2 is CRITICAL because:
 - Instagram re-serves carousel from slide 2 if user didn't engage on slide 1 (second chance algorithm)
 - Slide 2 must create FOMO — "If you skip this, you'll miss [consequence]"
@@ -169,6 +173,8 @@ Slide 2 is CRITICAL because:
 4. **Visual Tease** — Show blurred/partial preview of the reveal slide
 
 ### CTA Slide Hook (Last Slide)
+
+> **Prompt implementation:** For the 4 CTA visual types with prompt templates, see `references/prompt-formulas.md` > "Template — CTA Slide" section.
 
 The CTA must convert attention. Use these formulas:
 
@@ -232,6 +238,8 @@ Last: CTA
 ---
 
 ## Emotional Arc for Maximum Engagement
+
+> **Prompt implementation:** For the Emotional Arc Visual Map with beat→visual treatment mapping and intensity tags, see `references/prompt-formulas.md` > "Emotional Arc Visual Map" section.
 
 The optimal carousel emotional arc follows a "roller coaster" pattern:
 

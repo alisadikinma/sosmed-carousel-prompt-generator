@@ -180,7 +180,7 @@ When given source carousel images to rebrand:
 
 ### Step 1: Analyze Source
 For each uploaded slide, identify:
-- Slide type (Hook / Content / CTA)
+- Slide type (Hook / Foreshadow / Content / CTA)
 - Topic and key data/stats
 - Visual concept
 - Third-party elements to REMOVE
@@ -189,27 +189,40 @@ For each uploaded slide, identify:
 - Web-search all factual claims from source slides
 - Flag any inaccurate data to user
 
-### Step 3: Interactive Design
-- Check each slide for ambiguity triggers (human figures, costumes, settings)
+### Step 3: Plot Emotional Arc
+- Assign emotional beat + intensity to each slide (see Emotional Arc Visual Map in `references/prompt-formulas.md`)
+- Beats: HIGH (hook) → DIP (foreshadow) → BUILD (body) → MINI-HOOK (mid-carousel) → CLIMAX (reveal) → WARM (CTA)
+
+### Step 4: Interactive Design
+- Check each slide for ambiguity triggers (costumes, settings)
 - Ask user for decisions on ambiguous slides
 
-### Step 4: Convert Style
+### Step 5: Convert Style
 Apply conversion matrix (read `references/carousel-rebranding.md` for full detail):
 - Source accent colors → User's accent color
 - Cold background → Warm amber environment
 - Generic setting → Culturally relevant context
 - Third-party branding → DELETE, replace with user's brand
-- No creator face → ADD on Hook + CTA
+- No creator face → ADD on Hook + CTA + human figure slides
 - Text overlay → Rendered IN-IMAGE in Bahasa Indonesia
 
-### Step 5: Generate Prompts
-Output per slide in standard output format (see OUTPUT FORMAT below)
+### Step 6: Score Hook Headline
+- Write hook headline using Hook Headline Formula (see `references/prompt-formulas.md`)
+- Verify 3/5 on Hook Scoring Gate before generating hook prompt
+- If < 3/5: REWRITE
 
-### Step 6: Generate Captions
+### Step 7: Generate Prompts (Engagement Funnel Order)
+1. **Slide 1 (HOOK)** — Hook Slide template, expression + scene matching hook category
+2. **Slide 2 (FORESHADOW, mandatory)** — Foreshadow template, type matching topic
+3. **Slides 3-N (BODY)** — Standard templates, visual treatment matching emotional arc beat
+4. **Last Slide (CTA)** — CTA Visual Type matching engagement goal (Polarize/Question/Identity Tag/Reward)
+5. Score all prompts via WOW gate (min 6/8)
+
+### Step 8: Generate Captions
 Generate captions for all 3 platforms (IG + TikTok + LinkedIn) in Bahasa
 
-### Step 7: Continuity Checklist
-Verify all visual continuity rules
+### Step 9: Continuity Checklist
+Verify all visual continuity rules (including hook score, foreshadow, emotional arc, CTA type)
 
 ---
 
@@ -219,37 +232,50 @@ When given a topic or brief:
 
 ### Step 1: Analyze & Structure
 - Identify key messages, data points, emotions
-- Determine slide structure (Hook → Content slides → CTA)
+- Determine slide structure: Hook → Foreshadow → Content slides → CTA
 - Set target platform and aspect ratio
 
 ### Step 2: Verify Facts
 - Web-search each factual claim
 - Collect sources, flag inaccuracies
 
-### Step 3: Interactive Design
+### Step 3: Plot Emotional Arc
+- Assign emotional beat + intensity to each slide (see Emotional Arc Visual Map in `references/prompt-formulas.md`)
+- Beats: HIGH (hook) → DIP (foreshadow) → BUILD (body) → MINI-HOOK (mid-carousel) → CLIMAX (reveal) → WARM (CTA)
+- Each slide gets tagged: `Emotion: [BEAT] ([intensity]/6)`
+
+### Step 4: Interactive Design
 - Check each slide for ambiguity triggers
 - Ask user for decisions on ambiguous slides
 - Wait for answers before generating those slides
 
-### Step 4: Generate Prompts
-- Generate Nano Banana Pro prompt per slide
-- Apply 8-element priority: Subject → Action → Setting → Camera → Lighting → Style → Texture → Text
-- Include face reference for creator shots (Hook, CTA, user-approved B-Roll)
-- Include text rendering in-image (Bahasa default)
-- 80-200 words per prompt, natural language
-- All 8 WOW elements in every prompt
+### Step 5: Score Hook Headline
+- Select hook category based on topic (see Hook Category mapping in `references/hook-science.md`)
+- Write headline using Hook Headline Formula (see `references/prompt-formulas.md`)
+- Verify 3/5 on Hook Scoring Gate
+- If < 3/5: REWRITE until passing
 
-### Step 5: Score & Verify
+### Step 6: Generate Prompts (Engagement Funnel Order)
+1. **Slide 1 (HOOK)** — Hook Slide template, expression + scene matching hook category
+2. **Slide 2 (FORESHADOW, mandatory)** — Foreshadow template, type matching topic
+3. **Slides 3-N (BODY)** — Standard templates with visual treatment matching emotional arc beat
+   - Include mini-hook at slide 5-7 (sudden visual change for re-engagement)
+4. **Last Slide (CTA)** — Select CTA Visual Type matching engagement goal
+5. Apply 8-element priority: Subject → Action → Setting → Camera → Lighting → Style → Texture → Text
+6. 80-200 words per prompt, natural language
+7. All 8 WOW elements in every prompt
+
+### Step 7: Score & Verify
 - Score each prompt via WOW gate (min 6/8)
-- Verify continuity checklist
+- Verify continuity checklist (including hook score, foreshadow, emotional arc, CTA type)
 
-### Step 6: Generate Captions
+### Step 8: Generate Captions
 - Generate captions for all 3 platforms (IG + TikTok + LinkedIn)
 - Bahasa Indonesia default
 - Follow character limits and hashtag rules
 
-### Step 7: Output
-- Output in standard format with all sections
+### Step 9: Output
+- Output in standard format with all sections (including emotional beat tags)
 
 ---
 
@@ -303,8 +329,11 @@ Platform: [Target] | Slides: [N] | Aspect: [ratio] | Language: [Bahasa Indonesia
 
 ---
 
-## Slide [N]: [TYPE] — [Slide Topic]
-Type: Hook / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
+## Slide [N]: [TYPE] — [Slide Topic] | Emotion: [BEAT] ([intensity]/6)
+Type: Hook / Foreshadow / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
+[For Hook: Hook Category: [category] | Headline Score: [N]/5]
+[For Foreshadow: Foreshadow Type: [Steps Tease / Fear Urgency / Quiz / Visual Tease]]
+[For CTA: CTA Type: [Polarize / Question / Identity Tag / Reward]]
 
 ### Nano Banana Pro Prompt
 [Full merged prompt: scene + cinematography + all 8 WOW elements + text rendering + branding, 80-200 words]
@@ -327,6 +356,13 @@ Source: [URL or "Well-established fact"]
 - [ ] ALL slides use consistent warm color palette
 - [ ] NO competitor branding on ANY slide (source category tags removed, subject brand kept)
 - [ ] Subject brand (logo/UI) visible on slides discussing that brand's data
+- [ ] Hook headline scored 3/5+ on Hook Scoring Gate
+- [ ] Hook visual matches hook category (expression + scene + lighting)
+- [ ] Slide 2 is FORESHADOW type (Steps Tease / Fear Urgency / Quiz / Visual Tease)
+- [ ] Foreshadow creates FOMO — viewer must swipe to resolve
+- [ ] Emotional arc plotted — each slide has assigned beat + intensity
+- [ ] Mini-hook present at slide 5-7 (re-engagement surprise)
+- [ ] CTA uses specific visual type (Polarize / Question / Identity Tag / Reward)
 - [ ] Hook + CTA have creator face
 - [ ] B-Roll with human figures = creator face as most prominent figure
 - [ ] B-Roll without humans = no creator face

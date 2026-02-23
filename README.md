@@ -83,6 +83,34 @@ The agent detects ambiguous creative decisions and asks before generating:
 
 When discussing a specific company (Google, WhatsApp, Tesla), their brand elements (logo, UI, color scheme) are included in the image. Without subject brand context, factual claims are meaningless to viewers.
 
+### 9. Carousel Engagement Funnel (NEW in v2.2.0)
+
+Full-funnel engagement system from first impression to conversion:
+
+```
+HOOK (Slide 1)     → Mindblowing headline + pattern interrupt visual
+    ↓                 Score 3/5 on Hook Scoring Gate before generating
+FORESHADOW (Slide 2) → Bridge to body with FOMO ("kalau lo skip...")
+    ↓                 4 types: Steps Tease, Fear Urgency, Quiz, Visual Tease
+BODY (Slides 3-N)  → Progressive value with emotional arc
+    ↓                 Mini-hook at slide 5-7 re-engages committed swipers
+CTA (Last Slide)    → 4 visual types matching engagement goal
+                      Polarize | Question | Identity Tag | Engagement Reward
+```
+
+### 10. Emotional Arc System (NEW in v2.2.0)
+
+Every carousel follows a "roller coaster" emotional pattern with visual treatment mapped per beat:
+
+| Beat | Visual Treatment |
+|------|-----------------|
+| HIGH (Hook) | Extreme CU, 4:1 lighting, peak saturation, pattern interrupt |
+| DIP (Foreshadow) | Pull back, muted palette, tension build |
+| BUILD (Body) | Progressive saturation + tighter framing |
+| MINI-HOOK (Mid) | Sudden change — angle shift, color disruption |
+| CLIMAX (Reveal) | Peak drama, biggest text, most shareable insight |
+| WARM (CTA) | Softest lighting, warmest tone, intimate connection |
+
 ---
 
 ## Installation
@@ -153,7 +181,7 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 | `carousel-rebranding.md` | Converting third-party carousels to your brand |
 | `platform-specs.md` | Nano Banana Pro specs, platform aspect ratios |
 | `cinematography-lut.md` | Lighting, lens, film stock, atmosphere, DP signatures |
-| `prompt-formulas.md` | Prompt templates (text-in-image), quality checklists |
+| `prompt-formulas.md` | Prompt templates, hook headline formula, foreshadow, CTA visual types, emotional arc, checklists |
 | `localization-id.md` | Indonesian localization extras, holidays, AI bias countermeasures |
 | `carousel-best-practices.md` | Carousel design, engagement benchmarks, algorithm signals |
 | `caption-copywriting.md` | Caption formulas, emotional triggers, CTA psychology, hashtag strategy |
@@ -183,18 +211,28 @@ User Request
 [5] VERIFY FACTS — web-search all claims
     |
     v
-[6] INTERACTIVE DESIGN — ask about ambiguous slides
+[6] PLOT EMOTIONAL ARC — assign beat + intensity per slide
     |
     v
-[7] Generate prompts (text in-image, all 8 WOW elements)
+[7] INTERACTIVE DESIGN — ask about ambiguous slides
+    |
+    v
+[8] SCORE HOOK HEADLINE — 3/5 on Hook Scoring Gate
+    |
+    v
+[9] Generate prompts (Engagement Funnel Order):
+    ├── Slide 1: HOOK (category-matched visual + scored headline)
+    ├── Slide 2: FORESHADOW (mandatory bridge with FOMO)
+    ├── Slides 3-N: BODY (emotional arc + mini-hook at 5-7)
+    └── Last: CTA (4 visual types matching engagement goal)
     |
     ├── Below 6/8? ──> REVISE
     |
     v
-[8] Generate captions for all 3 platforms (Bahasa default)
+[10] Generate captions for all 3 platforms (Bahasa default)
     |
     v
-[9] Output with verified sources + continuity checklist
+[11] Output with verified sources + continuity checklist
 ```
 
 ---
@@ -251,8 +289,8 @@ These are non-negotiable across all generated prompts:
 ### Carousel Slide
 
 ```
-## Slide [N]: [TYPE] — [Topic]
-Type: Hook / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
+## Slide [N]: [TYPE] — [Topic] | Emotion: [BEAT] ([intensity]/6)
+Type: Hook / Foreshadow / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
 
 ### Nano Banana Pro Prompt
 [Full merged prompt: scene + cinematography + 8 WOW elements + text rendering + branding, 80-200 words]
@@ -307,7 +345,7 @@ sosmed-carousel-prompt-generator/
 │   ├── carousel-rebranding.md   # Rebranding conversion rules
 │   ├── platform-specs.md        # Nano Banana Pro + platform specs
 │   ├── cinematography-lut.md    # Lighting/lens/film stock LUT
-│   ├── prompt-formulas.md       # Prompt templates (text-in-image) + checklists
+│   ├── prompt-formulas.md       # Prompt templates + hook formula + foreshadow + CTA types + emotional arc
 │   ├── localization-id.md       # Indonesian localization
 │   ├── carousel-best-practices.md  # Design best practices
 │   └── caption-copywriting.md   # Caption formulas + hashtags
