@@ -1,7 +1,7 @@
 {
   "name": "sosmed-carousel-prompt-generator",
   "description": "Cinematic AI image prompt generator for social media carousel content. Generates carousel image prompts, thumbnail prompts, carousel rebranding, multi-platform export, and caption copywriting with WOW quality gate scoring.",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "author": {
     "name": "Ali Sadikin",
     "url": "https://github.com/alisadikinma"
