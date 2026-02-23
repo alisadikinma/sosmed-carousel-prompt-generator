@@ -1,5 +1,8 @@
 # Local Claude Code settings (personal, not shared)
 .claude/settings.local.json
 
+# Local MCP configuration (development-only)
+.mcp.json
+
 # Plan artifacts (local working docs)
 docs/plans/

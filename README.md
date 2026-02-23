@@ -55,13 +55,16 @@ Single Brief → IG (4:5) + TikTok (9:16) + LinkedIn (4:5)
 
 ## Installation
 
-### From GitHub (Recommended)
+### From Marketplace (Recommended)
 
 ```bash
 # Step 1: Add marketplace source
 claude plugins marketplace add https://github.com/alisadikinma/sosmed-carousel-prompt-generator
 
-# Step 2: Install plugin (choose scope)
+# Step 2: Install plugin
+claude plugins install sosmed-carousel-prompt-generator
+
+# Optional: Choose scope
 claude plugins install sosmed-carousel-prompt-generator --scope user    # All projects
 claude plugins install sosmed-carousel-prompt-generator --scope project # This project only
 ```
@@ -69,14 +72,23 @@ claude plugins install sosmed-carousel-prompt-generator --scope project # This p
 ### Manual Installation
 
 ```bash
-# Clone to Claude Code plugins directory
+# Clone to Claude Code marketplaces directory
 git clone https://github.com/alisadikinma/sosmed-carousel-prompt-generator.git \
-  ~/.claude/plugins/sosmed-carousel-prompt-generator
+  ~/.claude/plugins/marketplaces/sosmed-carousel-prompt-generator
 ```
 
 ### Verify Installation
 
-After installing, the skill auto-triggers when you mention carousels, thumbnails, rebranding, or AI image prompts. You can also invoke it explicitly:
+After installing, the plugin announces itself on every session start:
+
+```
+sosmed-carousel-prompt-generator loaded. Skills available:
+  carousel-prompt-generator — cinematic AI image prompts for social media carousels
+  validate-references — cross-file consistency checker (6 checks)
+  new-localization — scaffold new localization files
+```
+
+The skill auto-triggers when you mention carousels, thumbnails, rebranding, or AI image prompts. You can also invoke it explicitly:
 
 ```
 /carousel-prompt-generator
@@ -237,6 +249,9 @@ sosmed-carousel-prompt-generator/
 ├── .claude-plugin/
 │   ├── plugin.json              # Plugin metadata
 │   └── marketplace.json         # Marketplace listing
+├── hooks/
+│   ├── hooks.json               # Hook definitions (SessionStart)
+│   └── session-start.sh         # Session start announcement
 ├── skills/
 │   ├── carousel-prompt-generator/
 │   │   └── SKILL.md             # Main skill — carousel prompt generation

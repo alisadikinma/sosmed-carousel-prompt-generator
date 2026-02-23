@@ -10,6 +10,8 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 |------|---------|
 | `.claude-plugin/plugin.json` | Plugin metadata (name, version, author) |
 | `.claude-plugin/marketplace.json` | Marketplace listing |
+| `hooks/hooks.json` | SessionStart hook definition |
+| `hooks/session-start.sh` | Session start script — announces available skills |
 | `skills/carousel-prompt-generator/SKILL.md` | Main skill definition — carousel prompt generation |
 | `skills/validate-references/SKILL.md` | Cross-file consistency checker (6 checks) |
 | `skills/new-localization/SKILL.md` | Scaffold new localization files + wire reference tables |

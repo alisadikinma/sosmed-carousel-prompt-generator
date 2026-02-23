@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "sosmed-carousel-prompt-generator loaded. Skills available:"
+echo "  carousel-prompt-generator — cinematic AI image prompts for social media carousels"
+echo "  validate-references — cross-file consistency checker (6 checks)"
+echo "  new-localization — scaffold new localization files"
+echo ""
+echo "Agent available:"
+echo "  carousel-prompt-generator — subagent for batch carousel prompt work"
+echo ""
+echo "REMINDER: Read references/creator-bible.md FIRST for any prompt generation."
