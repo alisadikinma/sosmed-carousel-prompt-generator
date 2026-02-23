@@ -114,7 +114,7 @@ For each slide, output a text specification sheet:
   - [User's brand icon] [position: centered top / on divider]
   - [User's handle] below icon [opacity: 30% / 100% for hook]
 - **Corner labels**: [series name / episode ID] (if applicable)
-- **SWIPE FOR MORE >**: Bottom center (slides 1-3 only)
+- **SWIPE FOR MORE >**: Bottom center (all slides except CTA)
 ```
 
 ## Step 5: Visual Continuity Checklist
@@ -130,6 +130,6 @@ Before delivering carousel set, verify:
 - [ ] All slides have dark gradient text zone (bottom 30-40%)
 - [ ] Brand icon placement specified for every slide
 - [ ] Handle specified for every slide
-- [ ] SWIPE FOR MORE on slides 1-3 only
+- [ ] SWIPE FOR MORE on all slides except CTA
 - [ ] Film stock consistently warm (Portra 400 / Vision3 500T)
 - [ ] Aspect ratio matches target platform (IG Feed 4:5, TikTok 9:16, LinkedIn 4:5)

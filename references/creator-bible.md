@@ -35,7 +35,7 @@ Prompt instruction: `"using facial identity from reference image: [creator-face-
 - Brand icon centered on vertical divider (content slides)
 - @handle below icon, 30% opacity (Hook = 100% opacity)
 - Corner labels where applicable: series name, episode number
-- "SWIPE FOR MORE >" on slides 1-3 only (data-backed: 20-30% engagement boost)
+- "SWIPE FOR MORE >" on all slides except CTA (20-30% engagement boost)
 
 ### NEVER include:
 - Third-party badges, brand logos, other handles

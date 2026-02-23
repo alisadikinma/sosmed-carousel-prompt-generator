@@ -61,7 +61,7 @@ Slide N+1: CTA — Tell them what to do next
 | First slide = no text-heavy design | Feed preview must be visually striking |
 | Use 4:5 aspect ratio for feed carousels | Takes up more screen real estate than 1:1 |
 | Consistent color palette across all slides | Brand recognition + professional look |
-| "SWIPE →" indicator on slides 1-3 | Increases swipe-through rate by 20-30% |
+| "SWIPE →" indicator on all slides except CTA | Increases swipe-through rate by 20-30% |
 | Number your slides ("3/8") | Creates completion drive |
 | Last slide = face + CTA | Personal connection converts |
 
@@ -281,11 +281,11 @@ Before publishing any carousel:
 - [ ] Each slide delivers ONE clear idea
 - [ ] Text is readable at phone size (zoom out test)
 - [ ] Brand colors/fonts consistent across all slides
-- [ ] "SWIPE" indicator on first 2-3 slides (Instagram/TikTok)
+- [ ] "SWIPE FOR MORE >" on all slides except CTA
 - [ ] Page numbers shown (LinkedIn)
 - [ ] CTA is clear and specific on last slide
 - [ ] Caption complements (not repeats) carousel content
-- [ ] Hashtags researched and relevant
+- [ ] Hashtags: max 5 (IG/TikTok), 3-5 (LinkedIn)
 - [ ] Tagged relevant accounts/brands
 - [ ] Posted at optimal time for platform
 - [ ] Saved as template for future carousels

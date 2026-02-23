@@ -181,7 +181,7 @@ These are non-negotiable across all generated prompts:
 | Aspect ratio | Platform-specific: IG Feed 4:5, TikTok 9:16, LinkedIn 4:5 |
 | Image resolution | 4K via Nano Banana Pro |
 | Accent color | User-defined (default: Golden Yellow #F5A623) |
-| SWIPE FOR MORE | Slides 1-3 only |
+| SWIPE FOR MORE | All slides except CTA |
 | Hashtags | Max 5 (IG/TikTok), 3-5 (LinkedIn) |
 
 ---
@@ -201,7 +201,7 @@ Type: Hook / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
 - Headline: "[TEXT]" — White bold condensed ALL CAPS
 - Accent: "[WORD]" — [User's accent color]
 - Branding: [brand icon] [position] + [handle]
-- SWIPE FOR MORE: slides 1-3 only
+- SWIPE FOR MORE: all slides except CTA
 
 ### WOW: [N]/8
 ```

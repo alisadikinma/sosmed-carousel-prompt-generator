@@ -35,7 +35,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 - **WOW Quality Gate**: 8-point scoring (lighting, depth, atmosphere, color, emotion, camera, texture, cinematic ref). Minimums: Hook 5+, CTA/Thumb 4+, Body/B-Roll 3+
 - **Platform-Specific Aspect Ratios**: IG Feed 4:5, TikTok/Reels 9:16, LinkedIn 4:5/1:1, Default 4:5
 - **Hard Rules**: No third-party branding, creator face only on Hook/CTA/Loop-end/Thumbnail, text is post-production only
-- **SWIPE FOR MORE**: Slides 1-3 only (data-backed: 20-30% engagement boost)
+- **SWIPE FOR MORE**: All slides except CTA (20-30% engagement boost)
 - **Gradient Zones**: Hook 40%, B-Roll 35%, Split-Panel 30%, CTA 40%, Thumbnail 25% (source of truth in creator-bible.md Section 7)
 - **Localization Trigger**: When user speaks Bahasa or targets Indonesia, load localization-id.md first
 - **Multi-Platform Export**: Generate carousel prompts + captions for IG + TikTok + LinkedIn from single brief

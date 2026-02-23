@@ -160,7 +160,7 @@ Output per slide in this format:
 - Accent word: "[WORD]" — [User's accent color]
 - Branding: [user's brand icon] [position] + [user's handle]
 - Corner labels: [if applicable]
-- SWIPE FOR MORE: slides 1-3 only
+- SWIPE FOR MORE: all slides except CTA
 
 ### WOW Score: [N]/8
 ```
@@ -250,7 +250,7 @@ Type: Hook / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
 - Headline: "[TEXT]" — White bold condensed ALL CAPS
 - Accent: "[WORD]" — [User's accent color]
 - Branding: [user's brand icon] [position] + [user's handle]
-- SWIPE FOR MORE: slides 1-3 only
+- SWIPE FOR MORE: all slides except CTA
 ### WOW: [N]/8
 ```
 
