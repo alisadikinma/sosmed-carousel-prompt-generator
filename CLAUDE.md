@@ -61,6 +61,8 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 - **5-Hashtag Era**: IG max 5 (Dec 2025), TikTok max 5 (Aug 2025), LinkedIn 3-5
 - **Default specs**: 4K, Kodak Portra 400, warm golden amber grade, 80-200 word prompts
 - **Content Language**: Single language per carousel — Bahasa Indonesia default, never bilingual mix
+- **Source URL Collection**: Agent asks for source post URL at start of every generation. Extracts caption + metadata via og:tags to enrich context. Optional — user can skip. NEVER copy caption verbatim — rewrite in creator voice. Source account = competitor branding (DELETE)
+- **Suggested Filenames**: Every slide includes an SEO-optimized filename: `{N}-{topic-keywords}-{brand-handle}-{slide-type}.png`. Hyphens only, lowercase, slide-level keywords, 5-8 words. Full convention in `references/prompt-formulas.md`
 
 ## Capabilities
 
@@ -74,6 +76,8 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 8. **Foreshadow system** — mandatory slide 2 bridging hook to body with FOMO
 9. **CTA engagement system** — 4 visual types matching engagement goals
 10. **Emotional arc plotting** — roller coaster intensity mapping across full carousel
+11. **SEO filename suggestions** — per-slide optimized filenames for content management and discoverability
+12. **Source URL metadata extraction** — extract caption, account, engagement from Instagram/TikTok/LinkedIn post URLs to enrich prompt context and caption writing
 
 ### Creator Identity (VERBATIM Rule)
 - User provides: physical description, face reference image, brand handle, brand icon, accent color
@@ -128,6 +132,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | Watermark position | Center of image, below brand icon (vertical divider for comparison split-panel) |
 | Watermark opacity | 30% (described as "thirty percent opacity" in prompt body, not raw "30%") |
 | Gradient zone | Bottom half (bottom third for thumbnails) |
+| Filename pattern | `{N}-{topic-keywords}-{brand-handle}-{slide-type}.png` |
 
 ## Conventions for Contributors
 
@@ -183,8 +188,11 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | Missing creator face in crowd | B-Roll with humans = creator ALWAYS as most prominent figure |
 | Unverified facts | All factual claims must be web-searched before prompt generation |
 | Cross-file drift | Run `/validate-references` — checks SWIPE, hashtags, gradients, aspect ratios |
+| URL metadata empty | Instagram/TikTok may block or truncate — inform user and proceed without metadata. Extraction is best-effort |
+| Source caption copied verbatim | NEVER copy — always rewrite in creator voice (Gen-Z Bahasa, gue/lo). Source caption is inspiration only |
+| Source account branding leaked | Source account handle/watermark = competitor branding. Must NOT appear in any prompt |
 
 ---
 
-**Version:** 2.4.0
+**Version:** 2.6.0
 **Last Updated:** February 2026

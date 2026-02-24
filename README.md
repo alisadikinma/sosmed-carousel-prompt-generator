@@ -97,7 +97,30 @@ Plus: Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), co
 
 When discussing a specific company (Google, WhatsApp, Tesla), their brand elements (logo, UI, color scheme) are included in the image. Without subject brand context, factual claims are meaningless to viewers.
 
-### 10. Carousel Engagement Funnel (NEW in v2.2.0)
+### 10. Source URL Metadata Extraction (NEW in v2.6.0)
+
+Paste an Instagram/TikTok/LinkedIn post URL and the agent auto-extracts caption, account name, engagement stats, and post date. This metadata enriches prompt context and powers caption writing — no manual copy-paste needed.
+
+```
+/carousel-prompt-generator
+
+Agent: "Punya URL source carousel-nya?"
+User:  https://instagram.com/p/DVJgCUcDAVI/
+
+Agent extracts:
+  → @getintoai (account)
+  → "Another major week in AI!..." (caption)
+  → 173 likes, 1 comments (engagement)
+  → Feb 24, 2026 (date)
+
+Uses caption as:
+  → Topic context for image prompts
+  → Skeleton for our own captions (rewritten in creator voice)
+  → Factual claims → fed into verification step
+  → Hashtag research reference
+```
+
+### 11. Carousel Engagement Funnel (NEW in v2.2.0)
 
 Full-funnel engagement system from first impression to conversion:
 
@@ -208,13 +231,16 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 User Request
     |
     v
+[0] Ask for source URL (optional) ── extract caption + metadata
+    |
+    v
 [1] Read creator-bible.md (ALWAYS)
     |
     v
 [2] Read task-specific references
     |
     v
-[3] Analyze input ──────────────────────┐
+[3] Analyze input (enriched with source metadata if available)
     |                                    |
     v                                    v
 [4a] FRESH CONTENT            [4b] REBRANDING
@@ -295,6 +321,7 @@ These are non-negotiable across all generated prompts:
 | Fact verification | All claims web-verified before output |
 | SWIPE FOR MORE | "GESER UNTUK LANJUT >" on all slides except CTA |
 | Hashtags | Max 5 (IG/TikTok), 3-5 (LinkedIn) |
+| Suggested filenames | SEO-optimized per slide: `{N}-{topic}-{brand}-{type}.png` |
 
 ---
 
@@ -305,6 +332,9 @@ These are non-negotiable across all generated prompts:
 ```
 ## Slide [N]: [TYPE] — [Topic] | Emotion: [BEAT] ([intensity]/6)
 Type: Hook / Foreshadow / Content / CTA | Creator Face: YES/NO | Platform: Nano Banana Pro
+
+### Suggested Filename
+`[N]-[topic-keywords]-[brand-handle]-[slide-type].png`
 
 ### Nano Banana Pro Prompt
 [Full merged prompt: scene + cinematography + 8 WOW elements + text rendering + branding, 80-200 words]

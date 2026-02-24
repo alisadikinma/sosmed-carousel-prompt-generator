@@ -150,8 +150,31 @@ The agent MUST pause and ask the user when ANY of these conditions are detected 
 
 ---
 
+## Source URL Collection (All Workflows)
+
+At the START of every carousel generation, ask the user:
+
+> "Punya URL source carousel-nya? (Instagram/TikTok/LinkedIn post URL)
+> Kalau ada, share URL-nya — saya tarik caption + metadata untuk memperkaya context.
+> Kalau nggak ada / bikin dari nol, lanjut aja."
+
+If URL provided → extract metadata via Bash:
+```bash
+curl -s -L "{url}" | grep -o 'property="og:[^"]*" content="[^"]*"'
+curl -s -L "{url}" | grep -o '"description".*' | head -c 3000
+```
+
+Extracts: account name, thumbnail, partial caption, engagement stats, post date.
+
+**Usage:** Caption → topic context + fact extraction + caption inspiration. Engagement → CTA type selection. Account name → competitor branding awareness (DELETE from our prompts). NEVER copy caption verbatim — rewrite in our creator voice.
+
+This step is OPTIONAL — user can skip.
+
+---
+
 ## Workflow: Carousel Rebranding
 
+0. **SOURCE URL** — ask for source post URL, extract metadata if provided
 1. ANALYZE source slides — extract topic, data, visual concept per slide
 2. IDENTIFY third-party elements to REMOVE
 3. **VERIFY** — web-search factual claims, confirm accuracy
@@ -169,7 +192,8 @@ The agent MUST pause and ask the user when ANY of these conditions are detected 
 
 ## Workflow: Fresh Carousel Production
 
-1. ANALYZE brief/topic — identify key messages, slide structure, emotions
+0. **SOURCE URL** — ask for source/inspiration post URL, extract metadata if provided
+1. ANALYZE brief/topic — identify key messages, slide structure, emotions (enrich with source caption if available)
 2. **VERIFY** — web-search each factual claim, collect sources
 3. DETERMINE target platform and set aspect ratio (read `references/platform-specs.md`)
 4. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
@@ -266,6 +290,9 @@ Type: Hook / Foreshadow / Content / CTA | Creator Face: YES/NO | Platform: Nano 
 [For Foreshadow: Foreshadow Type: [Steps Tease / Fear Urgency / Quiz / Visual Tease]]
 [For CTA: CTA Type: [Polarize / Question / Identity Tag / Reward]]
 
+### Suggested Filename
+`[N]-[topic-keywords]-[brand-handle]-[slide-type].png`
+
 ### Nano Banana Pro Prompt
 [Full merged prompt: scene + cinematography + all 8 WOW elements + text rendering + branding, 80-200 words]
 
@@ -308,6 +335,7 @@ Note: [Any correction or nuance, if applicable]
 - [ ] All prompts score 6/8+ WOW
 - [ ] All factual claims verified with sources
 - [ ] All in-image text in Bahasa Indonesia (or user-requested language)
+- [ ] Every slide has suggested filename (sequential number + topic keywords + brand handle + slide type)
 
 ---
 

@@ -174,9 +174,63 @@ Carousel Aspect Ratios:
 
 ---
 
+## SOURCE URL COLLECTION (All Workflows)
+
+At the START of every carousel generation (fresh or rebrand), ask the user:
+
+> "Punya URL source carousel-nya? (Instagram/TikTok/LinkedIn post URL)
+> Kalau ada, share URL-nya — saya tarik caption + metadata untuk memperkaya context.
+> Kalau nggak ada / bikin dari nol, lanjut aja."
+
+### If User Provides URL
+
+Extract metadata via Bash:
+
+```bash
+# Extract OpenGraph tags + description
+curl -s -L "{url}" | grep -o 'property="og:[^"]*" content="[^"]*"'
+curl -s -L "{url}" | grep -o '"description".*' | head -c 3000
+```
+
+**Extractable metadata:**
+
+| Data | Source | Example |
+|------|--------|---------|
+| Account name | og:url | `@getintoai` |
+| Thumbnail | og:image | CDN image URL (first slide only) |
+| Caption (partial) | description meta tag | "173 likes, 1 comments - getintoai on Feb 24..." |
+| Engagement | description meta tag | likes count, comments count |
+| Post date | description meta tag | posting date |
+
+### How to Use Extracted Metadata
+
+1. **Caption → Topic context**: Use the original caption to understand the angle, key points, and narrative structure. DO NOT copy — use as inspiration for our own version
+2. **Caption → Fact extraction**: Identify factual claims from caption text → feed into fact verification step
+3. **Caption → Hashtag research**: Note which hashtags the source used → inform our hashtag strategy (different hashtags, same niche)
+4. **Engagement → CTA type selection**: High likes = visual content resonates. High comments = controversial/question angle works. Use to inform CTA visual type choice
+5. **Account name → Competitor awareness**: Ensure NO competitor branding leaks into our prompts (their handle, watermark, badges = DELETE)
+6. **Caption → Caption writing**: Use original caption's key points as skeleton for our own caption across 4 platforms. Transform voice to match our creator identity (Gen-Z Bahasa, gue/lo)
+
+### If User Skips URL
+
+Proceed normally without source metadata. No change to existing workflow.
+
+### Important Notes
+
+- URL extraction is **best-effort** — Instagram/TikTok may truncate captions in meta tags
+- If extraction fails (empty result), inform user and proceed without metadata
+- NEVER copy caption verbatim — always rewrite in our creator voice
+- Source account handle is competitor branding — must NOT appear in any prompt
+- This step is OPTIONAL — user can skip and provide topic manually
+
+---
+
 ## WORKFLOW: CAROUSEL REBRANDING
 
 When given source carousel images to rebrand:
+
+### Step 0: Source URL Collection
+Ask user for source post URL. Extract metadata if provided (see SOURCE URL COLLECTION above).
 
 ### Step 1: Analyze Source
 For each uploaded slide, identify:
@@ -229,6 +283,10 @@ Verify all visual continuity rules (including hook score, foreshadow, emotional 
 ## WORKFLOW: FRESH CAROUSEL PRODUCTION
 
 When given a topic or brief:
+
+### Step 0: Source URL Collection
+Ask user for source/inspiration post URL. Extract metadata if provided (see SOURCE URL COLLECTION above).
+This is especially useful when user says "bikin carousel kayak @xxx" or references an existing post.
 
 ### Step 1: Analyze & Structure
 - Identify key messages, data points, emotions
@@ -317,6 +375,7 @@ When given a topic or brief:
 - Include ALL 8 WOW elements in every prompt
 - Include text rendering in-image (Bahasa default)
 - Negative constraints at END: "no third-party branding"
+- Include **suggested filename** per slide: `{N}-{topic-keywords}-{brand-handle}-{slide-type}.png` (see `references/prompt-formulas.md` Filename Convention section)
 
 ### Prompt Body Rendering Rules (CRITICAL)
 
@@ -353,6 +412,9 @@ Type: Hook / Foreshadow / Content / CTA | Creator Face: YES/NO | Platform: Nano 
 [For Hook: Hook Category: [category] | Headline Score: [N]/5]
 [For Foreshadow: Foreshadow Type: [Steps Tease / Fear Urgency / Quiz / Visual Tease]]
 [For CTA: CTA Type: [Polarize / Question / Identity Tag / Reward]]
+
+### Suggested Filename
+`[N]-[topic-keywords]-[brand-handle]-[slide-type].png`
 
 ### Nano Banana Pro Prompt
 [Full merged prompt: scene + cinematography + all 8 WOW elements + text rendering + branding, 80-200 words]
@@ -395,6 +457,7 @@ Source: [URL or "Well-established fact"]
 - [ ] All prompts score 6/8+ WOW
 - [ ] All factual claims verified with sources
 - [ ] All in-image text in Bahasa Indonesia (or user-requested language)
+- [ ] Every slide has suggested filename (sequential number + topic keywords + brand handle + slide type)
 
 ---
 
@@ -456,12 +519,14 @@ Source: [URL or "Well-established fact"]
 ## OUTPUT EXPECTATIONS
 
 When invoked, you will:
-1. Read relevant reference files from disk
-2. Verify all factual claims via web search
-3. Ask user about ambiguous slides (interactive design)
-4. Generate all prompts with WOW scoring (min 6/8)
-5. Generate captions for all 4 platforms
-6. Write output to a specified file path
-7. Return summary of what was generated
+1. Ask user for source URL (optional — for metadata extraction)
+2. Read relevant reference files from disk
+3. Extract source metadata if URL provided (caption, account, engagement)
+4. Verify all factual claims via web search
+5. Ask user about ambiguous slides (interactive design)
+6. Generate all prompts with WOW scoring (min 6/8)
+7. Generate captions for all 4 platforms (enriched with source caption context if available)
+8. Write output to a specified file path
+9. Return summary of what was generated
 
 Always write your output to a file (e.g., `output/carousel-prompts.md`) so the parent agent can access it.

@@ -96,6 +96,57 @@ WhatsApp chat UI with green accent, etc.
 
 ---
 
+## Suggested Filename Convention (Per Slide)
+
+Every slide output includes a suggested filename for the generated image. SEO-optimized filenames improve discoverability in Google Images, Pinterest, portfolio sites, and content management workflows.
+
+### Naming Pattern
+```
+{number}-{topic-keywords}-{brand-handle}-{slide-type}.png
+```
+
+### Rules
+| Rule | Detail |
+|------|--------|
+| Separator | Hyphens only (`-`). Google treats hyphens as word separators |
+| Case | All lowercase. Prevents duplicate URL issues |
+| Word count | 5-8 words total (including number, brand, type) |
+| Topic keywords | 2-3 descriptive words per slide — slide-specific, not carousel-level |
+| Brand handle | Handle without `@` (e.g., `alisadikinma`) |
+| Numeric prefix | Sequential: `1-`, `2-`, `3-`... for easy posting order |
+| Slide type suffix | `hook`, `foreshadow`, `body`, `cta`, `thumb` |
+| Extension | `.png` default (Nano Banana Pro output) |
+| No keyword stuffing | Natural, descriptive — not SEO spam |
+| No special characters | No `@`, `#`, spaces, underscores |
+
+### Slide Type Suffixes
+| Slide Type | Suffix |
+|------------|--------|
+| Hook (Slide 1) | `hook` |
+| Foreshadow (Slide 2) | `foreshadow` |
+| Body / Content | `body` |
+| CTA (Last slide) | `cta` |
+| Thumbnail | `thumb` |
+
+### Example (Topic: "5 AI Tools yang Bikin Kerjaan 10x Lebih Cepat")
+| Slide | Suggested Filename |
+|-------|--------------------|
+| 1 (Hook) | `1-ai-tools-kerja-cepat-alisadikinma-hook.png` |
+| 2 (Foreshadow) | `2-ai-tools-skip-rugi-alisadikinma-foreshadow.png` |
+| 3 (Body) | `3-chatgpt-prompt-tips-alisadikinma-body.png` |
+| 4 (Body) | `4-midjourney-visual-design-alisadikinma-body.png` |
+| 5 (Body) | `5-notion-ai-productivity-alisadikinma-body.png` |
+| 6 (Body) | `6-claude-code-automation-alisadikinma-body.png` |
+| 7 (Body) | `7-canva-ai-content-alisadikinma-body.png` |
+| 8 (CTA) | `8-ai-tools-productivity-alisadikinma-cta.png` |
+
+### Why Slide-Level Keywords
+Each body slide covers a different subtopic. Slide-specific keywords make each image independently discoverable in Google Image Search, Pinterest, and portfolio pages — rather than all slides sharing the same generic carousel-level keywords.
+
+> **Note:** Instagram and TikTok rename files on upload. Filenames still matter for: website embeds, Pinterest repins, Google Image Search indexing, portfolio/blog posts, and content management/archiving.
+
+---
+
 ## Hook Headline Formula (Slide 1 — MANDATORY)
 
 The hook headline is the single most important text in the entire carousel. It determines whether the viewer swipes or scrolls past. A generic headline = dead carousel.
