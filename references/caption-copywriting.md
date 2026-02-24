@@ -141,8 +141,15 @@ Hashtags are now **topic labels for categorization**, NOT reach drivers. All 3 p
 
 [Link to full article, tool, or resource]
 
+📲 Follow me on IG/TikTok/YT: @alisadikinma
+🌐 Portfolio: https://alisadikinma.com
+
 #IndustryTag1 #IndustryTag2 #TopicTag
 ```
+
+**LinkedIn Cross-Promotion (MANDATORY):** Every LinkedIn caption must end with a cross-promotion block before hashtags:
+- `📲 Follow me on IG/TikTok/YT: @alisadikinma`
+- `🌐 Portfolio: https://alisadikinma.com`
 
 **LinkedIn Tone:** Professional but human. Thought leadership. Share frameworks, not tips. Use "I" statements for authority. No emojis in first line.
 

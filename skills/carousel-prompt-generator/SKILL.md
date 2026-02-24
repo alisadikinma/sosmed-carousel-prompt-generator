@@ -375,6 +375,9 @@ Note: [Any correction or nuance, if applicable]
 
 🔗 [Link]
 
+📲 Follow me on IG/TikTok/YT: @alisadikinma
+🌐 Portfolio: https://alisadikinma.com
+
 #tag1 #tag2 #tag3
 
 ---
@@ -394,4 +397,5 @@ Note: [Any correction or nuance, if applicable]
 - Character limits enforced: IG ≤2200, TikTok ≤4000, LinkedIn ≤3000, Threads ≤500
 - Hashtags: IG max 5, TikTok max 5, LinkedIn 3-5, Threads none
 - **Output format**: One continuous caption per platform — NO section labels (Hook/Body/CTA/Hashtags)
+- **LinkedIn cross-promotion (MANDATORY)**: Every LinkedIn caption includes before hashtags: `📲 Follow me on IG/TikTok/YT: @alisadikinma` + `🌐 Portfolio: https://alisadikinma.com`
 - Each caption follows platform-specific rules from `references/caption-copywriting.md`
