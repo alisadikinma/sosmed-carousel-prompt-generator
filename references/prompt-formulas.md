@@ -60,12 +60,13 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 ### Text Elements to Include
 | Element | Where | Rule |
 |---------|-------|------|
-| Headline | Bottom gradient zone | White #FFFFFF bold condensed ALL CAPS |
-| Accent words | Within headline | Accent color (default: Golden Yellow #F5A623) |
-| Brand icon | **Center of image, above watermark** | Brand icon filename, every slide |
-| @handle watermark | **Center of image, below brand icon** | White, **30% opacity on ALL slides** |
+| Main headline | Bottom gradient zone | White #FFFFFF bold condensed ALL CAPS |
+| Bahasa subtitle | Below main headline | Accent color (default: #F5A623) at 70-80% size of main headline. NEVER same white as main headline — must create visual hierarchy |
+| Accent keywords (2-4) | Within headline | 2-4 emotionally impactful keywords in accent color (default: Golden Yellow #F5A623). Hook: power word at 120% size + 1-3 more. Never highlight just 1 word |
+| Brand icon | **Center of image, above watermark** | From reference file, thirty percent opacity, every slide. In prompt body: "thirty percent opacity" — NEVER "30%" |
+| @handle watermark | **Center of image, below brand icon** | White, thirty percent opacity on ALL slides. In prompt body: "thirty percent opacity" — NEVER "30%" |
 | SWIPE FOR MORE > | Bottom center | White small text, all slides EXCEPT CTA |
-| Slide counter | Optional | "3/10" format, small, top-left |
+| Page number | **Top-left corner** | "N/TOTAL" format (e.g., "1/10"), small white text, ALL slides. Helps viewers track progress and simplifies posting order |
 
 ### Default Language
 - In-image text (headlines, accent words) = **Bahasa Indonesia** by default
@@ -75,14 +76,17 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 ### Text Rendering Syntax in Prompt
 ```
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
+reading "[MAIN HEADLINE]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Below the main headline, a subtitle line reading "[BAHASA SUBTITLE]" in [accent color hex] at slightly smaller size,
+creating clear visual hierarchy — the subtitle must NOT be white like the main headline.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 ["GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap. | omit for CTA slide]
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 ```
 
 ### Subject Brand Context in Prompt
@@ -217,14 +221,29 @@ The hook headline category MUST match the visual composition and creator express
 | Relatability | Relatable frustration OR joy, "that's so me" expression | Everyday scenario elevated to cinematic — familiar but beautiful | Soft loop lighting, 2:1, warm natural |
 | Speed & Value | Confident authority, direct unblinking eye contact, chin slightly up | Clean composition, minimal distraction, focus on creator authority | Butterfly 2:1, clean, professional |
 
-### Power Word Rendering in Prompt
+### Multi-Keyword Highlighting in Prompt (All Slides)
 
-When writing the hook prompt, the power word gets special treatment:
+Every headline must highlight **2-4 emotionally impactful keywords** in accent color — not just 1 power word. Single-word highlighting looks weak and fails to create visual rhythm across the headline.
+
+**Keyword Selection Rules:**
+1. **Power words** — GILA, PARAH, RAHASIA, FATAL, BAHAYA, GRATIS, WAJIB, TERLARANG, INSANE, SKIP, NEVER
+2. **Emotional triggers** — words that provoke fear, curiosity, or urgency (COLLECTED, KNOWS, NEVER, STOP, RUGI)
+3. **Numbers/stats** — concrete data points that add credibility ("10x", "30 DETIK", "99%")
+4. **Identity words** — words the viewer self-identifies with (YOU, YOUR, LO, GUE)
+5. **Minimum 2 keywords highlighted per headline** — 1 keyword = weak visual impact. 3-4 keywords = optimal rhythm
+
+**Example headline analysis:**
+- `"SKIP THIS AND YOU'LL NEVER KNOW WHAT THEY'VE COLLECTED"` → highlight: **SKIP**, **NEVER**, **COLLECTED** (3 keywords)
+- `"INSANE — WHAT YOUR PHONE KNOWS ABOUT YOU RIGHT NOW"` → highlight: **INSANE**, **YOUR PHONE**, **KNOWS**, **RIGHT NOW** (4 keywords)
+- `"GILA — 5 HAL TERLARANG yang Semua Orang Lakuin"` → highlight: **GILA**, **5**, **TERLARANG** (3 keywords)
+
+**Hook slide:** Power word at 120% size + additional 1-3 keywords in accent color at normal size.
+**All other slides:** 2-4 keywords in accent color (no size difference needed).
 
 ```
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[FULL HEADLINE]" with the word "[POWER WORD]" in slightly larger size in [accent color hex],
-visually dominant within the headline. Remaining text in white.
+reading "[FULL HEADLINE]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+The word "[POWER WORD]" in slightly larger size, visually dominant within the headline. Remaining text in white.
 The text uses the largest possible font size that fills the width, extra bold weight, dominating the gradient zone.
 ```
 
@@ -252,15 +271,17 @@ Lens: [lens]mm f/[aperture], [angle], [depth of field].
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HOOK HEADLINE — scored 3/5+]" with the word "[POWER WORD]" in slightly larger size
-in [accent color hex], visually dominant within the headline. Remaining text in white.
+reading "[HOOK HEADLINE — scored 3/5+]" with the words "[POWER WORD]", "[KEYWORD 2]", and "[KEYWORD 3]"
+in [accent color hex]. The word "[POWER WORD]" in slightly larger size, visually dominant. Remaining text in white.
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
 Maintain exact facial identity from reference image: [face-ref.png].
@@ -285,14 +306,16 @@ Lens: [lens]mm f/[aperture], [angle], [depth of field].
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
+reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
 Maintain exact facial identity from reference image: [face-ref.png].
@@ -336,14 +359,16 @@ Natural skin texture with visible pores, fabric weave detail.
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[FORESHADOW HEADLINE — creates FOMO/urgency to keep swiping]"
-with the word "[KEY WORD]" in [accent color hex].
+with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
 Maintain exact facial identity from reference image: [face-ref.png].
@@ -370,14 +395,16 @@ Lens: [lens]mm f/[aperture], [angle]. [Depth of field].
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
+reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
 ```
@@ -397,14 +424,16 @@ Lens: [lens]mm f/[aperture], [angle]. [Depth of field].
 [Texture detail]. [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
+reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
 Maintain exact facial identity from reference image: [face-ref.png].
@@ -433,16 +462,19 @@ Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
 Bottom third of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[JUDUL THUMBNAIL DALAM BAHASA]" with key words in [accent color hex].
+reading "[JUDUL THUMBNAIL DALAM BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
 Maintain exact facial identity from reference image: [face-ref.png].
 ```
+
+> **Note:** Thumbnails typically don't need page numbers since they are standalone images, not part of the carousel sequence. Omit `"[N]/[TOTAL]"` for thumbnails.
 
 ### Template — Split-Panel
 ```
@@ -461,19 +493,21 @@ Lens: 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
 [Atmosphere: haze, particles, or environmental effect].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HEADLINE IN BAHASA]" with accent words in [accent color hex].
+reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight, dominating the gradient zone.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 [If comparison (A vs B): brand icon + watermark on divider:]
 Render the creator's brand icon from reference image [brand-icon.png] on the vertical center divider line
-between the two panels as a small circular badge — use the exact icon from the file, do not generate a new one.
+between the two panels as a small circular badge at thirty percent opacity — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white on the vertical center divider line,
 thirty percent opacity, subtle background mark only.
 [If non-comparison: brand icon + watermark centered:]
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
 Maintain exact facial identity from reference image: [face-ref.png].
@@ -519,11 +553,13 @@ Natural skin texture with visible pores, fabric weave.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "MENURUT LO [A] ATAU [B]?" with "[A]" and "[B]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
 Maintain exact facial identity from reference image: [face-ref.png].
@@ -552,13 +588,15 @@ Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[SIMPLE CHOICE QUESTION IN BAHASA]?" with key word in [accent color hex].
+reading "[SIMPLE CHOICE QUESTION IN BAHASA]?" with the words "[KEYWORD 1]" and "[KEYWORD 2]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
 Maintain exact facial identity from reference image: [face-ref.png].
@@ -589,11 +627,13 @@ Natural skin texture with visible pores on both subjects, fabric detail.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "TAG TEMEN YANG BUTUH INI" with "BUTUH" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
 Maintain exact facial identity from reference image: [face-ref.png].
@@ -626,11 +666,13 @@ Natural skin texture with visible pores, fabric weave detail.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "COMMENT '[KEYWORD]' BUAT DAPETIN [REWARD]" with "[KEYWORD]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
+Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
 Maintain exact facial identity from reference image: [face-ref.png].

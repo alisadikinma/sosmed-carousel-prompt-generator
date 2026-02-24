@@ -66,7 +66,7 @@ If the user hasn't provided these, ASK before generating prompts.
 ## HARD RULES (NON-NEGOTIABLE)
 
 1. **NEVER** competitor branding (no other creator badges, watermarks, handles, source category tags). **Subject brand** (Google, WhatsApp, etc.) that IS the topic **MUST remain visible** for context
-2. **ALWAYS** include user's brand icon (**CENTER of image, above watermark**) + @handle watermark (**CENTER of image, below brand icon, 30% opacity**) rendered IN-IMAGE on every slide. For split-panel comparison (A vs B): both on the **vertical divider line**
+2. **ALWAYS** include user's brand icon (**CENTER of image, above watermark, thirty percent opacity**) + @handle watermark (**CENTER of image, below brand icon, thirty percent opacity**) rendered IN-IMAGE on every slide. For split-panel comparison (A vs B): both on the **vertical divider line**. In prompt body: ALWAYS spell "thirty percent opacity" — NEVER write "30%"
 3. Creator face on: Hook, CTA, Loop-end, Thumbnail, **AND any B-Roll with human figures** (always — no need to ask). Creator must be the most prominent/identifiable figure
 4. B-roll / content slides **without any human figures** = **NO creator face**
 5. Text = **IN-IMAGE rendering** — headlines, accent words, branding, SWIPE CTA all described in prompt
@@ -374,6 +374,9 @@ This is especially useful when user says "bikin carousel kayak @xxx" or referenc
 - Include face reference filename for creator shots
 - Include ALL 8 WOW elements in every prompt
 - Include text rendering in-image (Bahasa default)
+- **Multi-keyword highlighting**: 2-4 emotionally impactful keywords per headline in accent color — NEVER just 1 word. Hook: power word at 120% + 1-3 more keywords
+- **Bahasa subtitle**: Below main headline in accent color at slightly smaller size — NEVER white like main headline
+- **Brand icon + watermark both at thirty percent opacity** — spell out "thirty percent opacity" in prompt body, NEVER "30%"
 - Negative constraints at END: "no third-party branding"
 - Include **suggested filename** per slide: `{N}-{topic-keywords}-{brand-handle}-{slide-type}.png` (see `references/prompt-formulas.md` Filename Convention section)
 
@@ -391,7 +394,7 @@ Inside the Nano Banana Pro prompt body, the AI renders ALL text as visible image
 8. **No metadata labels** in HUD text — "120 TB/DETIK" not "THROUGHPUT: 120 TB/DETIK"
 9. **Gradient zone = bottom half** — "bottom half of the image has a smooth dark gradient zone"
 10. **Text positioned from vertical center downward** — not crammed at the very bottom
-11. **Watermark = descriptive opacity** — "thirty percent opacity, subtle background mark only"
+11. **Brand icon + watermark = descriptive opacity** — both "thirty percent opacity, subtle background mark only"
 12. **GESER UNTUK LANJUT = beneath headline** — "positioned directly beneath the headline text with minimal gap"
 
 See full reference table in `references/prompt-formulas.md` (Prompt Body Rendering Rules section).
@@ -449,7 +452,8 @@ Source: [URL or "Well-established fact"]
 - [ ] B-Roll without humans = no creator face
 - [ ] All slides have largest-possible billboard-scale text rendered in-image (gradient zone = bottom half)
 - [ ] Brand icon rendered in every slide (center of image, above watermark, from reference file)
-- [ ] @handle watermark centered in image (30% opacity, below brand icon; on vertical divider for comparison split-panel)
+- [ ] Brand icon + @handle watermark both at thirty percent opacity (center of image; on vertical divider for comparison split-panel)
+- [ ] Page number "[N]/[TOTAL]" in top-left corner on all slides
 - [ ] GESER UNTUK LANJUT on all slides except CTA (beneath headline, not at bottom edge)
 - [ ] Prompt body follows rendering rules (no ALL CAPS instructions, no raw %, no Shot on, no //, no category tags)
 - [ ] Film stock consistently warm

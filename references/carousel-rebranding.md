@@ -29,7 +29,7 @@ Convert source style → user's brand style using this mapping:
 | Source creator badge/watermark | → DELETE completely (competitor branding) |
 | **Subject brand** (Google, WhatsApp, etc.) | → **KEEP** — subject brand IS the context, must remain visible |
 | No creator face | → ADD face on Hook + CTA |
-| Source branding | → User's brand icon (center of image, above watermark) + @handle (center, 30% opacity) |
+| Source branding | → User's brand icon (center, thirty percent opacity, above watermark) + @handle (center, thirty percent opacity) |
 | Cold color grading | → Kodak Portra 400 warm look |
 | Blue HUD overlays | → Warm golden/amber HUD overlays |
 | Small/weak text overlay | → **Largest possible billboard-scale text** in gradient zone |
@@ -53,6 +53,7 @@ Rembrandt lighting at 4:1 ratio, 3200K warm key from left.
 Kodak Portra 400, warm golden grade. Subtle atmospheric haze.
 
 Bottom half reserved for text overlay (smooth dark gradient zone).
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding.
 Maintain facial identity from reference image: [face-ref.png].
 ```
@@ -73,10 +74,11 @@ Kodak Portra 400, warm golden amber grade. [Atmosphere].
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed
 uppercase text, the largest possible font size that fills the width, extra bold weight.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
-as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding (subject brand required for context).
 No creator face in this slide.
 ```
@@ -96,10 +98,11 @@ Lens: 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed
 uppercase text, the largest possible font size that fills the width, extra bold weight.
 Render the creator's brand icon from reference image [brand-icon.png] on the vertical center divider line
-as a small circular badge — use the exact icon from the file, do not generate a new one.
+as a small circular badge at thirty percent opacity — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white on the vertical center divider line,
 thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding.
 Maintain facial identity from reference image: [face-ref.png].
 ```
@@ -116,6 +119,7 @@ Lens: 85mm f/2, shallow depth of field. Butterfly lighting 2:1, 3500K golden.
 Kodak Portra 400, warm amber grade.
 
 Bottom half reserved for text overlay + social handles.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding.
 Maintain facial identity from reference image: [face-ref.png].
 ```
@@ -128,13 +132,15 @@ For each slide, output a text specification sheet:
 ### Text Overlay — Slide [N]
 - **Main headline**: "[TEXT]" — White #FFFFFF, EXTRA BOLD/BLACK weight condensed, ALL CAPS
   - Font must be largest possible — billboard-scale, dominating gradient zone
-- **Accent keyword(s)**: "[WORD]" — [User's accent color], same massive size
-- **Position**: Bottom 35-40%, centered
+- **Accent keywords (2-4)**: "[KEYWORD 1]", "[KEYWORD 2]", "[KEYWORD 3]" — [User's accent color], same massive size. Min 2 keywords highlighted
+- **Bahasa subtitle**: [BAHASA LINE] — [User's accent color] at slightly smaller size (never white like main headline)
+- **Position**: Bottom half, centered
 - **Branding**:
-  - [User's brand icon] center of image, above watermark
-  - [User's @handle] center of image, below brand icon, 30% opacity (all slides)
+  - [User's brand icon] center of image, above watermark, thirty percent opacity
+  - [User's @handle] center of image, below brand icon, thirty percent opacity (all slides)
 - **Subject brand** (if applicable): [Brand logo/UI] visible in scene for context
 - **Corner labels**: [series name / episode ID] (if applicable)
+- **Page number**: "[N]/[TOTAL]" — white, small, top-left corner (all slides)
 - **SWIPE FOR MORE >**: Bottom center (all slides except CTA)
 ```
 
@@ -151,8 +157,9 @@ Before delivering carousel set, verify:
 - [ ] B-Roll with human faces = creator face ALWAYS included
 - [ ] B-Roll without humans = NO creator face
 - [ ] All slides have dark gradient text zone (bottom half) with largest possible billboard-scale text
-- [ ] Brand icon centered in image (above watermark) on every slide
-- [ ] @handle watermark centered in image (30% opacity, below brand icon) on every slide
+- [ ] Brand icon centered in image (thirty percent opacity, above watermark) on every slide
+- [ ] @handle watermark centered in image (thirty percent opacity, below brand icon) on every slide
+- [ ] Page number "[N]/[TOTAL]" in top-left corner on all slides
 - [ ] SWIPE FOR MORE on all slides except CTA
 - [ ] Film stock consistently warm (Portra 400 / Vision3 500T)
 - [ ] Aspect ratio matches target platform (IG Feed 4:5, TikTok 9:16, LinkedIn 4:5)

@@ -26,17 +26,18 @@ Prompt instruction: `"maintain exact facial identity from reference image: [crea
 
 | Asset | File | Usage |
 |-------|------|-------|
-| Brand icon/logo | `[brand-icon.png]` | Rendered in center of image (above watermark) on EVERY slide |
+| Brand icon/logo | `[brand-icon.png]` | Rendered in center of image (above watermark), thirty percent opacity, on EVERY slide |
 | Face reference | `[creator-face-ref.png]` | AI face generation reference (creator shots) |
 
 ## 3. Branding Rules (HARD — NON-NEGOTIABLE)
 
 ### ALWAYS include (rendered IN-IMAGE):
-- Brand icon rendered in **CENTER of image, directly ABOVE the @handle watermark** on EVERY slide (part of AI prompt)
-- @handle watermark rendered in **CENTER of image, directly BELOW the brand icon**, white text, **30% opacity** on ALL slides:
-  - Brand icon + watermark stack as a centered branding block
-  - 30% opacity ensures visibility without distracting from content
+- Brand icon rendered in **CENTER of image, directly ABOVE the @handle watermark**, **thirty percent opacity**, on EVERY slide (part of AI prompt)
+- @handle watermark rendered in **CENTER of image, directly BELOW the brand icon**, white text, **thirty percent opacity** on ALL slides:
+  - Brand icon + watermark stack as a centered branding block, both at thirty percent opacity
+  - Ensures visibility without distracting from content
   - This applies to ALL slide types (Hook, Content, CTA, Thumbnail)
+  - In prompt body: ALWAYS spell out "thirty percent opacity" — NEVER write "30%"
 - "GESER UNTUK LANJUT >" rendered on all slides except CTA (20-30% engagement boost)
 - Corner labels where applicable: series name, episode number
 
@@ -72,7 +73,7 @@ When a slide discusses a SPECIFIC company, product, or service (Google, WhatsApp
 
 ### Typography (Rendered IN-IMAGE)
 - Headlines: Condensed **EXTRA BOLD / BLACK weight** sans-serif (Oswald Black / Bebas Neue Bold / Impact family)
-- ALL CAPS for main headlines — **MASSIVE SIZE, dominating bottom 35-40% of frame**
+- ALL CAPS for main headlines — **MASSIVE SIZE, dominating the bottom half of the frame**
 - Headline font must be **significantly larger than typical** — think billboard-scale, not book-scale
 - Accent/keyword text = same massive size but in accent color for maximum punch
 - Mixed case for subtitles/taglines only
@@ -253,22 +254,26 @@ All brand elements are rendered directly in the AI-generated image via the promp
 
 | Element | Position | Style | Slide Types |
 |---------|----------|-------|-------------|
-| Brand icon | **Center of image, above watermark** | As-is from file | ALL slides |
-| @handle watermark | **Center of image** | White text, 30% opacity | ALL slides |
+| Brand icon | **Center of image, above watermark** | As-is from file, thirty percent opacity | ALL slides |
+| @handle watermark | **Center of image** | White text, thirty percent opacity | ALL slides |
 | Headline | Bottom gradient zone | White **EXTRA BOLD** condensed ALL CAPS, **large font** | ALL slides |
-| Accent words | Within headline | Accent color (default #F5A623), **EXTRA BOLD** | ALL slides |
+| Bahasa subtitle | Below main headline | Accent color (default #F5A623), slightly smaller — NEVER white | ALL slides |
+| Accent keywords (2-4) | Within headline | 2-4 keywords in accent color (default #F5A623), **EXTRA BOLD** | ALL slides |
+| Page number | **Top-left corner** | "[N]/[TOTAL]" white small | ALL slides |
 | SWIPE CTA | Bottom center | "GESER UNTUK LANJUT >" white small | All EXCEPT CTA |
 | Social handles | CTA slide only | White, listed vertically | CTA only |
 
 ### Opacity & Position Rules
-| Slide Type | Brand Icon Position | @handle Position | @handle Opacity |
-|------------|-------------------|-----------------|----------------|
-| Hook | Center of image, above watermark | Center of image, below brand icon | 30% |
-| Content/B-Roll | Center of image, above watermark | Center of image, below brand icon | 30% |
-| Split-Panel / Comparison (A vs B) | **ON the vertical divider line** | **ON the vertical divider line** | 30% |
-| Split-Panel / Non-comparison | Center of image, above watermark | Center of image, below brand icon | 30% |
-| CTA | Center of image, above watermark | Center of image, below brand icon | 30% |
-| Thumbnail | Center of image, above watermark | Center of image, below brand icon | 30% |
+| Slide Type | Brand Icon Position | @handle Position | Both Opacity |
+|------------|-------------------|-----------------|-------------|
+| Hook | Center of image, above watermark | Center of image, below brand icon | Thirty percent |
+| Content/B-Roll | Center of image, above watermark | Center of image, below brand icon | Thirty percent |
+| Split-Panel / Comparison (A vs B) | **ON the vertical divider line** | **ON the vertical divider line** | Thirty percent |
+| Split-Panel / Non-comparison | Center of image, above watermark | Center of image, below brand icon | Thirty percent |
+| CTA | Center of image, above watermark | Center of image, below brand icon | Thirty percent |
+| Thumbnail | Center of image, above watermark | Center of image, below brand icon | Thirty percent |
+
+**In prompt body:** ALWAYS write "thirty percent opacity" — NEVER write "30%". Raw percentages render as visible text in Nano Banana Pro.
 
 **Split-Panel Rule:** For **comparison** split-panel slides (A vs B topics), the brand icon + @handle watermark is placed ON the vertical center divider that separates the two panels. For **non-comparison** split-panel slides (same topic, different angles), use the standard center-of-image placement (brand icon above watermark). This ensures comparison dividers are visually anchored while standard layouts remain consistent.
 

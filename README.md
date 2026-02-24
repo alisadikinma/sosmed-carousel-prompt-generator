@@ -309,7 +309,9 @@ These are non-negotiable across all generated prompts:
 | Rule | Enforcement |
 |---|---|
 | No competitor branding | Zero competitor badges, logos, handles, or source category tags. Subject brand (Google, WhatsApp) KEPT for context |
-| Brand icon + handle on every slide | Icon CENTER of image (above watermark). @handle CENTER of image (below icon), 30% opacity. Vertical divider for comparison split-panel |
+| Brand icon + handle on every slide | Both at thirty percent opacity. Icon CENTER (above watermark). @handle CENTER (below icon). Vertical divider for comparison split-panel |
+| Multi-keyword highlighting | 2-4 emotionally impactful keywords in accent color per headline — never just 1 word |
+| Bahasa subtitle color | Bahasa subtitle line in accent color (never white like main headline) |
 | Creator face placement | Hook, CTA, Thumbnail always. B-Roll with humans: ALWAYS (creator as most prominent figure) |
 | Text rendered in-image | Headlines (MASSIVE billboard-scale, extra bold), accents, branding, SWIPE CTA — all in prompt |
 | Default film stock | Kodak Portra 400 (warm golden, not cold) |
@@ -320,6 +322,7 @@ These are non-negotiable across all generated prompts:
 | Auto captions | All 4 platforms by default |
 | Fact verification | All claims web-verified before output |
 | SWIPE FOR MORE | "GESER UNTUK LANJUT >" on all slides except CTA |
+| Page numbers | "[N]/[TOTAL]" in top-left corner on all slides |
 | Hashtags | Max 5 (IG/TikTok), 3-5 (LinkedIn) |
 | Suggested filenames | SEO-optimized per slide: `{N}-{topic}-{brand}-{type}.png` |
 

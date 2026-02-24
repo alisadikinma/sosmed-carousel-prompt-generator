@@ -63,7 +63,7 @@ Use the creator description VERBATIM in every creator-facing prompt.
 ## Hard Rules (NON-NEGOTIABLE)
 
 1. NEVER competitor branding (no other creator badges, watermarks, or handles). **Subject brand** (Google, WhatsApp, etc.) that IS the topic MUST remain visible for context
-2. ALWAYS include user's brand icon (center of image, above watermark) + @handle watermark (center of image, below brand icon, 30% opacity) rendered IN-IMAGE on every slide. For split-panel comparison (A vs B): both on the vertical divider line
+2. ALWAYS include user's brand icon (center of image, above watermark, thirty percent opacity) + @handle watermark (center of image, below brand icon, thirty percent opacity) rendered IN-IMAGE on every slide. For split-panel comparison (A vs B): both on the vertical divider line. In prompt body: ALWAYS spell "thirty percent opacity" — NEVER "30%"
 3. Creator face on: Hook, CTA, Loop-end, Thumbnail, **AND any B-Roll with human figures** (always — no need to ask)
 4. B-roll / content slides **without any human figures** = NO creator face
 5. Text = **IN-IMAGE rendering** via Nano Banana Pro prompt (headlines, accents, branding, labels — all part of the prompt)
@@ -327,7 +327,8 @@ Note: [Any correction or nuance, if applicable]
 - [ ] B-Roll without humans = no creator face
 - [ ] All slides have dark gradient text zone (bottom half) with largest-possible billboard-scale text rendered in-image
 - [ ] Brand icon rendered in every slide (center of image, above watermark, from reference file)
-- [ ] @handle watermark centered in image (30% opacity, below brand icon; on vertical divider for comparison split-panel) on every slide
+- [ ] Brand icon + @handle watermark both at thirty percent opacity (center of image; on vertical divider for comparison split-panel)
+- [ ] Page number "[N]/[TOTAL]" in top-left corner on all slides
 - [ ] GESER UNTUK LANJUT on all slides except CTA (beneath headline, not at bottom edge)
 - [ ] Prompt body follows rendering rules (no ALL CAPS instructions, no raw %, no Shot on, no //, no category tags)
 - [ ] Film stock consistently warm
