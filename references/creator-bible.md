@@ -26,15 +26,15 @@ Prompt instruction: `"maintain exact facial identity from reference image: [crea
 
 | Asset | File | Usage |
 |-------|------|-------|
-| Brand icon/logo | `[brand-icon.png]` | Rendered in top-right corner of EVERY slide |
+| Brand icon/logo | `[brand-icon.png]` | Rendered in center of image (above watermark) on EVERY slide |
 | Face reference | `[creator-face-ref.png]` | AI face generation reference (creator shots) |
 
 ## 3. Branding Rules (HARD — NON-NEGOTIABLE)
 
 ### ALWAYS include (rendered IN-IMAGE):
-- Brand icon rendered in top-right corner of EVERY slide (part of AI prompt)
-- @handle watermark rendered in **CENTER of image**, white text, **30% opacity** on ALL slides:
-  - Centered horizontally and vertically (acts as a subtle ownership mark across the entire image)
+- Brand icon rendered in **CENTER of image, directly ABOVE the @handle watermark** on EVERY slide (part of AI prompt)
+- @handle watermark rendered in **CENTER of image, directly BELOW the brand icon**, white text, **30% opacity** on ALL slides:
+  - Brand icon + watermark stack as a centered branding block
   - 30% opacity ensures visibility without distracting from content
   - This applies to ALL slide types (Hook, Content, CTA, Thumbnail)
 - "GESER UNTUK LANJUT >" rendered on all slides except CTA (20-30% engagement boost)
@@ -253,7 +253,7 @@ All brand elements are rendered directly in the AI-generated image via the promp
 
 | Element | Position | Style | Slide Types |
 |---------|----------|-------|-------------|
-| Brand icon | Top-right corner | As-is from file | ALL slides |
+| Brand icon | **Center of image, above watermark** | As-is from file | ALL slides |
 | @handle watermark | **Center of image** | White text, 30% opacity | ALL slides |
 | Headline | Bottom gradient zone | White **EXTRA BOLD** condensed ALL CAPS, **large font** | ALL slides |
 | Accent words | Within headline | Accent color (default #F5A623), **EXTRA BOLD** | ALL slides |
@@ -261,15 +261,16 @@ All brand elements are rendered directly in the AI-generated image via the promp
 | Social handles | CTA slide only | White, listed vertically | CTA only |
 
 ### Opacity & Position Rules
-| Slide Type | @handle Opacity | @handle Position | Brand Icon Opacity |
-|------------|----------------|-----------------|-------------------|
-| Hook | 30% | Center of image | 100% |
-| Content/B-Roll | 30% | Center of image | 100% |
-| Split-Panel / Comparison | 30% | **ON the vertical divider line** between panels | 100% |
-| CTA | 30% | Center of image | 100% |
-| Thumbnail | 30% | Center of image | 100% |
+| Slide Type | Brand Icon Position | @handle Position | @handle Opacity |
+|------------|-------------------|-----------------|----------------|
+| Hook | Center of image, above watermark | Center of image, below brand icon | 30% |
+| Content/B-Roll | Center of image, above watermark | Center of image, below brand icon | 30% |
+| Split-Panel / Comparison (A vs B) | **ON the vertical divider line** | **ON the vertical divider line** | 30% |
+| Split-Panel / Non-comparison | Center of image, above watermark | Center of image, below brand icon | 30% |
+| CTA | Center of image, above watermark | Center of image, below brand icon | 30% |
+| Thumbnail | Center of image, above watermark | Center of image, below brand icon | 30% |
 
-**Split-Panel Special Rule:** For comparison/split-panel slides, the brand icon + @handle watermark is placed ON the vertical center divider that separates the two panels. This creates a natural branding integration that doesn't obstruct either panel's content.
+**Split-Panel Rule:** For **comparison** split-panel slides (A vs B topics), the brand icon + @handle watermark is placed ON the vertical center divider that separates the two panels. For **non-comparison** split-panel slides (same topic, different angles), use the standard center-of-image placement (brand icon above watermark). This ensures comparison dividers are visually anchored while standard layouts remain consistent.
 
 ### Language Default
 - All in-image text = **Bahasa Indonesia** by default

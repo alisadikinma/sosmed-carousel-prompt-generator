@@ -19,7 +19,7 @@ Nano Banana Pro renders ALL text in the prompt as visible image content. To prev
 | Only in-image text in ALL CAPS | `Text must be ULTRA MASSIVE` | `the text uses the largest possible font size` |
 | No instruction caps | `MANDATORY: render the icon` | `render the icon` |
 | No `//` separators | `120 TB/DETIK // KECEPATAN: CAHAYA` | `120 TB/DETIK` (core data only) |
-| No raw percentages | `30% opacity` | `faint, barely-visible, very low opacity` |
+| No raw percentages | `30% opacity` | `thirty percent opacity, subtle background mark only` |
 | No raw filenames in body | `[brand-icon.png] rendered in corner` | `render the creator's brand icon from reference image [brand-icon.png] as a small circular badge` |
 | No "Shot on" prefix | `Shot on 85mm f/1.8` | `Lens: 85mm f/1.8` |
 | No category tags | `"TEKNOLOGI" badge above headline` | (remove entirely) |
@@ -62,8 +62,8 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 |---------|-------|------|
 | Headline | Bottom gradient zone | White #FFFFFF bold condensed ALL CAPS |
 | Accent words | Within headline | Accent color (default: Golden Yellow #F5A623) |
-| Brand icon | Top-right corner | Brand icon filename, every slide |
-| @handle watermark | **Center of image** | White, **faint barely-visible opacity on ALL slides** |
+| Brand icon | **Center of image, above watermark** | Brand icon filename, every slide |
+| @handle watermark | **Center of image, below brand icon** | White, **30% opacity on ALL slides** |
 | SWIPE FOR MORE > | Bottom center | White small text, all slides EXCEPT CTA |
 | Slide counter | Optional | "3/10" format, small, top-left |
 
@@ -78,10 +78,10 @@ Bottom half of the image has a smooth dark gradient zone. Extremely large, bold,
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 ["GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap. | omit for CTA slide]
 ```
 
@@ -205,10 +205,10 @@ reading "[HOOK HEADLINE — scored 3/5+]" with the word "[POWER WORD]" in slight
 in [accent color hex], visually dominant within the headline. Remaining text in white.
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -237,10 +237,10 @@ Bottom half of the image has a smooth dark gradient zone. Extremely large, bold,
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -288,10 +288,10 @@ reading "[FORESHADOW HEADLINE — creates FOMO/urgency to keep swiping]"
 with the word "[KEY WORD]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -322,10 +322,10 @@ Bottom half of the image has a smooth dark gradient zone. Extremely large, bold,
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
@@ -349,10 +349,10 @@ Bottom half of the image has a smooth dark gradient zone. Extremely large, bold,
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
@@ -384,10 +384,10 @@ Natural skin texture with visible pores, fabric weave detail.
 Bottom third of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[JUDUL THUMBNAIL DALAM BAHASA]" with key words in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
 Maintain exact facial identity from reference image: [face-ref.png].
@@ -412,10 +412,16 @@ Lens: 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[HEADLINE IN BAHASA]" with accent words in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight, dominating the gradient zone.
+[If comparison (A vs B): brand icon + watermark on divider:]
 Render the creator's brand icon from reference image [brand-icon.png] on the vertical center divider line
 between the two panels as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white on the vertical center divider line,
-very low opacity, ghosted, subtle background mark only.
+"@[handle]" as a watermark in white on the vertical center divider line,
+thirty percent opacity, subtle background mark only.
+[If non-comparison: brand icon + watermark centered:]
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 "GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -462,10 +468,10 @@ Natural skin texture with visible pores, fabric weave.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "MENURUT LO [A] ATAU [B]?" with "[A]" and "[B]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
@@ -497,10 +503,10 @@ Natural skin texture with visible pores, fabric weave detail.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[SIMPLE CHOICE QUESTION IN BAHASA]?" with key word in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
@@ -532,10 +538,10 @@ Natural skin texture with visible pores on both subjects, fabric detail.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "TAG TEMEN YANG BUTUH INI" with "BUTUH" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
@@ -569,10 +575,10 @@ Natural skin texture with visible pores, fabric weave detail.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "COMMENT '[KEYWORD]' BUAT DAPETIN [REWARD]" with "[KEYWORD]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
-as a small circular badge — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
-very low opacity, ghosted, subtle background mark only.
+Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+as a small circular badge, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.

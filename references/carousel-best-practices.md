@@ -369,7 +369,7 @@ Caption:  14-16pt, Regular, Mixed case
 - Gradient overlay: bottom half with text rendered directly in AI-generated image
 - All text (headlines, accents, branding, SWIPE CTA) is part of the Nano Banana Pro prompt — NOT post-production
 - Consistent image style across all slides (same filter, same lighting, same text styling)
-- Brand icon (top-right) + @handle watermark (CENTER of image, 30% opacity) rendered in every slide
+- Brand icon (CENTER of image, above watermark) + @handle watermark (CENTER of image, below brand icon, 30% opacity) rendered in every slide
 
 ---
 

@@ -50,7 +50,7 @@ Run 6 automated consistency checks across all operational files. Reports PASS/FA
 
 ### Check 4: Hashtag Counts
 **Pattern:** Any mention of `hashtag` with a number
-**Expected:** Instagram = max 5, TikTok = max 5 (or exactly 5), LinkedIn = 3-5. Never "5-10", never "no hashtags".
+**Expected:** Instagram = max 5, TikTok = max 5 (or exactly 5), LinkedIn = 3-5, Threads = none (0). Never "5-10", never "no hashtags" for IG/TikTok/LinkedIn.
 **How to verify:** Grep for `hashtag` in all operational files. Check each numeric value matches the platform rule.
 
 ### Check 5: Gradient Zones
@@ -58,12 +58,12 @@ Run 6 automated consistency checks across all operational files. Reports PASS/FA
 **Expected values:**
 | Slide Type | Gradient |
 |------------|----------|
-| Hook | Bottom 40% |
-| Content B-Roll | Bottom 35% |
-| Split-Panel | Bottom 30% |
-| CTA | Bottom 40% |
-| Thumbnail | Bottom 25% |
-**How to verify:** Grep for `%` near `gradient`, `overlay`, or `text zone` in all operational files. Each hardcoded percentage must match the table above for its slide type context. Placeholder `[N]%` is acceptable in templates.
+| Hook | Bottom half |
+| Content B-Roll | Bottom half |
+| Split-Panel | Bottom half |
+| CTA | Bottom half |
+| Thumbnail | Bottom third |
+**How to verify:** Grep for `bottom half` and `bottom third` in all operational files. Each slide type context must match the table above. Thumbnail = "bottom third", all others = "bottom half". No hardcoded percentages (e.g., "bottom 40%") should appear in gradient zone contexts.
 
 ### Check 6: Aspect Ratio Default
 **Pattern:** `aspect ratio` near `default` or as a standalone spec
