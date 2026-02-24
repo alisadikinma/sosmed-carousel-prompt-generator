@@ -38,7 +38,7 @@ Prompt instruction: `"maintain exact facial identity from reference image: [crea
   - Ensures visibility without distracting from content
   - This applies to ALL slide types (Hook, Content, CTA, Thumbnail)
   - In prompt body: ALWAYS spell out "thirty percent opacity" — NEVER write "30%"
-- "GESER UNTUK LANJUT >" rendered on all slides except CTA (20-30% engagement boost)
+- "SWIPE (GESER) >" rendered on all slides except CTA (20-30% engagement boost)
 - Corner labels where applicable: series name, episode number
 
 ### Subject Brand Context (CRITICAL for B-Roll / Factual Slides)
@@ -79,7 +79,7 @@ When a slide discusses a SPECIFIC company, product, or service (Google, WhatsApp
 - Mixed case for subtitles/taglines only
 - Text hierarchy: **MASSIVE bold title** > medium subtitle > small tagline
 - Prompt MUST specify: "extremely large, bold, impactful condensed uppercase text" — not just "bold text"
-- **Default language: Bahasa Indonesia** (English only if user explicitly requests)
+- **Default language: Bilingual** — English headline (main) + Bahasa Indonesia subtitle (accent color). Single language only if user explicitly requests
 - **Prompt body rendering rule:** In the actual prompt body, describe text size using lowercase only: "the largest possible font size that fills the width, extra bold weight" — never use ALL CAPS instruction words like MASSIVE, ULTRA, LARGE in prompt body (AI renders them as literal text). See `references/prompt-formulas.md` Prompt Body Rendering Rules.
 
 ### Film Stock & Color Temperature
@@ -257,10 +257,10 @@ All brand elements are rendered directly in the AI-generated image via the promp
 | Brand icon | **Center of image, above watermark** | As-is from file, thirty percent opacity | ALL slides |
 | @handle watermark | **Center of image** | White text, thirty percent opacity | ALL slides |
 | Headline | Bottom gradient zone | White **EXTRA BOLD** condensed ALL CAPS, **large font** | ALL slides |
-| Bahasa subtitle | Below main headline | Accent color (default #F5A623), slightly smaller — NEVER white | ALL slides |
+| Bahasa subtitle | Below main headline | Bahasa Indonesia translation of English headline. Accent color (default #F5A623), slightly smaller — NEVER white | ALL slides |
 | Accent keywords (2-4) | Within headline | 2-4 keywords in accent color (default #F5A623), **EXTRA BOLD** | ALL slides |
 | Page number | **Top-left corner** | "[N]/[TOTAL]" white small | ALL slides |
-| SWIPE CTA | Bottom center | "GESER UNTUK LANJUT >" white small | All EXCEPT CTA |
+| SWIPE CTA | Bottom center | "SWIPE (GESER) >" white small | All EXCEPT CTA |
 | Social handles | CTA slide only | White, listed vertically | CTA only |
 
 ### Opacity & Position Rules
@@ -278,6 +278,7 @@ All brand elements are rendered directly in the AI-generated image via the promp
 **Split-Panel Rule:** For **comparison** split-panel slides (A vs B topics), the brand icon + @handle watermark is placed ON the vertical center divider that separates the two panels. For **non-comparison** split-panel slides (same topic, different angles), use the standard center-of-image placement (brand icon above watermark). This ensures comparison dividers are visually anchored while standard layouts remain consistent.
 
 ### Language Default
-- All in-image text = **Bahasa Indonesia** by default
-- SWIPE CTA: "GESER UNTUK LANJUT >"
-- English only when user explicitly requests
+- **Main headline** = **English** by default (white ALL CAPS)
+- **Subtitle** = **Bahasa Indonesia** translation (accent color, slightly smaller)
+- SWIPE CTA: "SWIPE (GESER) >"
+- Single language override when user explicitly requests

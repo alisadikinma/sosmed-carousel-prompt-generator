@@ -5,7 +5,7 @@
 Treat every prompt like a Creative Director brief — natural language, NOT keyword spam.
 ⚠ Use: "Maintain exact appearance from reference image" for character consistency
 ⚠ Text rendered IN-IMAGE — all headlines, accents, branding, and labels are part of the prompt
-⚠ Default language for in-image text = Bahasa Indonesia (English only if user explicitly requests)
+⚠ Default language: Bilingual — English headline (main) + Bahasa Indonesia subtitle. Single language on user request
 ```
 
 ---
@@ -29,10 +29,10 @@ Nano Banana Pro renders ALL text in the prompt as visible image content. To prev
 | Negations lowercase | `NOT cold blue` | `not cold blue` |
 
 **What MAY be ALL CAPS in prompt body (actual in-image text):**
-- Headline text: `"GILA — INI YANG TERJADI DALAM 1 DETIK DI BUMI"`
-- HUD display data: `"120 TB/DETIK"`
-- CTA text: `"GESER UNTUK LANJUT >"`
-- Power words within headlines: `"PARAH"`
+- Headline text: `"INSANE — THIS IS WHAT HAPPENS IN 1 SECOND ON EARTH"`
+- HUD display data: `"120 TB/SEC"`
+- CTA text: `"SWIPE (GESER) >"`
+- Power words within headlines: `"INSANE"`
 - Watermark handle: `"@alisadikinma"`
 
 ---
@@ -61,31 +61,32 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 | Element | Where | Rule |
 |---------|-------|------|
 | Main headline | Bottom gradient zone | White #FFFFFF bold condensed ALL CAPS |
-| Bahasa subtitle | Below main headline | Accent color (default: #F5A623) at 70-80% size of main headline. NEVER same white as main headline — must create visual hierarchy |
+| Bahasa subtitle | Below main headline | Bahasa Indonesia translation of English headline. Accent color (default: #F5A623) at 70-80% size of main headline. NEVER same white as main headline — must create visual hierarchy |
 | Accent keywords (2-4) | Within headline | 2-4 emotionally impactful keywords in accent color (default: Golden Yellow #F5A623). Hook: power word at 120% size + 1-3 more. Never highlight just 1 word |
 | Brand icon | **Center of image, above watermark** | From reference file, thirty percent opacity, every slide. In prompt body: "thirty percent opacity" — NEVER "30%" |
 | @handle watermark | **Center of image, below brand icon** | White, thirty percent opacity on ALL slides. In prompt body: "thirty percent opacity" — NEVER "30%" |
-| SWIPE FOR MORE > | Bottom center | White small text, all slides EXCEPT CTA |
+| SWIPE (GESER) > | Bottom center | White small text, all slides EXCEPT CTA |
 | Page number | **Top-left corner** | "N/TOTAL" format (e.g., "1/10"), small white text, ALL slides. Helps viewers track progress and simplifies posting order |
 
 ### Default Language
-- In-image text (headlines, accent words) = **Bahasa Indonesia** by default
-- English only if user explicitly requests
+- **Main headline** = **English** by default (white ALL CAPS)
+- **Subtitle** = **Bahasa Indonesia** translation (accent color, slightly smaller)
+- **Override**: User requests single language (English-only, Bahasa-only, or other) → use that language for both headline and subtitle (no translation subtitle)
 - Prompt instructions (scene description) = ALWAYS English (AI model instruction)
 
 ### Text Rendering Syntax in Prompt
 ```
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[MAIN HEADLINE]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+reading "[MAIN HEADLINE IN ENGLISH]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Below the main headline, a subtitle line reading "[BAHASA SUBTITLE]" in [accent color hex] at slightly smaller size,
+Below the main headline, a Bahasa Indonesia subtitle line reading "[BAHASA INDONESIA TRANSLATION]" in [accent color hex] at slightly smaller size,
 creating clear visual hierarchy — the subtitle must NOT be white like the main headline.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-["GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap. | omit for CTA slide]
+["SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap. | omit for CTA slide]
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 ```
 
@@ -280,7 +281,7 @@ Render the creator's brand icon from reference image [brand-icon.png] centered i
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -314,7 +315,7 @@ Render the creator's brand icon from reference image [brand-icon.png] centered i
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -367,7 +368,7 @@ Render the creator's brand icon from reference image [brand-icon.png] centered i
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -403,7 +404,7 @@ Render the creator's brand icon from reference image [brand-icon.png] centered i
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
@@ -432,7 +433,7 @@ Render the creator's brand icon from reference image [brand-icon.png] centered i
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
@@ -506,7 +507,7 @@ Render the creator's brand icon from reference image [brand-icon.png] centered i
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -561,7 +562,7 @@ thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
-[PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
+[PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
 Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
@@ -598,7 +599,7 @@ thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
-[PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
+[PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
 Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
@@ -635,7 +636,7 @@ thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
-[PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
+[PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
 Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
@@ -674,7 +675,7 @@ thirty percent opacity, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
-[PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
+[PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
 Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
@@ -766,7 +767,7 @@ Before finalizing each image prompt, verify ALL 8 are present:
 - [ ] **Cinematic Ref** — Film stock named + color grade + optional DP reference
 
 ### Text Rendering Checklist
-- [ ] Headline text specified in Bahasa Indonesia (or user-requested language)
+- [ ] Main headline in English, Bahasa Indonesia subtitle in accent color (or single language if user-requested)
 - [ ] Accent words identified and color specified
 - [ ] Brand icon filename + position specified
 - [ ] @handle watermark + opacity specified
@@ -792,6 +793,6 @@ Before finalizing each image prompt, verify ALL 8 are present:
 - Always specify reference image filename for creator shots
 - **All 8 WOW elements MANDATORY** — minimum score 6/8
 - **Text rendered IN-IMAGE** — no separate post-production section
-- **Default text language = Bahasa Indonesia**
+- **Default: Bilingual — English headline + Bahasa Indonesia subtitle**
 - API: `response_modalities=['TEXT', 'IMAGE']`, `image_size="4K"` (uppercase K)
 - Aspect ratio set per target platform — see `references/platform-specs.md`

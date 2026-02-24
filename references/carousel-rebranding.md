@@ -77,7 +77,7 @@ Render the creator's brand icon from reference image [brand-icon.png] centered i
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding (subject brand required for context).
 No creator face in this slide.
@@ -101,7 +101,7 @@ Render the creator's brand icon from reference image [brand-icon.png] on the ver
 as a small circular badge at thirty percent opacity — use the exact icon from the file, do not generate a new one.
 "@[handle]" as a watermark in white on the vertical center divider line,
 thirty percent opacity, subtle background mark only.
-"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
+"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding.
 Maintain facial identity from reference image: [face-ref.png].
@@ -141,7 +141,7 @@ For each slide, output a text specification sheet:
 - **Subject brand** (if applicable): [Brand logo/UI] visible in scene for context
 - **Corner labels**: [series name / episode ID] (if applicable)
 - **Page number**: "[N]/[TOTAL]" — white, small, top-left corner (all slides)
-- **SWIPE FOR MORE >**: Bottom center (all slides except CTA)
+- **SWIPE (GESER) >**: Bottom center (all slides except CTA)
 ```
 
 ## Step 5: Visual Continuity Checklist
@@ -160,6 +160,6 @@ Before delivering carousel set, verify:
 - [ ] Brand icon centered in image (thirty percent opacity, above watermark) on every slide
 - [ ] @handle watermark centered in image (thirty percent opacity, below brand icon) on every slide
 - [ ] Page number "[N]/[TOTAL]" in top-left corner on all slides
-- [ ] SWIPE FOR MORE on all slides except CTA
+- [ ] SWIPE (GESER) on all slides except CTA
 - [ ] Film stock consistently warm (Portra 400 / Vision3 500T)
 - [ ] Aspect ratio matches target platform (IG Feed 4:5, TikTok 9:16, LinkedIn 4:5)

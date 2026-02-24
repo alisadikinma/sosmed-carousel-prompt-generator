@@ -140,7 +140,7 @@ If a user scrolls past a carousel without engaging, **Instagram re-serves the sa
 | **Optimal 8-10 slides** for peak engagement | Peak reach observed around slide 13 |
 | Use 4:5 aspect ratio for feed carousels | Takes up more screen real estate than 1:1 |
 | Consistent color palette across all slides | Brand recognition + professional look |
-| "GESER UNTUK LANJUT >" rendered in-image on all slides except CTA | Increases swipe-through rate by 20-30% |
+| "SWIPE (GESER) >" rendered in-image on all slides except CTA | Increases swipe-through rate by 20-30% |
 | Number your slides ("3/8") | Creates completion drive |
 | Last slide = face + CTA | Personal connection converts |
 
@@ -381,7 +381,7 @@ Before publishing any carousel:
 - [ ] Each slide delivers ONE clear idea
 - [ ] Text is readable at phone size (zoom out test)
 - [ ] Brand colors/fonts consistent across all slides
-- [ ] "GESER UNTUK LANJUT >" rendered in-image on all slides except CTA
+- [ ] "SWIPE (GESER) >" rendered in-image on all slides except CTA
 - [ ] Page numbers shown (LinkedIn)
 - [ ] CTA is clear and specific on last slide
 - [ ] Caption complements (not repeats) carousel content
