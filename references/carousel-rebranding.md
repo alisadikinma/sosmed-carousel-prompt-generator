@@ -29,10 +29,10 @@ Convert source style → user's brand style using this mapping:
 | Source creator badge/watermark | → DELETE completely (competitor branding) |
 | **Subject brand** (Google, WhatsApp, etc.) | → **KEEP** — subject brand IS the context, must remain visible |
 | No creator face | → ADD face on Hook + CTA |
-| Source branding | → User's brand icon + handle (center watermark 30% opacity) |
+| Source branding | → User's brand icon + handle (center watermark, faint barely-visible opacity) |
 | Cold color grading | → Kodak Portra 400 warm look |
 | Blue HUD overlays | → Warm golden/amber HUD overlays |
-| Small/weak text overlay | → **MASSIVE billboard-scale text** in gradient zone |
+| Small/weak text overlay | → **Largest possible billboard-scale text** in gradient zone |
 
 ### Color Temperature Shift Rules
 - Cold accent colors (blues, cyans) → shift to user's accent color
@@ -45,36 +45,38 @@ Convert source style → user's brand style using this mapping:
 ### Hook Slide Template
 ```
 A photorealistic cinematic close-up of [CREATOR DESCRIPTION VERBATIM].
-[EXAGGERATED HOOK EXPRESSION — e.g., wide shocked eyes, mouth open].
-[WARDROBE]. [WARM ENVIRONMENT — e.g., modern cafe, lifestyle setting].
+[Exaggerated hook expression — e.g., wide shocked eyes, mouth open].
+[Wardrobe]. [Warm environment — e.g., modern cafe, lifestyle setting].
 
-Shot on 85mm f/1.8, shallow depth of field with warm bokeh background.
+Lens: 85mm f/1.8, shallow depth of field with warm bokeh background.
 Rembrandt lighting at 4:1 ratio, 3200K warm key from left.
 Kodak Portra 400, warm golden grade. Subtle atmospheric haze.
 
-Bottom 40% reserved for text overlay (dark gradient zone).
-[PLATFORM ASPECT] aspect. No text, no watermarks, no logos.
-Using facial identity from reference image: [face-ref.png].
+Bottom half reserved for text overlay (smooth dark gradient zone).
+[PLATFORM ASPECT] aspect. No competitor branding.
+Maintain facial identity from reference image: [face-ref.png].
 ```
 
 ### Content B-Roll Slide Template
 ```
-A photorealistic cinematic [SHOT TYPE] of [TOPIC VISUAL CONCEPT].
-[SPECIFIC SCENE DESCRIPTION with culturally relevant context].
-[IF slide discusses a specific brand/product: include recognizable brand elements
-(logo, UI, interface, color scheme) of the SUBJECT for viewer context.
+A photorealistic cinematic [shot type] of [topic visual concept].
+[Specific scene description with culturally relevant context].
+[If slide discusses a specific brand/product: include recognizable brand elements
+(logo, UI, interface, color scheme) of the subject for viewer context.
 Example: Google search bar visible, WhatsApp green chat UI, etc.]
-[WARM-TONED HUD/data overlay elements showing KEY STAT].
+[Warm-toned HUD/data overlay elements showing key stat in large readable text].
 
-Shot on [LENS]mm f/[APERTURE], [ANGLE]. [DEPTH OF FIELD].
-[LIGHTING PATTERN], [RATIO], [KELVIN — always warm side].
-Kodak Portra 400, warm golden amber grade. [ATMOSPHERE].
+Lens: [lens]mm f/[aperture], [angle]. [Depth of field].
+[Lighting pattern], [ratio], [Kelvin — warm side].
+Kodak Portra 400, warm golden amber grade. [Atmosphere].
 
-Bottom 35% dark gradient zone with extremely large, bold, impactful condensed
-ALL CAPS text — MASSIVE billboard-scale, extra bold/black weight.
-[brand-icon.png] in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
-"GESER UNTUK LANJUT >" in small white text at bottom center.
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed
+uppercase text, the largest possible font size that fills the width, extra bold weight.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
+"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 [PLATFORM ASPECT] aspect. No competitor branding (subject brand required for context).
 No creator face in this slide.
 ```
@@ -83,37 +85,39 @@ No creator face in this slide.
 ```
 A photorealistic split-panel composition divided vertically into two halves.
 
-LEFT HALF ("[LABEL A IN BAHASA]"): [Current/old way scene] featuring [CREATOR].
+Left half ("[LABEL A IN BAHASA]"): [Current/old way scene] featuring [CREATOR].
 [Context-appropriate setting]. Natural warm daylight, Kodak Portra 400.
 
-RIGHT HALF ("[LABEL B IN BAHASA]"): Same person in same location but [CONTRAST VERSION].
+Right half ("[LABEL B IN BAHASA]"): Same person in same location but [contrasting version].
 Warm-toned holographic interfaces. Enhanced but still warm color temperature.
 
 Both halves: same environment context.
-50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
-Bottom 30% dark gradient zone with extremely large, bold, impactful condensed
-ALL CAPS text — MASSIVE billboard-scale, extra bold/black weight.
-[brand-icon.png] + "@[handle]" watermark in white at 30% opacity,
-placed ON the vertical center divider line between the two panels.
-"GESER UNTUK LANJUT >" in small white text at bottom center.
+Lens: 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed
+uppercase text, the largest possible font size that fills the width, extra bold weight.
+Render the creator's brand icon from reference image [brand-icon.png] on the vertical center divider line
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white on the vertical center divider line,
+very low opacity, ghosted, subtle background mark only.
+"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 [PLATFORM ASPECT] aspect. No competitor branding.
-Using facial identity from reference image: [face-ref.png].
+Maintain facial identity from reference image: [face-ref.png].
 ```
 
 ### CTA Slide Template
 ```
 A photorealistic cinematic medium close-up of [CREATOR DESCRIPTION VERBATIM].
-Wearing [WARDROBE].
+Wearing [wardrobe].
 Expression: warm confident smile, direct eye contact, approachable and inviting.
 Arms crossed or relaxed professional pose.
 
 Background: warm bokeh with soft golden ambient light, modern interior.
-Shot on 85mm f/2, shallow DOF. Butterfly lighting 2:1, 3500K golden.
+Lens: 85mm f/2, shallow depth of field. Butterfly lighting 2:1, 3500K golden.
 Kodak Portra 400, warm amber grade.
 
-Bottom 40% reserved for text overlay + social handles.
-[PLATFORM ASPECT] aspect. No text, no watermarks.
-Using facial identity from reference image: [face-ref.png].
+Bottom half reserved for text overlay + social handles.
+[PLATFORM ASPECT] aspect. No competitor branding.
+Maintain facial identity from reference image: [face-ref.png].
 ```
 
 ## Step 4: Text Overlay Guide (Per Slide)
@@ -123,12 +127,12 @@ For each slide, output a text specification sheet:
 ```
 ### Text Overlay — Slide [N]
 - **Main headline**: "[TEXT]" — White #FFFFFF, EXTRA BOLD/BLACK weight condensed, ALL CAPS
-  - Font must be MASSIVE — billboard-scale, dominating gradient zone
+  - Font must be largest possible — billboard-scale, dominating gradient zone
 - **Accent keyword(s)**: "[WORD]" — [User's accent color], same massive size
 - **Position**: Bottom 35-40%, centered
 - **Branding**:
   - [User's brand icon] top-right corner
-  - [User's @handle] CENTER of image, 30% opacity (ALL slides)
+  - [User's @handle] center of image, faint barely-visible opacity (all slides)
 - **Subject brand** (if applicable): [Brand logo/UI] visible in scene for context
 - **Corner labels**: [series name / episode ID] (if applicable)
 - **SWIPE FOR MORE >**: Bottom center (all slides except CTA)
@@ -146,9 +150,9 @@ Before delivering carousel set, verify:
 - [ ] CTA slide has creator face with warm confident expression
 - [ ] B-Roll with human faces = creator face ALWAYS included
 - [ ] B-Roll without humans = NO creator face
-- [ ] All slides have dark gradient text zone (bottom 30-40%) with MASSIVE billboard-scale text
+- [ ] All slides have dark gradient text zone (bottom half) with largest possible billboard-scale text
 - [ ] Brand icon in top-right of every slide
-- [ ] @handle watermark CENTERED in image at 30% opacity on every slide
+- [ ] @handle watermark centered in image (faint, barely-visible opacity) on every slide
 - [ ] SWIPE FOR MORE on all slides except CTA
 - [ ] Film stock consistently warm (Portra 400 / Vision3 500T)
 - [ ] Aspect ratio matches target platform (IG Feed 4:5, TikTok 9:16, LinkedIn 4:5)

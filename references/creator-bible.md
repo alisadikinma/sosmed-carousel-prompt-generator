@@ -20,7 +20,7 @@ Confident, warm expression.
 ```
 
 Face reference file: `[creator-face-ref.png]`
-Prompt instruction: `"MANDATORY: maintain exact facial identity from reference image: [creator-face-ref.png]"`
+Prompt instruction: `"maintain exact facial identity from reference image: [creator-face-ref.png]"`
 
 ## 2. Branding Assets
 
@@ -77,8 +77,9 @@ When a slide discusses a SPECIFIC company, product, or service (Google, WhatsApp
 - Accent/keyword text = same massive size but in accent color for maximum punch
 - Mixed case for subtitles/taglines only
 - Text hierarchy: **MASSIVE bold title** > medium subtitle > small tagline
-- Prompt MUST specify: "extremely large, bold, impactful condensed ALL CAPS text" — not just "bold text"
+- Prompt MUST specify: "extremely large, bold, impactful condensed uppercase text" — not just "bold text"
 - **Default language: Bahasa Indonesia** (English only if user explicitly requests)
+- **Prompt body rendering rule:** In the actual prompt body, describe text size using lowercase only: "the largest possible font size that fills the width, extra bold weight" — never use ALL CAPS instruction words like MASSIVE, ULTRA, LARGE in prompt body (AI renders them as literal text). See `references/prompt-formulas.md` Prompt Body Rendering Rules.
 
 ### Film Stock & Color Temperature
 | Context | Film Stock | Kelvin | Grade |
@@ -136,12 +137,12 @@ All text is rendered IN-IMAGE via the Nano Banana Pro prompt (not post-productio
 
 | Slide Type | Gradient Zone | Prompt Instruction |
 |------------|--------------|-------------------|
-| Hook | Bottom 40% | "Bottom 40% dark gradient zone with bold white condensed ALL CAPS text reading..." |
-| Foreshadow | Bottom 35% | "Bottom 35% dark gradient zone with bold white condensed ALL CAPS text reading..." |
-| Content B-Roll | Bottom 35% | "Bottom 35% dark gradient zone with bold white condensed ALL CAPS text reading..." |
-| Split-Panel | Bottom 30% | "Bottom 30% dark gradient zone with bold white condensed ALL CAPS text reading..." |
-| CTA | Bottom 40% | "Bottom 40% dark gradient zone with bold white condensed ALL CAPS text reading..." |
-| Thumbnail | Bottom 25% | "Bottom 25% dark gradient zone with bold white condensed ALL CAPS text reading..." |
+| Hook | Bottom half | "Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text reading..." |
+| Foreshadow | Bottom half | "Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text reading..." |
+| Content B-Roll | Bottom half | "Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text reading..." |
+| Split-Panel | Bottom half | "Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text reading..." |
+| CTA | Bottom half | "Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text reading..." |
+| Thumbnail | Bottom third | "Bottom third of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text reading..." |
 
 All gradient zones use a smooth dark-to-transparent gradient (not a hard cut).
 

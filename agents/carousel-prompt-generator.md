@@ -318,6 +318,25 @@ When given a topic or brief:
 - Include text rendering in-image (Bahasa default)
 - Negative constraints at END: "no third-party branding"
 
+### Prompt Body Rendering Rules (CRITICAL)
+
+Inside the Nano Banana Pro prompt body, the AI renders ALL text as visible image content. Follow these rules strictly:
+
+1. **Only in-image text in ALL CAPS** — headlines, HUD data, CTA text, power words, watermark handle
+2. **All instructions/descriptions = lowercase** — sizing, positioning, technical directives, cinematography, negations, emphasis words
+3. **No `//` separators** in HUD/data text — keep core data only
+4. **No raw percentages** — replace "30% opacity" with "faint, barely-visible, very low opacity, ghosted"
+5. **No raw filenames in prompt body** — use "render the creator's brand icon from reference image [brand-icon.png] as a small circular badge — use the exact icon from the file, do not generate a new one"
+6. **No "Shot on" prefix** — replace with "Lens:"
+7. **No category tags** — no TEKNOLOGI, SCIENCE, BISNIS badges in prompt
+8. **No metadata labels** in HUD text — "120 TB/DETIK" not "THROUGHPUT: 120 TB/DETIK"
+9. **Gradient zone = bottom half** — "bottom half of the image has a smooth dark gradient zone"
+10. **Text positioned from vertical center downward** — not crammed at the very bottom
+11. **Watermark = descriptive opacity** — "faint, barely-visible watermark, very low opacity, ghosted"
+12. **GESER UNTUK LANJUT = beneath headline** — "positioned directly beneath the headline text with minimal gap"
+
+See full reference table in `references/prompt-formulas.md` (Prompt Body Rendering Rules section).
+
 ---
 
 ## OUTPUT FORMAT
@@ -366,10 +385,11 @@ Source: [URL or "Well-established fact"]
 - [ ] Hook + CTA have creator face
 - [ ] B-Roll with human figures = creator face as most prominent figure
 - [ ] B-Roll without humans = no creator face
-- [ ] All slides have MASSIVE billboard-scale text rendered in-image (gradient zone)
-- [ ] Brand icon rendered in every slide (top-right)
-- [ ] @handle watermark CENTERED in image at 30% opacity (on vertical divider for split-panel)
-- [ ] GESER UNTUK LANJUT on all slides except CTA
+- [ ] All slides have largest-possible billboard-scale text rendered in-image (gradient zone = bottom half)
+- [ ] Brand icon rendered in every slide (top-right, from reference file)
+- [ ] @handle watermark centered in image (faint, barely-visible opacity; on vertical divider for split-panel)
+- [ ] GESER UNTUK LANJUT on all slides except CTA (beneath headline, not at bottom edge)
+- [ ] Prompt body follows rendering rules (no ALL CAPS instructions, no raw %, no Shot on, no //, no category tags)
 - [ ] Film stock consistently warm
 - [ ] Aspect ratio matches target platform
 - [ ] All prompts score 6/8+ WOW

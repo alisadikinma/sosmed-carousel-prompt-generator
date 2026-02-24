@@ -10,6 +10,33 @@ Treat every prompt like a Creative Director brief — natural language, NOT keyw
 
 ---
 
+## Prompt Body Rendering Rules (Nano Banana Pro)
+
+Nano Banana Pro renders ALL text in the prompt as visible image content. To prevent unwanted text artifacts in generated images, follow these rules strictly when writing the actual prompt body:
+
+| Rule | Wrong (renders as text) | Correct |
+|------|------------------------|---------|
+| Only in-image text in ALL CAPS | `Text must be ULTRA MASSIVE` | `the text uses the largest possible font size` |
+| No instruction caps | `MANDATORY: render the icon` | `render the icon` |
+| No `//` separators | `120 TB/DETIK // KECEPATAN: CAHAYA` | `120 TB/DETIK` (core data only) |
+| No raw percentages | `30% opacity` | `faint, barely-visible, very low opacity` |
+| No raw filenames in body | `[brand-icon.png] rendered in corner` | `render the creator's brand icon from reference image [brand-icon.png] as a small circular badge` |
+| No "Shot on" prefix | `Shot on 85mm f/1.8` | `Lens: 85mm f/1.8` |
+| No category tags | `"TEKNOLOGI" badge above headline` | (remove entirely) |
+| No metadata labels in HUD | `THROUGHPUT: 120 TB/DETIK` | `120 TB/DETIK` |
+| Sizing via description | `MASSIVE billboard-scale` | `the largest possible font size that fills the width, extra bold weight` |
+| Positioning lowercase | `CENTERED in the middle` | `centered in the middle` |
+| Negations lowercase | `NOT cold blue` | `not cold blue` |
+
+**What MAY be ALL CAPS in prompt body (actual in-image text):**
+- Headline text: `"GILA — INI YANG TERJADI DALAM 1 DETIK DI BUMI"`
+- HUD display data: `"120 TB/DETIK"`
+- CTA text: `"GESER UNTUK LANJUT >"`
+- Power words within headlines: `"PARAH"`
+- Watermark handle: `"@alisadikinma"`
+
+---
+
 ## Nano Banana Pro — Structure (8-Element Priority Order)
 ```
 1. Subject (who/what) — always first
@@ -36,7 +63,7 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 | Headline | Bottom gradient zone | White #FFFFFF bold condensed ALL CAPS |
 | Accent words | Within headline | Accent color (default: Golden Yellow #F5A623) |
 | Brand icon | Top-right corner | Brand icon filename, every slide |
-| @handle watermark | **Center of image** | White, **30% opacity on ALL slides** |
+| @handle watermark | **Center of image** | White, **faint barely-visible opacity on ALL slides** |
 | SWIPE FOR MORE > | Bottom center | White small text, all slides EXCEPT CTA |
 | Slide counter | Optional | "3/10" format, small, top-left |
 
@@ -47,12 +74,15 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 
 ### Text Rendering Syntax in Prompt
 ```
-Bottom [N]% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
-Text must be MASSIVE — billboard-scale, dominating the gradient zone, extra bold/black weight.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
-["GESER UNTUK LANJUT >" in small white text at bottom center. | omit for CTA slide]
+The text uses the largest possible font size that fills the width, extra bold weight,
+positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
+["GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap. | omit for CTA slide]
 ```
 
 ### Subject Brand Context in Prompt
@@ -141,10 +171,10 @@ The hook headline category MUST match the visual composition and creator express
 When writing the hook prompt, the power word gets special treatment:
 
 ```
-Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
-reading "[FULL HEADLINE]" with the word "[POWER WORD]" rendered at 120% size in [accent color hex],
-visually dominant within the headline. Remaining text in white #FFFFFF.
-Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
+reading "[FULL HEADLINE]" with the word "[POWER WORD]" in slightly larger size in [accent color hex],
+visually dominant within the headline. Remaining text in white.
+The text uses the largest possible font size that fills the width, extra bold weight, dominating the gradient zone.
 ```
 
 ---
@@ -157,29 +187,32 @@ Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating th
 
 ```
 A photorealistic cinematic [shot type — CU/MCU, match Hook Category table] of [CREATOR DESCRIPTION VERBATIM].
-[Expression MUST match Hook Category → Creator Expression mapping — e.g., wide-eyed shock for Visual Shock].
+[Expression must match Hook Category -> Creator Expression mapping — e.g., wide-eyed shock for Visual Shock].
 [Wardrobe]. [Action/pose that amplifies the emotion].
 
-[Scene with PATTERN INTERRUPT — something visually unexpected or contradictory that stops the scroll.
-Match Hook Category → Scene Direction mapping. The scene must feel "wrong" or surprising at first glance.]
+[Scene with pattern interrupt — something visually unexpected or contradictory that stops the scroll.
+Match Hook Category -> Scene Direction mapping. The scene must feel wrong or surprising at first glance.]
 [Foreground element] + [subject] + [background with bokeh/depth — 3 distinct layers].
 
-Shot on [lens]mm f/[aperture], [angle], [depth of field].
-[Lighting pattern from Hook Category → Lighting mapping] at [ratio] ratio, [Kelvin]K [key direction].
+Lens: [lens]mm f/[aperture], [angle], [depth of field].
+[Lighting pattern from Hook Category -> Lighting mapping] at [ratio] ratio, [Kelvin]K [key direction].
 [Film stock], [color grade]. [Atmosphere/particles — haze, volumetric, bokeh].
 [Texture detail: natural skin texture with visible pores, fabric weave].
 [Cinematic DP reference].
 
-Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
-reading "[HOOK HEADLINE — scored 3/5+]" with the word "[POWER WORD]" rendered at 120% size
-in [accent color hex], visually dominant within the headline. Remaining text in white #FFFFFF.
-Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
-"GESER UNTUK LANJUT >" in small white text at bottom center.
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
+reading "[HOOK HEADLINE — scored 3/5+]" with the word "[POWER WORD]" in slightly larger size
+in [accent color hex], visually dominant within the headline. Remaining text in white.
+The text uses the largest possible font size that fills the width, extra bold weight,
+positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
+"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 ### Template — Creator Shot (CTA)
@@ -194,21 +227,24 @@ A photorealistic cinematic [shot type] of [CREATOR DESCRIPTION VERBATIM].
 [Setting/environment with specific details].
 [Foreground element] + [subject] + [background with bokeh/depth].
 
-Shot on [lens]mm f/[aperture], [angle], [depth of field].
+Lens: [lens]mm f/[aperture], [angle], [depth of field].
 [Lighting pattern] at [ratio] ratio, [Kelvin]K [key direction].
 [Film stock], [color grade]. [Atmosphere/particles].
 [Texture detail: natural skin texture with visible pores, fabric weave].
 [Cinematic DP reference].
 
-Bottom [N]% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
-"GESER UNTUK LANJUT >" in small white text at bottom center.
+The text uses the largest possible font size that fills the width, extra bold weight,
+positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
+"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 ### Template — Foreshadow Slide (Slide 2 — MANDATORY)
@@ -226,37 +262,40 @@ MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 
 ```
 A photorealistic cinematic MCU of [CREATOR DESCRIPTION VERBATIM].
-[Expression: concerned urgency OR teasing "I know something" smirk — matching foreshadow type].
+[Expression: concerned urgency or teasing "I know something" smirk — matching foreshadow type].
 [Wardrobe]. [Pose: leaning slightly forward, creating intimacy and urgency].
 
-[FOR Steps Tease: background shows floating numbered cards/list items, items 1-3 crisp,
+[For Steps Tease: background shows floating numbered cards/list items, items 1-3 crisp,
 last item heavily blurred with glowing "?" overlay]
-[FOR Fear Urgency: warning-toned environment, subtle red/amber accent lighting,
-visual tension — creator gesturing "stop" or pointing urgently at camera]
-[FOR Quiz/Choice: split background showing option A and option B,
+[For Fear Urgency: warning-toned environment, subtle red/amber accent lighting,
+visual tension — creator gesturing stop or pointing urgently at camera]
+[For Quiz/Choice: split background showing option A and option B,
 both partially visible, creator in center between them]
-[FOR Visual Tease: background shows a blurred/partially revealed version of the
-climax slide content, gaussian blur 40-60%, creating anticipation]
+[For Visual Tease: background shows a blurred/partially revealed version of the
+climax slide content, heavy gaussian blur, creating anticipation]
 
 [Foreground element] + [creator subject] + [foreshadow background — 3 depth layers].
 
-Shot on 85mm f/2, eye-level to slight low angle (authority), shallow depth of field.
+Lens: 85mm f/2, eye-level to slight low angle (authority), shallow depth of field.
 Loop lighting at 3:1 ratio, 3200K warm key. Slightly muted palette compared to hook
-(tension build, NOT peak energy — save that for later slides).
+(tension build, not peak energy — save that for later slides).
 [Film stock], [warm but restrained grade]. [Subtle atmosphere: light haze, minimal particles].
 Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
-Bottom 35% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[FORESHADOW HEADLINE — creates FOMO/urgency to keep swiping]"
 with the word "[KEY WORD]" in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
-"GESER UNTUK LANJUT >" in small white text at bottom center.
+The text uses the largest possible font size that fills the width, extra bold weight,
+positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
+"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 **Foreshadow Headline Bank:**
@@ -269,49 +308,55 @@ MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 ```
 A photorealistic cinematic [shot type] of [subject/scene].
 [Detailed scene description]. [Context-specific elements].
-[IF slide discusses a specific brand/product: include recognizable brand elements
-(logo, UI, interface, color scheme) of the SUBJECT being discussed for viewer context.]
+[If slide discusses a specific brand/product: include recognizable brand elements
+(logo, UI, interface, color scheme) of the subject being discussed for viewer context.]
 [Foreground element] + [main subject] + [background depth layer].
 
-Shot on [lens]mm f/[aperture], [angle]. [Depth of field].
+Lens: [lens]mm f/[aperture], [angle]. [Depth of field].
 [Lighting pattern] at [ratio] ratio, [Kelvin]K.
 [Film stock], [color grade]. [Atmosphere: haze/particles/volumetric].
 [Texture detail: surface materials, environmental textures].
 [Cinematic DP reference].
 
-Bottom 35% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
-"GESER UNTUK LANJUT >" in small white text at bottom center.
+The text uses the largest possible font size that fills the width, extra bold weight,
+positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
+"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
-[PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand IS required for context).
+[PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
 ```
 
 ### Template — B-Roll with Human Figure (Creator Face ALWAYS)
 ```
 A photorealistic cinematic [shot type] of [CREATOR DESCRIPTION VERBATIM] as a prominent figure in [scene].
-[Context-appropriate expression]. [Profession-specific wardrobe OR creator default wardrobe].
+[Context-appropriate expression]. [Profession-specific wardrobe or creator default wardrobe].
 [Scene description with creator clearly identifiable among other figures.
 For crowd scenes: creator in center-foreground, slightly closer to camera, clearly the most recognizable face.
-For single/few person scenes: creator IS the primary subject.]
+For single/few person scenes: creator is the primary subject.]
 [Foreground element] + [subject] + [background depth layer].
 
-Shot on [lens]mm f/[aperture], [angle]. [Depth of field].
+Lens: [lens]mm f/[aperture], [angle]. [Depth of field].
 [Lighting pattern] at [ratio] ratio, [Kelvin]K.
 [Film stock], [color grade]. [Atmosphere].
 [Texture detail]. [Cinematic DP reference].
 
-Bottom 35% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
-"GESER UNTUK LANJUT >" in small white text at bottom center.
+The text uses the largest possible font size that fills the width, extra bold weight,
+positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
+"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
-[PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand IS required for context).
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+[PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 **NOTE:** B-Roll with ANY visible human figures = creator face ALWAYS included (no need to ask). Creator must be the most prominent/identifiable figure. Only pure object/landscape B-Roll has no creator face.
@@ -320,57 +365,61 @@ MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 ```
 A photorealistic cinematic thumbnail composition:
 
-PRIMARY: [CREATOR DESCRIPTION VERBATIM], [EXAGGERATED HOOK EXPRESSION].
+Primary subject: [CREATOR DESCRIPTION VERBATIM], [exaggerated hook expression].
 Expression: [specific exaggerated emotion] — wide eyes, raised brows,
 [mouth position], energy that screams "KAMU HARUS LIHAT INI".
-Position: Face occupies 50-60% of frame, positioned [left/right/center].
+Position: face occupies majority of frame, positioned [left/right/center].
 
-SECONDARY: [TOPIC VISUAL] — [description of topic element visible
+Secondary element: [topic visual] — [description of topic element visible
 in background or beside creator, e.g., AI interface, data visualization].
 [Foreground detail] + [creator subject] + [topic visual background layer].
 
-Shot on 85mm f/1.8, eye-level, slight dutch tilt (5-10°) for dynamic energy.
+Lens: 85mm f/1.8, eye-level, slight dutch tilt for dynamic energy.
 Rembrandt or Split lighting, 4:1-6:1 ratio, mixed warm face / cool topic element.
 Strong rim light separating creator from background.
-Kodak Vision3 500T, HIGH SATURATION, boosted contrast, vibrant teal-orange.
+Kodak Vision3 500T, high saturation, boosted contrast, vibrant teal-orange.
 Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
-Bottom 25% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom third of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[JUDUL THUMBNAIL DALAM BAHASA]" with key words in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
+The text uses the largest possible font size that fills the width, extra bold weight.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 ### Template — Split-Panel
 ```
 A photorealistic split-panel composition divided vertically into two halves.
 
-LEFT HALF ("[LABEL A IN BAHASA]"): [Scene A] featuring [CREATOR].
+Left half ("[LABEL A IN BAHASA]"): [Scene A] featuring [CREATOR].
 [Context-appropriate setting]. Natural warm daylight, Kodak Portra 400.
 [Texture: natural skin, fabric detail]. [DP reference].
 
-RIGHT HALF ("[LABEL B IN BAHASA]"): Same person in same location but [CONTRAST VERSION].
+Right half ("[LABEL B IN BAHASA]"): Same person in same location but [contrasting version].
 [Contrasting visual elements]. Enhanced but still warm color temperature.
 [Foreground + subject + background depth layers in each half].
 
 Both halves: same environment context.
-50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
+Lens: 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
 [Atmosphere: haze, particles, or environmental effect].
 
-Bottom 30% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[HEADLINE IN BAHASA]" with accent words in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-[brand-icon.png] + "@[handle]" watermark in white at 30% opacity, placed ON the vertical
-center divider line between the two panels (not top-right — on the divider for split-panel).
-"GESER UNTUK LANJUT >" in small white text at bottom center.
+The text uses the largest possible font size that fills the width, extra bold weight, dominating the gradient zone.
+Render the creator's brand icon from reference image [brand-icon.png] on the vertical center divider line
+between the two panels as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white on the vertical center divider line,
+very low opacity, ghosted, subtle background mark only.
+"GESER UNTUK LANJUT >" in small white text positioned directly beneath the headline text with minimal gap.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 ### Template — CTA Slide (Last Slide — 4 Visual Types)
@@ -396,29 +445,31 @@ The CTA slide must CONVERT attention into action. A generic "follow me" composit
 ```
 A photorealistic cinematic MS of [CREATOR DESCRIPTION VERBATIM].
 Expression: confident, playful challenge — one eyebrow raised, slight smirk,
-"I want to hear YOUR take" energy. Arms open, gesturing to both sides.
+"I want to hear your take" energy. Arms open, gesturing to both sides.
 [Wardrobe: default creator wardrobe].
 
-Background split into TWO ZONES: left side shows [OPTION A visual],
-right side shows [OPTION B visual]. Both options clearly visible and distinct.
-Creator positioned CENTER between both options, acting as the "referee."
+Background split into two zones: left side shows [option A visual],
+right side shows [option B visual]. Both options clearly visible and distinct.
+Creator positioned center between both options, acting as the referee.
 [Foreground element] + [creator center] + [split background with options].
 
-Shot on 50mm f/2.8, eye-level, centered composition.
+Lens: 50mm f/2.8, eye-level, centered composition.
 Butterfly lighting at 2:1 ratio, 3500K warm key, soft fill.
 Kodak Portra 400, warm golden amber grade. Soft haze, warm bokeh.
 Natural skin texture with visible pores, fabric weave.
 [Cinematic DP reference].
 
-Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "MENURUT LO [A] ATAU [B]?" with "[A]" and "[B]" in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
+The text uses the largest possible font size that fills the width, extra bold weight.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 #### CTA Type 2: Question ("Lo yang mana?")
@@ -429,29 +480,31 @@ MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 ```
 A photorealistic cinematic CU of [CREATOR DESCRIPTION VERBATIM].
 Expression: warm curiosity, direct eye contact, slight head tilt —
-"I'm genuinely asking YOU" energy. One hand near chin (thinking pose)
+"I'm genuinely asking you" energy. One hand near chin (thinking pose)
 or pointing directly at camera (breaking fourth wall).
 [Wardrobe: default creator wardrobe].
 
 Background: clean, warm, minimal distraction — soft bokeh environment
-that keeps ALL attention on creator's face and the question.
+that keeps all attention on creator's face and the question.
 [Foreground element: subtle] + [creator face dominant] + [warm bokeh background].
 
-Shot on 85mm f/1.8, eye-level, tight framing — face fills 60% of frame.
+Lens: 85mm f/1.8, eye-level, tight framing — face fills majority of frame.
 Butterfly lighting at 2:1 ratio, 3500K warm intimate key.
 Kodak Portra 400, warm golden grade. Gentle atmosphere, minimal particles.
 Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
-Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[SIMPLE CHOICE QUESTION IN BAHASA]?" with key word in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
+The text uses the largest possible font size that fills the width, extra bold weight.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 #### CTA Type 3: Identity Tag ("Tag temen yang BUTUH ini")
@@ -461,30 +514,32 @@ MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 
 ```
 A photorealistic cinematic MWS of [CREATOR DESCRIPTION VERBATIM]
-with a SECOND PERSON (friend/colleague energy — similar age, casual interaction).
+with a second person (friend/colleague energy — similar age, casual interaction).
 Expression: both laughing/smiling warmly, creator nudging/pointing at the other person
-as if saying "THIS is for you." Natural, candid friendship moment.
+as if saying "this is for you." Natural, candid friendship moment.
 [Wardrobe: casual, approachable for both figures].
 
 Setting: warm lifestyle environment — coffee shop, co-working space, or casual hangout.
 Natural warm light streaming in. Feeling of genuine connection between two people.
 [Foreground element: table/coffee] + [two subjects] + [warm interior bokeh background].
 
-Shot on 50mm f/2, eye-level, slightly wider to fit both subjects.
+Lens: 50mm f/2, eye-level, slightly wider to fit both subjects.
 Loop lighting at 2:1 ratio, 3500K natural warm key.
 Kodak Portra 400, warm golden grade. Soft atmospheric haze.
 Natural skin texture with visible pores on both subjects, fabric detail.
 [Cinematic DP reference].
 
-Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "TAG TEMEN YANG BUTUH INI" with "BUTUH" in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
+The text uses the largest possible font size that fills the width, extra bold weight.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 #### CTA Type 4: Engagement Reward ("Comment KEYWORD buat dapetin...")
@@ -495,31 +550,33 @@ MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
 ```
 A photorealistic cinematic MCU of [CREATOR DESCRIPTION VERBATIM].
 Expression: generous, excited to give — bright smile, eyes lit up,
-one hand extended toward camera holding/presenting [REWARD VISUAL:
+one hand extended toward camera holding/presenting [reward visual:
 a glowing guide/book/template/phone showing the resource].
-The "gift" is the visual focal point alongside the creator's face.
+The gift object is the visual focal point alongside the creator's face.
 [Wardrobe: default creator wardrobe].
 
 Setting: warm, professional but inviting environment.
 [Reward object] in foreground, slightly glowing with accent color light.
 [Creator subject] + [reward in hand] + [warm professional bokeh background].
 
-Shot on 85mm f/2, eye-level, medium-close framing.
+Lens: 85mm f/2, eye-level, medium-close framing.
 Butterfly lighting at 2:1 ratio, 3500K warm key.
-Accent color rim light on the reward object (making it "glow" and stand out).
+Accent color rim light on the reward object (making it glow and stand out).
 Kodak Portra 400, warm golden grade. Subtle golden particles floating.
 Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
-Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
+Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "COMMENT '[KEYWORD]' BUAT DAPETIN [REWARD]" with "[KEYWORD]" in [accent color hex].
-Text must be MASSIVE — billboard-scale, extra bold/black weight.
-[brand-icon.png] rendered in top-right corner.
-"@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
+The text uses the largest possible font size that fills the width, extra bold weight.
+Render the creator's brand icon from reference image [brand-icon.png] in the top-right corner
+as a small circular badge — use the exact icon from the file, do not generate a new one.
+"@[handle]" as a faint, barely-visible watermark in white, centered in the middle of the image,
+very low opacity, ghosted, subtle background mark only.
 [Social handles listed: @ig | @tiktok | @linkedin]
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "GESER UNTUK LANJUT" on CTA.
-MANDATORY: maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact facial identity from reference image: [face-ref.png].
 ```
 
 **CTA Headline Bank:**
@@ -554,8 +611,8 @@ Before generating individual slide prompts, PLOT the emotional arc for the entir
 | **HIGH** | 1 (Hook) | 6/6 | Extreme CU, pattern interrupt scene, creator's most exaggerated expression | CU/MCU, 85mm f/1.8, slight dutch tilt | High contrast 4:1, dramatic key | Peak saturation, strong accent color on power word |
 | **DIP** | 2 (Foreshadow) | 3/6 | Pull back to MCU/MS, tension build composition, partially hidden/blurred elements | MCU/MS, 85mm f/2, eye-level | 3:1, slightly muted key | Restrained palette — warm but held back, building anticipation |
 | **BUILD** | 3-5 (Body) | 2→4/6 | Progressive escalation: each slide slightly more saturated, tighter framing as value increases | Varies, progressively tighter | Progressively brighter, 3:1→2:1 | Gradual saturation increase slide-over-slide |
-| **MINI-HOOK** | 5-7 | 5/6 | SUDDEN CHANGE — split panel, extreme angle, color temperature shift, or unexpected composition. "Tapi tunggu..." energy | Extreme angle OR split panel OR dramatic zoom | Sudden shift — if previous slides were warm, add cool accent | Color temperature disruption — introduce unexpected contrast |
-| **CLIMAX** | 8+ (Reveal) | 6/6 | Widest establishing shot OR most intimate close-up (contrast with body), peak saturation, biggest text, most shareable insight | Widest OR tightest (contrast with body slides) | Peak drama, 4:1, rim light dominant | Peak saturation, accent color dominant, full visual impact |
+| **MINI-HOOK** | 5-7 | 5/6 | Sudden change — split panel, extreme angle, color temperature shift, or unexpected composition. "Tapi tunggu..." energy | Extreme angle or split panel or dramatic zoom | Sudden shift — if previous slides were warm, add cool accent | Color temperature disruption — introduce unexpected contrast |
+| **CLIMAX** | 8+ (Reveal) | 6/6 | Widest establishing shot or most intimate close-up (contrast with body), peak saturation, biggest text, most shareable insight | Widest or tightest (contrast with body slides) | Peak drama, 4:1, rim light dominant | Peak saturation, accent color dominant, full visual impact |
 | **WARM** | Last (CTA) | 1/6 | Softest, warmest, most intimate — direct eye contact, inviting expression, connection energy | MCU, 85mm f/2, direct eye-level | Butterfly 2:1, warmest Kelvin (3500K), soft fill | Warmest tone, golden, gentle — "come closer" feeling |
 
 ### Emotional Intensity Scale
@@ -615,7 +672,7 @@ Before finalizing each image prompt, verify ALL 8 are present:
 - [ ] Brand icon filename + position specified
 - [ ] @handle watermark + opacity specified
 - [ ] SWIPE FOR MORE present (or omitted for CTA)
-- [ ] Gradient zone percentage matches slide type
+- [ ] Gradient zone matches slide type (bottom half, bottom third for thumbnail)
 
 ### Thumbnail Checklist
 - [ ] Creator face from reference image, 50-60% of frame

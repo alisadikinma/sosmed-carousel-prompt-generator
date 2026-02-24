@@ -366,7 +366,7 @@ Caption:  14-16pt, Regular, Mixed case
 ### Image Integration (Text Rendered IN-IMAGE)
 - Creator face: 40-60% of frame on Hook/CTA slides
 - B-roll: full frame, no creator face (unless user approves for scenes with human figures)
-- Gradient overlay: bottom 30-40% with text rendered directly in AI-generated image
+- Gradient overlay: bottom half with text rendered directly in AI-generated image
 - All text (headlines, accents, branding, SWIPE CTA) is part of the Nano Banana Pro prompt — NOT post-production
 - Consistent image style across all slides (same filter, same lighting, same text styling)
 - Brand icon (top-right) + @handle watermark (CENTER of image, 30% opacity) rendered in every slide

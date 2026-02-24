@@ -59,7 +59,7 @@ The cover slide must answer TWO questions instantly: "Is this for me?" and "What
 | Element | Spec | Why |
 |---------|------|-----|
 | Word count | **Max 8-10 words** | More = visual clutter, less = no context |
-| Font size | **70-100pt equivalent** (MASSIVE billboard-scale) | Must be readable in thumbnail |
+| Font size | **70-100pt equivalent** (largest possible billboard-scale) | Must be readable in thumbnail |
 | Safe zone | **Top 60%** for face + visual, **Bottom 40%** for text | Avoids IG UI overlap |
 | Power word | **120% size**, accent color | Draws eye to emotional trigger |
 | Arrow/swipe indicator | Adds **+15-30% swipe rate** | Visual affordance says "there's more" |
