@@ -25,7 +25,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | File | When Used |
 |------|-----------|
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
-| `hook-science.md` | Hook slides — clickbait psychology, 5 hook categories, power words, scoring, engagement data |
+| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, cover slide specs, interactive hooks |
 | `carousel-rebranding.md` | Rebranding third-party carousels |
 | `platform-specs.md` | Platform routing, aspect ratios, Nano Banana Pro specs |
 | `cinematography-lut.md` | Lighting/lens/film stock/atmosphere/DP signature lookup |
@@ -51,9 +51,11 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 - **Fact Verification**: All factual claims auto-verified via web search before prompt generation
 - **Interactive Design**: Agent pauses + asks user at ambiguous slides (costumes, settings). Human figures = automatic creator face
 - **Hook Headline Formula**: Mandatory structure `[POWER WORD] + [curiosity gap/number] + [unrevealed payoff]`. Must score 3/5 on Hook Scoring Gate BEFORE generating prompt. Power word at 120% size in accent color
-- **Hook Science**: 5 psychology-based hook categories (Visual Shock, Negative Bias, Curiosity Gap, Relatability, Speed & Value). Hook category determines expression + scene + lighting
+- **Hook Science**: 5 psychology-based hook categories with 100-hook bank (20 per category, Bahasa + English). Hook category determines expression + scene + lighting. Includes Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), and cover slide design specs
 - **Foreshadow (Slide 2)**: MANDATORY bridge between hook and body. 4 types: Steps Tease, Fear Urgency, Quiz/Choice, Visual Tease. Creates FOMO to keep swiping. Instagram re-serves from slide 2 = second chance
-- **CTA Visual Types**: 4 engagement-driven types: Polarize (debate), Question (low-friction), Identity Tag (share/tag), Engagement Reward (comment-to-DM). Each has specific visual composition and lighting
+- **CTA Visual Types**: 4 engagement-driven types ranked by impact: Engagement Reward (12-18% conversion), Question (highest comment volume), Polarize (highest shares + depth), Identity Tag (highest DM shares). Each has specific visual composition and lighting
+- **Algorithm Engagement Hierarchy**: DM Shares (3-5x weight) > Saves (3x) > Comments (depth matters) > Dwell time > Completion rate > Likes. Optimize CTA for top signals
+- **Comment-to-DM**: "Comment [WORD] and I'll DM you [resource]" = highest-converting CTA format in 2026 (12-18% with automation)
 - **Emotional Arc**: Roller coaster pattern with intensity tags — HIGH (hook) → DIP (foreshadow) → BUILD (body) → MINI-HOOK (slide 5-7 surprise) → CLIMAX (reveal) → WARM (CTA). Each slide tagged with beat + intensity
 - **5-Hashtag Era**: IG max 5 (Dec 2025), TikTok max 5 (Aug 2025), LinkedIn 3-5
 - **Default specs**: 4K, Kodak Portra 400, warm golden amber grade, 80-200 word prompts
@@ -103,7 +105,6 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 |---------|-------|-------------|
 | Brand icon | Top-right corner | YES |
 | @handle watermark | **CENTER of image** (30% opacity). On **vertical divider** for split-panel | YES |
-| Category tag | Above headline (creator's own, NOT from source) | YES |
 | Headline | Bottom gradient zone — **MASSIVE billboard-scale font** | YES |
 | Subject brand | In scene (logo/UI of discussed company) | When discussing specific brand |
 | SWIPE CTA | Bottom center | All except CTA |
@@ -164,7 +165,9 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | Hook visual doesn't match | Hook category determines expression + scene + lighting — check Hook Category → Visual Direction mapping in prompt-formulas.md |
 | Missing foreshadow | Slide 2 MUST be foreshadow type (Steps Tease / Fear Urgency / Quiz / Visual Tease) |
 | Foreshadow doesn't create FOMO | Headline must create urgency to swipe — "kalau lo skip..." / "tunggu sampai..." |
-| Flat CTA | Must use specific CTA visual type (Polarize/Question/Identity Tag/Reward) — not generic creator shot |
+| Flat CTA | Must use specific CTA visual type (Polarize/Question/Identity Tag/Reward) — not generic creator shot. Check CTA Selection Guide in hook-science.md |
+| CTA not driving engagement | Check algorithm hierarchy: DM shares (3-5x) > Saves (3x) > Comments. Engagement Reward (comment-to-DM) = highest conversion (12-18%) |
+| Hook sounds formal/stiff | Must follow Gen-Z transcreation rules — gue/lo pronouns, particles (sih/tuh/banget), code-mixing. Check hook-science.md Gen-Z section |
 | No emotional arc | Each slide must have emotional beat tag (HIGH/DIP/BUILD/MINI-HOOK/CLIMAX/WARM) + intensity |
 | Missing mini-hook | Slide 5-7 must have sudden visual change (angle shift, split panel, color temp disruption) |
 | Missing creator face in crowd | B-Roll with humans = creator ALWAYS as most prominent figure |
@@ -173,5 +176,5 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 
 ---
 
-**Version:** 2.2.0
+**Version:** 2.3.0
 **Last Updated:** February 2026

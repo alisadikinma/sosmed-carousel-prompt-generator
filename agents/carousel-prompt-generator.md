@@ -40,7 +40,7 @@ Before generating prompts, read the relevant reference files from your project's
 
 ## DEFAULT CONTENT LANGUAGE
 
-- **In-image text** (headlines, accent words, category tags, SWIPE CTA) = **Bahasa Indonesia**
+- **In-image text** (headlines, accent words, SWIPE CTA) = **Bahasa Indonesia**
 - **Captions** (hook, body, CTA, hashtags) = **Bahasa Indonesia**
 - **Prompt instructions** (scene description, cinematography) = English (AI model instruction)
 - Override: user says "in English" or specifies other language → switch
@@ -69,7 +69,7 @@ If the user hasn't provided these, ASK before generating prompts.
 2. **ALWAYS** include user's brand icon (top-right) + @handle watermark (**CENTER of image, 30% opacity**) rendered IN-IMAGE on every slide. For split-panel/comparison: watermark on the **vertical divider line**
 3. Creator face on: Hook, CTA, Loop-end, Thumbnail, **AND any B-Roll with human figures** (always — no need to ask). Creator must be the most prominent/identifiable figure
 4. B-roll / content slides **without any human figures** = **NO creator face**
-5. Text = **IN-IMAGE rendering** — headlines, accent words, category tags, branding, SWIPE CTA all described in prompt
+5. Text = **IN-IMAGE rendering** — headlines, accent words, branding, SWIPE CTA all described in prompt
 6. Accent color = **user's brand color** (default: Golden Yellow #F5A623)
 7. Default film stock = **Kodak Portra 400** (warm, not cold)
 8. Aspect ratio = **platform-specific**: IG Feed/LinkedIn 4:5, TikTok/Reels 9:16 (see Platform Routing)

@@ -72,18 +72,31 @@ The agent detects ambiguous creative decisions and asks before generating:
 
 ### 7. Psychology-Based Hook Science
 
-5 hook categories backed by research data (Backlinko 912M posts, Conductor, Outbrain 65K headlines, Kahneman loss aversion):
-- **Visual Shock** — pattern interrupt in <0.5s (+400% dopamine)
-- **Negative Bias** — loss aversion trigger (+63% CTR)
-- **Curiosity Gap** — open loop psychology (+41% retention)
-- **Relatability** — identity alignment (+91.7% engagement)
-- **Speed & Value** — ROI on attention (+36% CTR with numbers)
+5 hook categories with 100-hook bank (20 per category, Bahasa + English), backed by research data (Backlinko 912M posts, TokPortal Q2-2025, Virvid 2026, Sephora May-2025):
+- **Visual Shock** — pattern interrupt in <0.5s (+131% attention retention, +400% dopamine)
+- **Negative Bias** — loss aversion trigger (+63% CTR, 2:1 outperform generic)
+- **Curiosity Gap** — open loop psychology (+41% retention, 70%+ completion)
+- **Relatability** — identity alignment (+91.7% engagement, +31% authentic)
+- **Speed & Value** — ROI on attention (2.5x saves/shares, +217% lead gen)
 
-### 8. Subject Brand Context
+Plus: Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), cover slide design specs, and algorithm engagement hierarchy.
+
+### 8. CTA Science (Algorithm-Optimized)
+
+4 CTA types ranked by engagement impact, designed around the 2026 algorithm engagement hierarchy (DM shares 3-5x > Saves 3x > Comments > Likes):
+
+| CTA Type | Strength | Example |
+|---|---|---|
+| **Engagement Reward** | Highest conversion (12-18%) | "Comment 'MAU' dan gue kirim guide-nya ke DM lo" |
+| **Question Trigger** | Highest comment volume | "Lo termasuk yang mana? Comment angkanya!" |
+| **Polarize Debate** | Highest shares + depth | "Menurut lo [A] atau [B]?" |
+| **Identity Tag** | Highest DM shares | "Tag temen yang BUTUH ini" |
+
+### 9. Subject Brand Context
 
 When discussing a specific company (Google, WhatsApp, Tesla), their brand elements (logo, UI, color scheme) are included in the image. Without subject brand context, factual claims are meaningless to viewers.
 
-### 9. Carousel Engagement Funnel (NEW in v2.2.0)
+### 10. Carousel Engagement Funnel (NEW in v2.2.0)
 
 Full-funnel engagement system from first impression to conversion:
 
@@ -98,7 +111,7 @@ CTA (Last Slide)    → 4 visual types matching engagement goal
                       Polarize | Question | Identity Tag | Engagement Reward
 ```
 
-### 10. Emotional Arc System (NEW in v2.2.0)
+### 11. Emotional Arc System (NEW in v2.2.0)
 
 Every carousel follows a "roller coaster" emotional pattern with visual treatment mapped per beat:
 
@@ -177,7 +190,7 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 | File | When Used |
 |---|---|
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
-| `hook-science.md` | Hook slides — clickbait psychology, 5 hook categories, power words, scoring, engagement data |
+| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, interactive hooks |
 | `carousel-rebranding.md` | Converting third-party carousels to your brand |
 | `platform-specs.md` | Nano Banana Pro specs, platform aspect ratios |
 | `cinematography-lut.md` | Lighting, lens, film stock, atmosphere, DP signatures |

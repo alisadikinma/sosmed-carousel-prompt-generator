@@ -38,7 +38,6 @@ Prompt instruction: `"MANDATORY: maintain exact facial identity from reference i
   - 30% opacity ensures visibility without distracting from content
   - This applies to ALL slide types (Hook, Content, CTA, Thumbnail)
 - "GESER UNTUK LANJUT >" rendered on all slides except CTA (20-30% engagement boost)
-- Category tag rendered above headline in accent color small caps
 - Corner labels where applicable: series name, episode number
 
 ### Subject Brand Context (CRITICAL for B-Roll / Factual Slides)
@@ -255,7 +254,6 @@ All brand elements are rendered directly in the AI-generated image via the promp
 |---------|----------|-------|-------------|
 | Brand icon | Top-right corner | As-is from file | ALL slides |
 | @handle watermark | **Center of image** | White text, 30% opacity | ALL slides |
-| Category tag | Centered above headline | Accent color, small caps | ALL slides |
 | Headline | Bottom gradient zone | White **EXTRA BOLD** condensed ALL CAPS, **large font** | ALL slides |
 | Accent words | Within headline | Accent color (default #F5A623), **EXTRA BOLD** | ALL slides |
 | SWIPE CTA | Bottom center | "GESER UNTUK LANJUT >" white small | All EXCEPT CTA |
@@ -274,6 +272,5 @@ All brand elements are rendered directly in the AI-generated image via the promp
 
 ### Language Default
 - All in-image text = **Bahasa Indonesia** by default
-- Category tag examples: "TEKNOLOGI", "BISNIS", "KESEHATAN", "KEUANGAN", "LIFESTYLE"
 - SWIPE CTA: "GESER UNTUK LANJUT >"
 - English only when user explicitly requests

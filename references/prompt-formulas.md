@@ -33,7 +33,6 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 ### Text Elements to Include
 | Element | Where | Rule |
 |---------|-------|------|
-| Category tag | Centered above headline | Accent color, small caps (e.g., "TEKNOLOGI") |
 | Headline | Bottom gradient zone | White #FFFFFF bold condensed ALL CAPS |
 | Accent words | Within headline | Accent color (default: Golden Yellow #F5A623) |
 | Brand icon | Top-right corner | Brand icon filename, every slide |
@@ -42,7 +41,7 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 | Slide counter | Optional | "3/10" format, small, top-left |
 
 ### Default Language
-- In-image text (headlines, accent words, category tags) = **Bahasa Indonesia** by default
+- In-image text (headlines, accent words) = **Bahasa Indonesia** by default
 - English only if user explicitly requests
 - Prompt instructions (scene description) = ALWAYS English (AI model instruction)
 
@@ -51,7 +50,6 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 Bottom [N]% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
 Text must be MASSIVE — billboard-scale, dominating the gradient zone, extra bold/black weight.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 ["GESER UNTUK LANJUT >" in small white text at bottom center. | omit for CTA slide]
@@ -176,7 +174,6 @@ Bottom 40% dark gradient zone with extremely large, bold, impactful condensed AL
 reading "[HOOK HEADLINE — scored 3/5+]" with the word "[POWER WORD]" rendered at 120% size
 in [accent color hex], visually dominant within the headline. Remaining text in white #FFFFFF.
 Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 "GESER UNTUK LANJUT >" in small white text at bottom center.
@@ -206,7 +203,6 @@ Shot on [lens]mm f/[aperture], [angle], [depth of field].
 Bottom [N]% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
 Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 "GESER UNTUK LANJUT >" in small white text at bottom center.
@@ -255,7 +251,6 @@ Bottom 35% dark gradient zone with extremely large, bold, impactful condensed AL
 reading "[FORESHADOW HEADLINE — creates FOMO/urgency to keep swiping]"
 with the word "[KEY WORD]" in [accent color hex].
 Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 "GESER UNTUK LANJUT >" in small white text at bottom center.
@@ -287,7 +282,6 @@ Shot on [lens]mm f/[aperture], [angle]. [Depth of field].
 Bottom 35% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
 Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 "GESER UNTUK LANJUT >" in small white text at bottom center.
@@ -312,7 +306,6 @@ Shot on [lens]mm f/[aperture], [angle]. [Depth of field].
 Bottom 35% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[HEADLINE IN BAHASA]" with the words "[KATA AKSEN]" in [accent color hex].
 Text must be MASSIVE — billboard-scale, extra bold/black weight, dominating the gradient zone.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 "GESER UNTUK LANJUT >" in small white text at bottom center.
@@ -420,7 +413,6 @@ Natural skin texture with visible pores, fabric weave.
 Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "MENURUT LO [A] ATAU [B]?" with "[A]" and "[B]" in [accent color hex].
 Text must be MASSIVE — billboard-scale, extra bold/black weight.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 [Social handles listed: @ig | @tiktok | @linkedin]
@@ -454,7 +446,6 @@ Natural skin texture with visible pores, fabric weave detail.
 Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "[SIMPLE CHOICE QUESTION IN BAHASA]?" with key word in [accent color hex].
 Text must be MASSIVE — billboard-scale, extra bold/black weight.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 [Social handles listed: @ig | @tiktok | @linkedin]
@@ -488,7 +479,6 @@ Natural skin texture with visible pores on both subjects, fabric detail.
 Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "TAG TEMEN YANG BUTUH INI" with "BUTUH" in [accent color hex].
 Text must be MASSIVE — billboard-scale, extra bold/black weight.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 [Social handles listed: @ig | @tiktok | @linkedin]
@@ -524,7 +514,6 @@ Natural skin texture with visible pores, fabric weave detail.
 Bottom 40% dark gradient zone with extremely large, bold, impactful condensed ALL CAPS text
 reading "COMMENT '[KEYWORD]' BUAT DAPETIN [REWARD]" with "[KEYWORD]" in [accent color hex].
 Text must be MASSIVE — billboard-scale, extra bold/black weight.
-Small "[KATEGORI]" label in [accent color] small caps centered above headline.
 [brand-icon.png] rendered in top-right corner.
 "@[handle]" watermark in white at 30% opacity, CENTERED in the middle of the image.
 [Social handles listed: @ig | @tiktok | @linkedin]
@@ -623,7 +612,6 @@ Before finalizing each image prompt, verify ALL 8 are present:
 ### Text Rendering Checklist
 - [ ] Headline text specified in Bahasa Indonesia (or user-requested language)
 - [ ] Accent words identified and color specified
-- [ ] Category tag present
 - [ ] Brand icon filename + position specified
 - [ ] @handle watermark + opacity specified
 - [ ] SWIPE FOR MORE present (or omitted for CTA)

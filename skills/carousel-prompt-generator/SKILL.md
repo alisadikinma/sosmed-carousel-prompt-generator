@@ -82,7 +82,7 @@ Use the creator description VERBATIM in every creator-facing prompt.
 
 ## Default Content Language
 
-- **In-image text** (headlines, accent words, category tags, SWIPE CTA) = **Bahasa Indonesia**
+- **In-image text** (headlines, accent words, SWIPE CTA) = **Bahasa Indonesia**
 - **Captions** (hook, body, CTA, hashtags) = **Bahasa Indonesia**
 - **Prompt instructions** (scene description, cinematography) = English (AI model instruction)
 - Override: user says "in English" or specifies other language → switch

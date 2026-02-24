@@ -12,7 +12,7 @@ Run 6 automated consistency checks across all operational files. Reports PASS/FA
 **Operational files** (checked):
 - `skills/carousel-prompt-generator/SKILL.md`
 - `agents/carousel-prompt-generator.md`
-- `references/*.md` (all 8 files)
+- `references/*.md` (all 9 files)
 - `CLAUDE.md`
 - `README.md`
 
@@ -36,16 +36,17 @@ Run 6 automated consistency checks across all operational files. Reports PASS/FA
 
 ### Check 3: Reference Table Completeness
 **Pattern:** Reference/file tables in SKILL.md, agent.md, README.md, CLAUDE.md
-**Expected:** All 4 tables list exactly 8 reference files:
+**Expected:** All 4 tables list exactly 9 reference files:
 1. `creator-bible.md`
-2. `carousel-rebranding.md`
-3. `platform-specs.md`
-4. `cinematography-lut.md`
-5. `prompt-formulas.md`
-6. `localization-id.md`
-7. `carousel-best-practices.md`
-8. `caption-copywriting.md`
-**How to verify:** For each of the 4 files, grep for each reference filename. All 8 must appear.
+2. `hook-science.md`
+3. `carousel-rebranding.md`
+4. `platform-specs.md`
+5. `cinematography-lut.md`
+6. `prompt-formulas.md`
+7. `localization-id.md`
+8. `carousel-best-practices.md`
+9. `caption-copywriting.md`
+**How to verify:** For each of the 4 files, grep for each reference filename. All 9 must appear.
 
 ### Check 4: Hashtag Counts
 **Pattern:** Any mention of `hashtag` with a number
