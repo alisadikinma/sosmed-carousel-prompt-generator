@@ -1,5 +1,7 @@
 # Creator Bible — Template
 
+> Configurable values (colors, language, handle, film stock, etc.) are in `global-config.md`. This file contains brand RULES and creative GUIDANCE.
+
 ## 1. Character Bible (USER MUST CUSTOMIZE)
 
 Replace this template with the creator's actual physical description. This description is used VERBATIM in every creator-facing prompt for AI consistency.
@@ -67,7 +69,7 @@ When a slide discusses a SPECIFIC company, product, or service (Google, WhatsApp
 | Role | Color | Hex |
 |------|-------|-----|
 | Primary text | White | #FFFFFF |
-| Accent keyword | [User's accent] | [User's hex, default #F5A623] |
+| Accent keyword | [User's accent] | Per global-config.md `accent_color` |
 | Background mood | Warm amber/golden | — |
 | Secondary accent | Soft gold | #D4AF37 |
 
@@ -79,13 +81,13 @@ When a slide discusses a SPECIFIC company, product, or service (Google, WhatsApp
 - Mixed case for subtitles/taglines only
 - Text hierarchy: **MASSIVE bold title** > medium subtitle > small tagline
 - Prompt MUST specify: "extremely large, bold, impactful condensed uppercase text" — not just "bold text"
-- **Default language: Bilingual** — English headline (main) + Bahasa Indonesia subtitle (accent color). Single language only if user explicitly requests
+- **Default language:** Per `global-config.md` Language section (bilingual by default). Single language only if user explicitly requests
 - **Prompt body rendering rule:** In the actual prompt body, describe text size using lowercase only: "the largest possible font size that fills the width, extra bold weight" — never use ALL CAPS instruction words like MASSIVE, ULTRA, LARGE in prompt body (AI renders them as literal text). See `references/prompt-formulas.md` Prompt Body Rendering Rules.
 
 ### Film Stock & Color Temperature
 | Context | Film Stock | Kelvin | Grade |
 |---------|-----------|--------|-------|
-| Default / warm | Kodak Portra 400 | 3200-3500K | Warm golden amber |
+| Default / warm | Per global-config.md `film_stock` | Per global-config.md `color_temp` | Per global-config.md `color_grade` |
 | Dramatic | Kodak Vision3 500T | 3200K | Rich warm shadows |
 | Vivid/saturated | Kodak Ektar 100 | 5600K | Punchy warm colors |
 | Night/moody | CineStill 800T | 3200K | Warm halation |
@@ -257,11 +259,11 @@ All brand elements are rendered directly in the AI-generated image via the promp
 | Brand icon | **Center of image, above watermark** | As-is from file, thirty percent opacity | ALL slides |
 | @handle watermark | **Center of image** | White text, thirty percent opacity | ALL slides |
 | Headline | Bottom gradient zone | White **EXTRA BOLD** condensed ALL CAPS, **large font** | ALL slides |
-| Bahasa subtitle | Below main headline | Bahasa Indonesia translation of English headline. Accent color (default #F5A623), slightly smaller — NEVER white | ALL slides |
-| Accent keywords (2-4) | Within headline | 2-4 keywords in accent color (default #F5A623), **EXTRA BOLD** | ALL slides |
+| Subtitle | Below main headline | [config: subtitle_language] translation. [config: subtitle_color], slightly smaller — NEVER white | ALL slides |
+| Accent keywords (2-4) | Within headline | 2-4 keywords in [config: accent_color], **EXTRA BOLD** | ALL slides |
 | Page number | **Top-left corner** | "[N]/[TOTAL]" white small | ALL slides |
-| SWIPE CTA | Bottom center | "SWIPE (GESER) >" white small | All EXCEPT CTA |
-| Social handles | CTA slide only | White, listed vertically | CTA only |
+| SWIPE CTA | Bottom center | [config: swipe_cta_text] white small | All EXCEPT CTA |
+| Social icons + handle | CTA slide only | Per global-config.md CTA Social Media Block | CTA only |
 
 ### Opacity & Position Rules
 | Slide Type | Brand Icon Position | @handle Position | Both Opacity |
@@ -278,7 +280,5 @@ All brand elements are rendered directly in the AI-generated image via the promp
 **Split-Panel Rule:** For **comparison** split-panel slides (A vs B topics), the brand icon + @handle watermark is placed ON the vertical center divider that separates the two panels. For **non-comparison** split-panel slides (same topic, different angles), use the standard center-of-image placement (brand icon above watermark). This ensures comparison dividers are visually anchored while standard layouts remain consistent.
 
 ### Language Default
-- **Main headline** = **English** by default (white ALL CAPS)
-- **Subtitle** = **Bahasa Indonesia** translation (accent color, slightly smaller)
-- SWIPE CTA: "SWIPE (GESER) >"
-- Single language override when user explicitly requests
+
+See `global-config.md` Language section for current defaults. Single language override when user explicitly requests.

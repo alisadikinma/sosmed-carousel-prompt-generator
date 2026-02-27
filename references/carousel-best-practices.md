@@ -1,5 +1,7 @@
 # Carousel Best Practices — Instagram, TikTok, LinkedIn
 
+> Configurable values (colors, language, handle, platform specs) are in `global-config.md`. This file contains engagement research and design best practices.
+
 ## 1. Platform Specs Summary
 
 | Spec | Instagram | TikTok | LinkedIn |

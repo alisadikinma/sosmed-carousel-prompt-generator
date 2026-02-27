@@ -9,8 +9,8 @@
   "plugins": [
     {
       "name": "sosmed-carousel-prompt-generator",
-      "description": "3 skills + 1 agent + 9 reference docs for cinematic carousel content production (Instagram, TikTok, LinkedIn, Threads)",
-      "version": "2.7.0",
+      "description": "3 skills + 1 agent + 10 reference docs for cinematic carousel content production (Instagram, TikTok, LinkedIn, Threads)",
+      "version": "2.9.0",
       "source": "./"
     }
   ]

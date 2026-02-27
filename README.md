@@ -57,7 +57,7 @@ Single Brief → Carousel Prompts (text in-image)
              Threads Caption (≤500 chars, no hashtags)
 ```
 
-Default language: **English** (captions) with **bilingual in-image text** (English headline + Bahasa Indonesia subtitle).
+Default language: per `references/global-config.md` (bilingual in-image text + English captions by default).
 
 ### 5. Fact Verification
 
@@ -209,10 +209,11 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 |---|---|
 | `carousel-prompt-generator` | Subagent for batch carousel prompt work — reads references, verifies facts, asks about ambiguities, generates prompts + captions, writes output |
 
-### Reference Docs (9 files, read on-demand)
+### Reference Docs (10 files, read on-demand)
 
 | File | When Used |
 |---|---|
+| `global-config.md` | ALWAYS (read FIRST) — single source of truth for all configurable values (language, colors, handle, film stock, platform specs) |
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
 | `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, interactive hooks |
 | `carousel-rebranding.md` | Converting third-party carousels to your brand |
@@ -234,7 +235,7 @@ User Request
 [0] Ask for source URL (optional) ── extract caption + metadata
     |
     v
-[1] Read creator-bible.md (ALWAYS)
+[1] Read global-config.md + creator-bible.md (ALWAYS)
     |
     v
 [2] Read task-specific references
@@ -311,14 +312,14 @@ These are non-negotiable across all generated prompts:
 | No competitor branding | Zero competitor badges, logos, handles, or source category tags. Subject brand (Google, WhatsApp) KEPT for context |
 | Brand icon + handle on every slide | Both at thirty percent opacity. Icon CENTER (above watermark). @handle CENTER (below icon). Vertical divider for comparison split-panel |
 | Multi-keyword highlighting | 2-4 emotionally impactful keywords in accent color per headline — never just 1 word |
-| Bahasa subtitle color | Bahasa subtitle line in accent color (never white like main headline) |
+| Subtitle color | Subtitle in accent color per global-config.md (never white like main headline) |
 | Creator face placement | Hook, CTA, Thumbnail always. B-Roll with humans: ALWAYS (creator as most prominent figure) |
 | Text rendered in-image | Headlines (MASSIVE billboard-scale, extra bold), accents, branding, SWIPE CTA — all in prompt |
-| Default film stock | Kodak Portra 400 (warm golden, not cold) |
+| Default film stock | Per global-config.md `film_stock` (warm, not cold) |
 | Aspect ratio | Platform-specific: IG Feed 4:5, TikTok 9:16, LinkedIn 4:5 |
 | Image resolution | 4K via Nano Banana Pro |
 | WOW minimum | 6/8, all 8 elements mandatory |
-| Default language | Bilingual: English headline + Bahasa subtitle (single language on request) |
+| Default language | Per global-config.md Language section (bilingual by default, single language on request) |
 | Auto captions | All 4 platforms by default |
 | Fact verification | All claims web-verified before output |
 | SWIPE FOR MORE | "SWIPE (GESER) >" on all slides except CTA |

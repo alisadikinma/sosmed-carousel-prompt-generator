@@ -1,5 +1,7 @@
 # Carousel Rebranding Pipeline
 
+> Configurable values (accent color, handle, language, film stock) are in `global-config.md`. This file contains rebranding workflow rules and analysis steps.
+
 ## Overview
 Transform third-party carousel designs into the user's branded content while preserving the educational value and visual impact.
 
@@ -30,7 +32,7 @@ Convert source style → user's brand style using this mapping:
 | **Subject brand** (Google, WhatsApp, etc.) | → **KEEP** — subject brand IS the context, must remain visible |
 | No creator face | → ADD face on Hook + CTA |
 | Source branding | → User's brand icon (center, thirty percent opacity, above watermark) + @handle (center, thirty percent opacity) |
-| Cold color grading | → Kodak Portra 400 warm look |
+| Cold color grading | → [config: film_stock] warm look |
 | Blue HUD overlays | → Warm golden/amber HUD overlays |
 | Small/weak text overlay | → **Largest possible billboard-scale text** in gradient zone |
 
@@ -50,7 +52,7 @@ A photorealistic cinematic close-up of [CREATOR DESCRIPTION VERBATIM].
 
 Lens: 85mm f/1.8, shallow depth of field with warm bokeh background.
 Rembrandt lighting at 4:1 ratio, 3200K warm key from left.
-Kodak Portra 400, warm golden grade. Subtle atmospheric haze.
+[config: film_stock], [config: color_grade]. Subtle atmospheric haze.
 
 Bottom half reserved for text overlay (smooth dark gradient zone).
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
@@ -69,15 +71,15 @@ Example: Google search bar visible, WhatsApp green chat UI, etc.]
 
 Lens: [lens]mm f/[aperture], [angle]. [Depth of field].
 [Lighting pattern], [ratio], [Kelvin — warm side].
-Kodak Portra 400, warm golden amber grade. [Atmosphere].
+[config: film_stock], [config: color_grade]. [Atmosphere].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed
 uppercase text, the largest possible font size that fills the width, extra bold weight.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
+"[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding (subject brand required for context).
 No creator face in this slide.
@@ -88,7 +90,7 @@ No creator face in this slide.
 A photorealistic split-panel composition divided vertically into two halves.
 
 Left half ("[LABEL A IN BAHASA]"): [Current/old way scene] featuring [CREATOR].
-[Context-appropriate setting]. Natural warm daylight, Kodak Portra 400.
+[Context-appropriate setting]. Natural warm daylight, [config: film_stock].
 
 Right half ("[LABEL B IN BAHASA]"): Same person in same location but [contrasting version].
 Warm-toned holographic interfaces. Enhanced but still warm color temperature.
@@ -99,9 +101,9 @@ Bottom half of the image has a smooth dark gradient zone. Extremely large, bold,
 uppercase text, the largest possible font size that fills the width, extra bold weight.
 Render the creator's brand icon from reference image [brand-icon.png] on the vertical center divider line
 as a small circular badge at thirty percent opacity — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white on the vertical center divider line,
+"[config: handle]" as a watermark in white on the vertical center divider line,
 thirty percent opacity, subtle background mark only.
-"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
+"[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding.
 Maintain facial identity from reference image: [face-ref.png].
@@ -116,7 +118,7 @@ Arms crossed or relaxed professional pose.
 
 Background: warm bokeh with soft golden ambient light, modern interior.
 Lens: 85mm f/2, shallow depth of field. Butterfly lighting 2:1, 3500K golden.
-Kodak Portra 400, warm amber grade.
+[config: film_stock], [config: color_grade].
 
 Bottom half reserved for text overlay + social handles.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
@@ -132,8 +134,8 @@ For each slide, output a text specification sheet:
 ### Text Overlay — Slide [N]
 - **Main headline**: "[TEXT]" — White #FFFFFF, EXTRA BOLD/BLACK weight condensed, ALL CAPS
   - Font must be largest possible — billboard-scale, dominating gradient zone
-- **Accent keywords (2-4)**: "[KEYWORD 1]", "[KEYWORD 2]", "[KEYWORD 3]" — [User's accent color], same massive size. Min 2 keywords highlighted
-- **Bahasa subtitle**: [BAHASA LINE] — [User's accent color] at slightly smaller size (never white like main headline)
+- **Accent keywords (2-4)**: "[KEYWORD 1]", "[KEYWORD 2]", "[KEYWORD 3]" — [config: accent_color], same massive size. Min 2 keywords highlighted
+- **[config: subtitle_language] subtitle**: [SUBTITLE LINE] — [config: subtitle_color] at slightly smaller size (never white like main headline)
 - **Position**: Bottom half, centered
 - **Branding**:
   - [User's brand icon] center of image, above watermark, thirty percent opacity
@@ -141,7 +143,7 @@ For each slide, output a text specification sheet:
 - **Subject brand** (if applicable): [Brand logo/UI] visible in scene for context
 - **Corner labels**: [series name / episode ID] (if applicable)
 - **Page number**: "[N]/[TOTAL]" — white, small, top-left corner (all slides)
-- **SWIPE (GESER) >**: Bottom center (all slides except CTA)
+- **[config: swipe_cta_text]**: Bottom center (all slides except CTA)
 ```
 
 ## Step 5: Visual Continuity Checklist

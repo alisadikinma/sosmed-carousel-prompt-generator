@@ -1,18 +1,18 @@
 ---
 name: validate-references
-description: Cross-file consistency checker for carousel prompt generator references. Run after editing any reference file, before commits, or after merging new RAG content. Triggers on validate, consistency check, reference check, cek referensi, cek konsistensi.
+description: Cross-file consistency checker for carousel prompt generator references (7 checks including global-config consistency). Run after editing any reference file, before commits, or after merging new RAG content. Triggers on validate, consistency check, reference check, cek referensi, cek konsistensi.
 ---
 
 # Validate References
 
-Run 6 automated consistency checks across all operational files. Reports PASS/FAIL per check with exact file:line for every violation.
+Run 7 automated consistency checks across all operational files. Reports PASS/FAIL per check with exact file:line for every violation.
 
 ## Scope
 
 **Operational files** (checked):
 - `skills/carousel-prompt-generator/SKILL.md`
 - `agents/carousel-prompt-generator.md`
-- `references/*.md` (all 9 files)
+- `references/*.md` (all 10 files)
 - `CLAUDE.md`
 - `README.md`
 
@@ -36,17 +36,18 @@ Run 6 automated consistency checks across all operational files. Reports PASS/FA
 
 ### Check 3: Reference Table Completeness
 **Pattern:** Reference/file tables in SKILL.md, agent.md, README.md, CLAUDE.md
-**Expected:** All 4 tables list exactly 9 reference files:
-1. `creator-bible.md`
-2. `hook-science.md`
-3. `carousel-rebranding.md`
-4. `platform-specs.md`
-5. `cinematography-lut.md`
-6. `prompt-formulas.md`
-7. `localization-id.md`
-8. `carousel-best-practices.md`
-9. `caption-copywriting.md`
-**How to verify:** For each of the 4 files, grep for each reference filename. All 9 must appear.
+**Expected:** All 4 tables list exactly 10 reference files:
+1. `global-config.md`
+2. `creator-bible.md`
+3. `hook-science.md`
+4. `carousel-rebranding.md`
+5. `platform-specs.md`
+6. `cinematography-lut.md`
+7. `prompt-formulas.md`
+8. `localization-id.md`
+9. `carousel-best-practices.md`
+10. `caption-copywriting.md`
+**How to verify:** For each of the 4 files, grep for each reference filename. All 10 must appear.
 
 ### Check 4: Hashtag Counts
 **Pattern:** Any mention of `hashtag` with a number
@@ -70,6 +71,15 @@ Run 6 automated consistency checks across all operational files. Reports PASS/FA
 **Expected:** Always platform-specific. Default for unspecified platform = 4:5 (not 9:16).
 **How to verify:** Grep for `aspect` in all operational files. No file should declare a single global aspect ratio. The fallback default must be 4:5.
 
+### Check 7: Global Config Consistency
+**Pattern:** Hardcoded configurable values outside `global-config.md`
+**Expected:** No operational file (except `global-config.md`) should hardcode values that are configurable via global-config.md. Known patterns to check:
+- `#F5A623` — should not appear standalone (only in config refs or examples)
+- `@alisadikinma` — should not appear standalone (only in config refs, examples, or global-config.md)
+- `alisadikinma.com` — same
+- `Kodak Portra 400` as a default spec — should reference global-config.md (OK in debugging problem descriptions or cinematography LUT)
+**How to verify:** Grep for each pattern in all operational files EXCEPT `references/global-config.md`. Hits in template examples, headline banks, debugging problem descriptions, or cinematography LUT entries are OK. Hits in default specs, config tables, or template values are FAIL.
+
 ---
 
 ## Output Format
@@ -90,8 +100,9 @@ Run 6 automated consistency checks across all operational files. Reports PASS/FA
 | 4 | Hashtag counts | PASS/FAIL | [count] |
 | 5 | Gradient zones | PASS/FAIL | [count] |
 | 6 | Aspect ratio default | PASS/FAIL | [count] |
+| 7 | Global config consistency | PASS/FAIL | [count] |
 
-**Score: [N]/6 PASS**
+**Score: [N]/7 PASS**
 
 ## Issues Found
 
@@ -99,7 +110,7 @@ Run 6 automated consistency checks across all operational files. Reports PASS/FA
 - `[file]:[line]` — [what's wrong] → [what it should say]
 
 ## All Clear
-[If no issues: "All 6 checks passed. References are consistent."]
+[If no issues: "All 7 checks passed. References are consistent."]
 ```
 
 ---

@@ -6,3 +6,9 @@
 
 # Plan artifacts (local working docs)
 docs/plans/
+
+# Junk artifacts (accidental shell expansion)
+for
+not
+Other
+*All

@@ -5,7 +5,7 @@
 Treat every prompt like a Creative Director brief — natural language, NOT keyword spam.
 ⚠ Use: "Maintain exact appearance from reference image" for character consistency
 ⚠ Text rendered IN-IMAGE — all headlines, accents, branding, and labels are part of the prompt
-⚠ Default language: Bilingual — English headline (main) + Bahasa Indonesia subtitle. Single language on user request
+⚠ Default language: Per global-config.md Language section (bilingual by default). Single language on user request
 ```
 
 ---
@@ -31,9 +31,9 @@ Nano Banana Pro renders ALL text in the prompt as visible image content. To prev
 **What MAY be ALL CAPS in prompt body (actual in-image text):**
 - Headline text: `"INSANE — THIS IS WHAT HAPPENS IN 1 SECOND ON EARTH"`
 - HUD display data: `"120 TB/SEC"`
-- CTA text: `"SWIPE (GESER) >"`
+- CTA text: `"[config: swipe_cta_text]"`
 - Power words within headlines: `"INSANE"`
-- Watermark handle: `"@alisadikinma"`
+- Watermark handle: `"[config: handle]"`
 
 ---
 
@@ -60,33 +60,31 @@ All user-facing text is rendered directly in the AI-generated image. The prompt 
 ### Text Elements to Include
 | Element | Where | Rule |
 |---------|-------|------|
-| Main headline | Bottom gradient zone | White #FFFFFF bold condensed ALL CAPS |
-| Bahasa subtitle | Below main headline | Bahasa Indonesia translation of English headline. Accent color (default: #F5A623) at 70-80% size of main headline. NEVER same white as main headline — must create visual hierarchy |
-| Accent keywords (2-4) | Within headline | 2-4 emotionally impactful keywords in accent color (default: Golden Yellow #F5A623). Hook: power word at 120% size + 1-3 more. Never highlight just 1 word |
+| Main headline | Bottom gradient zone | White bold condensed ALL CAPS (per global-config.md `headline_color`) |
+| Subtitle | Below main headline | Translation in [config: subtitle_language]. [config: subtitle_color] at 70-80% size of main headline. NEVER same white as main headline — must create visual hierarchy |
+| Accent keywords (2-4) | Within headline | 2-4 emotionally impactful keywords in [config: accent_color]. Hook: power word at 120% size + 1-3 more. Never highlight just 1 word |
 | Brand icon | **Center of image, above watermark** | From reference file, thirty percent opacity, every slide. In prompt body: "thirty percent opacity" — NEVER "30%" |
 | @handle watermark | **Center of image, below brand icon** | White, thirty percent opacity on ALL slides. In prompt body: "thirty percent opacity" — NEVER "30%" |
-| SWIPE (GESER) > | Bottom center | White small text, all slides EXCEPT CTA |
+| [config: swipe_cta_text] | Bottom center | White small text, all slides EXCEPT CTA |
 | Page number | **Top-left corner** | "N/TOTAL" format (e.g., "1/10"), small white text, ALL slides. Helps viewers track progress and simplifies posting order |
 
 ### Default Language
-- **Main headline** = **English** by default (white ALL CAPS)
-- **Subtitle** = **Bahasa Indonesia** translation (accent color, slightly smaller)
-- **Override**: User requests single language (English-only, Bahasa-only, or other) → use that language for both headline and subtitle (no translation subtitle)
-- Prompt instructions (scene description) = ALWAYS English (AI model instruction)
+
+See `global-config.md` Language section for current defaults. Override: user specifies single language → use that language, no subtitle. Prompt instructions (scene description) = ALWAYS English (AI model instruction).
 
 ### Text Rendering Syntax in Prompt
 ```
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[MAIN HEADLINE IN ENGLISH]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+reading "[HEADLINE IN [config: main_headline_language]]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Below the main headline, a Bahasa Indonesia subtitle line reading "[BAHASA INDONESIA TRANSLATION]" in [accent color hex] at slightly smaller size,
+Below the main headline, a [config: subtitle_language] subtitle line reading "[SUBTITLE TRANSLATION]" in [config: subtitle_color] at slightly smaller size,
 creating clear visual hierarchy — the subtitle must NOT be white like the main headline.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-["SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap. | omit for CTA slide]
+["[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap. | omit for CTA slide]
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 ```
 
@@ -117,7 +115,7 @@ Every slide output includes a suggested filename for the generated image. SEO-op
 | Case | All lowercase. Prevents duplicate URL issues |
 | Word count | 5-8 words total (including number, brand, type) |
 | Topic keywords | 2-3 descriptive words per slide — slide-specific, not carousel-level |
-| Brand handle | Handle without `@` (e.g., `alisadikinma`) |
+| Brand handle | [config: handle_no_at] — handle without `@` |
 | Numeric prefix | Sequential: `1-`, `2-`, `3-`... for easy posting order |
 | Slide type suffix | `hook`, `foreshadow`, `body`, `cta`, `thumb` |
 | Extension | `.png` default (Nano Banana Pro output) |
@@ -243,7 +241,7 @@ Every headline must highlight **2-4 emotionally impactful keywords** in accent c
 
 ```
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[FULL HEADLINE]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+reading "[FULL HEADLINE]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accent_color].
 The word "[POWER WORD]" in slightly larger size, visually dominant within the headline. Remaining text in white.
 The text uses the largest possible font size that fills the width, extra bold weight, dominating the gradient zone.
 ```
@@ -273,15 +271,15 @@ Lens: [lens]mm f/[aperture], [angle], [depth of field].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[HOOK HEADLINE — scored 3/5+]" with the words "[POWER WORD]", "[KEYWORD 2]", and "[KEYWORD 3]"
-in [accent color hex]. The word "[POWER WORD]" in slightly larger size, visually dominant. Remaining text in white.
+in [config: accent_color]. The word "[POWER WORD]" in slightly larger size, visually dominant. Remaining text in white.
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
+"[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -307,15 +305,15 @@ Lens: [lens]mm f/[aperture], [angle], [depth of field].
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
+"[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -360,15 +358,15 @@ Natural skin texture with visible pores, fabric weave detail.
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
 reading "[FORESHADOW HEADLINE — creates FOMO/urgency to keep swiping]"
-with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
+"[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -396,15 +394,15 @@ Lens: [lens]mm f/[aperture], [angle]. [Depth of field].
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
+"[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
@@ -425,15 +423,15 @@ Lens: [lens]mm f/[aperture], [angle]. [Depth of field].
 [Texture detail]. [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
+"[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
@@ -463,12 +461,12 @@ Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
 Bottom third of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[JUDUL THUMBNAIL DALAM BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+reading "[JUDUL THUMBNAIL DALAM BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -482,7 +480,7 @@ Maintain exact facial identity from reference image: [face-ref.png].
 A photorealistic split-panel composition divided vertically into two halves.
 
 Left half ("[LABEL A IN BAHASA]"): [Scene A] featuring [CREATOR].
-[Context-appropriate setting]. Natural warm daylight, Kodak Portra 400.
+[Context-appropriate setting]. Natural warm daylight, [config: film_stock].
 [Texture: natural skin, fabric detail]. [DP reference].
 
 Right half ("[LABEL B IN BAHASA]"): Same person in same location but [contrasting version].
@@ -494,20 +492,20 @@ Lens: 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
 [Atmosphere: haze, particles, or environmental effect].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [accent color hex].
+reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight, dominating the gradient zone.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 [If comparison (A vs B): brand icon + watermark on divider:]
 Render the creator's brand icon from reference image [brand-icon.png] on the vertical center divider line
 between the two panels as a small circular badge at thirty percent opacity — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white on the vertical center divider line,
+"[config: handle]" as a watermark in white on the vertical center divider line,
 thirty percent opacity, subtle background mark only.
 [If non-comparison: brand icon + watermark centered:]
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-"SWIPE (GESER) >" in small white text positioned directly beneath the headline text with minimal gap.
+"[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
@@ -547,19 +545,20 @@ Creator positioned center between both options, acting as the referee.
 
 Lens: 50mm f/2.8, eye-level, centered composition.
 Butterfly lighting at 2:1 ratio, 3500K warm key, soft fill.
-Kodak Portra 400, warm golden amber grade. Soft haze, warm bokeh.
+[config: film_stock], [config: color_grade]. Soft haze, warm bokeh.
 Natural skin texture with visible pores, fabric weave.
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "MENURUT LO [A] ATAU [B]?" with "[A]" and "[B]" in [accent color hex].
+reading "MENURUT LO [A] ATAU [B]?" with "[A]" and "[B]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-[Social handles listed: @ig | @tiktok | @linkedin]
+Three small social media icons (Instagram logo, TikTok logo, LinkedIn logo) arranged in a single horizontal row with "[config: handle]" in white text beside the icons row.
+Below the icons row, "[config: portfolio_url]" in white text at slightly smaller size.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
@@ -584,19 +583,20 @@ that keeps all attention on creator's face and the question.
 
 Lens: 85mm f/1.8, eye-level, tight framing — face fills majority of frame.
 Butterfly lighting at 2:1 ratio, 3500K warm intimate key.
-Kodak Portra 400, warm golden grade. Gentle atmosphere, minimal particles.
+[config: film_stock], [config: color_grade]. Gentle atmosphere, minimal particles.
 Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "[SIMPLE CHOICE QUESTION IN BAHASA]?" with the words "[KEYWORD 1]" and "[KEYWORD 2]" in [accent color hex].
+reading "[SIMPLE CHOICE QUESTION IN BAHASA]?" with the words "[KEYWORD 1]" and "[KEYWORD 2]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-[Social handles listed: @ig | @tiktok | @linkedin]
+Three small social media icons (Instagram logo, TikTok logo, LinkedIn logo) arranged in a single horizontal row with "[config: handle]" in white text beside the icons row.
+Below the icons row, "[config: portfolio_url]" in white text at slightly smaller size.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
@@ -621,19 +621,20 @@ Natural warm light streaming in. Feeling of genuine connection between two peopl
 
 Lens: 50mm f/2, eye-level, slightly wider to fit both subjects.
 Loop lighting at 2:1 ratio, 3500K natural warm key.
-Kodak Portra 400, warm golden grade. Soft atmospheric haze.
+[config: film_stock], [config: color_grade]. Soft atmospheric haze.
 Natural skin texture with visible pores on both subjects, fabric detail.
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "TAG TEMEN YANG BUTUH INI" with "BUTUH" in [accent color hex].
+reading "TAG TEMEN YANG BUTUH INI" with "BUTUH" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-[Social handles listed: @ig | @tiktok | @linkedin]
+Three small social media icons (Instagram logo, TikTok logo, LinkedIn logo) arranged in a single horizontal row with "[config: handle]" in white text beside the icons row.
+Below the icons row, "[config: portfolio_url]" in white text at slightly smaller size.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
@@ -660,19 +661,20 @@ Setting: warm, professional but inviting environment.
 Lens: 85mm f/2, eye-level, medium-close framing.
 Butterfly lighting at 2:1 ratio, 3500K warm key.
 Accent color rim light on the reward object (making it glow and stand out).
-Kodak Portra 400, warm golden grade. Subtle golden particles floating.
+[config: film_stock], [config: color_grade]. Subtle golden particles floating.
 Natural skin texture with visible pores, fabric weave detail.
 [Cinematic DP reference].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed uppercase text
-reading "COMMENT '[KEYWORD]' BUAT DAPETIN [REWARD]" with "[KEYWORD]" in [accent color hex].
+reading "COMMENT '[KEYWORD]' BUAT DAPETIN [REWARD]" with "[KEYWORD]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
-Below the main headline, a subtitle line in [accent color hex] at slightly smaller size — subtitle must not be white.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
-"@[handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
-[Social handles listed: @ig | @tiktok | @linkedin]
+Three small social media icons (Instagram logo, TikTok logo, LinkedIn logo) arranged in a single horizontal row with "[config: handle]" in white text beside the icons row.
+Below the icons row, "[config: portfolio_url]" in white text at slightly smaller size.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
@@ -767,7 +769,7 @@ Before finalizing each image prompt, verify ALL 8 are present:
 - [ ] **Cinematic Ref** — Film stock named + color grade + optional DP reference
 
 ### Text Rendering Checklist
-- [ ] Main headline in English, Bahasa Indonesia subtitle in accent color (or single language if user-requested)
+- [ ] Main headline in [config: main_headline_language], subtitle in [config: subtitle_language] + [config: subtitle_color] (or single language if user-requested)
 - [ ] Accent words identified and color specified
 - [ ] Brand icon filename + position specified
 - [ ] @handle watermark + opacity specified
@@ -793,6 +795,6 @@ Before finalizing each image prompt, verify ALL 8 are present:
 - Always specify reference image filename for creator shots
 - **All 8 WOW elements MANDATORY** — minimum score 6/8
 - **Text rendered IN-IMAGE** — no separate post-production section
-- **Default: Bilingual — English headline + Bahasa Indonesia subtitle**
+- **Default: Per global-config.md Language section (bilingual by default)**
 - API: `response_modalities=['TEXT', 'IMAGE']`, `image_size="4K"` (uppercase K)
 - Aspect ratio set per target platform — see `references/platform-specs.md`
