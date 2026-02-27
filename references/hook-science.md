@@ -523,6 +523,216 @@ For boring/complex topics (finance, coding, law, science, health, history), add 
 
 ---
 
+## Visual Action Hook Bank (Static Carousel Hook Slide)
+
+The "Pope in the Pool" technique above covers video retention. This section is for **static image carousel hook slides** — the frozen-moment visual action that stops the scroll in under 1.5 seconds.
+
+**Psychology:** The creator performs a **mundane but visually absurd action** that creates cognitive dissonance with the serious/educational headline. The viewer's brain processes two contradictory signals simultaneously (absurd visual + serious text), forcing a pause. This dual-stimulus technique exploits:
+1. **Cognitive Dissonance** — "Why is this person eating bread while talking about AI?" → forces attention
+2. **Dual Stimulus** — viewer stays for 2 reasons: curiosity about the absurd action + value from the headline
+3. **Mirror Neurons** — creator's intense expression during a trivial action triggers emotional contagion
+4. **Stronger Memory Encoding** — absurd visual + information = dual coding theory → higher recall
+
+**Performance data:**
+- Pattern interrupt in first 1.5s = +156% For You Page appearances (TikTok internal)
+- Surprise stimulus = +400% dopamine vs neutral content (Copenhagen neuro study)
+- Dual-stimulus visual hooks = 3x higher engagement (Facebook marketing research)
+- Raw/imperfect visuals outperform polished by +31% (OpusClip 2026)
+
+### 12 Visual Action Categories
+
+| # | Category | Action in Hook Image | Why It Stops Scrolling | Best Topic Match |
+|---|----------|---------------------|----------------------|-----------------|
+| 1 | **Makan Nyeleneh** (Absurd Eating) | Creator bites into bread/apple/donut mid-chew with exaggerated expression, staring directly at camera | Mundane eating + serious headline = maximum cognitive dissonance. Eating is primal — brain can't ignore food imagery | Finance, Education, Tech, Business |
+| 2 | **Minum Dramatic** (Dramatic Drinking) | Creator sips/pours coffee or tea with intense stare at camera, steam visible, cup at lip level | Satisfying liquid visual + intense eye contact. Coffee is universally relatable — triggers "morning scroll" behavior | Business, Tutorial, Tips, Productivity |
+| 3 | **Objek Absurd** (Absurd Object) | Creator holds an unrelated object (fish, sandal, rubber duck, pineapple) with dead-serious expression | Maximum "kenapa dia megang itu?!" — curiosity forces viewer to read the headline for context | Any serious/educational topic |
+| 4 | **Destruction** (Destructive Action) | Creator rips paper, snaps pencil, crumples document, throws object toward camera | Aggressive visual = instant scroll-stop. Implies "throw away your old beliefs" — primes viewer for paradigm shift | Myth-busting, Negative Bias, Controversy |
+| 5 | **Satisfying Process** (ASMR-Adjacent) | Creator pours honey/latte art/sauce, squeezes lemon, stretches dough — captured at peak moment | ASMR-like satisfying visual creates involuntary pause. Oddly satisfying content = highest dwell time category | Food, Lifestyle, Beauty, Wellness |
+| 6 | **Scale Absurd** (Scale Exaggeration) | Creator dwarfed by oversized prop, or holding absurdly tiny version of a large thing | MrBeast effect — scale exaggeration triggers "wait, what?" in <0.5 seconds. Size anomaly = pattern interrupt | Tech, Comparison, Challenge, Numbers |
+| 7 | **Wrong Context** (Setting Mismatch) | Creator in suit at the beach, with laptop in a jungle, cooking in a server room, formal dinner at a desk | Environmental mismatch forces brain to reconcile two conflicting contexts — "why is this person HERE doing THAT?" | Lifestyle, Business, Travel, Remote Work |
+| 8 | **Frozen Mid-Action** (Kinetic Freeze) | Creator captured mid-jump, mid-fall, mid-throw, or mid-catch — frozen at peak action moment | Kinetic energy in a still image creates visual tension. Brain wants to see the next frame — drives swipe | Challenge, Motivation, Fitness, Transformation |
+| 9 | **Extreme Close-Up + Action** (Macro Absurd) | Super tight crop on mouth biting, hand pouring, eye reaction — uncomfortably close with visible texture | Uncomfortably intimate framing + action = "why am I seeing this SO close?" Forces extended attention | Any topic — universal pattern interrupt |
+| 10 | **Props Overflow** (Abundance Visual) | Creator surrounded/buried in objects related to the topic (stack of books, pile of gadgets, mountain of cash, wall of screens) | Abundance signals authority — "this person has SO much [topic material] they're drowning in it" | Listicle, Tips, Education, Review |
+| 11 | **Contradiction Pose** (Emotional Mismatch) | Creator smiling/laughing in a "bad" situation, OR dead-serious in a fun/casual context | Emotional mismatch = "why are they HAPPY/SERIOUS about THIS?" — forces reading the headline | Controversy, Irony, News, Hot Takes |
+| 12 | **Mundane Zen** (Calm vs Chaos) | Creator meditating/calmly sipping tea while background is chaotic (fire, notifications, deadlines, alarms) | Calm-in-chaos contrast is relatable + aspirational. Background chaos = engagement driver, calm creator = authority | Productivity, Mental Health, Burnout, Work-Life |
+
+### Visual Action → Hook Category Synergy
+
+Each visual action category pairs naturally with specific hook psychology categories:
+
+| Visual Action | Best Hook Category | Synergy Effect |
+|--------------|-------------------|---------------|
+| Makan Nyeleneh | Curiosity Gap | "Why is this person eating while revealing a secret?" |
+| Minum Dramatic | Speed & Value | Calm authority while promising fast results |
+| Objek Absurd | Curiosity Gap | Maximum "I NEED to read the headline to understand this image" |
+| Destruction | Negative Bias | Physical destruction reinforces "destroy your old beliefs" message |
+| Satisfying Process | Visual Shock | Satisfying visual + shocking headline = dual dopamine trigger |
+| Scale Absurd | Visual Shock | Exaggerated scale amplifies exaggerated claims |
+| Wrong Context | Relatability | "This is literally me working from [wrong place]" |
+| Frozen Mid-Action | Visual Shock | Kinetic tension mirrors the urgency of the hook |
+| Extreme Close-Up | Visual Shock | Intimate framing + shocking headline = uncomfortable but unmissable |
+| Props Overflow | Speed & Value | "This person has resources — I need what they're offering" |
+| Contradiction Pose | Negative Bias | Smiling about failure = "they know something I don't" |
+| Mundane Zen | Relatability | "I wish I could be this calm — let me learn their secret" |
+
+### Topic → Visual Action Mapping (Default Selection)
+
+When generating a carousel hook, use this mapping to select the default visual action. Creator or agent may override.
+
+| Topic Category | Primary Visual Action | Secondary Visual Action | Avoid |
+|---------------|---------------------|----------------------|-------|
+| Finance / Investasi | Makan Nyeleneh | Minum Dramatic | Satisfying Process |
+| Tech / AI | Objek Absurd | Makan Nyeleneh | Wrong Context |
+| Business / Startup | Minum Dramatic | Contradiction Pose | Frozen Mid-Action |
+| Education / Tutorial | Props Overflow | Makan Nyeleneh | Scale Absurd |
+| Coding / Programming | Minum Dramatic | Objek Absurd | Wrong Context |
+| Lifestyle | Wrong Context | Mundane Zen | Destruction |
+| Health / Wellness | Satisfying Process | Mundane Zen | Destruction |
+| Motivation | Frozen Mid-Action | Scale Absurd | Mundane Zen |
+| Controversy / News | Contradiction Pose | Destruction | Satisfying Process |
+| Food | Satisfying Process | Extreme Close-Up | Objek Absurd |
+| Comparison / Review | Scale Absurd | Destruction | Mundane Zen |
+| Productivity | Mundane Zen | Minum Dramatic | Scale Absurd |
+| Challenge | Frozen Mid-Action | Scale Absurd | Mundane Zen |
+| Story / Vlog | Wrong Context | Contradiction Pose | Props Overflow |
+| Myth-busting | Destruction | Contradiction Pose | Satisfying Process |
+| Transformation | Frozen Mid-Action | Scale Absurd | Makan Nyeleneh |
+
+### Prompt Fragment Bank (Nano Banana Pro — Static Image)
+
+Ready-to-insert prompt fragments for each visual action category. Use these INSIDE the Hook Slide template at the `[Action/pose]` and `[Scene with pattern interrupt]` slots.
+
+**Important:** All fragments follow Prompt Body Rendering Rules — lowercase instructions, no ALL CAPS instruction words, no raw percentages.
+
+#### 1. Makan Nyeleneh (Absurd Eating)
+```
+creator mid-bite into a large piece of bread, cheeks slightly puffed, one hand gripping the bread near mouth level,
+eyes wide open staring directly at camera with shocked expression, crumbs visible on fingers,
+the mundane act of eating contrasts sharply with the serious headline text below
+```
+
+#### 2. Minum Dramatic (Dramatic Drinking)
+```
+creator holding a steaming coffee mug at lip level with both hands, mid-sip,
+steam rising and catching warm side light, eyes locked on camera with intense knowing stare,
+the casual act of drinking coffee contrasts with the urgent headline below,
+warm golden tones from the coffee blending with ambient light
+```
+
+#### 3. Objek Absurd (Absurd Object)
+```
+creator holding [absurd object — e.g., a whole raw fish, a rubber duck, a traffic cone, a pineapple]
+at chest height with completely serious expression, dead-pan stare at camera,
+the object has no logical connection to the topic, creating visual confusion
+that forces the viewer to read the headline for context
+```
+
+#### 4. Destruction (Destructive Action)
+```
+creator mid-action ripping a sheet of paper in half with both hands,
+torn edges visible, small paper fragments floating in the air,
+aggressive confident expression with slight smirk, implying "everything you knew is wrong,"
+the physical destruction mirrors the myth-busting nature of the headline
+```
+
+#### 5. Satisfying Process (ASMR-Adjacent)
+```
+creator pouring [thick golden honey / latte art milk / chocolate sauce] in a slow stream,
+captured at the peak satisfying moment with the pour creating a smooth ribbon shape,
+warm golden backlighting catching the liquid, creator's face visible in soft focus behind the pour,
+expression of calm focus, the oddly satisfying visual holds attention involuntarily
+```
+
+#### 6. Scale Absurd (Scale Exaggeration)
+```
+creator standing next to [an absurdly oversized version of a normal object — e.g., giant smartphone,
+enormous stack of coins reaching above head, a massive keyboard], looking up at the object
+with expression of genuine amazement, one hand reaching toward it,
+the extreme scale difference creates an immediate "wait, what?" reaction
+```
+
+#### 7. Wrong Context (Setting Mismatch)
+```
+creator wearing [formal business attire / full suit and tie] sitting casually on [a beach / in a jungle /
+on a mountain trail / in a laundromat], working on a laptop as if this is completely normal,
+creator's expression is relaxed and unbothered by the absurd setting,
+the environmental mismatch between professional clothing and casual setting creates visual friction
+```
+
+#### 8. Frozen Mid-Action (Kinetic Freeze)
+```
+creator captured at the peak moment of [jumping / throwing an object / catching something midair /
+leaning dramatically off-balance], body suspended in a dynamic pose with hair and clothing
+showing motion blur while face is sharp, expression of intense determination,
+the frozen kinetic energy in a still image creates visual tension and urgency
+```
+
+#### 9. Extreme Close-Up + Action (Macro Absurd)
+```
+extreme tight close-up of [creator's mouth biting into fruit / hand squeezing a lemon /
+fingers tearing bread], filling most of the frame, every texture hyper-visible —
+skin pores, food texture, moisture droplets — uncomfortably intimate framing
+that forces extended attention, creator's eye partially visible at frame edge
+```
+
+#### 10. Props Overflow (Abundance Visual)
+```
+creator sitting in the center, surrounded by [an overwhelming pile of objects related to the topic —
+stacked books, scattered gadgets, fanned-out cash, multiple open laptops],
+slightly buried under the abundance, expression of overwhelmed excitement or knowing confidence,
+the visual abundance signals deep authority on the topic
+```
+
+#### 11. Contradiction Pose (Emotional Mismatch)
+```
+creator [smiling warmly and laughing in a clearly stressful situation / maintaining a dead-serious
+stone-faced expression while surrounded by fun and colorful party decorations],
+the emotional mismatch between expression and context creates "why are they reacting THAT way?"
+curiosity that forces the viewer to read the headline
+```
+
+#### 12. Mundane Zen (Calm vs Chaos)
+```
+creator sitting calmly in meditation pose or peacefully sipping tea,
+completely serene expression with closed or half-lidded eyes,
+while the background behind them shows [visible chaos — papers flying, notification bubbles,
+fire embers, alarm clocks, scattered deadlines], the extreme contrast between
+creator's calm and background chaos creates aspirational "I want that peace" reaction
+```
+
+### Visual Action Selection Rules
+
+1. **Default behavior:** When generating a hook slide, ALWAYS select a visual action from the Topic → Visual Action Mapping table above (primary or secondary)
+2. **User override:** If user specifies a visual action preference (e.g., "pakai yang lagi makan roti"), use that instead
+3. **Randomization:** If generating multiple carousels for the same topic, alternate between primary and secondary to avoid repetition
+4. **Combine with expression:** The visual action is the POSE/ACTION. The EXPRESSION still follows the Hook Category → Creator Expression mapping (e.g., Visual Shock = wide-eyed shock, Curiosity Gap = knowing smirk)
+5. **Never conflict with headline:** The visual action should CONTRAST with the headline tone (serious topic + absurd action = cognitive dissonance), never duplicate it (don't use Destruction action with "build something" headline)
+6. **Pope in the Pool crossover:** For high-friction topics (finance, coding, law, science), the visual action bank REPLACES the generic "pattern interrupt scene" in the hook template. The absurd mundane action IS the pattern interrupt
+
+### Prompt Integration
+
+When writing the Hook Slide prompt, insert the visual action fragment at two template slots:
+
+1. **`[Action/pose that amplifies the emotion]`** — use the action description from the fragment
+2. **`[Scene with pattern interrupt]`** — use the contrast/context description from the fragment
+
+Example (Finance topic, Makan Nyeleneh action, Negative Bias hook):
+```
+A photorealistic cinematic close-up of [CREATOR DESCRIPTION].
+concerned frown with raised eyebrows, warning gesture with one hand.
+casual blazer over a henley. creator mid-bite into a large croissant,
+cheeks slightly puffed, other hand holding the pastry near mouth level,
+eyes staring directly at camera with "I know something you don't" intensity.
+
+the mundane act of eating a croissant in a dimly lit cafe contrasts sharply
+with the serious financial warning headline below.
+warm Edison bulb bokeh in background + subject sharply lit + coffee cup
+in foreground creating three distinct depth layers.
+...
+```
+
+---
+
 ## Attention Economics (Critical Data)
 
 | Generation | Hook Window | Implication |

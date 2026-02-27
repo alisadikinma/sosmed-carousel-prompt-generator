@@ -10,7 +10,7 @@
     {
       "name": "sosmed-carousel-prompt-generator",
       "description": "3 skills + 1 agent + 10 reference docs for cinematic carousel content production (Instagram, TikTok, LinkedIn, Threads)",
-      "version": "2.9.0",
+      "version": "2.10.0",
       "source": "./"
     }
   ]

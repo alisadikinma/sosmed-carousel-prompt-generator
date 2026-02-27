@@ -254,12 +254,15 @@ The text uses the largest possible font size that fills the width, extra bold we
 
 **Pre-generation:** Score headline 3/5 on Hook Scoring Gate (see Hook Headline Formula above). If < 3/5, rewrite before proceeding.
 
+**Visual Action selection:** Choose a visual action from the Visual Action Hook Bank in `references/hook-science.md`. Use the Topic → Visual Action Mapping table for default selection. Insert the action fragment at `[Action/pose]` and `[Scene with pattern interrupt]` slots below. The absurd mundane action IS the pattern interrupt.
+
 ```
 A photorealistic cinematic [shot type — CU/MCU, match Hook Category table] of [CREATOR DESCRIPTION VERBATIM].
 [Expression must match Hook Category -> Creator Expression mapping — e.g., wide-eyed shock for Visual Shock].
-[Wardrobe]. [Action/pose that amplifies the emotion].
+[Wardrobe]. [Action/pose from Visual Action Hook Bank — e.g., mid-bite into bread, pouring coffee, holding absurd object].
 
-[Scene with pattern interrupt — something visually unexpected or contradictory that stops the scroll.
+[Scene with pattern interrupt — use the contrast/context from the Visual Action prompt fragment.
+The mundane action contrasts with the serious headline, creating cognitive dissonance.
 Match Hook Category -> Scene Direction mapping. The scene must feel wrong or surprising at first glance.]
 [Foreground element] + [subject] + [background with bokeh/depth — 3 distinct layers].
 

@@ -108,6 +108,7 @@ When a slide discusses a SPECIFIC company, product, or service (Google, WhatsApp
 | FORESHADOW (Slide 2) | YES (always) | Concerned urgency OR teasing "I know something" smirk | MCU |
 | Content body (no humans) | NO | — | B-roll topic visuals |
 | Content body (with humans) | **YES (always)** | Context-appropriate | Depends on scene |
+| Content body (**public figure topic**) | **PUBLIC FIGURE primary**, creator optional companion | Public figure context-appropriate, creator secondary | Depends on scene |
 | Split-panel (with creator) | YES | Context-appropriate | MS/MWS |
 | CTA (Polarize) | YES (always) | Playful challenge, one eyebrow raised | MS |
 | CTA (Question) | YES (always) | Warm curiosity, direct eye contact, head tilt | CU |
@@ -123,6 +124,29 @@ When a B-Roll/content slide involves visible human figures (silhouettes, crowds,
 4. **Single/few person scenes**: Creator IS the primary subject.
 5. If scene implies profession-specific clothing (lab coat, suit, hard hat) → ask: "Should you wear [profession outfit] or your default wardrobe?"
 6. The ONLY B-Roll slides without creator face = slides with NO human figures at all (pure object/landscape/abstract visuals)
+
+### Public Figure Face Priority (OVERRIDES B-Roll Rule Above)
+
+When the carousel topic centers on a **public figure** — criminal, head of state, artist/celebrity, or prominent CEO — the face rules change:
+
+| Category | Examples |
+|----------|----------|
+| Criminal | Suspects, convicted persons, fugitives in the news |
+| Head of State | Presidents, prime ministers, monarchs, governors |
+| Artist / Celebrity | Actors, musicians, athletes, influencers with public notoriety |
+| Prominent CEO | Tech founders, Fortune 500 CEOs, public-facing business leaders |
+
+**Rules:**
+1. **Body/content slides**: The **public figure's face is PRIMARY** — they are the main subject. Creator face is NOT the primary subject on these slides
+2. **Creator as companion**: Creator MAY stand beside the public figure as a secondary/companion figure (side-by-side, slightly smaller or to the side). This is optional, not mandatory
+3. **HOOK slide**: Creator face is still **MANDATORY** (always). The public figure can appear as a secondary element (background image, screen display, smaller inset) but the creator's exaggerated expression drives the hook
+4. **CTA slide**: Creator face is still **MANDATORY** (always). Standard CTA visual type rules apply
+5. **Foreshadow slide**: Creator face still mandatory — public figure can appear as background/teaser element
+6. **Thumbnail**: Creator face still mandatory — public figure can appear as secondary element
+7. **Detection**: If the topic names a specific public figure or the content is "about" a recognizable person, this rule auto-activates. No need for user to flag it
+8. **AI face reference**: Use the public figure's name directly in the prompt (e.g., "Elon Musk" or "Joko Widodo") — AI models recognize public figures. Creator face reference file still used for creator companion shots
+
+**Summary: Hook + CTA + Foreshadow + Thumbnail = creator face mandatory. Body slides about public figure = public figure's face primary, creator as optional companion.**
 
 ## 6. Wardrobe Defaults
 

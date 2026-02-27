@@ -65,7 +65,7 @@ Use the creator description VERBATIM in every creator-facing prompt.
 
 1. NEVER competitor branding (no other creator badges, watermarks, or handles). **Subject brand** (Google, WhatsApp, etc.) that IS the topic MUST remain visible for context
 2. ALWAYS include user's brand icon (center of image, above watermark, thirty percent opacity) + @handle watermark (center of image, below brand icon, thirty percent opacity) rendered IN-IMAGE on every slide. For split-panel comparison (A vs B): both on the vertical divider line. In prompt body: ALWAYS spell "thirty percent opacity" — NEVER "30%"
-3. Creator face on: Hook, CTA, Loop-end, Thumbnail, **AND any B-Roll with human figures** (always — no need to ask)
+3. Creator face on: Hook, CTA, Foreshadow, Loop-end, Thumbnail, **AND any B-Roll with human figures** (always — no need to ask). **EXCEPTION — Public Figure Topics**: when carousel is about a public figure (criminal, head of state, artist/celebrity, prominent CEO), body slides show the **public figure's face as primary** — creator may stand beside as companion. Hook + CTA + Foreshadow + Thumbnail = creator face still mandatory
 4. B-roll / content slides **without any human figures** = NO creator face
 5. Text = **IN-IMAGE rendering** via Nano Banana Pro prompt (headlines, accents, branding, labels — all part of the prompt)
 6. Accent color = user's brand color (per global-config.md `accent_color`)
@@ -137,8 +137,8 @@ The agent MUST pause and ask the user when ANY of these conditions are detected 
 | **Setting ambiguity** | Location/environment has 2+ valid interpretations | "Slide N needs a [location type]. Which do you prefer: (A) [option] (B) [option]?" |
 
 ### Rules
-- **Human figures in B-Roll = ALWAYS use creator face** (no need to ask — this is automatic)
-- Creator must be the most prominent/identifiable figure (foreground, slightly closer to camera in crowd scenes)
+- **Human figures in B-Roll = ALWAYS use creator face** (no need to ask — this is automatic). **Exception**: Public figure topics — see Hard Rule #3
+- Creator must be the most prominent/identifiable figure (foreground, slightly closer to camera in crowd scenes). **Exception**: Public figure topics — public figure is primary, creator is companion
 - When NO triggers detected → generate prompt without asking
 - Questions are concise, 2-3 options max, multiple-choice preferred
 - Batch all questions for consecutive ambiguous slides together if possible
@@ -313,13 +313,15 @@ Note: [Any correction or nuance, if applicable]
 - [ ] Subject brand (logo/UI) visible on slides discussing that brand's stats/facts
 - [ ] Hook headline scored 3/5+ on Hook Scoring Gate
 - [ ] Hook visual matches hook category (expression + scene + lighting)
+- [ ] Hook slide uses a Visual Action from the Hook Bank (12 absurd action types — see hook-science.md)
 - [ ] Slide 2 is FORESHADOW type (Steps Tease / Fear Urgency / Quiz / Visual Tease)
 - [ ] Foreshadow creates FOMO — viewer must swipe to resolve
 - [ ] Emotional arc plotted — each slide has assigned beat + intensity
 - [ ] Mini-hook present at slide 5-7 (re-engagement surprise)
 - [ ] CTA uses specific visual type (Polarize / Question / Identity Tag / Reward)
-- [ ] Hook + CTA have creator face
-- [ ] B-Roll with human figures = creator face as most prominent figure
+- [ ] Hook + CTA + Foreshadow + Thumbnail have creator face
+- [ ] B-Roll with human figures = creator face as most prominent figure (UNLESS public figure topic — then public figure primary, creator companion)
+- [ ] Public figure topics: body slides show public figure's face as primary subject
 - [ ] B-Roll without humans = no creator face
 - [ ] All slides have dark gradient text zone (bottom half) with largest-possible billboard-scale text rendered in-image
 - [ ] Brand icon rendered in every slide (center of image, above watermark, from reference file)

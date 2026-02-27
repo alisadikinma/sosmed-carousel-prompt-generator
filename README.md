@@ -69,7 +69,7 @@ The agent detects ambiguous creative decisions and asks before generating:
 - Profession-specific costumes → "Lab coat or your default blazer?"
 - Setting ambiguity → "Modern glass server room or industrial gritty?"
 
-**Note:** B-Roll with human figures automatically uses your creator face as the most prominent figure — no question needed.
+**Note:** B-Roll with human figures automatically uses your creator face as the most prominent figure — no question needed. **Exception:** Public figure topics use the public figure's face as primary in body slides.
 
 ### 7. Psychology-Based Hook Science
 
@@ -97,7 +97,42 @@ Plus: Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), co
 
 When discussing a specific company (Google, WhatsApp, Tesla), their brand elements (logo, UI, color scheme) are included in the image. Without subject brand context, factual claims are meaningless to viewers.
 
-### 10. Source URL Metadata Extraction (NEW in v2.6.0)
+### 10. Public Figure Face Priority (NEW in v2.10.0)
+
+When the carousel topic is about a **public figure** (criminal, head of state, artist/celebrity, or prominent CEO), face allocation changes automatically:
+
+| Slide Type | Whose Face? |
+|---|---|
+| Hook | Creator (always mandatory) — public figure as secondary element |
+| Foreshadow | Creator (always mandatory) — public figure as background teaser |
+| Body/Content | **Public figure is primary** — creator as optional companion beside them |
+| CTA | Creator (always mandatory) — standard CTA visual rules |
+| Thumbnail | Creator (always mandatory) — public figure as secondary |
+
+The rule auto-activates when the topic names a specific public figure. No need to flag it manually.
+
+### 11. Visual Action Hook Bank (NEW in v2.10.0)
+
+12 absurd mundane action categories for carousel hook slides — because the best pattern interrupt is a creator doing something **nyeleneh** while delivering serious content:
+
+| # | Category | Action Example | Best For |
+|---|----------|---------------|----------|
+| 1 | Makan Nyeleneh | Biting bread/apple with shocked face | Finance, Education, Tech |
+| 2 | Minum Dramatic | Sipping coffee with intense stare | Business, Tutorial, Tips |
+| 3 | Objek Absurd | Holding unrelated object (fish, rubber duck) dead-serious | Any serious topic |
+| 4 | Destruction | Ripping paper, snapping pencil | Myth-busting, Controversy |
+| 5 | Satisfying Process | Pouring honey, squeezing lemon | Food, Lifestyle, Beauty |
+| 6 | Scale Absurd | Creator dwarfed by oversized prop | Tech, Comparison, Challenge |
+| 7 | Wrong Context | Suit at beach, laptop in jungle | Lifestyle, Business, Travel |
+| 8 | Frozen Mid-Action | Mid-jump, mid-throw freeze frame | Challenge, Motivation, Fitness |
+| 9 | Extreme Close-Up | Macro shot of mouth biting, hand pouring | Universal pattern interrupt |
+| 10 | Props Overflow | Buried in topic-related objects | Listicle, Tips, Education |
+| 11 | Contradiction Pose | Smiling in stressful situation | Controversy, Irony, News |
+| 12 | Mundane Zen | Calm meditation while background chaos | Productivity, Mental Health |
+
+Includes Topic → Visual Action mapping, prompt-ready fragments for Nano Banana Pro, and synergy tables linking visual action to hook psychology category. The absurd mundane action IS the pattern interrupt.
+
+### 12. Source URL Metadata Extraction (v2.6.0)
 
 Paste an Instagram/TikTok/LinkedIn post URL and the agent auto-extracts caption, account name, engagement stats, and post date. This metadata enriches prompt context and powers caption writing — no manual copy-paste needed.
 
@@ -120,7 +155,7 @@ Uses caption as:
   → Hashtag research reference
 ```
 
-### 11. Carousel Engagement Funnel (NEW in v2.2.0)
+### 13. Carousel Engagement Funnel (v2.2.0)
 
 Full-funnel engagement system from first impression to conversion:
 
@@ -135,7 +170,7 @@ CTA (Last Slide)    → 4 visual types matching engagement goal
                       Polarize | Question | Identity Tag | Engagement Reward
 ```
 
-### 11. Emotional Arc System (NEW in v2.2.0)
+### 14. Emotional Arc System (v2.2.0)
 
 Every carousel follows a "roller coaster" emotional pattern with visual treatment mapped per beat:
 
@@ -181,7 +216,7 @@ After installing, the plugin announces itself on every session start:
 ```
 sosmed-carousel-prompt-generator loaded. Skills available:
   carousel-prompt-generator — cinematic AI image prompts for social media carousels
-  validate-references — cross-file consistency checker (6 checks)
+  validate-references — cross-file consistency checker (7 checks)
   new-localization — scaffold new localization files
 ```
 
@@ -200,7 +235,7 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 | Skill | Triggers On |
 |---|---|
 | `carousel-prompt-generator` | carousel, thumbnail, rebrand, image generation, visual content, AI image, buat prompt, bikinin gambar |
-| `validate-references` | Cross-file consistency checker (SWIPE rules, hashtags, gradients, aspect ratios) |
+| `validate-references` | Cross-file consistency checker (7 checks: SWIPE rules, hashtags, gradients, aspect ratios, config consistency) |
 | `new-localization` | Scaffold new localization files + wire reference tables |
 
 ### Agent
@@ -215,7 +250,7 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 |---|---|
 | `global-config.md` | ALWAYS (read FIRST) — single source of truth for all configurable values (language, colors, handle, film stock, platform specs) |
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
-| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, interactive hooks |
+| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (12 absurd action types), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, interactive hooks |
 | `carousel-rebranding.md` | Converting third-party carousels to your brand |
 | `platform-specs.md` | Nano Banana Pro specs, platform aspect ratios |
 | `cinematography-lut.md` | Lighting, lens, film stock, atmosphere, DP signatures |
@@ -261,8 +296,11 @@ User Request
 [8] SCORE HOOK HEADLINE — 3/5 on Hook Scoring Gate
     |
     v
-[9] Generate prompts (Engagement Funnel Order):
-    ├── Slide 1: HOOK (category-matched visual + scored headline)
+[9] SELECT VISUAL ACTION — pick from 12-category bank for hook slide
+    |
+    v
+[10] Generate prompts (Engagement Funnel Order):
+    ├── Slide 1: HOOK (visual action + category-matched expression + scored headline)
     ├── Slide 2: FORESHADOW (mandatory bridge with FOMO)
     ├── Slides 3-N: BODY (emotional arc + mini-hook at 5-7)
     └── Last: CTA (4 visual types matching engagement goal)
@@ -270,10 +308,10 @@ User Request
     ├── Below 6/8? ──> REVISE
     |
     v
-[10] Generate captions for all 4 platforms (Bahasa default)
+[11] Generate captions for all 4 platforms (English default)
     |
     v
-[11] Output with verified sources + continuity checklist
+[12] Output with verified sources + continuity checklist
 ```
 
 ---
@@ -313,7 +351,8 @@ These are non-negotiable across all generated prompts:
 | Brand icon + handle on every slide | Both at thirty percent opacity. Icon CENTER (above watermark). @handle CENTER (below icon). Vertical divider for comparison split-panel |
 | Multi-keyword highlighting | 2-4 emotionally impactful keywords in accent color per headline — never just 1 word |
 | Subtitle color | Subtitle in accent color per global-config.md (never white like main headline) |
-| Creator face placement | Hook, CTA, Thumbnail always. B-Roll with humans: ALWAYS (creator as most prominent figure) |
+| Creator face placement | Hook, CTA, Foreshadow, Thumbnail always. B-Roll with humans: ALWAYS (creator as most prominent). **Public figure topics**: public figure primary in body, creator as companion |
+| Visual Action Hook | Hook slide MUST use absurd mundane action from Visual Action Hook Bank (12 categories) as pattern interrupt |
 | Text rendered in-image | Headlines (MASSIVE billboard-scale, extra bold), accents, branding, SWIPE CTA — all in prompt |
 | Default film stock | Per global-config.md `film_stock` (warm, not cold) |
 | Aspect ratio | Platform-specific: IG Feed 4:5, TikTok 9:16, LinkedIn 4:5 |
@@ -393,8 +432,9 @@ sosmed-carousel-prompt-generator/
 ├── agents/
 │   └── carousel-prompt-generator.md  # Subagent definition
 ├── references/
+│   ├── global-config.md         # Single source of truth for all configurable values
 │   ├── creator-bible.md         # Creator identity + brand-in-image + holidays
-│   ├── hook-science.md          # Hook psychology, 5 categories, power words, scoring
+│   ├── hook-science.md          # Hook psychology, 5 categories, visual action bank, scoring
 │   ├── carousel-rebranding.md   # Rebranding conversion rules
 │   ├── platform-specs.md        # Nano Banana Pro + platform specs
 │   ├── cinematography-lut.md    # Lighting/lens/film stock LUT

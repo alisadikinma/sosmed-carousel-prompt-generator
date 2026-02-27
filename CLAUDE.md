@@ -26,7 +26,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 |------|-----------|
 | `global-config.md` | ALWAYS (read FIRST) — single source of truth for all configurable values (language, colors, handle, film stock, platform specs) |
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
-| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, cover slide specs, interactive hooks |
+| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (12 absurd action types for static carousel hooks), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, cover slide specs, interactive hooks |
 | `carousel-rebranding.md` | Rebranding third-party carousels |
 | `platform-specs.md` | Platform routing, aspect ratios, Nano Banana Pro specs |
 | `cinematography-lut.md` | Lighting/lens/film stock/atmosphere/DP signature lookup |
@@ -43,7 +43,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 - **Platform-Specific Aspect Ratios**: IG Feed 4:5, TikTok/Reels 9:16, LinkedIn 4:5/1:1, Default 4:5
 - **Subject Brand Context**: When discussing a specific company (Google, WhatsApp, etc.), their brand elements MUST be visible in the image for context. Without it, factual claims are meaningless
 - **No Competitor Branding**: No other creator badges, watermarks, handles, or source category tags (e.g., "TECHNOLOGY" badge from source = competitor branding)
-- **Creator Face Rules**: Hook/CTA/Foreshadow/Thumbnail = ALWAYS. B-Roll with human figures = ALWAYS (creator as most prominent figure). B-Roll without humans = NO face
+- **Creator Face Rules**: Hook/CTA/Foreshadow/Thumbnail = ALWAYS. B-Roll with human figures = ALWAYS (creator as most prominent figure). B-Roll without humans = NO face. **Exception — Public Figure Topics** (criminal, head of state, artist/celebrity, prominent CEO): body slides show the public figure's face as primary — creator as optional companion. Hook + CTA + Foreshadow + Thumbnail = creator face still mandatory
 - **Brand Icon + Watermark**: Both at **thirty percent opacity**. Brand icon center of image above watermark, @handle center below brand icon. Split-panel comparison (A vs B): both on **vertical divider line**. In prompt body: ALWAYS spell "thirty percent opacity" — NEVER "30%"
 - **SWIPE FOR MORE**: "SWIPE (GESER) >" rendered in-image on all slides except CTA, positioned directly beneath headline (20-30% engagement boost)
 - **Gradient Zones**: Bottom half for all slide types, bottom third for thumbnails (source of truth in creator-bible.md Section 7)
@@ -56,6 +56,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 - **Subtitle**: Per global-config.md — subtitle language translation, rendered below main headline in **subtitle color from config** (not white). Creates visual hierarchy and bilingual accessibility
 - **Hook Headline Formula**: Mandatory structure `[POWER WORD] + [curiosity gap/number] + [unrevealed payoff]`. Must score 3/5 on Hook Scoring Gate BEFORE generating prompt. Power word at 120% size in accent color
 - **Hook Science**: 5 psychology-based hook categories with 100-hook bank (20 per category, Bahasa + English). Hook category determines expression + scene + lighting. Includes Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), and cover slide design specs
+- **Visual Action Hook Bank**: 12 absurd mundane action types for static carousel hook slides (makan nyeleneh, minum dramatic, objek absurd, destruction, satisfying process, scale absurd, wrong context, frozen mid-action, extreme close-up, props overflow, contradiction pose, mundane zen). Each hook slide MUST use a visual action from the bank — the absurd action IS the pattern interrupt. Topic → Visual Action mapping in `hook-science.md`
 - **Foreshadow (Slide 2)**: MANDATORY bridge between hook and body. 4 types: Steps Tease, Fear Urgency, Quiz/Choice, Visual Tease. Creates FOMO to keep swiping. Instagram re-serves from slide 2 = second chance
 - **CTA Visual Types**: 4 engagement-driven types ranked by impact: Engagement Reward (12-18% conversion), Question (highest comment volume), Polarize (highest shares + depth), Identity Tag (highest DM shares). Each has specific visual composition and lighting
 - **Algorithm Engagement Hierarchy**: DM Shares (3-5x weight) > Saves (3x) > Comments (depth matters) > Dwell time > Completion rate > Likes. Optimize CTA for top signals
@@ -105,6 +106,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | Foreshadow | Yes (always) | Concerned urgency or teasing smirk |
 | Content body (no humans) | No | Topic visuals only, no distraction |
 | Content body (with humans) | **Yes (always)** | Creator as most prominent figure — no need to ask |
+| Content body (**public figure topic**) | **Public figure primary**, creator optional companion | Topic is about a specific public figure (criminal, head of state, artist, CEO) — their face is the main subject |
 | Split-panel | Yes | Creator in both or relevant panel |
 | CTA | Yes (always) | Expression matches CTA type (see 4 CTA visual types) |
 | Thumbnail | Yes (always) | Curiosity gap drives clicks |
@@ -197,6 +199,7 @@ To change any configurable value (language, color, handle, film stock, etc.):
 | WOW too low | Min 6/8, all 8 elements mandatory — check each element is in prompt |
 | Weak hook headline | Must score 3/5 on Hook Scoring Gate (question, number, power word, negative frame, unrevealed payoff). If < 3/5, REWRITE before generating |
 | Hook visual doesn't match | Hook category determines expression + scene + lighting — check Hook Category → Visual Direction mapping in prompt-formulas.md |
+| Creator face on public figure slide | When topic is about a public figure (criminal, head of state, artist, CEO), body slides should show the public figure's face as primary — creator is optional companion. Check Public Figure Face Priority in creator-bible.md |
 | Missing foreshadow | Slide 2 MUST be foreshadow type (Steps Tease / Fear Urgency / Quiz / Visual Tease) |
 | Foreshadow doesn't create FOMO | Headline must create urgency to swipe — "kalau lo skip..." / "tunggu sampai..." |
 | Flat CTA | Must use specific CTA visual type (Polarize/Question/Identity Tag/Reward) — not generic creator shot. Check CTA Selection Guide in hook-science.md |
@@ -213,5 +216,5 @@ To change any configurable value (language, color, handle, film stock, etc.):
 
 ---
 
-**Version:** 2.9.0
+**Version:** 2.10.0
 **Last Updated:** February 2026
