@@ -42,7 +42,7 @@ All text (headlines, accent words, branding, SWIPE CTA) is described directly in
 
 ### 3. Creator Identity System
 
-Your physical description, brand handle, accent color, and brand icon are injected VERBATIM into every prompt — ensuring consistent AI-generated visuals across your entire content library.
+Your character reference image, brand handle, accent color, and brand icon are injected into every prompt — ensuring consistent AI-generated visuals across your entire content library. Image references produce more accurate AI likeness than text descriptions.
 
 ### 4. Auto Captions for All Platforms
 
@@ -276,6 +276,9 @@ User Request
 [0] Ask for source URL (optional) ── extract caption + metadata
     |
     v
+[0b] Ask for output folder path (optional) ── save to {path}/carousel-prompt.md
+    |
+    v
 [1] Read global-config.md + creator-bible.md (ALWAYS)
     |
     v
@@ -299,13 +302,19 @@ User Request
 [7] INTERACTIVE DESIGN — ask about ambiguous slides
     |
     v
-[8] SCORE HOOK HEADLINE — 3/5 on Hook Scoring Gate
+[7b] HOOK CLARIFICATION — present 3 hook options (PRIMARY/SECONDARY/WILDCARD), user picks
     |
     v
-[9] SELECT HOOK CATEGORY — MANDATORY Topic → Hook Category Mapping (NEVER default to Visual Shock)
+[7c] VISUAL DIRECTION — present 3 visual combos (action+prop+costume+lighting), user picks
     |
     v
-[9b] SELECT VISUAL ACTION — pick from 12-category bank for hook slide
+[8] SCORE HOOK HEADLINE — 3/5 on Hook Scoring Gate (using confirmed category)
+    |
+    v
+[9] SELECT HOOK CATEGORY — user-confirmed from step 7b (NEVER default to Visual Shock)
+    |
+    v
+[9b] SELECT VISUAL ACTION — user-confirmed from step 7c
     |
     v
 [9c] LOAD VISUAL PROFILE — expression + lighting + camera + environment from hook-visual-library.md
@@ -324,6 +333,10 @@ User Request
     |
     v
 [12] Output with verified sources + continuity checklist
+    |
+    v
+[12b] If folder path provided → write to {path}/carousel-prompt.md
+      If no path → print to console as usual
 ```
 
 ---
@@ -365,6 +378,7 @@ These are non-negotiable across all generated prompts:
 | Subtitle color | Subtitle in accent color per global-config.md (never white like main headline) |
 | Creator face placement | Hook, CTA, Foreshadow, Thumbnail always. B-Roll with humans: ALWAYS (creator as most prominent). **Public figure topics**: public figure primary in body, creator as companion |
 | Visual Action Hook | Hook slide MUST use absurd mundane action from Visual Action Hook Bank (12 categories) as pattern interrupt |
+| Creative Clarification | Every carousel starts with 2-step clarification: 3 hook options → user picks → 3 visual combos → user picks. No auto-selection |
 | Hook category enforcement | Hook category MUST match Topic → Hook Category Mapping. NEVER default to Visual Shock. Visual profile loaded from hook-visual-library.md |
 | Anti-repetition | Same topic repeated = different camera variant (A/B/C) from hook-visual-library.md |
 | Text rendered in-image | Headlines (MASSIVE billboard-scale, extra bold), accents, branding, SWIPE CTA — all in prompt |
@@ -379,6 +393,7 @@ These are non-negotiable across all generated prompts:
 | Page numbers | "[N]/[TOTAL]" in top-left corner on all slides |
 | Hashtags | Max 5 (IG/TikTok), 3-5 (LinkedIn) |
 | Suggested filenames | SEO-optimized per slide: `{N}-{topic}-{brand}-{type}.png` |
+| File output | Optional — user provides folder path at start, output saved to `{path}/carousel-prompt.md`. No path = console |
 
 ---
 
@@ -477,7 +492,7 @@ Text is rendered in the AI-generated image — headlines, accent words, branding
 
 ### Creator Consistency
 
-Your face, your brand, your colors — injected verbatim into every prompt. The AI sees the same description every time, producing consistent results across hundreds of slides.
+Your face, your brand, your colors — character reference image injected into every prompt. The AI sees the same visual reference every time, producing consistent results across hundreds of slides.
 
 ### Platform-Aware
 

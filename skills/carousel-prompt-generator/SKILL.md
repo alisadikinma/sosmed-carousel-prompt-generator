@@ -53,13 +53,14 @@ Claude reads this SKILL.md directly and follows the workflow below.
 
 The user must supply their creator identity for personalized prompts. If not provided, ask for:
 
-1. **Physical description** (age, gender, ethnicity, distinguishing features)
-2. **Face reference image** filename (for AI face generation)
+1. **Creator face** (`ref/creator-face.png`) — clear face photo used as visual identity in every prompt
+2. **Creator brand** (`ref/creator-brand.png`) — brand icon/logo file
 3. **Brand handle** (e.g., @username)
-4. **Brand icon/logo** filename (for carousel branding)
-5. **Accent color** (default per global-config.md `accent_color`)
+4. **Accent color** (default per global-config.md `accent_color`)
 
-Use the creator description VERBATIM in every creator-facing prompt.
+Use `ref/creator-face.png` in every creator-facing prompt: `[CHARACTER from reference image: creator-face.png]`.
+
+**Session start:** Always confirm `ref/` folder exists with `creator-face.png` + `creator-brand.png` before generating.
 
 ---
 
@@ -172,7 +173,7 @@ This step is OPTIONAL — user can skip.
 
 ## Workflow: Carousel Rebranding
 
-0. **SOURCE URL** — ask for source post URL, extract metadata if provided
+0. **SOURCE URL + REF CONFIRMATION** — ask for source post URL (extract metadata if provided) + confirm `ref/creator-face.png` + `ref/creator-brand.png` exist
 1. ANALYZE source slides — extract topic, data, visual concept per slide
 2. IDENTIFY third-party elements to REMOVE
 3. **VERIFY** — web-search factual claims, confirm accuracy
@@ -190,20 +191,22 @@ This step is OPTIONAL — user can skip.
 
 ## Workflow: Fresh Carousel Production
 
-0. **SOURCE URL** — ask for source/inspiration post URL, extract metadata if provided
+0. **SOURCE URL + REF CONFIRMATION + OUTPUT FOLDER** — ask for source/inspiration post URL (extract metadata if provided) + confirm `ref/creator-face.png` + `ref/creator-brand.png` exist in topic folder + ask for topic folder path (optional — if provided, output to `{path}/carousel-prompt.md`; if skipped, print to console)
 1. ANALYZE brief/topic — identify key messages, slide structure, emotions (enrich with source caption if available)
 2. **VERIFY** — web-search each factual claim, collect sources
 3. DETERMINE target platform and set aspect ratio (read `references/platform-specs.md`)
 4. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
 5. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
-6. **SCORE HOOK HEADLINE** — verify 3/5 on Hook Scoring Gate before generating hook prompt
-7. GENERATE Slide 1 (HOOK) — use Hook Slide template from `references/prompt-formulas.md`
+5b. **HOOK CLARIFICATION** — present 3 hook options (PRIMARY + SECONDARY + WILDCARD) with sample headline + vibe. User picks or provides custom. Validate against Avoid list
+5c. **VISUAL DIRECTION** — based on confirmed hook, present 3 visual combos (Visual Action + Prop + Costume + Lighting/Camera). User picks or modifies elements
+6. **SCORE HOOK HEADLINE** — use confirmed hook category from 5b + visual direction from 5c. Verify 3/5 on Hook Scoring Gate
+7. GENERATE Slide 1 (HOOK) — use Hook Slide template with confirmed creative direction
 8. GENERATE Slide 2 (FORESHADOW, mandatory) — use Foreshadow template, select type matching topic
 9. GENERATE remaining body slides — Nano Banana Pro prompts (text rendered in-image, bilingual default)
 10. GENERATE last slide (CTA) — select CTA visual type matching engagement goal
 11. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
 12. **GENERATE CAPTIONS** for all 4 platforms (IG + TikTok + LinkedIn + Threads)
-13. OUTPUT continuity checklist
+13. **OUTPUT** — if folder path provided → write to `{path}/carousel-prompt.md` with Creative Direction summary at top; if no path → print to console. Include continuity checklist
 
 ## Workflow: Thumbnail Generation
 
@@ -342,6 +345,9 @@ Note: [Any correction or nuance, if applicable]
 - [ ] All factual claims verified with sources
 - [ ] Main headline + subtitle per global-config.md Language section (bilingual default; or single language if user-requested)
 - [ ] Every slide has suggested filename (sequential number + topic keywords + brand handle + slide type)
+- [ ] Hook category confirmed by user (Step 5b) — not auto-selected
+- [ ] Visual direction confirmed by user (Step 5c) — not auto-selected
+- [ ] Output saved to folder (if path provided) or printed to console
 
 ---
 

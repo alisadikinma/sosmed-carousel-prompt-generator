@@ -51,13 +51,16 @@ See `references/global-config.md` Language section for current defaults. Overrid
 
 Before generating any creator-facing prompt, you MUST have:
 
-1. **Physical description** — used VERBATIM in every prompt with creator face
-2. **Face reference image** filename — for AI face consistency
+1. **Creator face** (`ref/creator-face.png`) — clear face photo used as visual identity in every prompt
+2. **Creator brand** (`ref/creator-brand.png`) — brand icon/logo file
 3. **Brand handle** — rendered in-image on every slide
-4. **Brand icon** filename — rendered in-image on every slide
-5. **Accent color** — per global-config.md `accent_color` if not specified
+4. **Accent color** — per global-config.md `accent_color` if not specified
 
-If the user hasn't provided these, ASK before generating prompts.
+**At every new session/topic, ALWAYS confirm with user:**
+> "Sebelum mulai, pastikan file reference image sudah siap di folder `ref/`:
+> 1. `ref/creator-face.png` — foto muka lo (lighting bagus, muka jelas)
+> 2. `ref/creator-brand.png` — logo/icon brand lo
+> Sudah siap? Kasih path folder topic-nya."
 
 ---
 
@@ -227,8 +230,9 @@ Proceed normally without source metadata. No change to existing workflow.
 
 When given source carousel images to rebrand:
 
-### Step 0: Source URL Collection
+### Step 0: Source URL + Reference Image Confirmation
 Ask user for source post URL. Extract metadata if provided (see SOURCE URL COLLECTION above).
+Confirm reference images exist in `ref/` folder (see CREATOR IDENTITY above).
 
 ### Step 1: Analyze Source
 For each uploaded slide, identify:
@@ -282,9 +286,23 @@ Verify all visual continuity rules (including hook score, foreshadow, emotional 
 
 When given a topic or brief:
 
-### Step 0: Source URL Collection
+### Step 0: Source URL + Character Reference + Output Folder
 Ask user for source/inspiration post URL. Extract metadata if provided (see SOURCE URL COLLECTION above).
 This is especially useful when user says "bikin carousel kayak @xxx" or references an existing post.
+
+**Reference Image Confirmation (MANDATORY — every new session/topic):**
+Confirm with user: "Pastikan file reference image sudah ada di folder `ref/` di dalam folder topic lo:
+- `ref/creator-face.png` — foto muka (lighting bagus, muka jelas)
+- `ref/creator-brand.png` — logo/icon brand
+Sudah siap?"
+- User confirms → use `ref/creator-face.png` in all prompts as `[CHARACTER from reference image: creator-face.png]`
+- User hasn't created → guide them to create `ref/` folder and place files
+
+**Output Folder (optional):**
+After source URL, ask: "Mau save hasilnya ke folder mana? Kasih path folder-nya, atau skip kalau mau print ke console aja."
+- If user provides path → validate folder exists → all output written to `{path}/carousel-prompt.md`
+- If user skips → output printed to console as usual
+- After generation completes: show brief summary + file path (if saved)
 
 ### Step 1: Analyze & Structure
 - Identify key messages, data points, emotions
@@ -305,15 +323,79 @@ This is especially useful when user says "bikin carousel kayak @xxx" or referenc
 - Ask user for decisions on ambiguous slides
 - Wait for answers before generating those slides
 
+### Step 4b: Hook Clarification (MANDATORY — present to user before generating)
+
+Read Topic → Hook Category Mapping from `references/hook-science.md`. Generate 3 hook options:
+
+**Option A (PRIMARY):** The primary hook category for this topic
+- Category name + why it fits
+- Sample headline (from 100-hook bank or 52 formulas)
+- Vibe: 1-line description of the visual energy
+
+**Option B (SECONDARY):** The secondary hook category for this topic
+- Same format as A
+
+**Option C (WILDCARD):** A random non-Avoid category NOT already used as PRIMARY or SECONDARY
+- Same format as A
+- Adds creative variety — encourages exploring unexpected categories
+
+**Present to user:**
+```
+Hook mana yang mau dipakai?
+
+A) [CATEGORY] — "[Sample headline]"
+   → [1-line vibe: expression + energy]
+
+B) [CATEGORY] — "[Sample headline]"
+   → [1-line vibe: expression + energy]
+
+C) [CATEGORY] — "[Sample headline]"
+   → [1-line vibe: expression + energy]
+
+Atau mau kasih hook sendiri?
+```
+
+- User picks A/B/C or provides custom hook/category
+- If custom → validate against Avoid list for the topic
+- Store confirmed hook category for Step 4c and Step 5
+
+### Step 4c: Visual Direction (MANDATORY — present to user after hook confirmed)
+
+Based on the **confirmed hook category** from Step 4b, generate 3 visual combos by reading:
+- Visual Action: Topic → Visual Action Mapping (`references/hook-science.md`)
+- Prop: Section 11c rule → Section 11a bank (`references/hook-visual-library.md`)
+- Costume: Section 10 topic match (`references/hook-visual-library.md`)
+- Lighting + Camera: Lighting Presets + Camera Bank for the confirmed category (`references/hook-visual-library.md`)
+
+**Option A:** PRIMARY visual action + default prop + default costume
+**Option B:** SECONDARY visual action + alternative prop + same costume
+**Option C:** Creative mix — different action + different prop or costume twist
+
+**Present to user:**
+```
+Visual direction mana?
+
+A) [Visual Action] — [Prop] — [Costume summary]
+   → [Lighting vibe], [Camera angle]
+
+B) [Visual Action] — [Prop] — [Costume summary]
+   → [Lighting vibe], [Camera angle]
+
+C) [Visual Action] — [Prop] — [Costume summary]
+   → [Lighting vibe], [Camera angle]
+
+Atau mau modify elemen tertentu?
+```
+
+- User picks A/B/C or modifies individual elements (e.g., "A tapi prop-nya ganti durian")
+- Store confirmed visual direction for Step 5 and prompt generation
+
 ### Step 5: Score Hook Headline
-- Select hook category from **Topic → Hook Category Mapping** (`references/hook-science.md`)
-- **MANDATORY: State the selected category explicitly. DO NOT default to Visual Shock**
-- If topic = Education, Business, Health → Visual Shock is in "Avoid" column. **NEVER** use it
-- If PRIMARY was used in previous carousel this session → use SECONDARY category
-- Read visual profile from `references/hook-visual-library.md` for the selected category
-- Load costume profile from `references/hook-visual-library.md` Section 10 (match to topic category)
-- Select prop from Section 11: check hook category → prop type rule (11c), pick from topic bank (11a), apply interaction (11b)
-- Write headline using Hook Headline Formula (see `references/prompt-formulas.md`)
+- Use the **confirmed hook category** from Step 4b (NOT auto-select)
+- Use the **confirmed visual direction** from Step 4c
+- Read visual profile from `references/hook-visual-library.md` for the confirmed category
+- Load costume + prop from confirmed visual direction
+- Write headline using Hook Headline Formula (see `references/prompt-formulas.md`), or use user's custom headline from Step 4b
 - Verify 3/5 on Hook Scoring Gate
 - If < 3/5: REWRITE until passing
 
@@ -337,7 +419,13 @@ This is especially useful when user says "bikin carousel kayak @xxx" or referenc
 - Follow character limits and hashtag rules
 
 ### Step 9: Output
-- Output in standard format with all sections (including emotional beat tags)
+- If output folder was provided in Step 0 → write ALL output to `{folder-path}/carousel-prompt.md`:
+  - Creative Direction summary (confirmed hook category + visual direction from Steps 4b/4c)
+  - All slide prompts with WOW scores
+  - Captions for all 4 platforms
+  - Continuity checklist
+  - Print brief summary to console: "Carousel saved to {path}/carousel-prompt.md — {N} slides + captions"
+- If no output folder → print to console in standard format (current behavior)
 
 ---
 
@@ -393,7 +481,7 @@ Inside the Nano Banana Pro prompt body, the AI renders ALL text as visible image
 2. **All instructions/descriptions = lowercase** — sizing, positioning, technical directives, cinematography, negations, emphasis words
 3. **No `//` separators** in HUD/data text — keep core data only
 4. **No raw percentages** — replace "30% opacity" with "thirty percent opacity, subtle background mark only"
-5. **No raw filenames in prompt body** — use "render the creator's brand icon from reference image [brand-icon.png] as a small circular badge — use the exact icon from the file, do not generate a new one"
+5. **No raw filenames in prompt body** — use "render the creator's brand icon from reference image creator-brand.png as a small circular badge — use the exact icon from the file, do not generate a new one"
 6. **No "Shot on" prefix** — replace with "Lens:"
 7. **No category tags** — no TEKNOLOGI, SCIENCE, BISNIS badges in prompt
 8. **No metadata labels** in HUD text — "120 TB/DETIK" not "THROUGHPUT: 120 TB/DETIK"

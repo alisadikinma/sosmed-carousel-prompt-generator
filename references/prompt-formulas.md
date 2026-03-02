@@ -20,7 +20,7 @@ Nano Banana Pro renders ALL text in the prompt as visible image content. To prev
 | No instruction caps | `MANDATORY: render the icon` | `render the icon` |
 | No `//` separators | `120 TB/DETIK // KECEPATAN: CAHAYA` | `120 TB/DETIK` (core data only) |
 | No raw percentages | `30% opacity` | `thirty percent opacity, subtle background mark only` |
-| No raw filenames in body | `[brand-icon.png] rendered in corner` | `render the creator's brand icon from reference image [brand-icon.png] as a small circular badge` |
+| No raw filenames in body | `creator-brand.png rendered in corner` | `render the creator's brand icon from reference image creator-brand.png as a small circular badge` |
 | No "Shot on" prefix | `Shot on 85mm f/1.8` | `Lens: 85mm f/1.8` |
 | No category tags | `"TEKNOLOGI" badge above headline` | (remove entirely) |
 | No metadata labels in HUD | `THROUGHPUT: 120 TB/DETIK` | `120 TB/DETIK` |
@@ -80,7 +80,7 @@ The text uses the largest possible font size that fills the width, extra bold we
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
 Below the main headline, a [config: subtitle_language] subtitle line reading "[SUBTITLE TRANSLATION]" in [config: subtitle_color] at slightly smaller size,
 creating clear visual hierarchy — the subtitle must NOT be white like the main headline.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -254,24 +254,24 @@ The text uses the largest possible font size that fills the width, extra bold we
 
 ### Template — Hook Slide (Slide 1)
 
-**MANDATORY — Hook Category Selection (DO NOT SKIP):**
+**MANDATORY — Hook Category Selection (USER-CONFIRMED):**
 1. Identify topic from the **Topic → Hook Category Mapping** in `references/hook-science.md`
-2. Use the **PRIMARY** hook category for this topic
-3. If the PRIMARY was used in a previous carousel this session, use **SECONDARY**
-4. **NEVER** use a category listed in "Avoid" for this topic — e.g., Education → Avoid: Visual Shock
-5. Read the **visual profile** for the selected category from `references/hook-visual-library.md`
-6. State the selected category explicitly: `Hook Category: [X]`
+2. Present **3 options** to user: PRIMARY + sample headline + vibe, SECONDARY + headline + vibe, WILDCARD (random non-Avoid) + headline + vibe
+3. **User picks** A/B/C or provides custom hook/category
+4. If custom → validate against **Avoid** list for this topic — e.g., Education → Avoid: Visual Shock
+5. Read the **visual profile** for the **confirmed** category from `references/hook-visual-library.md`
+6. State the confirmed category explicitly: `Hook Category: [X] (user-confirmed)`
 
 **Pre-generation:** Score headline 3/5 on Hook Scoring Gate (see Hook Headline Formula above). If < 3/5, rewrite before proceeding.
 
 **Costume selection:** Read topic → find matching Costume Profile in `references/hook-visual-library.md` Section 10. Copy the prompt phrase into the `[Wardrobe]` slot. If topic doesn't match any category → use Default / Smart Casual. User override always wins.
 
-**Visual Action + Prop selection:** Choose a visual action from the Visual Action Hook Bank in `references/hook-science.md`. Then select a prop from `references/hook-visual-library.md` Section 11: check hook category → prop type rule (Section 11c), pick specific prop from topic bank (Section 11a), apply interaction style (Section 11b). The absurd mundane action + prop IS the pattern interrupt.
+**Visual Direction (USER-CONFIRMED):** After hook category is confirmed, present **3 visual combos** to user — each combo includes Visual Action + Prop + Costume + Lighting/Camera vibe (assembled from hook-science.md Visual Action Bank, hook-visual-library.md Sections 4-5, 10, 11). User picks A/B/C or modifies individual elements. The confirmed visual direction drives the prompt.
 
 **Anti-repetition:** If this topic has been used before this session, select a different camera variant (A/B/C) from `references/hook-visual-library.md` Section 5. Check the synergy matrix (Section 7) for expression modifications when combining category + visual action.
 
 ```
-A photorealistic cinematic [shot type — from hook-visual-library.md Camera Angle Bank, variant A/B/C] of [CREATOR DESCRIPTION VERBATIM].
+A photorealistic cinematic [shot type — from hook-visual-library.md Camera Angle Bank, variant A/B/C] of [CHARACTER from reference image: creator-face.png].
 [Expression from hook-visual-library.md Expression Library — use FULL prompt phrases for eyes, mouth, head, hands, body, emotion. NOT generic "shocked face"].
 [Wardrobe — from hook-visual-library.md Section 10 Costume Library, matched to topic category].
 [Action/pose from Visual Action Hook Bank + prop from Section 11 with interaction detail from Section 11b — e.g., mid-bite into golden coin, holding raw fish with deadpan].
@@ -293,7 +293,7 @@ in [config: accent_color]. The word "[POWER WORD]" in slightly larger size, visu
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -301,7 +301,7 @@ thirty percent opacity, subtle background mark only.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 ### Template — Creator Shot (CTA)
@@ -310,7 +310,7 @@ See "Template — CTA Slide" section below for the 4 CTA visual types.
 
 ### Template — Creator Shot (General — Non-Hook, Non-CTA)
 ```
-A photorealistic cinematic [shot type] of [CREATOR DESCRIPTION VERBATIM].
+A photorealistic cinematic [shot type] of [CHARACTER from reference image: creator-face.png].
 [Expression keywords from cinematography-lut.md]. [Wardrobe]. [Action/pose].
 
 [Setting/environment with specific details].
@@ -327,7 +327,7 @@ reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and 
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -335,7 +335,7 @@ thirty percent opacity, subtle background mark only.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 ### Template — Foreshadow Slide (Slide 2 — MANDATORY)
@@ -352,7 +352,7 @@ Maintain exact facial identity from reference image: [face-ref.png].
 | **Visual Tease** | Story, reveal, transformation, case study | "[Preview of reveal] — tapi tunggu sampai slide [N]..." | Partial/blurred preview of the climax slide, gaussian blur 40-60% with "coming soon" energy |
 
 ```
-A photorealistic cinematic MCU of [CREATOR DESCRIPTION VERBATIM].
+A photorealistic cinematic MCU of [CHARACTER from reference image: creator-face.png].
 [Expression: concerned urgency or teasing "I know something" smirk — matching foreshadow type].
 [Wardrobe]. [Pose: leaning slightly forward, creating intimacy and urgency].
 
@@ -380,7 +380,7 @@ with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accen
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -388,7 +388,7 @@ thirty percent opacity, subtle background mark only.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 **Foreshadow Headline Bank:**
@@ -416,7 +416,7 @@ reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and 
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -428,7 +428,7 @@ thirty percent opacity, subtle background mark only.
 
 ### Template — B-Roll with Human Figure (Creator Face ALWAYS)
 ```
-A photorealistic cinematic [shot type] of [CREATOR DESCRIPTION VERBATIM] as a prominent figure in [scene].
+A photorealistic cinematic [shot type] of [CHARACTER from reference image: creator-face.png] as a prominent figure in [scene].
 [Context-appropriate expression]. [Profession-specific wardrobe or creator default wardrobe].
 [Scene description with creator clearly identifiable among other figures.
 For crowd scenes: creator in center-foreground, slightly closer to camera, clearly the most recognizable face.
@@ -445,7 +445,7 @@ reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and 
 The text uses the largest possible font size that fills the width, extra bold weight,
 positioned starting from the vertical center of the image extending downward, not crammed at the very bottom.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -453,7 +453,7 @@ thirty percent opacity, subtle background mark only.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding (subject brand is required for context).
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 **NOTE:** B-Roll with ANY visible human figures = creator face ALWAYS included (no need to ask). Creator must be the most prominent/identifiable figure. Only pure object/landscape B-Roll has no creator face.
@@ -462,7 +462,7 @@ Maintain exact facial identity from reference image: [face-ref.png].
 ```
 A photorealistic cinematic thumbnail composition:
 
-Primary subject: [CREATOR DESCRIPTION VERBATIM], [exaggerated hook expression].
+Primary subject: [CHARACTER from reference image: creator-face.png], [exaggerated hook expression].
 Expression: [specific exaggerated emotion] — wide eyes, raised brows,
 [mouth position], energy that screams "KAMU HARUS LIHAT INI".
 Position: face occupies majority of frame, positioned [left/right/center].
@@ -482,13 +482,13 @@ Bottom third of the image has a smooth dark gradient zone. Extremely large, bold
 reading "[JUDUL THUMBNAIL DALAM BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 > **Note:** Thumbnails typically don't need page numbers since they are standalone images, not part of the carousel sequence. Omit `"[N]/[TOTAL]"` for thumbnails.
@@ -514,12 +514,12 @@ reading "[HEADLINE IN BAHASA]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and 
 The text uses the largest possible font size that fills the width, extra bold weight, dominating the gradient zone.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
 [If comparison (A vs B): brand icon + watermark on divider:]
-Render the creator's brand icon from reference image [brand-icon.png] on the vertical center divider line
+Render the creator's brand icon from reference image creator-brand.png on the vertical center divider line
 between the two panels as a small circular badge at thirty percent opacity — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white on the vertical center divider line,
 thirty percent opacity, subtle background mark only.
 [If non-comparison: brand icon + watermark centered:]
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -527,7 +527,7 @@ thirty percent opacity, subtle background mark only.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 ### Template — CTA Slide (Last Slide — 4 Visual Types)
@@ -551,7 +551,7 @@ The CTA slide must CONVERT attention into action. A generic "follow me" composit
 **Best stat:** Debate-driven CTAs generate highest comment volume per impression.
 
 ```
-A photorealistic cinematic MS of [CREATOR DESCRIPTION VERBATIM].
+A photorealistic cinematic MS of [CHARACTER from reference image: creator-face.png].
 Expression: confident, playful challenge — one eyebrow raised, slight smirk,
 "I want to hear your take" energy. Arms open, gesturing to both sides.
 [Wardrobe: default creator wardrobe].
@@ -571,7 +571,7 @@ Bottom half of the image has a smooth dark gradient zone. Extremely large, bold,
 reading "MENURUT LO [A] ATAU [B]?" with "[A]" and "[B]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -580,7 +580,7 @@ Below the icons row, "[config: portfolio_url]" in white text at slightly smaller
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 #### CTA Type 2: Question ("Lo yang mana?")
@@ -589,7 +589,7 @@ Maintain exact facial identity from reference image: [face-ref.png].
 **Best stat:** "Which one?" CTAs get +25% more comments than open-ended questions.
 
 ```
-A photorealistic cinematic CU of [CREATOR DESCRIPTION VERBATIM].
+A photorealistic cinematic CU of [CHARACTER from reference image: creator-face.png].
 Expression: warm curiosity, direct eye contact, slight head tilt —
 "I'm genuinely asking you" energy. One hand near chin (thinking pose)
 or pointing directly at camera (breaking fourth wall).
@@ -609,7 +609,7 @@ Bottom half of the image has a smooth dark gradient zone. Extremely large, bold,
 reading "[SIMPLE CHOICE QUESTION IN BAHASA]?" with the words "[KEYWORD 1]" and "[KEYWORD 2]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -618,7 +618,7 @@ Below the icons row, "[config: portfolio_url]" in white text at slightly smaller
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 #### CTA Type 3: Identity Tag ("Tag temen yang BUTUH ini")
@@ -627,7 +627,7 @@ Maintain exact facial identity from reference image: [face-ref.png].
 **Best stat:** IG DM shares = 3-5x heavier algorithm weight than likes.
 
 ```
-A photorealistic cinematic MWS of [CREATOR DESCRIPTION VERBATIM]
+A photorealistic cinematic MWS of [CHARACTER from reference image: creator-face.png]
 with a second person (friend/colleague energy — similar age, casual interaction).
 Expression: both laughing/smiling warmly, creator nudging/pointing at the other person
 as if saying "this is for you." Natural, candid friendship moment.
@@ -647,7 +647,7 @@ Bottom half of the image has a smooth dark gradient zone. Extremely large, bold,
 reading "TAG TEMEN YANG BUTUH INI" with "BUTUH" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -656,7 +656,7 @@ Below the icons row, "[config: portfolio_url]" in white text at slightly smaller
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 #### CTA Type 4: Engagement Reward ("Comment KEYWORD buat dapetin...")
@@ -665,7 +665,7 @@ Maintain exact facial identity from reference image: [face-ref.png].
 **Best stat:** Comment-to-DM funnels can generate 1,000+ leads/month.
 
 ```
-A photorealistic cinematic MCU of [CREATOR DESCRIPTION VERBATIM].
+A photorealistic cinematic MCU of [CHARACTER from reference image: creator-face.png].
 Expression: generous, excited to give — bright smile, eyes lit up,
 one hand extended toward camera holding/presenting [reward visual:
 a glowing guide/book/template/phone showing the resource].
@@ -687,7 +687,7 @@ Bottom half of the image has a smooth dark gradient zone. Extremely large, bold,
 reading "COMMENT '[KEYWORD]' BUAT DAPETIN [REWARD]" with "[KEYWORD]" in [config: accent_color].
 The text uses the largest possible font size that fills the width, extra bold weight.
 Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -696,7 +696,7 @@ Below the icons row, "[config: portfolio_url]" in white text at slightly smaller
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding. No "SWIPE (GESER)" on CTA.
-Maintain exact facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 **CTA Headline Bank:**

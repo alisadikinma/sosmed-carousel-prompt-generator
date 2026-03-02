@@ -46,7 +46,7 @@ Convert source style → user's brand style using this mapping:
 
 ### Hook Slide Template
 ```
-A photorealistic cinematic close-up of [CREATOR DESCRIPTION VERBATIM].
+A photorealistic cinematic close-up of [CHARACTER from reference image: creator-face.png].
 [Exaggerated hook expression — e.g., wide shocked eyes, mouth open].
 [Wardrobe]. [Warm environment — e.g., modern cafe, lifestyle setting].
 
@@ -57,7 +57,7 @@ Rembrandt lighting at 4:1 ratio, 3200K warm key from left.
 Bottom half reserved for text overlay (smooth dark gradient zone).
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding.
-Maintain facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 ### Content B-Roll Slide Template
@@ -75,7 +75,7 @@ Lens: [lens]mm f/[aperture], [angle]. [Depth of field].
 
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed
 uppercase text, the largest possible font size that fills the width, extra bold weight.
-Render the creator's brand icon from reference image [brand-icon.png] centered in the middle of the image
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
 as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
 thirty percent opacity, subtle background mark only.
@@ -99,19 +99,19 @@ Both halves: same environment context.
 Lens: 50mm f/2.8, eye-level. Warm golden hour lighting bridging both panels.
 Bottom half of the image has a smooth dark gradient zone. Extremely large, bold, impactful condensed
 uppercase text, the largest possible font size that fills the width, extra bold weight.
-Render the creator's brand icon from reference image [brand-icon.png] on the vertical center divider line
+Render the creator's brand icon from reference image creator-brand.png on the vertical center divider line
 as a small circular badge at thirty percent opacity — use the exact icon from the file, do not generate a new one.
 "[config: handle]" as a watermark in white on the vertical center divider line,
 thirty percent opacity, subtle background mark only.
 "[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding.
-Maintain facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 ### CTA Slide Template
 ```
-A photorealistic cinematic medium close-up of [CREATOR DESCRIPTION VERBATIM].
+A photorealistic cinematic medium close-up of [CHARACTER from reference image: creator-face.png].
 Wearing [wardrobe].
 Expression: warm confident smile, direct eye contact, approachable and inviting.
 Arms crossed or relaxed professional pose.
@@ -123,7 +123,7 @@ Lens: 85mm f/2, shallow depth of field. Butterfly lighting 2:1, 3500K golden.
 Bottom half reserved for text overlay + social handles.
 "[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
 [PLATFORM ASPECT] aspect. No competitor branding.
-Maintain facial identity from reference image: [face-ref.png].
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
 ## Step 4: Text Overlay Guide (Per Slide)

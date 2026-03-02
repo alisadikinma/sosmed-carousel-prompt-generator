@@ -724,7 +724,7 @@ When writing the Hook Slide prompt, insert the visual action fragment at two tem
 
 Example (Finance topic, Makan Nyeleneh action, Negative Bias hook):
 ```
-A photorealistic cinematic close-up of [CREATOR DESCRIPTION].
+A photorealistic cinematic close-up of [CHARACTER from reference image: creator-face.png].
 concerned frown with raised eyebrows, warning gesture with one hand.
 casual blazer over a henley. creator mid-bite into a large croissant,
 cheeks slightly puffed, other hand holding the pastry near mouth level,

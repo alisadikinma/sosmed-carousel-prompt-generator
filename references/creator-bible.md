@@ -2,34 +2,37 @@
 
 > Configurable values (colors, language, handle, film stock, etc.) are in `global-config.md`. This file contains brand RULES and creative GUIDANCE.
 
-## 1. Character Bible (USER MUST CUSTOMIZE)
+## 1. Character Reference (USER MUST PROVIDE)
 
-Replace this template with the creator's actual physical description. This description is used VERBATIM in every creator-facing prompt for AI consistency.
+Creator identity is established through an **image character reference** — NOT a text description. Text descriptions (age, ethnicity, hair, etc.) produce inconsistent AI results. An image reference ensures the AI generates faces that actually look like the creator.
 
+**How it works:**
+1. User provides a character reference image at the start of each session (Step 0)
+2. The image is referenced in every prompt that requires the creator's face
+3. No text-based physical description is needed — the image IS the identity
+
+**Required files (stored in `ref/` folder inside topic folder):**
+- Creator face: `ref/creator-face.png` — clear face photo, good lighting (used for both character appearance and facial identity)
+- Creator brand: `ref/creator-brand.png` — brand icon/logo file
+
+**Prompt instruction (in every creator-facing prompt):**
 ```
-[Age]-year-old [ethnicity/nationality] [gender] with [hair description] and [face shape].
-[Skin tone] with natural texture and visible pores.
-[Eye description] [glasses if applicable].
-[Facial hair], with a [expression style] expression.
+[CHARACTER from reference image: creator-face.png]
+...
+Maintain exact appearance from reference image: creator-face.png.
 ```
 
-**Example:**
-```
-A 30-year-old Southeast Asian woman with long black hair and oval face shape.
-Medium warm skin undertone with natural texture and visible pores.
-Dark brown almond-shaped eyes with minimal makeup.
-Confident, warm expression.
-```
-
-Face reference file: `[creator-face-ref.png]`
-Prompt instruction: `"maintain exact facial identity from reference image: [creator-face-ref.png]"`
+**Session start checklist — agent MUST confirm with user:**
+1. Have you created a `ref/` folder in your topic folder?
+2. Is `creator-face.png` (your face photo) in the `ref/` folder?
+3. Is `creator-brand.png` (your brand icon) in the `ref/` folder?
 
 ## 2. Branding Assets
 
 | Asset | File | Usage |
 |-------|------|-------|
-| Brand icon/logo | `[brand-icon.png]` | Rendered in center of image (above watermark), thirty percent opacity, on EVERY slide |
-| Face reference | `[creator-face-ref.png]` | AI face generation reference (creator shots) |
+| Creator face | `ref/creator-face.png` | Character reference + facial identity lock for all creator-facing prompts |
+| Creator brand | `ref/creator-brand.png` | Rendered in center of image (above watermark), thirty percent opacity, on EVERY slide |
 
 ## 3. Branding Rules (HARD — NON-NEGOTIABLE)
 
@@ -119,7 +122,7 @@ When a slide discusses a SPECIFIC company, product, or service (Google, WhatsApp
 ### B-Roll with Human Figures — ALWAYS Use Creator Face
 When a B-Roll/content slide involves visible human figures (silhouettes, crowds, professionals, specific persons):
 1. **ALWAYS** use the creator's face — no need to ask. Creator face MUST appear in any slide with human figures.
-2. Use creator description VERBATIM + add face reference
+2. Use character reference image + face reference image
 3. **Crowd scenes**: Creator must be one of the **most prominent foreground figures** — clearly identifiable, not lost in the crowd. Place creator in center-foreground or left/right-foreground position, slightly larger/closer to camera than surrounding people.
 4. **Single/few person scenes**: Creator IS the primary subject.
 5. If scene implies profession-specific clothing (lab coat, suit, hard hat) → ask: "Should you wear [profession outfit] or your default wardrobe?"

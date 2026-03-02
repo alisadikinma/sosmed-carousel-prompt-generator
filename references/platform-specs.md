@@ -82,7 +82,7 @@ Nano Banana Pro is the **exclusive** image generation platform for this plugin.
 ## 5. Character Consistency Tips
 
 - Practical sweet spot: **3-5 reference images** (14 supported, but 6+ = diminishing returns)
-- Repeat defining traits **verbatim** in every prompt (eye color, hairstyle, scars)
+- Use **character reference image** in every prompt (replaces text-based descriptions — more accurate)
 - Change only **ONE variable** per generation (background OR outfit OR lighting)
 - Use **targeted edits**: "change background to forest" — NOT full regeneration
 - Stay in same conversation thread (model preserves visual context)
