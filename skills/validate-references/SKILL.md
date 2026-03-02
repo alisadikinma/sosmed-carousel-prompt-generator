@@ -36,18 +36,20 @@ Run 7 automated consistency checks across all operational files. Reports PASS/FA
 
 ### Check 3: Reference Table Completeness
 **Pattern:** Reference/file tables in SKILL.md, agent.md, README.md, CLAUDE.md
-**Expected:** All 4 tables list exactly 10 reference files:
+**Expected:** All 4 tables list exactly 12 reference files:
 1. `global-config.md`
 2. `creator-bible.md`
 3. `hook-science.md`
-4. `carousel-rebranding.md`
-5. `platform-specs.md`
-6. `cinematography-lut.md`
-7. `prompt-formulas.md`
-8. `localization-id.md`
-9. `carousel-best-practices.md`
-10. `caption-copywriting.md`
-**How to verify:** For each of the 4 files, grep for each reference filename. All 10 must appear.
+4. `hook-formula-bank.md`
+5. `hook-visual-library.md`
+6. `carousel-rebranding.md`
+7. `platform-specs.md`
+8. `cinematography-lut.md`
+9. `prompt-formulas.md`
+10. `localization-id.md`
+11. `carousel-best-practices.md`
+12. `caption-copywriting.md`
+**How to verify:** For each of the 4 files, grep for each reference filename. All 12 must appear.
 
 ### Check 4: Hashtag Counts
 **Pattern:** Any mention of `hashtag` with a number

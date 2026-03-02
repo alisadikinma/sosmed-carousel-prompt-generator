@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Claude Code plugin that generates cinematic AI image prompts for social media carousels. 1 skill + 1 agent + 10 reference documents as RAG knowledge base.
+Claude Code plugin that generates cinematic AI image prompts for social media carousels. 1 skill + 1 agent + 12 reference documents as RAG knowledge base.
 
 ## Architecture
 
@@ -16,7 +16,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | `skills/validate-references/SKILL.md` | Cross-file consistency checker (7 checks) |
 | `skills/new-localization/SKILL.md` | Scaffold new localization files + wire reference tables |
 | `agents/carousel-prompt-generator.md` | Subagent for batch carousel prompt work |
-| `references/` | 10 reference docs read on-demand by skill/agent |
+| `references/` | 12 reference docs read on-demand by skill/agent |
 | `README.md` | Repo README |
 | `LICENSE` | MIT license |
 
@@ -27,6 +27,8 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | `global-config.md` | ALWAYS (read FIRST) — single source of truth for all configurable values (language, colors, handle, film stock, platform specs) |
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
 | `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (12 absurd action types for static carousel hooks), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, cover slide specs, interactive hooks |
+| `hook-formula-bank.md` | 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer) — works for ALL content types, cross-mapped to visual hook categories |
+| `hook-visual-library.md` | Hook visual specs — expression libraries (5+8 categories), lighting presets, camera angle banks (3 variants per category), environment palettes, Visual Action × Expression synergy matrix, anti-repetition variation system |
 | `carousel-rebranding.md` | Rebranding third-party carousels |
 | `platform-specs.md` | Platform routing, aspect ratios, Nano Banana Pro specs |
 | `cinematography-lut.md` | Lighting/lens/film stock/atmosphere/DP signature lookup |
@@ -55,7 +57,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 - **Multi-Keyword Highlighting**: Every headline highlights **2-4 emotionally impactful keywords** in accent color — NEVER just 1 word. Includes power words, emotional triggers, numbers, identity words
 - **Subtitle**: Per global-config.md — subtitle language translation, rendered below main headline in **subtitle color from config** (not white). Creates visual hierarchy and bilingual accessibility
 - **Hook Headline Formula**: Mandatory structure `[POWER WORD] + [curiosity gap/number] + [unrevealed payoff]`. Must score 3/5 on Hook Scoring Gate BEFORE generating prompt. Power word at 120% size in accent color
-- **Hook Science**: 5 psychology-based hook categories with 100-hook bank (20 per category, Bahasa + English). Hook category determines expression + scene + lighting. Includes Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), and cover slide design specs
+- **Hook Science**: 5 psychology-based hook categories with 100-hook bank (20 per category, Bahasa + English). Hook category determines expression + scene + lighting. Includes Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), and cover slide design specs. **Hook Formula Bank**: 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer framework) for ALL content types — see `references/hook-formula-bank.md`. **Hook Visual Library**: Deep visual specs per hook category — expression libraries (eyes, mouth, head, hands, body), lighting presets, camera angle banks (3 variants A/B/C), environment palettes, Visual Action × Expression synergy matrix, anti-repetition variation system — see `references/hook-visual-library.md`. **MANDATORY: Hook category MUST match Topic → Hook Category Mapping. NEVER default to Visual Shock**
 - **Visual Action Hook Bank**: 12 absurd mundane action types for static carousel hook slides (makan nyeleneh, minum dramatic, objek absurd, destruction, satisfying process, scale absurd, wrong context, frozen mid-action, extreme close-up, props overflow, contradiction pose, mundane zen). Each hook slide MUST use a visual action from the bank — the absurd action IS the pattern interrupt. Topic → Visual Action mapping in `hook-science.md`
 - **Foreshadow (Slide 2)**: MANDATORY bridge between hook and body. 4 types: Steps Tease, Fear Urgency, Quiz/Choice, Visual Tease. Creates FOMO to keep swiping. Instagram re-serves from slide 2 = second chance
 - **CTA Visual Types**: 4 engagement-driven types ranked by impact: Engagement Reward (12-18% conversion), Question (highest comment volume), Polarize (highest shares + depth), Identity Tag (highest DM shares). Each has specific visual composition and lighting
@@ -198,7 +200,9 @@ To change any configurable value (language, color, handle, film stock, etc.):
 | Missing captions | Captions for all 4 platforms are default — check if user filtered |
 | WOW too low | Min 6/8, all 8 elements mandatory — check each element is in prompt |
 | Weak hook headline | Must score 3/5 on Hook Scoring Gate (question, number, power word, negative frame, unrevealed payoff). If < 3/5, REWRITE before generating |
-| Hook visual doesn't match | Hook category determines expression + scene + lighting — check Hook Category → Visual Direction mapping in prompt-formulas.md |
+| Hook visual doesn't match | Hook category determines expression + scene + lighting — check visual profile in hook-visual-library.md. MANDATORY: category MUST match Topic → Hook Category Mapping in hook-science.md |
+| Hook always Visual Shock | Agent must follow Topic → Hook Category Mapping. Education/Business/Health = Avoid Visual Shock. Check enforcement step in prompt-formulas.md |
+| Hook images repetitive | Use anti-repetition system: rotate camera variants A/B/C per category. Check hook-visual-library.md Anti-Repetition section |
 | Creator face on public figure slide | When topic is about a public figure (criminal, head of state, artist, CEO), body slides should show the public figure's face as primary — creator is optional companion. Check Public Figure Face Priority in creator-bible.md |
 | Missing foreshadow | Slide 2 MUST be foreshadow type (Steps Tease / Fear Urgency / Quiz / Visual Tease) |
 | Foreshadow doesn't create FOMO | Headline must create urgency to swipe — "kalau lo skip..." / "tunggu sampai..." |
@@ -216,5 +220,5 @@ To change any configurable value (language, color, handle, film stock, etc.):
 
 ---
 
-**Version:** 2.10.0
-**Last Updated:** February 2026
+**Version:** 2.12.0
+**Last Updated:** March 2026

@@ -37,6 +37,8 @@ Claude reads this SKILL.md directly and follows the workflow below.
 | ANY prompt | `references/global-config.md` (ALWAYS — read FIRST) |
 | ANY prompt | + `references/creator-bible.md` (ALWAYS) |
 | Hook slide / Slide 1 | + `references/hook-science.md` (hook psychology, clickbait formulas, power words) |
+| Hook headline formulas | + `references/hook-formula-bank.md` (52 hook formula templates, 8 psychology categories — all content types) |
+| Hook visual specs | + `references/hook-visual-library.md` (expression libraries, lighting presets, camera angle banks, environment palettes, synergy matrix, anti-repetition) |
 | Carousel rebranding | + `references/carousel-rebranding.md` |
 | Platform choice / aspect ratio | + `references/platform-specs.md` |
 | Lighting/lens lookup | + `references/cinematography-lut.md` |
@@ -312,8 +314,11 @@ Note: [Any correction or nuance, if applicable]
 - [ ] NO competitor branding on ANY slide (subject brand IS required where relevant)
 - [ ] Subject brand (logo/UI) visible on slides discussing that brand's stats/facts
 - [ ] Hook headline scored 3/5+ on Hook Scoring Gate
-- [ ] Hook visual matches hook category (expression + scene + lighting)
+- [ ] Hook category matches Topic → Hook Category Mapping (**NOT defaulting to Visual Shock**)
+- [ ] Hook visual profile loaded from `references/hook-visual-library.md` (expression + lighting + camera + environment)
+- [ ] Hook visual matches hook category (expression + scene + lighting — each category must look DISTINCT)
 - [ ] Hook slide uses a Visual Action from the Hook Bank (12 absurd action types — see hook-science.md)
+- [ ] If repeat topic this session: different camera variant (A/B/C) selected from hook-visual-library.md
 - [ ] Slide 2 is FORESHADOW type (Steps Tease / Fear Urgency / Quiz / Visual Tease)
 - [ ] Foreshadow creates FOMO — viewer must swipe to resolve
 - [ ] Emotional arc plotted — each slide has assigned beat + intensity

@@ -212,13 +212,15 @@ Before generating the hook image prompt, verify the headline scores 3/5:
 
 The hook headline category MUST match the visual composition and creator expression:
 
-| Hook Category | Creator Expression | Scene Direction | Lighting |
-|---------------|-------------------|-----------------|----------|
-| Visual Shock | Wide-eyed shock, mouth open, frozen mid-reaction | Visual contradiction or unexpected scale — something "wrong" in the scene | High contrast 4:1, dramatic rim light |
-| Negative Bias | Concerned frown, warning hand gesture, serious eye contact | Warning visual (red accent glow), "stop" composition | Moody, underlit face, 3:1 ratio |
-| Curiosity Gap | Knowing smirk, raised eyebrows, "I know something you don't" | Partially hidden/blurred element that teases the reveal | Rembrandt 4:1, warm key, mystery shadows |
-| Relatability | Relatable frustration OR joy, "that's so me" expression | Everyday scenario elevated to cinematic — familiar but beautiful | Soft loop lighting, 2:1, warm natural |
-| Speed & Value | Confident authority, direct unblinking eye contact, chin slightly up | Clean composition, minimal distraction, focus on creator authority | Butterfly 2:1, clean, professional |
+| Hook Category | Creator Expression | Scene Direction | Lighting | Camera Default |
+|---------------|-------------------|-----------------|----------|---------------|
+| Visual Shock | Eyes blown wide, full iris visible, dropped jaw in small O, head tilted back, hand raised in shock gesture — "frozen visceral 'wait WHAT' reaction" | Disrupted environment, warm-cool clash, motion elements, single dramatic element | Hard Rembrandt 4:1, 3200K tungsten key, strong cool 5600K rim, deep dramatic shadows | CU 85mm f/1.8 eye-level |
+| Negative Bias | Intense stare through narrowed lids, brows furrowed deeply, tight lips pulled down, chin lowered looking up through brows, palm-out stop gesture — "protective warning urgency" | Dark minimal, shadow-dominant, exposed brick/dark void, faint red-amber accent glow | Short-side Rembrandt 3:1, 3800K neutral-warm, cool fill from below, thin warm rim | MCU 85mm f/1.8 eye-level |
+| Curiosity Gap | One eyebrow raised creating asymmetric intrigue, closed-lip smirk one corner lifted, head tilted ten degrees, hand near mouth as if whispering — "smug insider confidence" | Warm atmospheric with depth, golden practicals, partially hidden/blurred tease element | Rembrandt 4:1, 3200K warm golden key, warm ambient fill, subtle warm halo rim | MCU 85mm f/1.8 slight angle |
+| Relatability | Soft warm eye contact with raised brows of recognition, natural smile hint of teeth, slight forward nod, hands wrapped around coffee mug — "the 'oh you TOO?' face" | Authentic lifestyle (cafe, desk, bedroom), warm naturals, recognizable everyday objects | Soft loop 2:1, 3500K warm natural daylight, large soft fill, barely visible rim | MCU 50mm f/2.0 slight offset |
+| Speed & Value | Direct unwavering gaze, steady confident brows, closed-lip half-smile, chin up three degrees with authoritative nod, hand showing number gesture — "calm unshakeable competence" | Clean professional (studio, organized desk), neutral warmth, competence signals (screens, tools) | Butterfly 2:1, 4000K neutral-warm, even controlled fill, subtle professional rim | MCU 85mm f/1.8 centered |
+
+> Full expression libraries (eyes, mouth, head, hands, body per category), 3 camera variants (A/B/C), environment palettes, and synergy matrix → see `references/hook-visual-library.md`
 
 ### Multi-Keyword Highlighting in Prompt (All Slides)
 
@@ -252,13 +254,23 @@ The text uses the largest possible font size that fills the width, extra bold we
 
 ### Template — Hook Slide (Slide 1)
 
+**MANDATORY — Hook Category Selection (DO NOT SKIP):**
+1. Identify topic from the **Topic → Hook Category Mapping** in `references/hook-science.md`
+2. Use the **PRIMARY** hook category for this topic
+3. If the PRIMARY was used in a previous carousel this session, use **SECONDARY**
+4. **NEVER** use a category listed in "Avoid" for this topic — e.g., Education → Avoid: Visual Shock
+5. Read the **visual profile** for the selected category from `references/hook-visual-library.md`
+6. State the selected category explicitly: `Hook Category: [X]`
+
 **Pre-generation:** Score headline 3/5 on Hook Scoring Gate (see Hook Headline Formula above). If < 3/5, rewrite before proceeding.
 
 **Visual Action selection:** Choose a visual action from the Visual Action Hook Bank in `references/hook-science.md`. Use the Topic → Visual Action Mapping table for default selection. Insert the action fragment at `[Action/pose]` and `[Scene with pattern interrupt]` slots below. The absurd mundane action IS the pattern interrupt.
 
+**Anti-repetition:** If this topic has been used before this session, select a different camera variant (A/B/C) from `references/hook-visual-library.md` Section 4. Check the synergy matrix (Section 6) for expression modifications when combining category + visual action.
+
 ```
-A photorealistic cinematic [shot type — CU/MCU, match Hook Category table] of [CREATOR DESCRIPTION VERBATIM].
-[Expression must match Hook Category -> Creator Expression mapping — e.g., wide-eyed shock for Visual Shock].
+A photorealistic cinematic [shot type — from hook-visual-library.md Camera Angle Bank, variant A/B/C] of [CREATOR DESCRIPTION VERBATIM].
+[Expression from hook-visual-library.md Expression Library — use FULL prompt phrases for eyes, mouth, head, hands, body, emotion. NOT generic "shocked face"].
 [Wardrobe]. [Action/pose from Visual Action Hook Bank — e.g., mid-bite into bread, pouring coffee, holding absurd object].
 
 [Scene with pattern interrupt — use the contrast/context from the Visual Action prompt fragment.

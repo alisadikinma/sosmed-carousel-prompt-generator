@@ -284,6 +284,8 @@ Interactive carousels are the highest-engagement format in 2026. They turn passi
 
 ## Topic → Hook Category Mapping
 
+**MANDATORY:** Select the PRIMARY category for your topic. NEVER use a category in the "Avoid" column. For visual specs per category (expression, lighting, camera, environment), read `references/hook-visual-library.md`.
+
 | Topic | Primary Hook | Secondary Hook | Avoid |
 |-------|-------------|---------------|-------|
 | Education | Negative Bias | Speed & Value | Visual Shock |
@@ -893,6 +895,33 @@ When generating carousel prompts, the hook slide MUST include:
 
 ---
 
+## Hook Formula Bank (52 Templates) + Visual Library
+
+See **`references/hook-formula-bank.md`** — 52 fill-in-the-blank hook formula templates organized by 8 psychological categories (Seefluencer framework by Samuel Christ). Works for **ALL content types** (educational, tips, story, opinion, product, affiliate).
+
+See **`references/hook-visual-library.md`** — Deep visual specs per hook category: expression libraries, lighting presets, camera angle banks (3 variants per category), environment palettes, Visual Action × Expression synergy matrix, and anti-repetition variation system.
+
+**How the three files work together:**
+- **This file** (hook-science.md) → 5 hook categories with psychology + 100 hook examples + 12 Visual Actions + Topic → Hook Category Mapping + scoring gate
+- **Formula Bank** (hook-formula-bank.md) → 52 **fill-in-the-blank templates** for generating unlimited new headlines + Visual Profile summaries
+- **Visual Library** (hook-visual-library.md) → **Deep visual specs** per category: expression (eyes, mouth, head, hands, body), lighting presets, camera angles (3 variants A/B/C), environments, synergy matrix, anti-repetition
+- **Workflow** → Select category from Topic mapping (this file) → Pick formula from hook-formula-bank.md → Read visual specs from hook-visual-library.md → Pick Visual Action from this file → Check synergy matrix → Generate prompt
+
+Formula categories map to our 5 visual hook categories:
+
+| Formula Category | Visual Hook Category | Visual Direction |
+|---|---|---|
+| Unbeatable Value | Speed & Value | Confident authority expression |
+| Problem-Solver | Negative Bias | Concerned/warning expression |
+| Plot Twist | Curiosity Gap | Knowing smirk expression |
+| FOMO & Urgency | Negative Bias | Urgent "don't miss this" expression |
+| Social Proof | Speed & Value | Authoritative expression |
+| Comparison & Authority | Negative Bias | "Wake up" energy |
+| Hyper-Targeted | Relatability & Identity | Empathetic "I see you" expression |
+| Curiosity & Teaser | Curiosity Gap | Raised eyebrows/smirk |
+
+---
+
 ## Source Attribution
 
 Research data compiled from:
@@ -917,3 +946,4 @@ Research data compiled from:
 - TrueFuture Media 2026 — carousel strategy, cover design
 - CreatorFlow 2026 — engagement hierarchy, DM share weight
 - ManyChat 2026 — comment-to-DM conversion rates
+- Seefluencer Hook Playbook (Samuel Christ) — 52 hook formulas, 8 psychology categories (see `references/hook-formula-bank.md`)

@@ -82,6 +82,10 @@ The agent detects ambiguous creative decisions and asks before generating:
 
 Plus: Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), cover slide design specs, and algorithm engagement hierarchy.
 
+**Hook Formula Bank (v2.11.0):** 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer framework by Samuel Christ) — works for ALL content types (educational, tips, story, opinion, product, affiliate). Categories: Unbeatable Value, Problem-Solver, Plot Twist, FOMO & Urgency, Social Proof, Comparison & Authority, Hyper-Targeted, Curiosity & Teaser. Cross-mapped to the 5 visual hook categories with visual action pairing and execution checklist.
+
+**Hook Visual Library (NEW in v2.12.0):** Deep visual specs per hook category — expression libraries with prompt-ready phrases (eyes, mouth, head, hands, body, emotion per category), lighting presets (pattern, ratio, color temp, fill, rim, shadow), camera angle banks (3 variants A/B/C per category for anti-repetition), environment palettes, Visual Action × Expression synergy matrix, and anti-repetition variation system. Mandatory hook category enforcement: agent MUST follow Topic → Hook Category Mapping, NEVER default to Visual Shock.
+
 ### 8. CTA Science (Algorithm-Optimized)
 
 4 CTA types ranked by engagement impact, designed around the 2026 algorithm engagement hierarchy (DM shares 3-5x > Saves 3x > Comments > Likes):
@@ -244,13 +248,15 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 |---|---|
 | `carousel-prompt-generator` | Subagent for batch carousel prompt work — reads references, verifies facts, asks about ambiguities, generates prompts + captions, writes output |
 
-### Reference Docs (10 files, read on-demand)
+### Reference Docs (12 files, read on-demand)
 
 | File | When Used |
 |---|---|
 | `global-config.md` | ALWAYS (read FIRST) — single source of truth for all configurable values (language, colors, handle, film stock, platform specs) |
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
 | `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (12 absurd action types), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, interactive hooks |
+| `hook-formula-bank.md` | 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer) — works for ALL content types |
+| `hook-visual-library.md` | Hook visual specs — expression libraries, lighting presets, camera angle banks (3 variants), environment palettes, synergy matrix, anti-repetition |
 | `carousel-rebranding.md` | Converting third-party carousels to your brand |
 | `platform-specs.md` | Nano Banana Pro specs, platform aspect ratios |
 | `cinematography-lut.md` | Lighting, lens, film stock, atmosphere, DP signatures |
@@ -296,11 +302,17 @@ User Request
 [8] SCORE HOOK HEADLINE — 3/5 on Hook Scoring Gate
     |
     v
-[9] SELECT VISUAL ACTION — pick from 12-category bank for hook slide
+[9] SELECT HOOK CATEGORY — MANDATORY Topic → Hook Category Mapping (NEVER default to Visual Shock)
+    |
+    v
+[9b] SELECT VISUAL ACTION — pick from 12-category bank for hook slide
+    |
+    v
+[9c] LOAD VISUAL PROFILE — expression + lighting + camera + environment from hook-visual-library.md
     |
     v
 [10] Generate prompts (Engagement Funnel Order):
-    ├── Slide 1: HOOK (visual action + category-matched expression + scored headline)
+    ├── Slide 1: HOOK (visual action + category-matched visual profile + scored headline)
     ├── Slide 2: FORESHADOW (mandatory bridge with FOMO)
     ├── Slides 3-N: BODY (emotional arc + mini-hook at 5-7)
     └── Last: CTA (4 visual types matching engagement goal)
@@ -353,6 +365,8 @@ These are non-negotiable across all generated prompts:
 | Subtitle color | Subtitle in accent color per global-config.md (never white like main headline) |
 | Creator face placement | Hook, CTA, Foreshadow, Thumbnail always. B-Roll with humans: ALWAYS (creator as most prominent). **Public figure topics**: public figure primary in body, creator as companion |
 | Visual Action Hook | Hook slide MUST use absurd mundane action from Visual Action Hook Bank (12 categories) as pattern interrupt |
+| Hook category enforcement | Hook category MUST match Topic → Hook Category Mapping. NEVER default to Visual Shock. Visual profile loaded from hook-visual-library.md |
+| Anti-repetition | Same topic repeated = different camera variant (A/B/C) from hook-visual-library.md |
 | Text rendered in-image | Headlines (MASSIVE billboard-scale, extra bold), accents, branding, SWIPE CTA — all in prompt |
 | Default film stock | Per global-config.md `film_stock` (warm, not cold) |
 | Aspect ratio | Platform-specific: IG Feed 4:5, TikTok 9:16, LinkedIn 4:5 |
@@ -435,6 +449,8 @@ sosmed-carousel-prompt-generator/
 │   ├── global-config.md         # Single source of truth for all configurable values
 │   ├── creator-bible.md         # Creator identity + brand-in-image + holidays
 │   ├── hook-science.md          # Hook psychology, 5 categories, visual action bank, scoring
+│   ├── hook-formula-bank.md      # 52 hook formula templates, 8 psychology categories
+│   ├── hook-visual-library.md   # Hook visual specs, expression libraries, anti-repetition
 │   ├── carousel-rebranding.md   # Rebranding conversion rules
 │   ├── platform-specs.md        # Nano Banana Pro + platform specs
 │   ├── cinematography-lut.md    # Lighting/lens/film stock LUT

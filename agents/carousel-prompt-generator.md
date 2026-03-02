@@ -27,6 +27,8 @@ Before generating prompts, read the relevant reference files from your project's
 | ANY prompt | `references/global-config.md` (ALWAYS — read FIRST) |
 | ANY prompt | + `references/creator-bible.md` (ALWAYS) |
 | Hook slide / Slide 1 | + `references/hook-science.md` (hook psychology, clickbait formulas, power words) |
+| Hook headline formulas | + `references/hook-formula-bank.md` (52 hook formula templates, 8 psychology categories — all content types) |
+| Hook visual specs | + `references/hook-visual-library.md` (expression libraries, lighting presets, camera angle banks, environment palettes, synergy matrix, anti-repetition) |
 | Carousel rebranding | + `references/carousel-rebranding.md` |
 | Platform choice / aspect ratio | + `references/platform-specs.md` |
 | Lighting/lens lookup | + `references/cinematography-lut.md` |
@@ -304,7 +306,11 @@ This is especially useful when user says "bikin carousel kayak @xxx" or referenc
 - Wait for answers before generating those slides
 
 ### Step 5: Score Hook Headline
-- Select hook category based on topic (see Hook Category mapping in `references/hook-science.md`)
+- Select hook category from **Topic → Hook Category Mapping** (`references/hook-science.md`)
+- **MANDATORY: State the selected category explicitly. DO NOT default to Visual Shock**
+- If topic = Education, Business, Health → Visual Shock is in "Avoid" column. **NEVER** use it
+- If PRIMARY was used in previous carousel this session → use SECONDARY category
+- Read visual profile from `references/hook-visual-library.md` for the selected category
 - Write headline using Hook Headline Formula (see `references/prompt-formulas.md`)
 - Verify 3/5 on Hook Scoring Gate
 - If < 3/5: REWRITE until passing
