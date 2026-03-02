@@ -342,28 +342,47 @@ Maintain exact appearance from reference image: creator-face.png.
 
 **Purpose:** Bridge the hook to the body. Instagram re-serves carousel from slide 2 if user didn't engage on slide 1 — this is your SECOND CHANCE to capture attention. Slide 2 must create FOMO: "If you skip this, you'll miss [consequence]."
 
+**CRITICAL — Visual Continuity from Hook:**
+The foreshadow MUST visually connect to the hook's absurd scene concept. If the hook shows "creator riding a missile," the foreshadow can't suddenly be a generic studio shot — it breaks immersion. Use one of these continuity strategies:
+
+| Strategy | How It Works | Example (hook = "riding missile") |
+|----------|-------------|----------------------------------|
+| **Aftermath** | Show the scene AFTER the hook moment | Creator landed/crashed, dusting off rubble, looking at camera with "that was only the beginning" expression |
+| **Zoom Shift** | Same scene, different angle/zoom | MCU of creator's face still on the missile, now with concerned look — camera pulled back to show where it's heading |
+| **Narrative Continue** | Next beat of the same story | Creator standing next to the landed missile, pointing at the "AI GUIDANCE SYSTEM" label with urgent expression |
+| **Context Reveal** | Pull back to reveal more context | Wider shot showing the missile was actually a desk prop — creator at desk surrounded by military tech articles |
+
+The foreshadow should feel like swiping to the next panel of a comic book, not jumping to a different movie.
+
 **Foreshadow Type Selection:**
 
 | Type | When to Use | Headline Formula | Visual Direction |
 |------|-------------|-----------------|------------------|
-| **Steps Tease** | Listicle, tutorial, how-to | "Ada [N] cara, dan yang ke-[N] bikin gue berhenti [activity]" | Numbered list visual with LAST ITEM blurred/hidden. Items 1-3 visible, item N = blur overlay with "?" |
-| **Fear Urgency** | Education, finance, business, health | "Kalau lo skip ini, lo terus [negative consequence]" | Creator with concerned/urgent expression, subtle red warning accent, tension composition |
-| **Quiz/Choice** | Comparison, opinion, debate topics | "Mana yang lebih [adjective] — [A] atau [B]? Jawabannya MENGEJUTKAN" | Split composition showing A vs B, both slightly blurred, "?" in center |
-| **Visual Tease** | Story, reveal, transformation, case study | "[Preview of reveal] — tapi tunggu sampai slide [N]..." | Partial/blurred preview of the climax slide, gaussian blur 40-60% with "coming soon" energy |
+| **Steps Tease** | Listicle, tutorial, how-to | "Ada [N] cara, dan yang ke-[N] bikin gue berhenti [activity]" | Numbered list visual with LAST ITEM blurred/hidden. Items 1-3 visible, item N = blur overlay with "?" — **scene elements from hook still visible in background** |
+| **Fear Urgency** | Education, finance, business, health | "Kalau lo skip ini, lo terus [negative consequence]" | Creator with concerned/urgent expression, subtle red warning accent — **same wardrobe/setting as hook, shifted mood** |
+| **Quiz/Choice** | Comparison, opinion, debate topics | "Mana yang lebih [adjective] — [A] atau [B]? Jawabannya MENGEJUTKAN" | Split composition showing A vs B — **hook prop or context element visible as connective thread** |
+| **Visual Tease** | Story, reveal, transformation, case study | "[Preview of reveal] — tapi tunggu sampai slide [N]..." | Partial/blurred preview of climax — **hook's absurd element in background, energy shifting from chaos to curiosity** |
 
 ```
 A photorealistic cinematic MCU of [CHARACTER from reference image: creator-face.png].
 [Expression: concerned urgency or teasing "I know something" smirk — matching foreshadow type].
-[Wardrobe]. [Pose: leaning slightly forward, creating intimacy and urgency].
+[Same wardrobe as hook slide — visual continuity]. [Pose: leaning slightly forward, creating intimacy and urgency].
 
-[For Steps Tease: background shows floating numbered cards/list items, items 1-3 crisp,
-last item heavily blurred with glowing "?" overlay]
+[VISUAL CONTINUITY from hook — pick ONE strategy:]
+[Aftermath: scene shows what happened AFTER the hook moment — creator recovering/reacting]
+[Zoom Shift: same scene, different camera angle — MCU of creator's face, new perspective on the action]
+[Narrative Continue: next story beat — creator now doing/showing the consequence of the hook action]
+[Context Reveal: pull back to reveal hook's absurd element in background while creator addresses camera]
+
+[PLUS foreshadow type visual:]
+[For Steps Tease: floating numbered cards/list items, items 1-3 crisp,
+last item heavily blurred with glowing "?" overlay — hook elements still in background]
 [For Fear Urgency: warning-toned environment, subtle red/amber accent lighting,
-visual tension — creator gesturing stop or pointing urgently at camera]
+visual tension — same setting as hook but mood shifted to urgency]
 [For Quiz/Choice: split background showing option A and option B,
-both partially visible, creator in center between them]
-[For Visual Tease: background shows a blurred/partially revealed version of the
-climax slide content, heavy gaussian blur, creating anticipation]
+both partially visible, hook prop or context element as connective thread]
+[For Visual Tease: blurred/partially revealed climax content,
+hook's absurd element visible in background, energy shifting from chaos to curiosity]
 
 [Foreground element] + [creator subject] + [foreshadow background — 3 depth layers].
 
@@ -389,7 +408,11 @@ thirty percent opacity, subtle background mark only.
 
 [PLATFORM ASPECT] aspect ratio. No competitor branding.
 Maintain exact appearance from reference image: creator-face.png.
+Use the generated hook slide (slide 1) as scene reference for visual continuity —
+same wardrobe, connected setting, consistent lighting temperature.
 ```
+
+**Hook → Foreshadow reference:** When generating foreshadow, use the hook image as a scene reference input in Nano Banana Pro. This ensures the AI maintains wardrobe, setting elements, and visual style across slides 1→2 without the agent having to describe every detail again.
 
 **Foreshadow Headline Bank:**
 - Steps Tease: `"Ada 7 Cara, yang ke-7 GILA"` / `"[N] Langkah — Tapi yang Terakhir Bikin Kaget"`

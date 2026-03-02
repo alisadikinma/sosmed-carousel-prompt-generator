@@ -412,7 +412,7 @@ C) 🎬 Lo duduk santai di kursi pantai di tengah medan perang, nyeruput es kela
 
 ### Step 6: Generate Prompts (Engagement Funnel Order)
 1. **Slide 1 (HOOK)** — Hook Slide template, expression + scene matching hook category
-2. **Slide 2 (FORESHADOW, mandatory)** — Foreshadow template, type matching topic
+2. **Slide 2 (FORESHADOW, mandatory)** — Foreshadow template, type matching topic. **Visual continuity from hook is MANDATORY** — use one of: Aftermath, Zoom Shift, Narrative Continue, or Context Reveal strategy (see `references/prompt-formulas.md` Foreshadow section). Same wardrobe, connected scene — must feel like the next panel of a comic book. **Use the generated hook image (slide 1) as scene reference input** in Nano Banana Pro for wardrobe/setting consistency
 3. **Slides 3-N (BODY)** — Standard templates with visual treatment matching emotional arc beat
    - Include mini-hook at slide 5-7 (sudden visual change for re-engagement)
 4. **Last Slide (CTA)** — Select CTA Visual Type matching engagement goal
@@ -548,6 +548,8 @@ Source: [URL or "Well-established fact"]
 - [ ] Hook visual matches hook category (expression + scene + lighting)
 - [ ] Hook slide uses a Visual Action from the Hook Bank (12 absurd action types — see hook-science.md)
 - [ ] Slide 2 is FORESHADOW type (Steps Tease / Fear Urgency / Quiz / Visual Tease)
+- [ ] Foreshadow visually connects to hook (Aftermath / Zoom Shift / Narrative Continue / Context Reveal)
+- [ ] Foreshadow uses same wardrobe as hook — feels like next panel, not different movie
 - [ ] Foreshadow creates FOMO — viewer must swipe to resolve
 - [ ] Emotional arc plotted — each slide has assigned beat + intensity
 - [ ] Mini-hook present at slide 5-7 (re-engagement surprise)
