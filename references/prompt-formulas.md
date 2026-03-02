@@ -266,7 +266,7 @@ The text uses the largest possible font size that fills the width, extra bold we
 
 **Costume selection:** Read topic → find matching Costume Profile in `references/hook-visual-library.md` Section 10. Copy the prompt phrase into the `[Wardrobe]` slot. If topic doesn't match any category → use Default / Smart Casual. User override always wins.
 
-**Visual Direction (USER-CONFIRMED):** After hook category is confirmed, present **3 visual combos** to user — each combo includes Visual Action + Prop + Costume + Lighting/Camera vibe (assembled from hook-science.md Visual Action Bank, hook-visual-library.md Sections 4-5, 10, 11). User picks A/B/C or modifies individual elements. The confirmed visual direction drives the prompt.
+**Visual Hook Idea (USER-CONFIRMED):** After hook category is confirmed, present **3 vivid scene concepts** — absurd, funny, eye-catching scenarios (2-3 sentence creative pitches, NOT technical component lists). Each idea built from hook-science.md Visual Action Bank + hook-visual-library.md Sections 4-5, 10, 11. The scene should be ABSURD but RELEVANT — humor/shock from contrast between serious headline and ridiculous visual. User picks A/B/C, modifies, or provides own idea. The confirmed visual concept drives the prompt.
 
 **Anti-repetition:** If this topic has been used before this session, select a different camera variant (A/B/C) from `references/hook-visual-library.md` Section 5. Check the synergy matrix (Section 7) for expression modifications when combining category + visual action.
 

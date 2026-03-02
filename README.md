@@ -306,7 +306,7 @@ User Request
 [7b] HOOK CLARIFICATION — present 3 hook options (PRIMARY/SECONDARY/WILDCARD), user picks
     |
     v
-[7c] VISUAL DIRECTION — present 3 visual combos (action+prop+costume+lighting), user picks
+[7c] VISUAL HOOK IDEA — present 3 vivid scene concepts (absurd+funny+eye-catching), user picks or gives own idea
     |
     v
 [8] SCORE HOOK HEADLINE — 3/5 on Hook Scoring Gate (using confirmed category)
@@ -379,7 +379,7 @@ These are non-negotiable across all generated prompts:
 | Subtitle color | Subtitle in accent color per global-config.md (never white like main headline) |
 | Creator face placement | Hook, CTA, Foreshadow, Thumbnail always. B-Roll with humans: ALWAYS (creator as most prominent). **Public figure topics**: public figure primary in body, creator as companion |
 | Visual Action Hook | Hook slide MUST use absurd mundane action from Visual Action Hook Bank (12 categories) as pattern interrupt |
-| Creative Clarification | Every carousel starts with 2-step clarification: 3 hook options → user picks → 3 visual combos → user picks. No auto-selection |
+| Creative Clarification | Every carousel starts with 2-step clarification: 3 hook options → user picks → 3 vivid scene concepts (absurd/funny/eye-catching) → user picks or gives own idea. No auto-selection |
 | Hook category enforcement | Hook category MUST match Topic → Hook Category Mapping. NEVER default to Visual Shock. Visual profile loaded from hook-visual-library.md |
 | Anti-repetition | Same topic repeated = different camera variant (A/B/C) from hook-visual-library.md |
 | Text rendered in-image | Headlines (MASSIVE billboard-scale, extra bold), accents, branding, SWIPE CTA — all in prompt |

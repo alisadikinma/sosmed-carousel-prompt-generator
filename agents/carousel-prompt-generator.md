@@ -359,36 +359,47 @@ Atau mau kasih hook sendiri?
 - If custom → validate against Avoid list for the topic
 - Store confirmed hook category for Step 4c and Step 5
 
-### Step 4c: Visual Direction (MANDATORY — present to user after hook confirmed)
+### Step 4c: Visual Hook Idea (MANDATORY — present to user after hook confirmed)
 
-Based on the **confirmed hook category** from Step 4b, generate 3 visual combos by reading:
+Generate 3 **vivid scene concepts** — absurd, funny, eye-catching scenarios the user can immediately visualize. Each idea is a creative pitch (2-3 sentences) describing what the hook image looks like, NOT a technical component list.
+
+**Data sources for building ideas:**
 - Visual Action: Topic → Visual Action Mapping (`references/hook-science.md`)
 - Prop: Section 11c rule → Section 11a bank (`references/hook-visual-library.md`)
 - Costume: Section 10 topic match (`references/hook-visual-library.md`)
 - Lighting + Camera: Lighting Presets + Camera Bank for the confirmed category (`references/hook-visual-library.md`)
 
-**Option A:** PRIMARY visual action + default prop + default costume
-**Option B:** SECONDARY visual action + alternative prop + same costume
-**Option C:** Creative mix — different action + different prop or costume twist
+**Key principle:** The scene should be ABSURD but RELEVANT to the topic. The humor/shock comes from the contrast between the serious headline and the ridiculous visual. Think: "creator riding a missile", "creator in gladiator armor blocking bullets with a shield", "creator eating durian while presenting financial charts."
+
+**Option A:** Primary visual action — most on-topic absurd scenario
+**Option B:** Secondary visual action — different angle, equally eye-catching
+**Option C:** Wild card — the most unexpected/creative idea, maximum pattern interrupt
 
 **Present to user:**
 ```
-Visual direction mana?
+Ide visual hook — pilih atau kasih ide sendiri:
 
-A) [Visual Action] — [Prop] — [Costume summary]
-   → [Lighting vibe], [Camera angle]
+A) 🎬 [2-3 sentence vivid scene description — what the image looks like, what creator is doing, what makes it absurd/funny]
 
-B) [Visual Action] — [Prop] — [Costume summary]
-   → [Lighting vibe], [Camera angle]
+B) 🎬 [2-3 sentence vivid scene description — different approach]
 
-C) [Visual Action] — [Prop] — [Costume summary]
-   → [Lighting vibe], [Camera angle]
+C) 🎬 [2-3 sentence vivid scene description — wildcard, most unexpected]
 
-Atau mau modify elemen tertentu?
+Mau pakai mana? Atau punya ide visual sendiri?
 ```
 
-- User picks A/B/C or modifies individual elements (e.g., "A tapi prop-nya ganti durian")
-- Store confirmed visual direction for Step 5 and prompt generation
+**Example** (topic: "AI used in military"):
+```
+A) 🎬 Lo lagi naik rudal US Air Force, rambut ketiup angin sampe copot, ekspresi panik tapi tetap pegang laptop — di layar ada HUD "AI GUIDANCE SYSTEM: ACTIVE"
+
+B) 🎬 Lo pakai armor gladiator romawi, teriak sambil nahan perisai dari tembakan peluru modern — kontras ancient warrior vs modern warfare
+
+C) 🎬 Lo duduk santai di kursi pantai di tengah medan perang, nyeruput es kelapa sambil drone AI terbang di atas — "ini gue sambil pantau perang dari laptop"
+```
+
+- User picks A/B/C or provides their own visual idea
+- User can also modify: "A tapi ganti rudal jadi tank" or combine: "A tapi pakai kostum dari B"
+- Store confirmed visual concept for Step 5 and prompt generation
 
 ### Step 5: Score Hook Headline
 - Use the **confirmed hook category** from Step 4b (NOT auto-select)

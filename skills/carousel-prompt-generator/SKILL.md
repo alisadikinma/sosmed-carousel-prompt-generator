@@ -198,7 +198,7 @@ This step is OPTIONAL — user can skip.
 4. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
 5. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
 5b. **HOOK CLARIFICATION** — present 3 hook options (PRIMARY + SECONDARY + WILDCARD) with sample headline + vibe. User picks or provides custom. Validate against Avoid list
-5c. **VISUAL DIRECTION** — based on confirmed hook, present 3 visual combos (Visual Action + Prop + Costume + Lighting/Camera). User picks or modifies elements
+5c. **VISUAL HOOK IDEA** — present 3 vivid scene concepts (absurd, funny, eye-catching — 2-3 sentence creative pitches, NOT technical component lists). User picks, modifies, or provides own idea
 6. **SCORE HOOK HEADLINE** — use confirmed hook category from 5b + visual direction from 5c. Verify 3/5 on Hook Scoring Gate
 7. GENERATE Slide 1 (HOOK) — use Hook Slide template with confirmed creative direction
 8. GENERATE Slide 2 (FORESHADOW, mandatory) — use Foreshadow template, select type matching topic
