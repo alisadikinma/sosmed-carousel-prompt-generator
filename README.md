@@ -249,7 +249,7 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 |---|---|
 | `carousel-prompt-generator` | Subagent for batch carousel prompt work — reads references, verifies facts, asks about ambiguities, generates prompts + captions, writes output |
 
-### Reference Docs (12 files, read on-demand)
+### Reference Docs (13 files, read on-demand)
 
 | File | When Used |
 |---|---|
@@ -265,6 +265,7 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 | `localization-id.md` | Indonesian localization extras, holidays, AI bias countermeasures |
 | `carousel-best-practices.md` | Carousel design, engagement benchmarks, algorithm signals |
 | `caption-copywriting.md` | Caption formulas, emotional triggers, CTA psychology, hashtag strategy |
+| `video-prompt-specs.md` | Grok 3 Imagine Video (Basic mode) — image-to-video animation, SFX, camera movements, text preservation |
 
 ---
 
@@ -338,6 +339,12 @@ User Request
     v
 [12b] If folder path provided → write to {path}/carousel-prompt.md
       If no path → print to console as usual
+    |
+    v
+[13] VIDEO ANIMATION PROMPT (optional)
+      Ask: "Mau generate video animation prompt? (Grok 3 Basic)"
+      If YES → select slides → generate motion + camera + SFX prompts
+      Output to SEPARATE file: {path}/video-prompt-grok3.md
 ```
 
 ---
@@ -361,6 +368,9 @@ All factual claims (statistics, numbers, quotes) auto-verified via web search. S
 
 ### Interactive Slide Design
 Agent detects ambiguous slides and asks before generating — human figures (creator face or anonymous?), profession costumes, setting interpretations. Straightforward slides generated without asking.
+
+### Video Animation Prompts (Optional, Grok 3)
+After carousel image prompts are generated, the agent asks if you want video animation prompts. Select which slides to animate (Hook + CTA recommended minimum). Grok 3 Basic mode prompts include motion direction, camera movement, SFX/audio, and text preservation rules. Output saved to a separate `video-prompt-grok3.md` file — never mixed with image prompts.
 
 ### Indonesian Localization
 Bahasa Indonesia subtitle support and localization reference. Includes setting conversions, holiday adaptations with color palettes, and AI bias countermeasures.
@@ -473,7 +483,8 @@ sosmed-carousel-prompt-generator/
 │   ├── prompt-formulas.md       # Prompt templates + hook formula + foreshadow + CTA types + emotional arc
 │   ├── localization-id.md       # Indonesian localization
 │   ├── carousel-best-practices.md  # Design best practices
-│   └── caption-copywriting.md   # Caption formulas + hashtags
+│   ├── caption-copywriting.md   # Caption formulas + hashtags
+│   └── video-prompt-specs.md   # Grok 3 video animation specs
 ├── CLAUDE.md                    # Project documentation
 ├── README.md
 └── LICENSE                      # MIT

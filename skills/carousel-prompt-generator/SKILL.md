@@ -46,6 +46,7 @@ Claude reads this SKILL.md directly and follows the workflow below.
 | Indonesian content | + `references/localization-id.md` |
 | Carousel best practices | + `references/carousel-best-practices.md` |
 | Caption/copywriting | + `references/caption-copywriting.md` |
+| Video animation prompts | + `references/video-prompt-specs.md` (Grok 3 Basic mode — SFX, camera, per-slide-type animation) |
 
 ---
 
@@ -188,6 +189,7 @@ This step is OPTIONAL — user can skip.
 12. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
 13. **GENERATE CAPTIONS** for all 4 platforms (IG + TikTok + LinkedIn + Threads)
 14. VERIFY continuity checklist
+15. **VIDEO ANIMATION PROMPT (Optional)** — same as Fresh Carousel Step 14
 
 ## Workflow: Fresh Carousel Production
 
@@ -207,6 +209,7 @@ This step is OPTIONAL — user can skip.
 11. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
 12. **GENERATE CAPTIONS** for all 4 platforms (IG + TikTok + LinkedIn + Threads)
 13. **OUTPUT** — if folder path provided → write to `{path}/carousel-prompt.md` with Creative Direction summary at top; if no path → print to console. Include continuity checklist
+14. **VIDEO ANIMATION PROMPT (Optional)** — ask user: "Mau generate video animation prompt juga? (Grok 3 Basic)" → if YES, ask which slides to animate (suggest: Hook + CTA minimum, optional climax). For each selected slide: read `references/video-prompt-specs.md`, match slide type → animation + SFX guide, generate Basic prompt ([motion] + [camera] + [text preservation] + [SFX]), set duration (6s default, 10s for hook/climax/CTA), verify Quality Checklist. Output to SEPARATE file: `{path}/video-prompt-grok3.md` (or print to console)
 
 ## Workflow: Thumbnail Generation
 

@@ -36,6 +36,7 @@ Before generating prompts, read the relevant reference files from your project's
 | Indonesian localization extras | + `references/localization-id.md` |
 | Carousel best practices | + `references/carousel-best-practices.md` |
 | Caption/copywriting | + `references/caption-copywriting.md` |
+| Video animation prompts | + `references/video-prompt-specs.md` (Grok 3 Basic mode — SFX, camera, per-slide-type animation) |
 
 **Read files using:** `cat references/creator-bible.md` (or equivalent file read)
 
@@ -280,6 +281,9 @@ Generate captions for all 4 platforms (IG + TikTok + LinkedIn + Threads) in Engl
 ### Step 9: Continuity Checklist
 Verify all visual continuity rules (including hook score, foreshadow, emotional arc, CTA type)
 
+### Step 10: Video Animation Prompt (Optional)
+Same as Fresh Carousel Step 10 — ask user if they want video animation prompts, generate per selected slide, output to separate `video-prompt-grok3.md` file.
+
 ---
 
 ## WORKFLOW: FRESH CAROUSEL PRODUCTION
@@ -437,6 +441,76 @@ C) 🎬 Lo duduk santai di kursi pantai di tengah medan perang, nyeruput es kela
   - Continuity checklist
   - Print brief summary to console: "Carousel saved to {path}/carousel-prompt.md — {N} slides + captions"
 - If no output folder → print to console in standard format (current behavior)
+
+### Step 10: Video Animation Prompt (Optional)
+
+Ask user: **"Mau generate video animation prompt juga? (Grok 3 Basic)"**
+
+- If NO → end workflow
+- If YES → ask: **"Slide mana yang mau dianimasikan? (contoh: 1,5,8,9 atau 'semua')"**
+  - Suggest: "Minimal Hook + CTA, optional: climax slide"
+
+**For EACH selected slide:**
+1. Re-read original image prompt for visual context
+2. Read `references/video-prompt-specs.md`
+3. Match slide type to Section 6 animation guide (Hook/Foreshadow/Body/CTA)
+4. Write motion description — what MOVES in the image (NOT static elements)
+5. Select ONE camera movement from Section 5
+6. Write specific SFX/audio from Section 4 vocabulary matching the scene
+7. Add text preservation instruction: "all text, headline, branding, and watermark remain sharp and readable throughout"
+8. Add SWIPE animation cue (non-CTA): "the SWIPE text gently slides right repeatedly"
+9. For CTA: add interactive elements — "CTA text subtly pulses, social icons glow one by one"
+10. Set duration: 6s default, 10s for hook/climax/CTA
+11. Verify against Quality Checklist (Section 8 — 10 checks)
+
+**Output to SEPARATE file:** `{folder-path}/video-prompt-grok3.md`
+
+```markdown
+# Video Animation Prompts — Grok 3 Basic Mode
+Topic: [topic name]
+Source: carousel-prompt.md
+Animated Slides: [e.g., 1, 5, 8, 9] of [total]
+Date: [date]
+
+---
+
+## Slide [N]: [TYPE] — [slide title]
+**Source Image:** `[filename].png`
+**Duration:** [6s/10s] | **Orientation:** Vertical (2:3) | **Resolution:** 720p (HD)
+**Emotional Beat:** [BEAT] ([intensity]/6)
+
+### Grok 3 Basic Prompt
+[Full prompt: motion + camera + text preservation + SFX]
+
+### Quality Check
+- [x] Motion matches emotional beat
+- [x] Single camera movement
+- [x] No static re-description
+- [x] SFX specific
+- [x] Duration appropriate
+- [x] Text stays readable
+- [x] SWIPE animated (or CTA interactive)
+- [x] Text preservation stated
+
+---
+(repeat per selected slide)
+
+---
+
+## Grok 3 UI Settings
+| Setting | Value |
+|---------|-------|
+| Model | Grok 3 |
+| Image Reference | Select each PNG above |
+| Generation Mode | Custom |
+| Prompt | Basic |
+| Orientation | Vertical (2:3) |
+| Resolution | High 720p (HD) |
+| Duration | Per slide (see above) |
+```
+
+- If no folder path → print to console
+- Print summary: "Video prompts saved to {path}/video-prompt-grok3.md — {N} slides animated"
 
 ---
 
@@ -647,5 +721,6 @@ When invoked, you will:
 7. Generate captions for all 4 platforms (enriched with source caption context if available)
 8. Write output to a specified file path
 9. Return summary of what was generated
+10. Ask user if they want video animation prompts (optional — Grok 3 Basic mode, separate output file)
 
 Always write your output to a file (e.g., `output/carousel-prompts.md`) so the parent agent can access it.

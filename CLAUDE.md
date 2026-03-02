@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Claude Code plugin that generates cinematic AI image prompts for social media carousels. 1 skill + 1 agent + 12 reference documents as RAG knowledge base.
+Claude Code plugin that generates cinematic AI image prompts for social media carousels, with optional video animation prompts (Grok 3). 1 skill + 1 agent + 13 reference documents as RAG knowledge base.
 
 ## Architecture
 
@@ -16,7 +16,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | `skills/validate-references/SKILL.md` | Cross-file consistency checker (7 checks) |
 | `skills/new-localization/SKILL.md` | Scaffold new localization files + wire reference tables |
 | `agents/carousel-prompt-generator.md` | Subagent for batch carousel prompt work |
-| `references/` | 12 reference docs read on-demand by skill/agent |
+| `references/` | 13 reference docs read on-demand by skill/agent |
 | `README.md` | Repo README |
 | `LICENSE` | MIT license |
 
@@ -36,10 +36,14 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | `localization-id.md` | Indonesian localization extras, holidays, AI bias countermeasures |
 | `carousel-best-practices.md` | Carousel design and engagement best practices |
 | `caption-copywriting.md` | Caption formulas, character limits, hashtag strategy per platform |
+| `video-prompt-specs.md` | Grok 3 Imagine Video (Basic mode) — image-to-video animation specs, SFX vocabulary, camera movements, per-slide-type animation guide, text preservation rules, quality checklist |
 
 ## Key Concepts
 
-- **Image-Only Plugin**: Nano Banana Pro is the exclusive image generation platform
+- **Image + Video Plugin**: Nano Banana Pro for image generation, Grok 3 Imagine Video (Basic mode) for optional animation
+- **Video Animation (Optional)**: After carousel image prompts are generated, system asks user if they want video animation prompts. Output goes to a SEPARATE file (`video-prompt-grok3.md`). User selects which slides to animate (not all required). Grok 3 Basic prompt: motion + camera + text preservation + SFX. Duration: 6s default, 10s for hook/climax/CTA
+- **Text Preservation in Video**: Headline, brand icon, watermark, subtitle, page number MUST stay readable throughout video. SWIPE (GESER) gets animated (slide-right cue). CTA text gets interactive animation (pulse, glow, social icons glow one by one)
+- **Video SFX**: Every video prompt includes specific SFX/audio direction matching the scene. Grok 3 auto-generates audio from prompt
 - **Text-in-Image**: All text (headlines, accent words, branding, SWIPE CTA) rendered directly in the AI-generated image via prompt — NOT post-production. Font must be **largest possible billboard-scale, extra bold/black weight**
 - **WOW Quality Gate**: 8-point scoring (lighting, depth, atmosphere, color, emotion, camera, texture, cinematic ref). **All 8 mandatory, minimum 6/8 for ALL slide types**
 - **Platform-Specific Aspect Ratios**: IG Feed 4:5, TikTok/Reels 9:16, LinkedIn 4:5/1:1, Default 4:5
@@ -87,6 +91,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 10. **Emotional arc plotting** — roller coaster intensity mapping across full carousel
 11. **SEO filename suggestions** — per-slide optimized filenames for content management and discoverability
 12. **Source URL metadata extraction** — extract caption, account, engagement from Instagram/TikTok/LinkedIn post URLs to enrich prompt context and caption writing
+13. **Video animation prompts (optional)** — Grok 3 Basic mode image-to-video prompts per selected carousel slide. Motion + camera + SFX + text preservation. Separate output file (`video-prompt-grok3.md`)
 
 ### Creator Identity (Image Reference)
 - **Standard filenames**: `creator-face.png` (face photo) + `creator-brand.png` (brand icon/logo)
@@ -224,8 +229,15 @@ To change any configurable value (language, color, handle, film stock, etc.):
 | URL metadata empty | Instagram/TikTok may block or truncate — inform user and proceed without metadata. Extraction is best-effort |
 | Source caption copied verbatim | NEVER copy — always rewrite in creator voice (Gen-Z Bahasa, gue/lo). Source caption is inspiration only |
 | Source account branding leaked | Source account handle/watermark = competitor branding. Must NOT appear in any prompt |
+| Video text unreadable | Camera move too fast or extreme zoom — keep moves slow and subtle. Add "all text, headline, branding remain sharp and readable throughout" in video prompt |
+| Video re-describes scene | Image-to-video prompt should ONLY describe motion + sound, NOT static elements already in the image |
+| Video multiple camera moves | Pick ONE camera movement per video prompt — not push-in AND pan simultaneously |
+| Video no SFX | Every video prompt must include specific SFX/audio direction — never generic "add sound" |
+| SWIPE not animated in video | Non-CTA video prompts must include "SWIPE text gently slides right repeatedly" |
+| CTA video too passive | CTA video must include interactive elements: text pulse, icon glow, beckoning gesture |
+| Video prompt in wrong file | Video prompts go to `video-prompt-grok3.md` — NEVER inside `carousel-prompt.md` |
 
 ---
 
-**Version:** 2.13.0
+**Version:** 2.14.0
 **Last Updated:** March 2026
