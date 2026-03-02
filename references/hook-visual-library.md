@@ -12,10 +12,12 @@ Single source of truth for HOW hook slides LOOK. Provides prompt-ready visual sp
 **When generating a hook slide:**
 1. Select hook category from Topic → Hook Category Mapping (hook-science.md) — **MANDATORY, never default to Visual Shock**
 2. Select headline from hook bank (hook-science.md) or formula (hook-formula-bank.md)
-3. Read visual profile for the selected category from THIS FILE
-4. Select Visual Action from hook-science.md (Topic → Visual Action mapping)
-5. Check synergy matrix (Section 7) for expression modification when combining category + visual action
-6. If repeat topic this session: rotate to next variant (A→B→C) per Section 8
+3. Read visual profile for the selected category from THIS FILE (expression, lighting, camera, environment)
+4. Select costume from **Section 10** based on topic category
+5. Select Visual Action from hook-science.md (Topic → Visual Action mapping)
+6. Select prop from **Section 11** — check hook category → prop type rule (11c), pick from topic bank (11a), apply interaction style (11b)
+7. Check synergy matrix (Section 7) for expression modification when combining category + visual action
+8. If repeat topic this session: rotate to next variant (A→B→C) per Section 8
 
 ---
 
@@ -501,16 +503,257 @@ Category-level engagement data mapped from research sources already cited in hoo
 
 ---
 
+## Section 10: Costume/Wardrobe Library
+
+Topic-based costume profiles with prompt-ready descriptions. Agent reads topic → picks matching costume → inserts at `[Wardrobe]` slot in hook template.
+
+### Selection Rule
+
+1. Match the user's topic to the closest topic category below
+2. If topic doesn't fit any category → use **Default / Smart Casual**
+3. If user explicitly specifies wardrobe → user override wins (skip this section)
+4. Costume descriptions are prompt-ready — copy the **Prompt Phrase** directly into the `[Wardrobe]` slot
+
+### Finance / Investment
+
+| Element | Spec |
+|---------|------|
+| Top | fitted dark navy blazer over crisp white open-collar dress shirt |
+| Bottom | dark tailored trousers, slim fit |
+| Accessories | subtle leather-strap watch on wrist, thin silver ring optional |
+| Texture | smooth wool blazer, crisp cotton shirt, natural fabric grain visible under warm light |
+| Color palette | navy, white, charcoal, muted gold accents |
+| **Prompt phrase** | wearing a fitted dark navy blazer over a crisp white open-collar shirt, dark tailored trousers, subtle leather watch visible on wrist, smooth wool and cotton textures catching warm side light |
+
+### Tech / AI
+
+| Element | Spec |
+|---------|------|
+| Top | clean fitted tech hoodie or minimal crewneck sweatshirt in dark charcoal or black |
+| Bottom | dark slim joggers or clean dark jeans |
+| Accessories | wireless earbuds visible in one ear, minimal smart watch |
+| Texture | soft premium fleece or knit, matte fabric, clean modern lines |
+| Color palette | charcoal, black, dark gray, subtle neon accent edge optional |
+| **Prompt phrase** | wearing a clean fitted dark charcoal tech hoodie with minimal design, dark slim joggers, wireless earbud visible in one ear, soft premium fleece fabric with matte texture |
+
+### Health / Fitness
+
+| Element | Spec |
+|---------|------|
+| Top | fitted athletic tank top or dry-fit performance tee in deep color |
+| Bottom | athletic shorts or fitted training pants |
+| Accessories | fitness tracker on wrist, towel draped over one shoulder optional |
+| Texture | moisture-wicking fabric with subtle mesh panels, compression fit |
+| Color palette | deep navy, forest green, black, bright accent stripe optional |
+| **Prompt phrase** | wearing a fitted deep navy athletic performance tee with subtle mesh panels, fitted training pants, fitness tracker on wrist, moisture-wicking fabric texture visible under gym lighting |
+
+### Food / Cooking
+
+| Element | Spec |
+|---------|------|
+| Top | casual tee or henley with a canvas cooking apron layered over it |
+| Bottom | relaxed jeans or chinos, slightly flour-dusted optional |
+| Accessories | rolled sleeves to forearm, kitchen towel tucked in apron string |
+| Texture | canvas apron with visible weave, soft cotton underneath, natural kitchen wear |
+| Color palette | cream apron, warm earth tones, natural whites and tans |
+| **Prompt phrase** | wearing a canvas cooking apron over a relaxed cream henley with sleeves rolled to forearms, kitchen towel tucked in apron string, natural canvas weave and soft cotton textures visible |
+
+### Education / Tutorial
+
+| Element | Spec |
+|---------|------|
+| Top | smart casual button-up shirt with top button open, or clean fitted polo |
+| Bottom | dark chinos or clean jeans |
+| Accessories | reading glasses pushed up on head or worn optional, pen in shirt pocket optional |
+| Texture | crisp cotton or oxford cloth, slightly lived-in but polished |
+| Color palette | light blue, white, soft gray, warm khaki |
+| **Prompt phrase** | wearing a smart casual light blue oxford button-up with top button open and sleeves casually rolled, dark chinos, crisp cotton fabric with natural texture, approachable teacher energy |
+
+### Business / Startup
+
+| Element | Spec |
+|---------|------|
+| Top | crisp fitted button-up shirt in white or light color, no tie, top two buttons open |
+| Bottom | tailored dark trousers or clean dark jeans |
+| Accessories | leather notebook or phone in hand optional, minimal silver cufflinks optional |
+| Texture | premium cotton poplin, sharp press, professional but not corporate |
+| Color palette | white, light gray, navy, clean neutrals |
+| **Prompt phrase** | wearing a crisp white fitted button-up shirt with top two buttons open, tailored dark trousers, premium cotton with sharp press, startup founder energy — professional but not corporate |
+
+### Lifestyle / Travel
+
+| Element | Spec |
+|---------|------|
+| Top | relaxed linen shirt or lightweight casual jacket, open front |
+| Bottom | comfortable chinos or relaxed cotton pants |
+| Accessories | sunglasses pushed up on head, leather bracelet or travel watch |
+| Texture | natural linen with gentle creases, lightweight breathable fabric |
+| Color palette | warm sand, olive, cream, faded indigo, earth tones |
+| **Prompt phrase** | wearing a relaxed olive linen shirt with open front over a simple white tee, comfortable sand chinos, natural linen creases catching warm golden light, travel-ready effortless style |
+
+### Productivity / Tools
+
+| Element | Spec |
+|---------|------|
+| Top | clean minimalist crewneck or fitted long-sleeve tee in solid neutral |
+| Bottom | clean dark slim jeans or technical pants |
+| Accessories | smart watch, single stud earring optional, minimal aesthetic |
+| Texture | smooth cotton or technical knit, clean lines, no logos or prints |
+| Color palette | black, white, gray, navy — monochrome minimal |
+| **Prompt phrase** | wearing a clean minimalist black crewneck in smooth cotton, dark slim jeans, smart watch on wrist, intentionally minimal and functional — the wardrobe itself is optimized |
+
+### Creative / Design
+
+| Element | Spec |
+|---------|------|
+| Top | artistic layered outfit — oversized graphic tee under an open denim or workwear jacket |
+| Bottom | relaxed wide-leg pants or paint-stained jeans |
+| Accessories | visible tattoos optional, chunky rings, colored scarf or bandana, artsy earrings |
+| Texture | mixed textures — denim over soft cotton, canvas patches, artistic intentional imperfection |
+| Color palette | bold accent color against neutrals, one statement piece stands out |
+| **Prompt phrase** | wearing an oversized graphic tee under an open raw denim workwear jacket, relaxed wide-leg pants, chunky silver rings on fingers, mixed textures of denim and soft cotton, artsy layered creative energy |
+
+### News / Current Events
+
+| Element | Spec |
+|---------|------|
+| Top | clean professional blazer or structured jacket over fitted dark turtleneck or crew |
+| Bottom | dark tailored trousers |
+| Accessories | minimal — clean professional appearance, no distracting elements |
+| Texture | structured wool or blend jacket, smooth dark knit underneath, anchor-desk polished |
+| Color palette | black, charcoal, deep navy, muted tones — serious and credible |
+| **Prompt phrase** | wearing a structured dark charcoal blazer over a fitted black turtleneck, dark tailored trousers, smooth structured wool and knit textures, news anchor polished — serious and credible authority |
+
+### Default / Smart Casual (Fallback)
+
+Use when topic doesn't clearly match any category above.
+
+| Element | Spec |
+|---------|------|
+| Top | clean fitted button-up or henley in neutral color, sleeves rolled to forearms |
+| Bottom | dark clean jeans |
+| Accessories | simple watch, minimal jewelry |
+| Texture | clean cotton or linen, natural fabric grain |
+| Color palette | white, gray, navy, warm neutrals |
+| **Prompt phrase** | wearing a clean fitted white button-up with sleeves rolled to forearms, dark clean jeans, simple watch on wrist, natural cotton fabric catching warm ambient light |
+
+---
+
+## Section 11: Prop/Tool Interaction System
+
+Systematic prop selection based on topic × hook category × visual action. Replaces generic props ("bread," "rubber duck") with topic-aware or strategically absurd objects.
+
+### 11a. Topic → Prop Bank
+
+For each topic, **Topic-Related** props visually signal the subject matter. **Random Absurd** props have zero connection — pure WTF factor.
+
+#### Finance / Investment
+**Topic-Related:** golden coin, stock chart printout, calculator with numbers on screen, credit card, bundled cash stack
+**Random Absurd:** raw whole fish, rubber duck, traffic cone
+
+#### Tech / AI
+**Topic-Related:** tangled USB cables, circuit board, vintage floppy disk, robot figurine, oversized computer mouse
+**Random Absurd:** pineapple, garden gnome, kitchen whisk
+
+#### Health / Fitness
+**Topic-Related:** dumbbell, protein shaker bottle, yoga mat rolled up, measuring tape, green smoothie in glass
+**Random Absurd:** cactus pot, flip-flop sandal, alarm clock
+
+#### Food / Cooking
+**Topic-Related:** fresh durian cut open, chef knife, wooden cutting board with ingredients, steaming pot, spice jars
+**Random Absurd:** laptop computer, necktie, phone charger cable
+
+#### Education / Tutorial
+**Topic-Related:** stack of heavy textbooks, oversized magnifying glass, chalkboard eraser, graduation cap, notebook with sticky notes
+**Random Absurd:** rubber chicken, boxing glove, watering can
+
+#### Business / Startup
+**Topic-Related:** whiteboard marker, pitch deck printout, sticky note wall, business card stack, trophy/award
+**Random Absurd:** pool noodle, oven mitt, snow globe
+
+#### Lifestyle / Travel
+**Topic-Related:** passport, vintage suitcase, world map, polaroid camera, plane ticket
+**Random Absurd:** fire extinguisher, toilet plunger, disco ball
+
+#### Productivity / Tools
+**Topic-Related:** hourglass, stacked planners, multiple phone screens, keyboard, cable management clips
+**Random Absurd:** banana, garden hose, rubber stamp
+
+#### Creative / Design
+**Topic-Related:** paint-splattered palette, oversized pencil, color swatch fan deck, camera lens, sketchbook
+**Random Absurd:** iron (clothes), fish bowl, umbrella
+
+#### News / Current Events
+**Topic-Related:** rolled newspaper, microphone, press badge, breaking news printout, red folder marked confidential
+**Random Absurd:** teddy bear, beach ball, toilet paper roll
+
+### 11b. Prop × Visual Action Interaction Matrix
+
+How each Visual Action modifies prop usage. The interaction column tells the agent exactly HOW the creator physically engages with the selected prop.
+
+| Visual Action | Prop Source | Physical Interaction | Prompt Detail |
+|---|---|---|---|
+| Makan Nyeleneh | Topic-Related OR Absurd | Creator BITES/EATS the prop | "mid-bite into [prop], teeth making contact with surface, crumbs or fragments visible, the absurd act of eating [prop] contrasts with the serious headline" |
+| Minum Dramatic | Topic-Related OR Absurd | Creator DRINKS from/with prop | "holding [prop] at lip level as if sipping from it, steam or condensation optional, eyes locked on camera over the [prop], intense knowing stare" |
+| Objek Absurd | Random Absurd ONLY | Creator HOLDS with deadpan | "holding [absurd prop] at chest height with completely flat serious expression, dead-pan stare at camera, the object has zero connection to the headline topic" |
+| Destruction | Topic-Related preferred | Creator RIPS/BREAKS/SMASHES | "mid-action tearing apart [prop], fragments and pieces visible in the air, aggressive confident energy, the physical destruction of [prop] mirrors dismantling the old belief" |
+| Satisfying Process | Topic-Related preferred | Creator performs SATISFYING action with prop | "slow deliberate [pouring/slicing/peeling/unboxing] of [prop], captured at the peak satisfying moment, warm backlighting catching the texture and detail" |
+| Scale Absurd | Topic-Related preferred | Creator dwarfed by OVERSIZED prop | "standing next to an absurdly oversized version of [prop], looking up at it with genuine amazement, one hand reaching toward it, the extreme scale difference creates immediate visual shock" |
+| Wrong Context | Topic-Related | Prop NORMAL but SETTING is absurd | "using [prop] as if completely normal while sitting in [absurd setting — beach, jungle, rooftop edge, laundromat], relaxed unbothered expression despite the environmental mismatch" |
+| Frozen Mid-Action | Topic-Related OR Absurd | Creator FROZEN mid-interaction | "captured at the peak moment of [throwing/catching/dropping/juggling] [prop], body suspended in dynamic pose, hair and clothing showing motion blur, the [prop] frozen mid-trajectory" |
+| Extreme Close-Up | Topic-Related preferred | MACRO shot of prop interaction | "extreme tight close-up of hands [gripping/slicing/pressing/opening] [prop], filling most of the frame, every texture hyper-visible — surface detail, skin pores, material grain — uncomfortably intimate" |
+| Props Overflow | Topic-Related ONLY | Creator BURIED in many props | "sitting at center surrounded by an overwhelming abundance of [topic props from 11a], slightly buried under the pile, expression of knowing confidence or overwhelmed excitement amid the chaos" |
+| Contradiction Pose | Topic-Related | Emotional MISMATCH with prop | "smiling warmly and laughing while casually holding [serious/warning topic prop], or maintaining stone-faced seriousness while surrounded by [fun/playful topic props], the emotional mismatch forces curiosity" |
+| Mundane Zen | Topic-Related as background chaos | Props create CHAOS behind calm creator | "creator in serene meditation pose or calmly sipping tea, peaceful half-lidded eyes, while behind them [topic props] are scattered chaotically — [props] flying, falling, stacked precariously, creating visible disorder" |
+
+### 11c. Hook Category → Prop Selection Rule
+
+Which prop type the agent picks based on the selected hook category.
+
+| Hook Category | Prop Type | Why | Example (Finance topic) |
+|---|---|---|---|
+| Visual Shock | **Random Absurd** | Maximum WTF pattern interrupt — topic only visible from headline text | Creator biting raw fish while headline says "RAHASIA INVESTASI" |
+| Negative Bias | **Topic-Related** | Warning object reinforces the "danger" message — prop IS the threat | Creator ripping stock chart while headline warns about financial mistake |
+| Curiosity Gap | **Topic-Related** | Visual clue teases the topic — viewer connects prop + headline for partial reveal | Creator holding golden coin with knowing smirk — "what does he know?" |
+| Relatability | **Topic-Related** | Recognizable everyday object = "gue juga punya itu" identification | Creator holding phone showing calculator app — relatable daily tool |
+| Speed & Value | **Topic-Related** | Tool/product shown = immediate value association — "I need that tool" | Creator confidently presenting calculator with visible numbers |
+
+### 11d. Prop Selection Decision Tree
+
+When generating a hook slide, follow this sequence:
+
+```
+1. Identify topic → find matching Topic Category in Section 11a
+   (If no match → use closest category or Default props: pen, notebook, coffee mug, phone, whiteboard)
+
+2. Read hook category (from MANDATORY selection in prompt-formulas.md)
+   → Check Section 11c for prop type: Topic-Related or Random Absurd
+
+3. Read visual action (from Visual Action Hook Bank in hook-science.md)
+   → Check Section 11b for physical interaction style
+
+4. Pick a specific prop from the bank that works with the interaction:
+   - If prop type = Topic-Related → pick from Topic-Related list in 11a
+   - If prop type = Random Absurd → pick from Random Absurd list in 11a
+   - Prefer props that physically work with the action (e.g., Makan = something bite-able)
+
+5. Write into prompt:
+   - Costume: [Wardrobe] slot from Section 10
+   - Prop + interaction: [Action/pose] slot using interaction phrase from 11b
+```
+
+---
+
 ## Quick Reference: Category Visual Fingerprint
 
 Use this table to verify each category produces a VISUALLY DISTINCT image:
 
-| Category | Face Signature | Lighting Signature | Color Signature | Energy |
-|----------|---------------|-------------------|----------------|--------|
-| Visual Shock | Wide eyes, dropped jaw, recoil | Hard 4:1, strong rim, deep shadows | Warm-cool clash, high contrast | Explosive, sudden |
-| Negative Bias | Furrowed brows, tight lips, stop gesture | Moody 3:1, underlit, red accent | Dark warm browns, deep blacks | Intense, confrontational |
-| Curiosity Gap | Asymmetric smirk, one raised brow | Warm 4:1 Rembrandt, golden mystery | Warm ambers and deep golds | Mysterious, conspiratorial |
-| Relatability | Soft smile, gentle eye contact, nod | Soft 2:1, natural window light | Warm naturals, cream and wood | Warm, intimate, peer |
-| Speed & Value | Steady gaze, chin up, number gesture | Clean 2:1 butterfly, professional | Clean neutrals, professional warmth | Confident, authoritative |
+| Category | Face Signature | Lighting Signature | Color Signature | Energy | Prop Type |
+|----------|---------------|-------------------|----------------|--------|-----------|
+| Visual Shock | Wide eyes, dropped jaw, recoil | Hard 4:1, strong rim, deep shadows | Warm-cool clash, high contrast | Explosive, sudden | Random Absurd |
+| Negative Bias | Furrowed brows, tight lips, stop gesture | Moody 3:1, underlit, red accent | Dark warm browns, deep blacks | Intense, confrontational | Topic-Related |
+| Curiosity Gap | Asymmetric smirk, one raised brow | Warm 4:1 Rembrandt, golden mystery | Warm ambers and deep golds | Mysterious, conspiratorial | Topic-Related |
+| Relatability | Soft smile, gentle eye contact, nod | Soft 2:1, natural window light | Warm naturals, cream and wood | Warm, intimate, peer | Topic-Related |
+| Speed & Value | Steady gaze, chin up, number gesture | Clean 2:1 butterfly, professional | Clean neutrals, professional warmth | Confident, authoritative | Topic-Related |
 
 **If two hook slides from different categories look similar, something is wrong. Re-read the category profiles above.**

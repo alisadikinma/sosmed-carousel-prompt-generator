@@ -604,26 +604,30 @@ When generating a carousel hook, use this mapping to select the default visual a
 
 Ready-to-insert prompt fragments for each visual action category. Use these INSIDE the Hook Slide template at the `[Action/pose]` and `[Scene with pattern interrupt]` slots.
 
+**Prop selection:** Fragments below show interaction mechanics with example props in brackets. Replace `[prop]` with the actual prop selected from `hook-visual-library.md` Section 11 — check hook category → prop type rule (Section 11c), pick from topic bank (Section 11a).
+
 **Important:** All fragments follow Prompt Body Rendering Rules — lowercase instructions, no ALL CAPS instruction words, no raw percentages.
 
 #### 1. Makan Nyeleneh (Absurd Eating)
 ```
-creator mid-bite into a large piece of bread, cheeks slightly puffed, one hand gripping the bread near mouth level,
-eyes wide open staring directly at camera with shocked expression, crumbs visible on fingers,
-the mundane act of eating contrasts sharply with the serious headline text below
+creator mid-bite into [prop — e.g., golden coin for finance, raw fish for absurd, durian for food],
+cheeks slightly puffed, one hand gripping the [prop] near mouth level,
+eyes wide open staring directly at camera with shocked expression, crumbs or fragments visible on fingers,
+the absurd act of eating [prop] contrasts sharply with the serious headline text below
 ```
 
 #### 2. Minum Dramatic (Dramatic Drinking)
 ```
-creator holding a steaming coffee mug at lip level with both hands, mid-sip,
+creator holding [prop — e.g., steaming coffee mug, protein shaker for fitness, beaker for science]
+at lip level with both hands, mid-sip,
 steam rising and catching warm side light, eyes locked on camera with intense knowing stare,
-the casual act of drinking coffee contrasts with the urgent headline below,
-warm golden tones from the coffee blending with ambient light
+the casual act of drinking from [prop] contrasts with the urgent headline below,
+warm golden tones blending with ambient light
 ```
 
 #### 3. Objek Absurd (Absurd Object)
 ```
-creator holding [absurd object — e.g., a whole raw fish, a rubber duck, a traffic cone, a pineapple]
+creator holding [absurd prop from Section 11a Random Absurd list — e.g., raw fish, rubber duck, traffic cone]
 at chest height with completely serious expression, dead-pan stare at camera,
 the object has no logical connection to the topic, creating visual confusion
 that forces the viewer to read the headline for context
@@ -631,75 +635,75 @@ that forces the viewer to read the headline for context
 
 #### 4. Destruction (Destructive Action)
 ```
-creator mid-action ripping a sheet of paper in half with both hands,
-torn edges visible, small paper fragments floating in the air,
+creator mid-action ripping apart [topic-related prop — e.g., stock chart for finance, textbook for education,
+business card for startup], torn edges visible, fragments floating in the air,
 aggressive confident expression with slight smirk, implying "everything you knew is wrong,"
-the physical destruction mirrors the myth-busting nature of the headline
+the physical destruction of [prop] mirrors the myth-busting nature of the headline
 ```
 
 #### 5. Satisfying Process (ASMR-Adjacent)
 ```
-creator pouring [thick golden honey / latte art milk / chocolate sauce] in a slow stream,
-captured at the peak satisfying moment with the pour creating a smooth ribbon shape,
-warm golden backlighting catching the liquid, creator's face visible in soft focus behind the pour,
+creator performing satisfying action with [prop — e.g., slicing open durian for food, slow pour of honey,
+peeling protective film off gadget for tech], captured at the peak satisfying moment,
+warm golden backlighting catching the texture and detail, creator's face visible in soft focus behind,
 expression of calm focus, the oddly satisfying visual holds attention involuntarily
 ```
 
 #### 6. Scale Absurd (Scale Exaggeration)
 ```
-creator standing next to [an absurdly oversized version of a normal object — e.g., giant smartphone,
-enormous stack of coins reaching above head, a massive keyboard], looking up at the object
+creator standing next to an absurdly oversized version of [topic-related prop — e.g., giant smartphone for tech,
+enormous golden coin stack for finance, massive dumbbell for fitness], looking up at the object
 with expression of genuine amazement, one hand reaching toward it,
 the extreme scale difference creates an immediate "wait, what?" reaction
 ```
 
 #### 7. Wrong Context (Setting Mismatch)
 ```
-creator wearing [formal business attire / full suit and tie] sitting casually on [a beach / in a jungle /
-on a mountain trail / in a laundromat], working on a laptop as if this is completely normal,
+creator wearing [costume from Section 10] using [topic-related prop] as if completely normal
+while sitting in [absurd setting — beach, jungle, mountain trail, laundromat],
 creator's expression is relaxed and unbothered by the absurd setting,
-the environmental mismatch between professional clothing and casual setting creates visual friction
+the environmental mismatch creates visual friction while the prop signals the topic
 ```
 
 #### 8. Frozen Mid-Action (Kinetic Freeze)
 ```
-creator captured at the peak moment of [jumping / throwing an object / catching something midair /
-leaning dramatically off-balance], body suspended in a dynamic pose with hair and clothing
-showing motion blur while face is sharp, expression of intense determination,
+creator captured at the peak moment of [throwing / catching / dropping / juggling] [prop — topic-related
+or absurd per Section 11c], body suspended in a dynamic pose with hair and clothing
+showing motion blur while face is sharp, [prop] frozen mid-trajectory,
 the frozen kinetic energy in a still image creates visual tension and urgency
 ```
 
 #### 9. Extreme Close-Up + Action (Macro Absurd)
 ```
-extreme tight close-up of [creator's mouth biting into fruit / hand squeezing a lemon /
-fingers tearing bread], filling most of the frame, every texture hyper-visible —
-skin pores, food texture, moisture droplets — uncomfortably intimate framing
-that forces extended attention, creator's eye partially visible at frame edge
+extreme tight close-up of [creator's hands interacting with topic-related prop — e.g., fingers gripping
+golden coin for finance, hand slicing durian for food, pressing keyboard for tech],
+filling most of the frame, every texture hyper-visible — surface detail, skin pores, material grain —
+uncomfortably intimate framing that forces extended attention, creator's eye partially visible at frame edge
 ```
 
 #### 10. Props Overflow (Abundance Visual)
 ```
-creator sitting in the center, surrounded by [an overwhelming pile of objects related to the topic —
-stacked books, scattered gadgets, fanned-out cash, multiple open laptops],
+creator sitting in the center, surrounded by [overwhelming pile of topic-related props from Section 11a —
+e.g., stacked books + notebooks + magnifying glass for education, scattered gadgets + cables + screens for tech],
 slightly buried under the abundance, expression of overwhelmed excitement or knowing confidence,
 the visual abundance signals deep authority on the topic
 ```
 
 #### 11. Contradiction Pose (Emotional Mismatch)
 ```
-creator [smiling warmly and laughing in a clearly stressful situation / maintaining a dead-serious
-stone-faced expression while surrounded by fun and colorful party decorations],
-the emotional mismatch between expression and context creates "why are they reacting THAT way?"
-curiosity that forces the viewer to read the headline
+creator [smiling warmly and laughing while casually holding serious topic-related prop — e.g., warning printout,
+overdue bill, failing grade report / OR maintaining dead-serious stone-faced expression
+while surrounded by fun playful topic props], the emotional mismatch between expression and prop context
+creates "why are they reacting THAT way?" curiosity that forces the viewer to read the headline
 ```
 
 #### 12. Mundane Zen (Calm vs Chaos)
 ```
 creator sitting calmly in meditation pose or peacefully sipping tea,
 completely serene expression with closed or half-lidded eyes,
-while the background behind them shows [visible chaos — papers flying, notification bubbles,
-fire embers, alarm clocks, scattered deadlines], the extreme contrast between
-creator's calm and background chaos creates aspirational "I want that peace" reaction
+while the background behind them shows [topic-related props from Section 11a in visible chaos —
+e.g., financial documents flying + coins scattered for finance, code screens glitching + cables tangled for tech],
+the extreme contrast between creator's calm and background chaos creates aspirational "I want that peace" reaction
 ```
 
 ### Visual Action Selection Rules

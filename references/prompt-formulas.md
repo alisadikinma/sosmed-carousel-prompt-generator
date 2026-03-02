@@ -264,14 +264,17 @@ The text uses the largest possible font size that fills the width, extra bold we
 
 **Pre-generation:** Score headline 3/5 on Hook Scoring Gate (see Hook Headline Formula above). If < 3/5, rewrite before proceeding.
 
-**Visual Action selection:** Choose a visual action from the Visual Action Hook Bank in `references/hook-science.md`. Use the Topic → Visual Action Mapping table for default selection. Insert the action fragment at `[Action/pose]` and `[Scene with pattern interrupt]` slots below. The absurd mundane action IS the pattern interrupt.
+**Costume selection:** Read topic → find matching Costume Profile in `references/hook-visual-library.md` Section 10. Copy the prompt phrase into the `[Wardrobe]` slot. If topic doesn't match any category → use Default / Smart Casual. User override always wins.
 
-**Anti-repetition:** If this topic has been used before this session, select a different camera variant (A/B/C) from `references/hook-visual-library.md` Section 4. Check the synergy matrix (Section 6) for expression modifications when combining category + visual action.
+**Visual Action + Prop selection:** Choose a visual action from the Visual Action Hook Bank in `references/hook-science.md`. Then select a prop from `references/hook-visual-library.md` Section 11: check hook category → prop type rule (Section 11c), pick specific prop from topic bank (Section 11a), apply interaction style (Section 11b). The absurd mundane action + prop IS the pattern interrupt.
+
+**Anti-repetition:** If this topic has been used before this session, select a different camera variant (A/B/C) from `references/hook-visual-library.md` Section 5. Check the synergy matrix (Section 7) for expression modifications when combining category + visual action.
 
 ```
 A photorealistic cinematic [shot type — from hook-visual-library.md Camera Angle Bank, variant A/B/C] of [CREATOR DESCRIPTION VERBATIM].
 [Expression from hook-visual-library.md Expression Library — use FULL prompt phrases for eyes, mouth, head, hands, body, emotion. NOT generic "shocked face"].
-[Wardrobe]. [Action/pose from Visual Action Hook Bank — e.g., mid-bite into bread, pouring coffee, holding absurd object].
+[Wardrobe — from hook-visual-library.md Section 10 Costume Library, matched to topic category].
+[Action/pose from Visual Action Hook Bank + prop from Section 11 with interaction detail from Section 11b — e.g., mid-bite into golden coin, holding raw fish with deadpan].
 
 [Scene with pattern interrupt — use the contrast/context from the Visual Action prompt fragment.
 The mundane action contrasts with the serious headline, creating cognitive dissonance.

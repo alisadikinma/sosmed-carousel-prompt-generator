@@ -28,7 +28,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
 | `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (12 absurd action types for static carousel hooks), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, cover slide specs, interactive hooks |
 | `hook-formula-bank.md` | 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer) — works for ALL content types, cross-mapped to visual hook categories |
-| `hook-visual-library.md` | Hook visual specs — expression libraries (5+8 categories), lighting presets, camera angle banks (3 variants per category), environment palettes, Visual Action × Expression synergy matrix, anti-repetition variation system |
+| `hook-visual-library.md` | Hook visual specs — expression libraries (5+8 categories), lighting presets, camera angle banks (3 variants per category), environment palettes, Visual Action × Expression synergy matrix, anti-repetition variation system, costume/wardrobe library (10 topic categories), prop/tool interaction system |
 | `carousel-rebranding.md` | Rebranding third-party carousels |
 | `platform-specs.md` | Platform routing, aspect ratios, Nano Banana Pro specs |
 | `cinematography-lut.md` | Lighting/lens/film stock/atmosphere/DP signature lookup |
@@ -203,6 +203,8 @@ To change any configurable value (language, color, handle, film stock, etc.):
 | Hook visual doesn't match | Hook category determines expression + scene + lighting — check visual profile in hook-visual-library.md. MANDATORY: category MUST match Topic → Hook Category Mapping in hook-science.md |
 | Hook always Visual Shock | Agent must follow Topic → Hook Category Mapping. Education/Business/Health = Avoid Visual Shock. Check enforcement step in prompt-formulas.md |
 | Hook images repetitive | Use anti-repetition system: rotate camera variants A/B/C per category. Check hook-visual-library.md Anti-Repetition section |
+| Hook costume wrong | Check topic → costume mapping in hook-visual-library.md Section 10. User override always wins |
+| Hook prop generic/random | Check hook category → prop type rule in Section 11c. Visual Shock = Random Absurd, all others = Topic-Related. Pick from Section 11a topic bank |
 | Creator face on public figure slide | When topic is about a public figure (criminal, head of state, artist, CEO), body slides should show the public figure's face as primary — creator is optional companion. Check Public Figure Face Priority in creator-bible.md |
 | Missing foreshadow | Slide 2 MUST be foreshadow type (Steps Tease / Fear Urgency / Quiz / Visual Tease) |
 | Foreshadow doesn't create FOMO | Headline must create urgency to swipe — "kalau lo skip..." / "tunggu sampai..." |
@@ -220,5 +222,5 @@ To change any configurable value (language, color, handle, film stock, etc.):
 
 ---
 
-**Version:** 2.12.0
+**Version:** 2.12.1
 **Last Updated:** March 2026

@@ -318,7 +318,9 @@ Note: [Any correction or nuance, if applicable]
 - [ ] Hook visual profile loaded from `references/hook-visual-library.md` (expression + lighting + camera + environment)
 - [ ] Hook visual matches hook category (expression + scene + lighting — each category must look DISTINCT)
 - [ ] Hook slide uses a Visual Action from the Hook Bank (12 absurd action types — see hook-science.md)
-- [ ] If repeat topic this session: different camera variant (A/B/C) selected from hook-visual-library.md
+- [ ] If repeat topic this session: different camera variant (A/B/C) selected
+- [ ] Costume matches topic category (hook-visual-library.md Section 10)
+- [ ] Prop type matches hook category rule (Topic-Related or Random Absurd per Section 11c) from hook-visual-library.md
 - [ ] Slide 2 is FORESHADOW type (Steps Tease / Fear Urgency / Quiz / Visual Tease)
 - [ ] Foreshadow creates FOMO — viewer must swipe to resolve
 - [ ] Emotional arc plotted — each slide has assigned beat + intensity

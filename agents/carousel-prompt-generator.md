@@ -311,6 +311,8 @@ This is especially useful when user says "bikin carousel kayak @xxx" or referenc
 - If topic = Education, Business, Health → Visual Shock is in "Avoid" column. **NEVER** use it
 - If PRIMARY was used in previous carousel this session → use SECONDARY category
 - Read visual profile from `references/hook-visual-library.md` for the selected category
+- Load costume profile from `references/hook-visual-library.md` Section 10 (match to topic category)
+- Select prop from Section 11: check hook category → prop type rule (11c), pick from topic bank (11a), apply interaction (11b)
 - Write headline using Hook Headline Formula (see `references/prompt-formulas.md`)
 - Verify 3/5 on Hook Scoring Gate
 - If < 3/5: REWRITE until passing

@@ -84,7 +84,7 @@ Plus: Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), co
 
 **Hook Formula Bank (v2.11.0):** 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer framework by Samuel Christ) — works for ALL content types (educational, tips, story, opinion, product, affiliate). Categories: Unbeatable Value, Problem-Solver, Plot Twist, FOMO & Urgency, Social Proof, Comparison & Authority, Hyper-Targeted, Curiosity & Teaser. Cross-mapped to the 5 visual hook categories with visual action pairing and execution checklist.
 
-**Hook Visual Library (NEW in v2.12.0):** Deep visual specs per hook category — expression libraries with prompt-ready phrases (eyes, mouth, head, hands, body, emotion per category), lighting presets (pattern, ratio, color temp, fill, rim, shadow), camera angle banks (3 variants A/B/C per category for anti-repetition), environment palettes, Visual Action × Expression synergy matrix, and anti-repetition variation system. Mandatory hook category enforcement: agent MUST follow Topic → Hook Category Mapping, NEVER default to Visual Shock.
+**Hook Visual Library (NEW in v2.12.0):** Deep visual specs per hook category — expression libraries with prompt-ready phrases (eyes, mouth, head, hands, body, emotion per category), lighting presets (pattern, ratio, color temp, fill, rim, shadow), camera angle banks (3 variants A/B/C per category for anti-repetition), environment palettes, Visual Action × Expression synergy matrix, and anti-repetition variation system. Mandatory hook category enforcement: agent MUST follow Topic → Hook Category Mapping, NEVER default to Visual Shock. **Costume/Wardrobe Library (v2.12.1):** 10 topic-based costume profiles with prompt-ready phrases (Finance = blazer, Tech = hoodie, Food = apron, etc.) + Default fallback. **Prop/Tool Interaction System (v2.12.1):** Topic → Prop bank (5 topic-related + 3 random absurd per category), Prop × Visual Action interaction matrix (12 actions), Hook Category → Prop selection rule (Visual Shock = absurd, others = topic-related).
 
 ### 8. CTA Science (Algorithm-Optimized)
 
@@ -256,7 +256,7 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
 | `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (12 absurd action types), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, interactive hooks |
 | `hook-formula-bank.md` | 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer) — works for ALL content types |
-| `hook-visual-library.md` | Hook visual specs — expression libraries, lighting presets, camera angle banks (3 variants), environment palettes, synergy matrix, anti-repetition |
+| `hook-visual-library.md` | Hook visual specs — expression libraries, lighting presets, camera angle banks (3 variants), environment palettes, synergy matrix, anti-repetition, costume library (10 topics), prop interaction system |
 | `carousel-rebranding.md` | Converting third-party carousels to your brand |
 | `platform-specs.md` | Nano Banana Pro specs, platform aspect ratios |
 | `cinematography-lut.md` | Lighting, lens, film stock, atmosphere, DP signatures |
