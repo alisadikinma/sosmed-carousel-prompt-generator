@@ -452,7 +452,7 @@ Atau mau modify elemen tertentu?
 6. GENERATE full prompt set per platform (text in-image, bilingual default)
 7. GENERATE caption per platform
 8. SCORE each prompt via WOW gate (min 6/8)
-9. VERIFY character limits: IG ≤2200, TikTok ≤4000, LinkedIn ≤3000, Threads ≤500
+9. VERIFY character limits: IG ≤2200, TikTok Title ≤19 + Caption ≤4000, LinkedIn ≤3000, Threads ≤500
 10. OUTPUT all variants grouped by platform
 
 ---
@@ -573,6 +573,9 @@ Source: [URL or "Well-established fact"]
 
 ---
 
+### TikTok Title (max 19 chars)
+[Primary SEO keyword — always visible above caption]
+
 ### TikTok Caption ([N]/4,000 chars)
 [Hook text — casual Gen Z tone, within first 100 chars]
 
@@ -611,7 +614,8 @@ Per global-config.md LinkedIn Cross-Promotion Block
 - Captions ALWAYS generated for all 4 platforms by default
 - User can say "IG aja" or "skip LinkedIn" to filter
 - Default language: English
-- Character limits: IG ≤2200, TikTok ≤4000, LinkedIn ≤3000, Threads ≤500
+- Character limits: IG ≤2200, TikTok Title ≤19 chars + Caption ≤4000, LinkedIn ≤3000, Threads ≤500
+- TikTok Title = primary SEO keyword (separate field, always visible above caption)
 - Hashtags: IG max 5, TikTok max 5, LinkedIn 3-5, Threads none
 - **Output format**: One continuous caption per platform — NO section labels (Hook/Body/CTA/Hashtags)
 - **LinkedIn cross-promotion (MANDATORY)**: Every LinkedIn caption includes cross-promotion block from `global-config.md` before hashtags

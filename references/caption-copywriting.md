@@ -15,7 +15,8 @@ Caption language: per `global-config.md` (`caption_language`). Other language on
 | Platform | Max Characters | Truncation Point | What Shows Before "...more" |
 |----------|---------------|-----------------|----------------------------|
 | Instagram | 2,200 | 125 chars | First ~125 chars in feed |
-| TikTok | 4,000 | ~100-150 chars | First ~100-150 chars in FYP |
+| TikTok Title | 19 | N/A (always visible) | Separate field above caption — primary SEO keyword |
+| TikTok Caption | 4,000 | ~100-150 chars | First ~100-150 chars in FYP |
 | LinkedIn | 3,000 | 210 (desktop) / 110 (mobile) | First line before "...see more" |
 | Threads | 500 | ~100 chars | First ~100 chars in feed |
 
@@ -104,6 +105,18 @@ Hashtags are now **topic labels for categorization**, NOT reach drivers. All 3 p
 
 ### TikTok Caption Formula
 
+**TikTok has 2 separate fields: Title + Caption.**
+
+**Title (19 chars max — SEPARATE field above caption):**
+```
+[Primary SEO keyword — max 19 characters, no hashtags, no emoji]
+```
+- Title is ALWAYS visible above the caption (never truncated)
+- Must contain the **primary search keyword** for the topic
+- TikTok indexes the title as the **highest-weight SEO signal**
+- Keep it short, punchy, keyword-dense (e.g., "AI Tools 2026", "Figma Tips", "Passive Income")
+
+**Caption:**
 ```
 [Casual, trend-aware, Gen Z hook (≤100 chars before truncation) — "POV:", "Wait for it...", provocative question]
 
@@ -117,16 +130,17 @@ Hashtags are now **topic labels for categorization**, NOT reach drivers. All 3 p
 
 **TikTok Tone:** Casual, trend-native, conversational. Use text-speak sparingly. Write like you talk. No corporate polish.
 
-**Output format:** One continuous caption — NO section labels. Hashtags at the end, no label.
+**Output format:** Title on first line (labeled `Title:`), then one continuous caption — NO section labels. Hashtags at the end, no label.
 
 **Character Budget:**
 | Section | Max Chars | Notes |
 |---------|----------|-------|
+| Title | 19 | SEPARATE field — primary SEO keyword, always visible |
 | Hook | 100 | Must survive truncation |
 | Body | 3,600 | SEO keywords for search |
 | CTA | 150 | Question + save/share ask |
 | Hashtags | 150 | 5 hashtags max |
-| **Total** | **≤4,000** | |
+| **Caption Total** | **≤4,000** | Title is separate, not counted |
 
 ### LinkedIn Caption Formula
 
@@ -336,28 +350,31 @@ Like → Save → Comment → Share/DM Send → Follow
 
 ---
 
-## 7. TikTok Triple-Layer Keyword SEO
+## 7. TikTok Keyword SEO (4 Layers)
 
-TikTok indexes 3 text layers simultaneously for content classification and search:
+TikTok indexes 4 text layers simultaneously for content classification and search:
 
 | Layer | What It Is | SEO Weight |
 |-------|-----------|-----------|
-| **Caption text** | Description below video | Highest — first 3 words = primary SEO weight |
+| **Title** | Separate 19-char field above caption | Highest — always visible, primary keyword signal |
+| **Caption text** | Description below video | High — first 3 words = secondary SEO weight |
 | **On-screen text** | Text overlay on video/image | OCR-scanned within first 2-3 seconds |
 | **Spoken audio** | Voice in video | Transcribed and indexed automatically |
 
-**Strategy:** Use **different but related keywords** across all 3 layers to maximize keyword coverage.
+**Strategy:** Use **different but related keywords** across all 4 layers to maximize keyword coverage. Title carries the **primary keyword**, caption carries **supporting keywords**.
 
 ```
 Example:
-- Spoken: "morning routine"
+- Title: "AI Tools 2026" (19 chars max)
+- Caption: "These 5 tools just changed the game for content creators"
 - On-screen text: "5am productivity hack"
-- Caption: "How I changed my morning for better focus"
+- Spoken: "morning routine"
 ```
 
-- Place primary keyword within first 3 words of caption
-- Use 2-3 keywords naturally (avoid keyword stuffing)
-- 40% of Gen Z uses TikTok over Google for search — caption SEO matters
+- Title = primary SEO keyword (max 19 chars, always visible)
+- Place supporting keyword within first 3 words of caption
+- Use 2-3 keywords naturally across caption (avoid keyword stuffing)
+- 40% of Gen Z uses TikTok over Google for search — title + caption SEO matters
 
 ---
 
@@ -415,6 +432,7 @@ When adapting the same carousel across platforms:
 - [ ] Tone matches platform culture
 - [ ] Hashtag count matches platform rules (IG 5/TikTok 5/LinkedIn 3-5/Threads 0)
 - [ ] CTA uses platform-native actions (save/share vs repost)
+- [ ] TikTok title is ≤19 chars with primary SEO keyword
 - [ ] Threads version stays under 500 chars, no hashtags
 - [ ] Character count within platform limit
 - [ ] Caption language matches user preference (English default)

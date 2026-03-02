@@ -52,6 +52,7 @@ Every carousel automatically generates captions for IG + TikTok + LinkedIn + Thr
 Single Brief → Carousel Prompts (text in-image)
                     ↓
              IG Caption (≤2200 chars, 5 hashtags)
+             TikTok Title (≤19 chars, primary SEO keyword)
              TikTok Caption (≤4000 chars, 5 hashtags)
              LinkedIn Caption (≤3000 chars, 3-5 hashtags)
              Threads Caption (≤500 chars, no hashtags)
