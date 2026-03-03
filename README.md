@@ -196,7 +196,7 @@ Every carousel follows a "roller coaster" emotional pattern with visual treatmen
 
 ```bash
 # Step 1: Add marketplace source
-claude plugins marketplace add https://github.com/alisadikinma/ai-image-carousel-prompt-gen
+claude plugins marketplace add alisadikinma/ai-image-carousel-prompt-gen
 
 # Step 2: Install plugin
 claude plugins install ai-image-carousel-prompt-gen
