@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c \"INPUT=$(cat); echo \\\"$INPUT\\\" | grep -q '\\\"references/' && echo '[hook] Modifying reference file — run /validate-references after' >&2 || true\""
+            "command": "bash -c \"INPUT=$(cat); echo \\\"$INPUT\\\" | grep -q '\\\"references/' && echo '[hook] Modifying reference file — run /carousel-validate after' >&2 || true\""
           }
         ]
       }

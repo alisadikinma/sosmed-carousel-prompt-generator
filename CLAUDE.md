@@ -12,9 +12,9 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 | `.claude-plugin/marketplace.json` | Marketplace listing |
 | `hooks/hooks.json` | SessionStart hook definition |
 | `hooks/session-start.sh` | Session start script — announces available skills |
-| `skills/carousel-prompt-generator/SKILL.md` | Main skill definition — carousel prompt generation |
-| `skills/validate-references/SKILL.md` | Cross-file consistency checker (7 checks) |
-| `skills/new-localization/SKILL.md` | Scaffold new localization files + wire reference tables |
+| `skills/carousel-gen/SKILL.md` | Main skill definition — carousel prompt generation |
+| `skills/carousel-validate/SKILL.md` | Cross-file consistency checker (7 checks) |
+| `skills/carousel-localize/SKILL.md` | Scaffold new localization files + wire reference tables |
 | `agents/carousel-prompt-generator.md` | Subagent for batch carousel prompt work |
 | `references/` | 12 reference docs read on-demand by skill/agent |
 | `README.md` | Repo README |
@@ -175,7 +175,7 @@ To change any configurable value (language, color, handle, film stock, etc.):
 2. Add entry to the Reference Files table in `SKILL.md`
 3. Add entry to the Reference Files table in `agents/carousel-prompt-generator.md`
 4. Update this CLAUDE.md file
-5. Run `/validate-references` to verify cross-file consistency
+5. Run `/carousel-validate` to verify cross-file consistency
 
 ### Adding a New Localization
 1. Create `references/localization-{code}.md` (e.g., `localization-hi.md` for Hindi)
@@ -230,7 +230,7 @@ To change any configurable value (language, color, handle, film stock, etc.):
 | Missing mini-hook | Slide 5-7 must have sudden visual change (angle shift, split panel, color temp disruption) |
 | Missing creator face in crowd | B-Roll with humans = creator ALWAYS as most prominent figure |
 | Unverified facts | All factual claims must be web-searched before prompt generation |
-| Cross-file drift | Run `/validate-references` — checks SWIPE, hashtags, gradients, aspect ratios |
+| Cross-file drift | Run `/carousel-validate` — checks SWIPE, hashtags, gradients, aspect ratios |
 | URL metadata empty | Instagram/TikTok may block or truncate — inform user and proceed without metadata. Extraction is best-effort |
 | Source caption copied verbatim | NEVER copy — always rewrite in creator voice (Gen-Z Bahasa, gue/lo). Source caption is inspiration only |
 | Source account branding leaked | Source account handle/watermark = competitor branding. Must NOT appear in any prompt |

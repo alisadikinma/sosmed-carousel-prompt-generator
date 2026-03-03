@@ -1,5 +1,5 @@
 ---
-name: new-localization
+name: carousel-localize
 description: Scaffold a new localization file for the carousel prompt generator. Creates localization-{code}.md from the Indonesian template and updates all reference tables. Triggers on new localization, add language, tambah bahasa, localization scaffold.
 ---
 
@@ -83,7 +83,7 @@ This file is loaded when the Localization Trigger activates:
 
 Add entry to each reference table:
 
-**`skills/carousel-prompt-generator/SKILL.md`** — Reference Files table:
+**`skills/carousel-gen/SKILL.md`** — Reference Files table:
 ```
 | {Language Name} content | + `references/localization-{code}.md` |
 ```
@@ -120,7 +120,7 @@ Increment reference count from N to N+1 in:
 
 ### Step 5: Verify
 
-Run `/validate-references` to confirm:
+Run `/carousel-validate` to confirm:
 - New file appears in all 4 reference tables
 - Reference count is correct
 - No cross-file drift introduced

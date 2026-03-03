@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "ai-image-carousel-prompt-gen loaded. Skills available:"
-echo "  carousel-prompt-generator — cinematic AI image prompts for social media carousels"
-echo "  validate-references — cross-file consistency checker (7 checks)"
-echo "  new-localization — scaffold new localization files"
+echo "  carousel-gen — cinematic AI image prompts for social media carousels"
+echo "  carousel-validate — cross-file consistency checker (7 checks)"
+echo "  carousel-localize — scaffold new localization files"
 echo ""
 echo "Agent available:"
 echo "  carousel-prompt-generator — subagent for batch carousel prompt work"

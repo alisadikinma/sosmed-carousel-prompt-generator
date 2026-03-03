@@ -142,7 +142,7 @@ Includes Topic → Visual Action mapping, prompt-ready fragments for Nano Banana
 Paste an Instagram/TikTok/LinkedIn post URL and the agent auto-extracts caption, account name, engagement stats, and post date. This metadata enriches prompt context and powers caption writing — no manual copy-paste needed.
 
 ```
-/carousel-prompt-generator
+/carousel-gen
 
 Agent: "Punya URL source carousel-nya?"
 User:  https://instagram.com/p/DVJgCUcDAVI/
@@ -220,15 +220,15 @@ After installing, the plugin announces itself on every session start:
 
 ```
 ai-image-carousel-prompt-gen loaded. Skills available:
-  carousel-prompt-generator — cinematic AI image prompts for social media carousels
-  validate-references — cross-file consistency checker (7 checks)
-  new-localization — scaffold new localization files
+  carousel-gen — cinematic AI image prompts for social media carousels
+  carousel-validate — cross-file consistency checker (7 checks)
+  carousel-localize — scaffold new localization files
 ```
 
 The skill auto-triggers when you mention carousels, thumbnails, rebranding, or AI image prompts. You can also invoke it explicitly:
 
 ```
-/carousel-prompt-generator
+/carousel-gen
 ```
 
 ---
@@ -239,15 +239,15 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 
 | Skill | Triggers On |
 |---|---|
-| `carousel-prompt-generator` | carousel, thumbnail, rebrand, image generation, visual content, AI image, buat prompt, bikinin gambar |
-| `validate-references` | Cross-file consistency checker (7 checks: SWIPE rules, hashtags, gradients, aspect ratios, config consistency) |
-| `new-localization` | Scaffold new localization files + wire reference tables |
+| `carousel-gen` | carousel, thumbnail, rebrand, image generation, visual content, AI image, buat prompt, bikinin gambar |
+| `carousel-validate` | Cross-file consistency checker (7 checks: SWIPE rules, hashtags, gradients, aspect ratios, config consistency) |
+| `carousel-localize` | Scaffold new localization files + wire reference tables |
 
 ### Agent
 
 | Agent | Purpose |
 |---|---|
-| `carousel-prompt-generator` | Subagent for batch carousel prompt work — reads references, verifies facts, asks about ambiguities, generates prompts + captions, writes output |
+| `carousel-gen` | Subagent for batch carousel prompt work — reads references, verifies facts, asks about ambiguities, generates prompts + captions, writes output |
 
 ### Reference Docs (12 files, read on-demand)
 
@@ -470,11 +470,11 @@ ai-image-carousel-prompt-gen/
 │   ├── hooks.json               # Hook definitions (SessionStart)
 │   └── session-start.sh         # Session start announcement
 ├── skills/
-│   ├── carousel-prompt-generator/
+│   ├── carousel-gen/
 │   │   └── SKILL.md             # Main skill — carousel prompt generation
-│   ├── validate-references/
+│   ├── carousel-validate/
 │   │   └── SKILL.md             # Cross-file consistency checker
-│   └── new-localization/
+│   └── carousel-localize/
 │       └── SKILL.md             # Scaffold new localizations
 ├── agents/
 │   └── carousel-prompt-generator.md  # Subagent definition

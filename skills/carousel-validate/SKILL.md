@@ -1,5 +1,5 @@
 ---
-name: validate-references
+name: carousel-validate
 description: Cross-file consistency checker for carousel prompt generator references (7 checks including global-config consistency). Run after editing any reference file, before commits, or after merging new RAG content. Triggers on validate, consistency check, reference check, cek referensi, cek konsistensi.
 ---
 
@@ -10,7 +10,7 @@ Run 7 automated consistency checks across all operational files. Reports PASS/FA
 ## Scope
 
 **Operational files** (checked):
-- `skills/carousel-prompt-generator/SKILL.md`
+- `skills/carousel-gen/SKILL.md`
 - `agents/carousel-prompt-generator.md`
 - `references/*.md` (all 12 files)
 - `CLAUDE.md`

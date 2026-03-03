@@ -1,5 +1,5 @@
 ---
-name: carousel-prompt-generator
+name: carousel-gen
 description: Cinematic AI image prompt generator for social media carousel content. Use whenever the user needs carousel image prompts, thumbnail prompts, carousel rebranding, or any visual content production for social media. Triggers on carousel, thumbnail, rebrand, image generation, Nano Banana Pro, visual content, AI image, buat prompt, bikinin gambar, or any request to create cinematic AI-generated visuals.
 ---
 
