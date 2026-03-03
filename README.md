@@ -196,7 +196,7 @@ Every carousel follows a "roller coaster" emotional pattern with visual treatmen
 
 ```bash
 # Step 1: Add marketplace source
-claude plugins marketplace add alisadikinma/ai-image-carousel-prompt-gen
+claude plugins marketplace add alisadikinma/ai-content-suite
 
 # Step 2: Install plugin
 claude plugins install ai-image-carousel-prompt-gen
@@ -211,7 +211,7 @@ claude plugins install ai-image-carousel-prompt-gen --scope project # This proje
 ```bash
 # Clone to Claude Code marketplaces directory
 git clone https://github.com/alisadikinma/ai-image-carousel-prompt-gen.git \
-  ~/.claude/plugins/marketplaces/ai-image-carousel-prompt-gen
+  ~/.claude/plugins/marketplaces/ai-content-suite
 ```
 
 ### Verify Installation
@@ -466,7 +466,6 @@ Type: Hook / Foreshadow / Content / CTA | Creator Face: YES/NO | Platform: Nano 
 ai-image-carousel-prompt-gen/
 ├── .claude-plugin/
 │   ├── plugin.json              # Plugin metadata
-│   └── marketplace.json         # Marketplace listing
 ├── hooks/
 │   ├── hooks.json               # Hook definitions (SessionStart)
 │   └── session-start.sh         # Session start announcement
