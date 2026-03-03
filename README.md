@@ -1,4 +1,4 @@
-# sosmed-carousel-prompt-generator
+# ai-image-carousel-prompt-gen
 
 > Cinematic AI image prompt generator for social media carousels — every frame must trigger visceral "WOW".
 
@@ -196,22 +196,22 @@ Every carousel follows a "roller coaster" emotional pattern with visual treatmen
 
 ```bash
 # Step 1: Add marketplace source
-claude plugins marketplace add https://github.com/alisadikinma/sosmed-carousel-prompt-generator
+claude plugins marketplace add https://github.com/alisadikinma/ai-image-carousel-prompt-gen
 
 # Step 2: Install plugin
-claude plugins install sosmed-carousel-prompt-generator
+claude plugins install ai-image-carousel-prompt-gen
 
 # Optional: Choose scope
-claude plugins install sosmed-carousel-prompt-generator --scope user    # All projects
-claude plugins install sosmed-carousel-prompt-generator --scope project # This project only
+claude plugins install ai-image-carousel-prompt-gen --scope user    # All projects
+claude plugins install ai-image-carousel-prompt-gen --scope project # This project only
 ```
 
 ### Manual Installation
 
 ```bash
 # Clone to Claude Code marketplaces directory
-git clone https://github.com/alisadikinma/sosmed-carousel-prompt-generator.git \
-  ~/.claude/plugins/marketplaces/sosmed-carousel-prompt-generator
+git clone https://github.com/alisadikinma/ai-image-carousel-prompt-gen.git \
+  ~/.claude/plugins/marketplaces/ai-image-carousel-prompt-gen
 ```
 
 ### Verify Installation
@@ -219,7 +219,7 @@ git clone https://github.com/alisadikinma/sosmed-carousel-prompt-generator.git \
 After installing, the plugin announces itself on every session start:
 
 ```
-sosmed-carousel-prompt-generator loaded. Skills available:
+ai-image-carousel-prompt-gen loaded. Skills available:
   carousel-prompt-generator — cinematic AI image prompts for social media carousels
   validate-references — cross-file consistency checker (7 checks)
   new-localization — scaffold new localization files
@@ -255,7 +255,7 @@ The skill auto-triggers when you mention carousels, thumbnails, rebranding, or A
 |---|---|
 | `global-config.md` | ALWAYS (read FIRST) — single source of truth for all configurable values (language, colors, handle, film stock, platform specs) |
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
-| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (12 absurd action types), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, interactive hooks |
+| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (16 absurd action types), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, interactive hooks |
 | `hook-formula-bank.md` | 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer) — works for ALL content types |
 | `hook-visual-library.md` | Hook visual specs — expression libraries, lighting presets, camera angle banks (3 variants), environment palettes, synergy matrix, anti-repetition, costume library (10 topics), prop interaction system |
 | `carousel-rebranding.md` | Converting third-party carousels to your brand |
@@ -297,6 +297,12 @@ User Request
 [5] VERIFY FACTS — web-search all claims
     |
     v
+[5b] SUBJECT REFERENCE PLANNING — name ref images upfront (if topic has specific objects)
+    |
+    v
+[5c] DEEP RESEARCH — proactively search 3-5 angles (mechanism, comparison, fun facts, controversy, impact)
+    |
+    v
 [6] PLOT EMOTIONAL ARC — assign beat + intensity per slide
     |
     v
@@ -333,10 +339,13 @@ User Request
 [11] Generate captions for all 4 platforms (English default)
     |
     v
-[12] Output with verified sources + continuity checklist
+[12] Generate video handover brief (video-handover.md)
     |
     v
-[12b] If folder path provided → write to {path}/carousel-prompt.md
+[13] Output with verified sources + continuity checklist
+    |
+    v
+[13b] If folder path provided → write carousel-prompt.md + video-handover.md to {path}/
       If no path → print to console as usual
 ```
 
@@ -365,6 +374,15 @@ Agent detects ambiguous slides and asks before generating — human figures (cre
 ### Indonesian Localization
 Bahasa Indonesia subtitle support and localization reference. Includes setting conversions, holiday adaptations with color palettes, and AI bias countermeasures.
 
+### Deep Research Expansion (NEW in v2.16.0)
+After verifying facts, the agent proactively searches 3-5 additional angles: how it works, comparisons, fun facts, controversy, real-world impact. Findings presented to user who picks which angles to include in body slides.
+
+### Video Handover Brief (NEW in v2.16.0)
+Auto-generated `video-handover.md` alongside every carousel. Provides downstream video agent with storyline summary, detailed hook visual concept (scene description + motion opportunities + comedy detail), per-slide scenes, emotional arc, text preservation rules, reference images, and creative context.
+
+### Subject Reference Images (NEW in v2.16.0)
+Agent identifies topic-specific objects needing visual consistency across slides, assigns descriptive filenames upfront (`ref-{object-description}.png`), asks user for source photos, generates reference image prompts. Same filenames used in ALL slide prompts.
+
 ---
 
 ## Hard Rules
@@ -378,7 +396,7 @@ These are non-negotiable across all generated prompts:
 | Multi-keyword highlighting | 2-4 emotionally impactful keywords in accent color per headline — never just 1 word |
 | Subtitle color | Subtitle in accent color per global-config.md (never white like main headline) |
 | Creator face placement | Hook, CTA, Foreshadow, Thumbnail always. B-Roll with humans: ALWAYS (creator as most prominent). **Public figure topics**: public figure primary in body, creator as companion |
-| Visual Action Hook | Hook slide MUST use absurd mundane action from Visual Action Hook Bank (12 categories) as pattern interrupt |
+| Visual Action Hook | Hook slide MUST use absurd action from Visual Action Hook Bank (16 categories) as pattern interrupt |
 | Creative Clarification | Every carousel starts with 2-step clarification: 3 hook options → user picks → 3 vivid scene concepts (absurd/funny/eye-catching) → user picks or gives own idea. No auto-selection |
 | Hook category enforcement | Hook category MUST match Topic → Hook Category Mapping. NEVER default to Visual Shock. Visual profile loaded from hook-visual-library.md |
 | Anti-repetition | Same topic repeated = different camera variant (A/B/C) from hook-visual-library.md |
@@ -445,7 +463,7 @@ Type: Hook / Foreshadow / Content / CTA | Creator Face: YES/NO | Platform: Nano 
 ## Project Structure
 
 ```
-sosmed-carousel-prompt-generator/
+ai-image-carousel-prompt-gen/
 ├── .claude-plugin/
 │   ├── plugin.json              # Plugin metadata
 │   └── marketplace.json         # Marketplace listing

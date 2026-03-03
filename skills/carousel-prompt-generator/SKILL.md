@@ -177,36 +177,41 @@ This step is OPTIONAL — user can skip.
 1. ANALYZE source slides — extract topic, data, visual concept per slide
 2. IDENTIFY third-party elements to REMOVE
 3. **VERIFY** — web-search factual claims, confirm accuracy
-4. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
-5. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
-6. CONVERT style to user's brand palette (warm, cinematic)
-7. **SCORE HOOK HEADLINE** — verify 3/5 on Hook Scoring Gate before generating hook prompt
-8. GENERATE Slide 1 (HOOK) — use Hook Slide template from `references/prompt-formulas.md`
-9. GENERATE Slide 2 (FORESHADOW, mandatory) — use Foreshadow template, select type matching topic
-10. GENERATE remaining slides — Nano Banana Pro prompts (text rendered in-image)
-11. GENERATE last slide (CTA) — select CTA visual type matching engagement goal
-12. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
-13. **GENERATE CAPTIONS** for all 4 platforms (IG + TikTok + LinkedIn + Threads)
-14. VERIFY continuity checklist
+4. **SUBJECT REFERENCE PLANNING** (if topic has specific objects) — identify objects needing visual consistency, assign filenames (`ref-{object-description}.png`), present to user, generate reference image prompts if needed. See Subject Reference Image System in `references/prompt-formulas.md`
+5. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
+6. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
+7. CONVERT style to user's brand palette (warm, cinematic)
+8. **SCORE HOOK HEADLINE** — verify 3/5 on Hook Scoring Gate before generating hook prompt
+9. GENERATE Slide 1 (HOOK) — use Hook Slide template from `references/prompt-formulas.md`
+10. GENERATE Slide 2 (FORESHADOW, mandatory) — use Foreshadow template, select type matching topic
+11. GENERATE remaining slides — Nano Banana Pro prompts (text rendered in-image)
+12. GENERATE last slide (CTA) — select CTA visual type matching engagement goal
+13. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
+14. **GENERATE CAPTIONS** for all 4 platforms (IG + TikTok + LinkedIn + Threads)
+15. **GENERATE VIDEO HANDOVER BRIEF** — auto-generate `video-handover.md` using Video Handover Brief Template from `references/prompt-formulas.md`
+16. VERIFY continuity checklist
 
 ## Workflow: Fresh Carousel Production
 
 0. **SOURCE URL + REF CONFIRMATION + OUTPUT FOLDER** — ask for source/inspiration post URL (extract metadata if provided) + confirm `ref/creator-face.png` + `ref/creator-brand.png` exist in topic folder + ask for topic folder path (optional — if provided, output to `{path}/carousel-prompt.md`; if skipped, print to console)
 1. ANALYZE brief/topic — identify key messages, slide structure, emotions (enrich with source caption if available)
 2. **VERIFY** — web-search each factual claim, collect sources
-3. DETERMINE target platform and set aspect ratio (read `references/platform-specs.md`)
-4. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
-5. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
-5b. **HOOK CLARIFICATION** — present 3 hook options (PRIMARY + SECONDARY + WILDCARD) with sample headline + vibe. User picks or provides custom. Validate against Avoid list
-5c. **VISUAL HOOK IDEA** — present 3 vivid scene concepts (absurd, funny, eye-catching — 2-3 sentence creative pitches, NOT technical component lists). User picks, modifies, or provides own idea
-6. **SCORE HOOK HEADLINE** — use confirmed hook category from 5b + visual direction from 5c. Verify 3/5 on Hook Scoring Gate
-7. GENERATE Slide 1 (HOOK) — use Hook Slide template with confirmed creative direction
-8. GENERATE Slide 2 (FORESHADOW, mandatory) — use Foreshadow template, select type matching topic
-9. GENERATE remaining body slides — Nano Banana Pro prompts (text rendered in-image, bilingual default)
-10. GENERATE last slide (CTA) — select CTA visual type matching engagement goal
-11. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
-12. **GENERATE CAPTIONS** for all 4 platforms (IG + TikTok + LinkedIn + Threads)
-13. **OUTPUT** — if folder path provided → write to `{path}/carousel-prompt.md` with Creative Direction summary at top; if no path → print to console. Include continuity checklist
+3. **SUBJECT REFERENCE PLANNING** (if topic has specific objects) — identify objects needing visual consistency (products, creatures, devices, food items), assign descriptive filenames (`ref-{object-description}.png`), present reference list to user, ask for source photos (optional), generate reference image prompts (isolated, white background). ALL subsequent slide prompts use these exact filenames. See Subject Reference Image System in `references/prompt-formulas.md`
+4. **DEEP RESEARCH EXPANSION** — after verifying core facts, proactively web-search 3-5 additional angles: (a) How does it actually work? (mechanism, technology, process), (b) What can it be compared to? (vs existing tech/solutions/competitors), (c) Fun facts / surprising details most people don't know, (d) Controversy / ethical concerns / public debate, (e) Real-world impact / who benefits / who's affected. Present findings as "Research Expansion" brief to user. User picks which angles to include in body slides
+5. DETERMINE target platform and set aspect ratio (read `references/platform-specs.md`)
+6. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
+7. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
+7b. **HOOK CLARIFICATION** — present 3 hook options (PRIMARY + SECONDARY + WILDCARD) with sample headline + vibe. User picks or provides custom. Validate against Avoid list
+7c. **VISUAL HOOK IDEA** — present 3 vivid scene concepts (absurd, funny, eye-catching — 2-3 sentence creative pitches, NOT technical component lists). User picks, modifies, or provides own idea
+8. **SCORE HOOK HEADLINE** — use confirmed hook category from 7b + visual direction from 7c. Verify 3/5 on Hook Scoring Gate
+9. GENERATE Slide 1 (HOOK) — use Hook Slide template with confirmed creative direction
+10. GENERATE Slide 2 (FORESHADOW, mandatory) — use Foreshadow template, select type matching topic
+11. GENERATE remaining body slides — Nano Banana Pro prompts (text rendered in-image, bilingual default)
+12. GENERATE last slide (CTA) — select CTA visual type matching engagement goal
+13. SCORE each prompt via WOW gate (min 6/8, all 8 mandatory)
+14. **GENERATE CAPTIONS** for all 4 platforms (IG + TikTok + LinkedIn + Threads)
+15. **GENERATE VIDEO HANDOVER BRIEF** — auto-generate `video-handover.md` alongside `carousel-prompt.md` using Video Handover Brief Template from `references/prompt-formulas.md`. Write to `{path}/video-handover.md` (same folder). If no output folder → print handover brief to console after carousel output
+16. **OUTPUT** — if folder path provided → write to `{path}/carousel-prompt.md` with Creative Direction summary at top; if no path → print to console. Include continuity checklist
 
 ## Workflow: Thumbnail Generation
 
@@ -320,7 +325,7 @@ Note: [Any correction or nuance, if applicable]
 - [ ] Hook category matches Topic → Hook Category Mapping (**NOT defaulting to Visual Shock**)
 - [ ] Hook visual profile loaded from `references/hook-visual-library.md` (expression + lighting + camera + environment)
 - [ ] Hook visual matches hook category (expression + scene + lighting — each category must look DISTINCT)
-- [ ] Hook slide uses a Visual Action from the Hook Bank (12 absurd action types — see hook-science.md)
+- [ ] Hook slide uses a Visual Action from the Hook Bank (16 absurd action types — see hook-science.md)
 - [ ] If repeat topic this session: different camera variant (A/B/C) selected
 - [ ] Costume matches topic category (hook-visual-library.md Section 10)
 - [ ] Prop type matches hook category rule (Topic-Related or Random Absurd per Section 11c) from hook-visual-library.md

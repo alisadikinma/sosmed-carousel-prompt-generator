@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "sosmed-carousel-prompt-generator loaded. Skills available:"
+echo "ai-image-carousel-prompt-gen loaded. Skills available:"
 echo "  carousel-prompt-generator — cinematic AI image prompts for social media carousels"
 echo "  validate-references — cross-file consistency checker (7 checks)"
 echo "  new-localization — scaffold new localization files"

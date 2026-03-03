@@ -327,9 +327,20 @@ A strong carousel hook headline should have **minimum 3 of 5** features:
 | **Negative frame** | +63% higher CTR (Outbrain, 65K headlines) | "JANGAN pernah...", "STOP lakuin..." |
 | **Payoff NOT revealed** | +41% retention (Sephora test) | Tease the answer, deliver in slide 3+ |
 
-### Power Words (Use 2-3 per carousel)
-**Bahasa:** GILA, PARAH, RAHASIA, FATAL, BAHAYA, KESALAHAN, GRATIS, WAJIB, TERLARANG, DILARANG
-**English:** INSANE, SECRET, FREE, SHOCKING, WORST, WARNING, HACK, TRUTH, ILLEGAL, BANNED
+### Power Words Bank (30+ Bahasa, 25+ English — Categorized)
+
+**Anti-Repetition Rule:** Never use the same power word as hook opener in 5 consecutive carousels. Rotate across categories. If previous carousel history is available, check and avoid repeats.
+
+| Category | Bahasa | English |
+|----------|--------|---------|
+| **Shock/Disbelief** | GILA, PARAH, NGERI, BRUTAL, ABSURD, GAK MASUK AKAL | INSANE, SHOCKING, BRUTAL, UNREAL, MIND-BLOWING, WTF |
+| **Danger/Fear** | FATAL, BAHAYA, TERLARANG, DILARANG, MEMATIKAN, BERBAHAYA | FATAL, DANGEROUS, BANNED, ILLEGAL, DEADLY, WARNING |
+| **Secret/Curiosity** | RAHASIA, TERSEMBUNYI, BOCORAN, FAKTA GELAP, BELUM BANYAK YANG TAU, TERKUAK | SECRET, HIDDEN, LEAKED, DARK TRUTH, EXPOSED, REVEALED |
+| **Urgency/FOMO** | WAJIB, BURUAN, JANGAN SAMPAI, TERLAMBAT, SEBELUM DIHAPUS, CUMA SAMPAI | MUST-KNOW, HURRY, DON'T MISS, LAST CHANCE, BEFORE IT'S GONE, NOW OR NEVER |
+| **Value/Benefit** | GRATIS, TERBUKTI, REVOLUSIONER, GAME CHANGER, TERBONGKAR, HACK | FREE, PROVEN, GAME CHANGER, HACK, BREAKTHROUGH, CHEAT CODE |
+| **Authority/Challenge** | KESALAHAN, SALAH BESAR, STOP, JANGAN, BERHENTI, LO HARUS TAU | MISTAKE, STOP, NEVER DO THIS, YOU'RE WRONG, WAKE UP, TRUTH BOMB |
+
+**Category → Hook Category matching:** Shock/Disbelief → Visual Shock. Danger/Fear → Negative Bias. Secret/Curiosity → Curiosity Gap. Urgency/FOMO → Speed & Value. Value/Benefit → Speed & Value. Authority/Challenge → Negative Bias. Pick from the category that matches your hook's emotional tone.
 
 ---
 
@@ -541,7 +552,7 @@ The "Pope in the Pool" technique above covers video retention. This section is f
 - Dual-stimulus visual hooks = 3x higher engagement (Facebook marketing research)
 - Raw/imperfect visuals outperform polished by +31% (OpusClip 2026)
 
-### 12 Visual Action Categories
+### 16 Visual Action Categories
 
 | # | Category | Action in Hook Image | Why It Stops Scrolling | Best Topic Match |
 |---|----------|---------------------|----------------------|-----------------|
@@ -557,6 +568,10 @@ The "Pope in the Pool" technique above covers video retention. This section is f
 | 10 | **Props Overflow** (Abundance Visual) | Creator surrounded/buried in objects related to the topic (stack of books, pile of gadgets, mountain of cash, wall of screens) | Abundance signals authority — "this person has SO much [topic material] they're drowning in it" | Listicle, Tips, Education, Review |
 | 11 | **Contradiction Pose** (Emotional Mismatch) | Creator smiling/laughing in a "bad" situation, OR dead-serious in a fun/casual context | Emotional mismatch = "why are they HAPPY/SERIOUS about THIS?" — forces reading the headline | Controversy, Irony, News, Hot Takes |
 | 12 | **Mundane Zen** (Calm vs Chaos) | Creator meditating/calmly sipping tea while background is chaotic (fire, notifications, deadlines, alarms) | Calm-in-chaos contrast is relatable + aspirational. Background chaos = engagement driver, calm creator = authority | Productivity, Mental Health, Burnout, Work-Life |
+| 13 | **Era Clash** (Time Mismatch) | Creator in ancient warrior armor/costume facing modern weapons or tech. OR creator with modern gadgets in ancient/historical setting | Two eras colliding = brain short-circuits. "Why is a gladiator fighting assault rifles?" Instant cognitive dissonance. Proven: 3000+ viewers vs 1000 baseline | Military, History, Tech Evolution, AI, Innovation |
+| 14 | **Riding Absurd** (Mounted Impossibility) | Creator physically mounted on/riding an impossible or dangerous object — missile, shark, giant insect, rocket, bulldozer, satellite | MrBeast-level "WHAT?!" — human on impossible vehicle = 100% scroll-stop. Physical scale of vehicle amplifies absurdity. Proven: 3000+ viewers | Military, Space, Tech, Transportation, Any high-stakes topic |
+| 15 | **Physical Impossibility** (Superhero Absurd) | Creator doing something physically impossible with serious/panicked expression — blocking bullets with bare hands, catching lightning, stopping train, holding up collapsing building | Impossible feats trigger "how is this real?!" response. Serious expression sells it as real, not cartoon. Played STRAIGHT — no winks or jokes | Any topic — universal pattern interrupt, esp. Controversy, Challenge |
+| 16 | **Danger Zone** (Peril Framing) | Creator in the middle of extreme danger — between two crashing cars, on edge of exploding volcano, inside tornado, surrounded by missiles mid-flight | Primal danger response = cannot look away. Viewer's survival instinct fires even knowing it's AI. Tension drives swiping | Military, Disaster, News, Controversy, Health/Safety |
 
 ### Visual Action → Hook Category Synergy
 
@@ -576,6 +591,10 @@ Each visual action category pairs naturally with specific hook psychology catego
 | Props Overflow | Speed & Value | "This person has resources — I need what they're offering" |
 | Contradiction Pose | Negative Bias | Smiling about failure = "they know something I don't" |
 | Mundane Zen | Relatability | "I wish I could be this calm — let me learn their secret" |
+| Era Clash | Curiosity Gap | "Ancient armor vs modern weapons — WHY is this relevant now?" Two eras colliding = maximum cognitive dissonance |
+| Riding Absurd | Visual Shock | Maximum impossible spectacle + shocking headline = dual overwhelm. Scale of vehicle amplifies the absurdity |
+| Physical Impossibility | Negative Bias | "This shouldn't be possible — and that's exactly the danger." Impossible feat played straight = uncanny tension |
+| Danger Zone | Negative Bias | Danger visual + warning headline = primal fear response. Viewer physically cannot ignore human in peril |
 
 ### Topic → Visual Action Mapping (Default Selection)
 
@@ -599,6 +618,11 @@ When generating a carousel hook, use this mapping to select the default visual a
 | Story / Vlog | Wrong Context | Contradiction Pose | Props Overflow |
 | Myth-busting | Destruction | Contradiction Pose | Satisfying Process |
 | Transformation | Frozen Mid-Action | Scale Absurd | Makan Nyeleneh |
+| Military / Defense | Era Clash | Riding Absurd | Mundane Zen |
+| Space / Aerospace | Riding Absurd | Scale Absurd | Makan Nyeleneh |
+| History / Culture | Era Clash | Physical Impossibility | Satisfying Process |
+| Disaster / Safety | Danger Zone | Physical Impossibility | Mundane Zen |
+| Transportation / Automotive | Riding Absurd | Danger Zone | Props Overflow |
 
 ### Prompt Fragment Bank (Nano Banana Pro — Static Image)
 
@@ -704,6 +728,66 @@ completely serene expression with closed or half-lidded eyes,
 while the background behind them shows [topic-related props from Section 11a in visible chaos —
 e.g., financial documents flying + coins scattered for finance, code screens glitching + cables tangled for tech],
 the extreme contrast between creator's calm and background chaos creates aspirational "I want that peace" reaction
+```
+
+#### 13. Era Clash (Time Mismatch)
+```
+[CHARACTER from reference image: creator-face.png] wearing [ancient warrior armor type —
+e.g., roman gladiator leather armor with bronze shoulder guards, weathered and battle-scarred]
+in [modern warfare environment — e.g., urban battlefield with assault rifles firing, bullet tracers,
+modern military vehicles in background].
+creator is [action that bridges both eras — e.g., raising an ancient bronze shield against a hail
+of modern bullets, sparks and shell casings flying on impact].
+expression: [era-appropriate warrior emotion — e.g., screaming battle cry with eyes squeezed shut,
+veins visible on neck, full commitment to the ancient warrior role despite modern chaos around].
+the visual clash between [ancient element] and [modern element] creates immediate cognitive dissonance.
+add 1 unexpected comedy detail [e.g., one bullet stuck in shield like a dart in a dartboard,
+ancient sandal untied, modern coffee cup sitting on rubble in corner].
+```
+
+#### 14. Riding Absurd (Mounted Impossibility)
+```
+[CHARACTER from reference image: creator-face.png] physically mounted on top of
+[impossible vehicle/object — e.g., a us air force missile mid-flight through clouds,
+or a giant cockroach drone, or a spacex rocket].
+creator wearing [context-appropriate outfit — e.g., military flight suit with patches]
+with [reaction to the ride — e.g., hair/wig flying off behind, glasses sliding off nose,
+one hand gripping desperately while other hand reaches for flying object].
+expression: [genuine physical reaction — e.g., eyes wide with shock, mouth open in scream,
+body leaning into wind resistance].
+background shows [environment that confirms impossibility — e.g., clouds rushing past,
+ground far below, exhaust trail behind].
+add 1 unexpected comedy detail [e.g., wig/toupee flying off, sunglasses tumbling away,
+briefcase floating behind still gripped by one finger, cup of coffee somehow still full].
+```
+
+#### 15. Physical Impossibility (Superhero Absurd)
+```
+[CHARACTER from reference image: creator-face.png] performing
+[physically impossible feat — e.g., catching a speeding bullet between two fingers,
+holding back a collapsing skyscraper with one hand, standing calmly as lightning strikes raised palm].
+expression: [deadpan serious or strained effort — e.g., slight frown of concentration,
+or veins popping with extreme effort, sweat drops visible].
+the impossibility is played straight — no winks, no jokes, creator treats it as completely normal.
+[physics-defying details — e.g., ground cracking beneath feet, shockwave ripples in air,
+objects frozen mid-trajectory, dust particles suspended].
+add 1 unexpected comedy detail [e.g., phone still in back pocket with notification visible,
+coffee cup balanced perfectly on a floating debris, glasses undisturbed despite chaos].
+```
+
+#### 16. Danger Zone (Peril Framing)
+```
+[CHARACTER from reference image: creator-face.png] positioned in the center of
+[extreme danger scenario — e.g., between two missiles about to collide,
+on a crumbling bridge over a lava river, inside the eye of a tornado with debris swirling].
+creator wearing [practical outfit for the danger — e.g., torn jacket, dust-covered, singed edges].
+expression: [calm defiance or genuine panic — e.g., serene meditation pose amidst chaos,
+or wide-eyed terror with hands shielding face].
+the danger is the visual hook — viewer cannot look away from a human in peril.
+[environmental danger details — e.g., heat distortion, flying debris, cracks spreading,
+smoke and ash, red-orange emergency lighting].
+add 1 unexpected comedy detail [e.g., phone selfie mid-danger, thumbs-up while panicking,
+perfectly intact coffee cup in the chaos, pet cat sitting calmly on creator's shoulder].
 ```
 
 ### Visual Action Selection Rules

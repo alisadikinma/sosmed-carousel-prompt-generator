@@ -150,6 +150,53 @@ Each body slide covers a different subtopic. Slide-specific keywords make each i
 
 ---
 
+## Subject Reference Image System (Pre-Generation)
+
+When the topic involves specific objects that need visual consistency across slides (products, animals, devices, branded items, food items), the agent MUST plan reference images BEFORE generating any slide prompt.
+
+### Naming Convention
+
+| Type | Filename Pattern | Example |
+|------|-----------------|---------|
+| Creator face | `creator-face.png` | Always — standard |
+| Creator brand | `creator-brand.png` | Always — standard |
+| Subject reference | `ref-{object-description}.png` | `ref-cyborg-cockroach-teal-casing.png` |
+| Subject variant | `ref-{object-variant}.png` | `ref-sate-kecoa-skewer-with-sauce.png` |
+
+**Rules:**
+- Filenames: lowercase, hyphens only, descriptive (2-5 words), `.png` extension
+- Agent assigns ALL filenames BEFORE any prompt generation
+- Same filename used in ALL slide prompts that reference that object
+- All stored in `ref/` folder inside topic folder
+
+### Workflow
+
+1. **Identify** — Agent analyzes topic, identifies objects needing consistent visual representation
+2. **Name** — Agent assigns descriptive filenames for each reference (e.g., `ref-cyborg-cockroach-teal-casing.png`)
+3. **Present** — Agent shows user the planned reference list with filenames and descriptions
+4. **Source photos** — Agent asks: "Do you have source photos for any of these? Save to `ref/` with these exact names"
+5. **Generate** — Agent generates reference image prompts (clean, isolated, white/neutral background, detailed object only)
+6. **Use** — ALL subsequent slide prompts reference the exact filenames: `[from reference image: ref-cyborg-cockroach-teal-casing.png]`
+
+### Reference Image Prompt Template
+
+```
+A photorealistic product/object reference image on a clean white background.
+[Detailed description of the object — shape, color, material, distinctive features, scale context].
+Studio lighting, soft even illumination, no harsh shadows. Sharp focus on every detail.
+No text, no branding, no background elements — isolated object only.
+4K resolution, reference quality for visual consistency across multiple images.
+```
+
+### Usage in Slide Prompts
+
+When a subject reference exists, insert in the relevant slide prompt:
+```
+[Object/creature rendered from reference image: ref-{filename}.png — maintain exact visual details: color, shape, texture, markings]
+```
+
+---
+
 ## Hook Headline Formula (Slide 1 — MANDATORY)
 
 The hook headline is the single most important text in the entire carousel. It determines whether the viewer swipes or scrolls past. A generic headline = dead carousel.
@@ -222,12 +269,41 @@ The hook headline category MUST match the visual composition and creator express
 
 > Full expression libraries (eyes, mouth, head, hands, body per category), 3 camera variants (A/B/C), environment palettes, and synergy matrix → see `references/hook-visual-library.md`
 
+### Headline-Visual Independence Rule (MANDATORY)
+
+Hook headline and hook visual are **INDEPENDENT** systems working together via cognitive dissonance:
+
+| System | Purpose | Source |
+|--------|---------|--------|
+| **Visual hook** | Absurd pattern interrupt — grabs eyeballs | Visual Action Hook Bank (hook-science.md) |
+| **Hook headline** | Topic-professional promise — delivers the content value | Hook Headline Formula (above) |
+
+**The Rule:** Headline describes the TOPIC, never the visual action. The absurd visual grabs attention; the serious headline converts it to curiosity.
+
+**MANDATORY CHECK before generating hook prompt:**
+> "Does this headline describe the TOPIC or the VISUAL?"
+> If it describes the visual → REWRITE immediately.
+
+**Anti-Pattern Examples:**
+
+| | Headline | Why |
+|---|---------|-----|
+| BAD | "GILA — GUE MAU MAKAN KECOAK INI" | Describes the visual action (eating cockroach), not the topic |
+| BAD | "PARAH — NAIK RUDAL SAMBIL BAWA LAPTOP" | Describes the visual (riding missile), not the topic |
+| GOOD | "NGERI — KECOAK HIDUP DIJADIKAN DRONE MATA-MATA MILITER" | Describes the topic (military drone cockroach), visual is independent |
+| GOOD | "FATAL — AI SEKARANG BISA KONTROL SENJATA TANPA MANUSIA" | Describes the topic (autonomous weapons AI), visual grabs attention separately |
+
+**How it works together:**
+- Viewer sees: creator eating cockroach at night market (ABSURD — scroll stops)
+- Viewer reads: "KECOAK HIDUP DIJADIKAN DRONE MATA-MATA MILITER" (TOPIC — curiosity activated)
+- Brain: "Wait, cockroaches are actually military drones?!" → SWIPE
+
 ### Multi-Keyword Highlighting in Prompt (All Slides)
 
 Every headline must highlight **2-4 emotionally impactful keywords** in accent color — not just 1 power word. Single-word highlighting looks weak and fails to create visual rhythm across the headline.
 
 **Keyword Selection Rules:**
-1. **Power words** — GILA, PARAH, RAHASIA, FATAL, BAHAYA, GRATIS, WAJIB, TERLARANG, INSANE, SKIP, NEVER
+1. **Power words** — 30+ options in 6 categories (see expanded Power Words Bank in `references/hook-science.md`). Anti-repetition: never same opener in 5 consecutive carousels
 2. **Emotional triggers** — words that provoke fear, curiosity, or urgency (COLLECTED, KNOWS, NEVER, STOP, RUGI)
 3. **Numbers/stats** — concrete data points that add credibility ("10x", "30 DETIK", "99%")
 4. **Identity words** — words the viewer self-identifies with (YOU, YOUR, LO, GUE)
@@ -264,7 +340,9 @@ The text uses the largest possible font size that fills the width, extra bold we
 
 **Pre-generation:** Score headline 3/5 on Hook Scoring Gate (see Hook Headline Formula above). If < 3/5, rewrite before proceeding.
 
-**Costume selection:** Read topic → find matching Costume Profile in `references/hook-visual-library.md` Section 10. Copy the prompt phrase into the `[Wardrobe]` slot. If topic doesn't match any category → use Default / Smart Casual. User override always wins.
+**Headline Independence Check (MANDATORY):** Verify headline describes the TOPIC, not the visual action. See Headline-Visual Independence Rule above. If headline describes what the creator is DOING in the image → REWRITE to describe the TOPIC instead.
+
+**Costume selection (Scene-Override Priority):** Check the confirmed Visual Hook Idea scene context FIRST → match against Scene → Costume Override Table in `references/hook-visual-library.md` Section 10. If scene has a specific environment (night market, beach, gym, etc.), use the scene-appropriate costume — NOT the topic costume. Only use topic → costume mapping for neutral/studio/unspecified scenes. Copy the prompt phrase into the `[Wardrobe]` slot. User override always wins.
 
 **Visual Hook Idea (USER-CONFIRMED):** After hook category is confirmed, present **3 vivid scene concepts** — absurd, funny, eye-catching scenarios (2-3 sentence creative pitches, NOT technical component lists). Each idea built from hook-science.md Visual Action Bank + hook-visual-library.md Sections 4-5, 10, 11. The scene should be ABSURD but RELEVANT — humor/shock from contrast between serious headline and ridiculous visual. User picks A/B/C, modifies, or provides own idea. The confirmed visual concept drives the prompt.
 
@@ -553,6 +631,44 @@ thirty percent opacity, subtle background mark only.
 Maintain exact appearance from reference image: creator-face.png.
 ```
 
+### Template — Video Source Overlay (Source MP4/Video Content)
+
+Use when a body slide references source video content (e.g., news footage, product demo, original clip). The upper portion stays transparent/minimal so the video plays behind when posted; the lower portion has the standard gradient + headline + branding.
+
+**When to use:** Source material is MP4/video, not static image. The slide serves as a "branded frame" over the video content.
+
+**Layout:**
+- **Upper 60-70%:** Minimal transparent area — light dark vignette edges only, no text, no heavy overlay. Video content visible behind
+- **Lower 30-40%:** Standard gradient zone with headline, subtitle, branding (same as other templates)
+- Source video branding REMOVED (competitor branding rule — no watermarks, handles, or badges from source)
+
+```
+A cinematic frame overlay for video content. The upper two-thirds of the image is mostly transparent
+with only a subtle dark vignette at the edges, allowing video to show through clearly.
+
+The lower third transitions into a smooth dark gradient zone. Extremely large, bold, impactful condensed
+uppercase text reading "[HEADLINE]" with the words "[KEYWORD 1]", "[KEYWORD 2]", and "[KEYWORD 3]"
+in [config: accent_color]. Remaining text in white.
+The text uses the largest possible font size that fills the width, extra bold weight.
+Below the main headline, a [config: subtitle_language] subtitle line in [config: subtitle_color] at slightly smaller size — subtitle must not be white.
+Render the creator's brand icon from reference image creator-brand.png centered in the middle of the image
+as a small circular badge at thirty percent opacity, positioned directly above the @handle watermark.
+"[config: handle]" as a watermark in white, centered in the middle of the image directly below the brand icon,
+thirty percent opacity, subtle background mark only.
+"[config: swipe_cta_text]" in small white text positioned directly beneath the headline text with minimal gap.
+"[N]/[TOTAL]" as a small white page number in the top-left corner of the image.
+
+No source branding — all original watermarks, handles, channel names, and badges removed.
+[PLATFORM ASPECT] aspect ratio.
+```
+
+**Key differences from standard B-Roll template:**
+- Upper area is intentionally sparse/transparent (video shows through)
+- No scene description in upper area (video IS the scene)
+- Gradient starts lower (bottom 30-40% vs bottom half)
+- No creator face (video content is the subject)
+- Source branding explicitly removed
+
 ### Template — CTA Slide (Last Slide — 4 Visual Types)
 
 The CTA slide must CONVERT attention into action. A generic "follow me" composition = wasted opportunity. Select the CTA visual type that best matches the carousel's engagement goal.
@@ -826,6 +942,81 @@ Before finalizing each image prompt, verify ALL 8 are present:
 - [ ] Curiosity gap created — "What does he know?"
 - [ ] Aspect ratio matches target platform
 - [ ] All 8 WOW elements present
+
+---
+
+## Video Handover Brief Template
+
+Auto-generated alongside `carousel-prompt.md` as `video-handover.md` in the same output folder. Provides downstream video agent with full creative context for image-to-video conversion.
+
+**Purpose:** The carousel image agent generates static prompts. A separate video agent converts selected images to video. The handover brief ensures the video agent understands the storyline, emotional arc, and creative decisions — without re-reading all carousel prompts.
+
+### Output Template
+
+```markdown
+# Video Handover Brief — [Carousel Topic]
+
+**Generated:** [date]
+**Source carousel:** carousel-prompt.md
+**Platform:** [target platform] | **Slides:** [N] | **Aspect:** [ratio]
+
+## Storyline Summary
+
+[1-2 paragraphs describing the carousel narrative arc — what the carousel is about, the key message, the emotional journey from hook to CTA. Written as a creative brief, not a technical description.]
+
+## Hook Visual Concept (DETAILED — for video animation)
+
+**Visual Action Category:** [e.g., Era Clash / Riding Absurd / Makan Nyeleneh]
+**Scene Description:** [Full vivid description of the hook image — what creator is wearing, what they're doing, their expression, the environment, the absurd element, the comedy detail. This MUST be detailed enough for a video agent to understand exactly what to animate. Example: "Creator in Roman gladiator armor, screaming while raising a bronze shield against a hail of modern assault rifle bullets. Sparks flying on impact, shell casings bouncing off shield. Night market environment with neon signs in background. Comedy detail: one bullet stuck comically in the shield like a dart in a dartboard."]
+**Key Motion Opportunities:** [What could move/animate in this scene — e.g., "bullets hitting shield with sparks, creator straining against impact, background explosions, shell casings falling"]
+**Comedy Detail:** [The specific unexpected comedy element — e.g., "wig flying off", "glasses sliding down nose", "bullet stuck in shield like a dart"]
+
+## Per-Slide Scene Descriptions
+
+| Slide | Type | Scene Description | Mood/Energy | Key Visual Elements |
+|-------|------|-------------------|-------------|-------------------|
+| 1 | Hook | [Visual setting, what's happening, atmosphere — NOT the prompt] | [e.g., Chaotic, high-energy] | [e.g., Night market, cockroach on skewer, neon lights] |
+| 2 | Foreshadow | [Scene description] | [Mood] | [Key elements] |
+| ... | ... | ... | ... | ... |
+| N | CTA | [Scene description] | [Mood] | [Key elements] |
+
+## Emotional Arc
+
+[Slide 1: HIGH (6/6)] → [Slide 2: DIP (3/6)] → [Slide 3: BUILD (2/6)] → ... → [Slide N: WARM (1/6)]
+
+## Text Elements (Must Stay Readable in Video)
+
+Every slide contains these text elements that must remain sharp and readable if animated:
+- Headline (ALL CAPS, bottom gradient zone)
+- Subtitle ([config: subtitle_language], below headline)
+- Brand icon (center, thirty percent opacity)
+- @handle watermark (center, below brand icon)
+- Page number (top-left corner)
+- SWIPE (GESER) > (below headline, all slides except CTA)
+- CTA-specific: social icons + handle (CTA slide only)
+
+## Reference Images Used
+
+| Filename | Description | Used In Slides |
+|----------|-------------|---------------|
+| creator-face.png | Creator face reference | 1, 2, N (all creator-facing slides) |
+| creator-brand.png | Brand icon/logo | All slides |
+| ref-{name}.png | [Object description] | [Which slides use it] |
+
+## Creative Context
+
+- **Hook category:** [confirmed category from creative clarification]
+- **Visual hook idea:** [confirmed scene concept]
+- **Target audience:** [inferred from topic + platform]
+- **Tone:** [e.g., Gen-Z Bahasa, educational but entertaining]
+- **Key message:** [1 sentence — what the viewer should remember]
+
+## Source Material
+
+- **Source URL:** [if provided, otherwise "Original content"]
+- **Source type:** [Instagram post / TikTok / LinkedIn / Original]
+- **Notes:** [any relevant context from source extraction]
+```
 
 ---
 

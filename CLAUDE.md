@@ -1,4 +1,4 @@
-# Sosmed Carousel Prompt Generator — Claude Project Instructions
+# AI Image Carousel Prompt Gen — Claude Project Instructions
 
 ## Project Overview
 
@@ -26,7 +26,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 |------|-----------|
 | `global-config.md` | ALWAYS (read FIRST) — single source of truth for all configurable values (language, colors, handle, film stock, platform specs) |
 | `creator-bible.md` | ALWAYS — creator identity, brand rules, gradient zones, holiday production, brand-in-image specs |
-| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (12 absurd action types for static carousel hooks), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, cover slide specs, interactive hooks |
+| `hook-science.md` | Hook slides — 5 hook categories (100-hook bank), Visual Action Hook Bank (16 absurd action types for static carousel hooks), CTA science (4 types + algorithm hierarchy), Gen-Z transcreation, engagement benchmarks, cover slide specs, interactive hooks |
 | `hook-formula-bank.md` | 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer) — works for ALL content types, cross-mapped to visual hook categories |
 | `hook-visual-library.md` | Hook visual specs — expression libraries (5+8 categories), lighting presets, camera angle banks (3 variants per category), environment palettes, Visual Action × Expression synergy matrix, anti-repetition variation system, costume/wardrobe library (10 topic categories), prop/tool interaction system |
 | `carousel-rebranding.md` | Rebranding third-party carousels |
@@ -60,7 +60,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 - **Subtitle**: Per global-config.md — subtitle language translation, rendered below main headline in **subtitle color from config** (not white). Creates visual hierarchy and bilingual accessibility
 - **Hook Headline Formula**: Mandatory structure `[POWER WORD] + [curiosity gap/number] + [unrevealed payoff]`. Must score 3/5 on Hook Scoring Gate BEFORE generating prompt. Power word at 120% size in accent color
 - **Hook Science**: 5 psychology-based hook categories with 100-hook bank (20 per category, Bahasa + English). Hook category determines expression + scene + lighting. Includes Gen-Z transcreation rules, interactive carousel hooks (quiz/flowchart), and cover slide design specs. **Hook Formula Bank**: 52 fill-in-the-blank hook formula templates in 8 psychology categories (Seefluencer framework) for ALL content types — see `references/hook-formula-bank.md`. **Hook Visual Library**: Deep visual specs per hook category — expression libraries (eyes, mouth, head, hands, body), lighting presets, camera angle banks (3 variants A/B/C), environment palettes, Visual Action × Expression synergy matrix, anti-repetition variation system — see `references/hook-visual-library.md`. **MANDATORY: Hook category MUST match Topic → Hook Category Mapping. NEVER default to Visual Shock**
-- **Visual Action Hook Bank**: 12 absurd mundane action types for static carousel hook slides (makan nyeleneh, minum dramatic, objek absurd, destruction, satisfying process, scale absurd, wrong context, frozen mid-action, extreme close-up, props overflow, contradiction pose, mundane zen). Each hook slide MUST use a visual action from the bank — the absurd action IS the pattern interrupt. Topic → Visual Action mapping in `hook-science.md`
+- **Visual Action Hook Bank (16 categories)**: 16 absurd action types for static carousel hook slides (makan nyeleneh, minum dramatic, objek absurd, destruction, satisfying process, scale absurd, wrong context, frozen mid-action, extreme close-up, props overflow, contradiction pose, mundane zen, era clash, riding absurd, physical impossibility, danger zone). New: Era Clash (ancient vs modern, proven 3000+ viewers), Riding Absurd (mounted on impossible object, proven 3000+ viewers), Physical Impossibility (superhero feats), Danger Zone (extreme peril). Each hook includes 1 unexpected comedy detail. Topic → Visual Action mapping in `hook-science.md`
 - **Foreshadow (Slide 2)**: MANDATORY bridge between hook and body. 4 types: Steps Tease, Fear Urgency, Quiz/Choice, Visual Tease. Creates FOMO to keep swiping. Instagram re-serves from slide 2 = second chance. **Visual continuity from hook is MANDATORY** — use Aftermath/Zoom Shift/Narrative Continue/Context Reveal strategy. Same wardrobe, connected scene. Use hook image as scene reference in Nano Banana Pro
 - **CTA Visual Types**: 4 engagement-driven types ranked by impact: Engagement Reward (12-18% conversion), Question (highest comment volume), Polarize (highest shares + depth), Identity Tag (highest DM shares). Each has specific visual composition and lighting
 - **Algorithm Engagement Hierarchy**: DM Shares (3-5x weight) > Saves (3x) > Comments (depth matters) > Dwell time > Completion rate > Likes. Optimize CTA for top signals
@@ -72,6 +72,12 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 - **Source URL Collection**: Agent asks for source post URL at start of every generation. Extracts caption + metadata via og:tags to enrich context. Optional — user can skip. NEVER copy caption verbatim — rewrite in creator voice. Source account = competitor branding (DELETE)
 - **Page Numbers**: Every carousel slide includes `"[N]/[TOTAL]"` as a small white page number in the top-left corner. Makes posting order easy to track. All slides get page numbers (thumbnails typically excluded since they're standalone)
 - **Suggested Filenames**: Every slide includes an SEO-optimized filename: `{N}-{topic-keywords}-{brand-handle}-{slide-type}.png`. Hyphens only, lowercase, slide-level keywords, 5-8 words. Full convention in `references/prompt-formulas.md`
+- **Headline-Visual Independence**: Hook headline and hook visual are INDEPENDENT systems. Visual = absurd pattern interrupt (grabs eyeballs). Headline = topic-professional (delivers content promise). They create cognitive dissonance together. MANDATORY check: if headline describes the visual action instead of the topic → REWRITE
+- **Deep Research Expansion**: After fact verification, agent proactively searches 3-5 additional angles (mechanism, comparisons, fun facts, controversy, impact). Findings presented to user who picks which angles to include in body slides
+- **Video Handover Brief**: Auto-generated `video-handover.md` alongside every carousel. Provides downstream video agent with storyline, **detailed hook visual concept** (full scene description + motion opportunities + comedy detail for animation), per-slide scenes, emotional arc, text preservation rules, reference images, creative context. Same output folder as `carousel-prompt.md`
+- **Subject Reference Images**: Agent identifies topic-specific objects needing visual consistency, assigns descriptive filenames upfront (`ref-{object-description}.png`), asks user for source photos, generates reference image prompts. Same filenames used in ALL slide prompts for consistency. Stored in `ref/` folder
+- **Scene-Override Costume**: Costume priority: user override > scene context > topic category. Visual Hook Idea scene determines costume (night market = casual, not blazer). Topic category is fallback for neutral/studio scenes only
+- **Power Word Anti-Repetition**: 30+ power words in 6 emotional categories (hook-science.md). Never repeat same opener in 5 consecutive carousels
 
 ## Capabilities
 
@@ -87,6 +93,9 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 10. **Emotional arc plotting** — roller coaster intensity mapping across full carousel
 11. **SEO filename suggestions** — per-slide optimized filenames for content management and discoverability
 12. **Source URL metadata extraction** — extract caption, account, engagement from Instagram/TikTok/LinkedIn post URLs to enrich prompt context and caption writing
+13. **Deep research expansion** — proactive 3-5 angle research (mechanism, comparisons, fun facts, controversy, impact) after fact verification. User picks which angles to include
+14. **Video handover brief** — auto-generated `video-handover.md` with storyline, detailed hook visual concept, scene descriptions, emotional arc, and creative context for downstream video agent
+15. **Subject reference images** — agent plans and names reference images upfront (`ref-{object-description}.png`) for visual consistency across all slides
 
 ### Creator Identity (Image Reference)
 - **Standard filenames**: `creator-face.png` (face photo) + `creator-brand.png` (brand icon/logo)
@@ -94,6 +103,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 - Image reference replaces text-based physical descriptions — images produce more accurate AI likeness
 - Referenced in every creator-facing prompt: `[CHARACTER from reference image: creator-face.png]`
 - **Every new session/topic**: agent MUST confirm `ref/` folder exists with both files before generating
+- **Subject references**: `ref-{object-description}.png` for topic-specific objects (products, creatures, devices). Agent names files upfront; same filenames in ALL slide prompts. See `references/prompt-formulas.md` Subject Reference Image System
 - Template in `references/creator-bible.md`
 
 ### Carousel Engagement Funnel (Slide Structure)
@@ -207,7 +217,7 @@ To change any configurable value (language, color, handle, film stock, etc.):
 | Hook visual doesn't match | Hook category determines expression + scene + lighting — check visual profile in hook-visual-library.md. MANDATORY: category MUST match Topic → Hook Category Mapping in hook-science.md |
 | Hook always Visual Shock | Agent must follow Topic → Hook Category Mapping. Education/Business/Health = Avoid Visual Shock. Check enforcement step in prompt-formulas.md |
 | Hook images repetitive | Use anti-repetition system: rotate camera variants A/B/C per category. Check hook-visual-library.md Anti-Repetition section |
-| Hook costume wrong | Check topic → costume mapping in hook-visual-library.md Section 10. User override always wins |
+| Hook costume wrong | Scene-Override Priority: user override > scene context > topic category. Check hook-visual-library.md Section 10 Scene → Costume Override Table |
 | Hook prop generic/random | Check hook category → prop type rule in Section 11c. Visual Shock = Random Absurd, all others = Topic-Related. Pick from Section 11a topic bank |
 | Creator face on public figure slide | When topic is about a public figure (criminal, head of state, artist, CEO), body slides should show the public figure's face as primary — creator is optional companion. Check Public Figure Face Priority in creator-bible.md |
 | Missing foreshadow | Slide 2 MUST be foreshadow type (Steps Tease / Fear Urgency / Quiz / Visual Tease) |
@@ -224,8 +234,15 @@ To change any configurable value (language, color, handle, film stock, etc.):
 | URL metadata empty | Instagram/TikTok may block or truncate — inform user and proceed without metadata. Extraction is best-effort |
 | Source caption copied verbatim | NEVER copy — always rewrite in creator voice (Gen-Z Bahasa, gue/lo). Source caption is inspiration only |
 | Source account branding leaked | Source account handle/watermark = competitor branding. Must NOT appear in any prompt |
+| Headline describes visual not topic | Headline-Visual Independence rule — headline must describe TOPIC. If "GUE MAU MAKAN KECOAK" instead of "KECOAK DIJADIKAN DRONE MILITER" → REWRITE. Check prompt-formulas.md |
+| Same power word every carousel | Power word bank has 30+ options in 6 categories. Anti-repetition rule: never same opener in 5 consecutive carousels. Check hook-science.md |
+| Hook visual too generic/boring | Agent brainstorm pitches must be VIVID movie-scene descriptions with specific details (costume, action, expression, environment, comedy detail). Check agent Step 6c brainstorm quality rules. 16 Visual Action categories available |
+| Costume doesn't match scene | Scene-Override Costume rule — scene context overrides topic. Night market ≠ blazer. Check hook-visual-library.md Section 10 Scene → Costume Override Table |
+| Subject looks different across slides | Subject Reference Image system — agent must name ref files upfront and use same filenames in ALL slide prompts. Check ref/ folder for consistency |
+| Video agent has no context | Video handover brief (`video-handover.md`) should be auto-generated with DETAILED hook visual concept. Check if file exists in output folder |
+| Hook visual can't be animated | video-handover.md must include Hook Visual Concept section with motion opportunities and comedy detail. Video agent needs to know what moves |
 
 ---
 
-**Version:** 2.15.0
+**Version:** 2.16.0
 **Last Updated:** March 2026

@@ -8,9 +8,9 @@
   },
   "plugins": [
     {
-      "name": "sosmed-carousel-prompt-generator",
-      "description": "3 skills + 1 agent + 12 reference docs for cinematic carousel image prompt production (Instagram, TikTok, LinkedIn, Threads)",
-      "version": "2.15.0",
+      "name": "ai-image-carousel-prompt-gen",
+      "description": "3 skills + 1 agent + 13 reference docs for cinematic carousel image prompt production (Instagram, TikTok, LinkedIn, Threads)",
+      "version": "2.16.0",
       "source": "./"
     }
   ]

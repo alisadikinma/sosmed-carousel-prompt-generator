@@ -399,6 +399,24 @@ When combining a Visual Action (from hook-science.md) with a hook category expre
 - **Modification:** Authority compressed into intimate macro framing — the confidence reads even stronger at extreme proximity
 - **Prompt phrase:** "extreme tight close-up of confident direct eyes and bridge of nose filling the frame, every pore visible, authoritative steady gaze unwavering, one hand visible at edge of frame holding up a number gesture"
 
+#### Curiosity Gap + Era Clash (primary for new category)
+- **Modification:** Knowing "I see the future" expression while committed to ancient warrior role — the anachronism is played completely straight
+- **Pose override:** Full ancient warrior pose (shield raised, sword drawn, battle stance) while face shows hook category expression
+- **Prompt phrase:** "fully committed to ancient roman gladiator warrior stance, raising a battle-scarred bronze shield against incoming modern assault rifle fire, sparks flying on impact with shell casings bouncing, screaming battle cry with eyes squeezed shut, veins visible on neck — the clash between ancient armor and modern bullets is the cognitive dissonance hook"
+
+#### Visual Shock + Riding Absurd (primary for new category)
+- **Modification:** Maximum shock expression amplified by physical impossibility — genuine terror of the ride, body language shows real wind resistance and grip
+- **Pose override:** Both hands gripping the vehicle/object, body leaning into wind, physical reaction to speed/height
+- **Prompt phrase:** "physically mounted on top of a missile mid-flight through clouds, military flight suit flapping in wind, hair/wig flying off behind, one hand gripping desperately while other reaches for escaping glasses, eyes wide with genuine shock, mouth open screaming into wind, body leaning forward against air resistance"
+
+#### Negative Bias + Physical Impossibility (primary for new category)
+- **Modification:** Warning seriousness while performing impossible feat — played completely straight, no humor on face. The impossibility reinforces the gravity of the warning
+- **Prompt phrase:** "catching a speeding bullet between two fingers with deadpan serious expression, slight frown of concentration, veins visible on forearm, ground cracking beneath feet from the force — treats the impossible as completely routine, making the warning feel even more authoritative"
+
+#### Negative Bias + Danger Zone (primary for new category)
+- **Modification:** Calm warning authority in the center of chaos — the danger is AROUND the creator, but they deliver the warning message unflinchingly
+- **Prompt phrase:** "standing calmly at the center of massive explosions and flying debris, torn jacket and dust-covered but expression steady with grave seriousness, one hand raised in warning gesture, the environmental chaos emphasizes the urgency of the warning"
+
 ### Synergy Rules (For Non-Primary Pairings)
 
 When combining any visual action with any hook category not listed above:
@@ -507,12 +525,33 @@ Category-level engagement data mapped from research sources already cited in hoo
 
 Topic-based costume profiles with prompt-ready descriptions. Agent reads topic → picks matching costume → inserts at `[Wardrobe]` slot in hook template.
 
-### Selection Rule
+### Selection Rule (Scene-Override Priority)
 
-1. Match the user's topic to the closest topic category below
-2. If topic doesn't fit any category → use **Default / Smart Casual**
-3. If user explicitly specifies wardrobe → user override wins (skip this section)
-4. Costume descriptions are prompt-ready — copy the **Prompt Phrase** directly into the `[Wardrobe]` slot
+Costume selection follows a **3-level priority chain**. Scene context from the Visual Hook Idea overrides topic category.
+
+**Priority Chain:**
+1. **User override** (always wins) — if user explicitly specifies wardrobe → use that, skip everything below
+2. **Visual Hook Idea scene context** — if the hook scene implies a specific environment, costume MUST match the scene (see Scene → Costume Override Table below)
+3. **Topic category** (fallback) — ONLY used when scene is neutral/studio/generic. Match topic to closest category below
+
+**Scene → Costume Override Table:**
+
+| Scene Context | Costume Override | Why |
+|--------------|-----------------|-----|
+| Night market / street food stall | casual streetwear tee or open flannel, shorts or relaxed jeans | blazer at pasar malam = uncanny |
+| Beach / waterfront | tank top or open linen shirt, board shorts or rolled-up pants | formal at beach = absurd (wrong kind) |
+| Kitchen / cooking scene | apron over casual tee, sleeves rolled up | clean and practical |
+| Gym / sports arena | athletic wear, compression shirt or tank | matches physical setting |
+| Lab / science facility | lab coat over smart casual, safety goggles on forehead | institutional context |
+| Construction / industrial site | high-vis vest over casual shirt, hard hat optional | safety context |
+| Formal event / stage / podium | full suit or blazer + dress shirt | formal setting matches formal wear |
+| Classroom / lecture hall | smart casual — button-up or polo, no blazer | approachable academic |
+| Home / living room | relaxed hoodie or casual tee, comfortable pants | domestic context |
+| Neutral studio / plain background | **Use topic category below** (fallback) | no scene context to override |
+
+**Rule:** If the hook visual places the creator in a night market holding giant cockroach skewers, the costume is **casual streetwear** — NOT a finance blazer, even if the topic is investment-related. The scene always wins over the topic.
+
+Costume descriptions are prompt-ready — copy the **Prompt Phrase** directly into the `[Wardrobe]` slot.
 
 ### Finance / Investment
 

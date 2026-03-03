@@ -245,15 +245,23 @@ For each uploaded slide, identify:
 - Web-search all factual claims from source slides
 - Flag any inaccurate data to user
 
-### Step 3: Plot Emotional Arc
+### Step 3: Subject Reference Planning (if topic has specific objects)
+- Analyze source slides for objects needing consistent visual representation
+- Assign descriptive filenames: `ref-{object-description}.png`
+- Present reference list to user, ask for source photos (optional)
+- Generate reference image prompts if needed (isolated, white background)
+- ALL subsequent slide prompts use these exact filenames
+- See Subject Reference Image System in `references/prompt-formulas.md`
+
+### Step 4: Plot Emotional Arc
 - Assign emotional beat + intensity to each slide (see Emotional Arc Visual Map in `references/prompt-formulas.md`)
 - Beats: HIGH (hook) → DIP (foreshadow) → BUILD (body) → MINI-HOOK (mid-carousel) → CLIMAX (reveal) → WARM (CTA)
 
-### Step 4: Interactive Design
+### Step 5: Interactive Design
 - Check each slide for ambiguity triggers (costumes, settings)
 - Ask user for decisions on ambiguous slides
 
-### Step 5: Convert Style
+### Step 6: Convert Style
 Apply conversion matrix (read `references/carousel-rebranding.md` for full detail):
 - Source accent colors → User's accent color
 - Cold background → Warm amber environment
@@ -262,22 +270,26 @@ Apply conversion matrix (read `references/carousel-rebranding.md` for full detai
 - No creator face → ADD on Hook + CTA + human figure slides
 - Text overlay → Rendered IN-IMAGE per global-config.md Language section (bilingual default)
 
-### Step 6: Score Hook Headline
+### Step 7: Score Hook Headline
 - Write hook headline using Hook Headline Formula (see `references/prompt-formulas.md`)
 - Verify 3/5 on Hook Scoring Gate before generating hook prompt
 - If < 3/5: REWRITE
 
-### Step 7: Generate Prompts (Engagement Funnel Order)
+### Step 8: Generate Prompts (Engagement Funnel Order)
 1. **Slide 1 (HOOK)** — Hook Slide template, expression + scene matching hook category
 2. **Slide 2 (FORESHADOW, mandatory)** — Foreshadow template, type matching topic
 3. **Slides 3-N (BODY)** — Standard templates, visual treatment matching emotional arc beat
 4. **Last Slide (CTA)** — CTA Visual Type matching engagement goal (Polarize/Question/Identity Tag/Reward)
 5. Score all prompts via WOW gate (min 6/8)
 
-### Step 8: Generate Captions
+### Step 9: Generate Captions
 Generate captions for all 4 platforms (IG + TikTok + LinkedIn + Threads) in English
 
-### Step 9: Continuity Checklist
+### Step 10: Generate Video Handover Brief
+Auto-generate `video-handover.md` using Video Handover Brief Template from `references/prompt-formulas.md`.
+Include detailed Hook Visual Concept section for video animation.
+
+### Step 11: Continuity Checklist
 Verify all visual continuity rules (including hook score, foreshadow, emotional arc, CTA type)
 
 ---
@@ -313,17 +325,84 @@ After source URL, ask: "Mau save hasilnya ke folder mana? Kasih path folder-nya,
 - Web-search each factual claim
 - Collect sources, flag inaccuracies
 
-### Step 3: Plot Emotional Arc
+### Step 3: Subject Reference Planning (if topic has specific objects)
+
+Analyze the topic for objects that need consistent visual representation across multiple slides.
+Examples: specific product (cyborg cockroach device), food item (sate kecoa), technology (drone chip), branded item.
+
+**3a) Identify & Name References:**
+- List each object needing a reference image
+- Assign descriptive filename for each: `ref-{object-description}.png`
+  * Lowercase, hyphens only, 2-5 descriptive words
+  * Example: `ref-cyborg-cockroach-teal-casing.png`, `ref-sate-kecoa-skewer.png`
+- These filenames are FINAL — they will be used in ALL slide prompts
+
+**3b) Present to User:**
+```
+Untuk konsistensi visual, saya perlu reference image untuk objek-objek ini:
+
+1. ref-cyborg-cockroach-teal-casing.png — kecoak cyborg dengan casing hijau teal, chip visible di punggung
+2. ref-sate-kecoa-skewer.png — sate kecoa di tusuk sate dengan saus kacang
+
+Punya foto source untuk objek-objek ini? Kalau ada, save ke folder ref/ pakai nama file di atas.
+Kalau nggak ada, saya generate reference image prompt-nya.
+```
+
+**3c) Generate Reference Prompts:**
+- For each object WITHOUT user source photo, generate a reference image prompt
+- Use Reference Image Prompt Template from `references/prompt-formulas.md`
+- Clean white background, isolated object, studio lighting, sharp detail
+
+**3d) Confirm Reference Set:**
+- Verify all ref files are named and ready
+- `ref/` folder should contain: `creator-face.png`, `creator-brand.png`, + all subject refs
+- These exact filenames used in ALL subsequent slide prompts
+
+### Step 4: Deep Research Expansion
+
+After verifying core facts (Step 2), proactively search for additional angles to enrich the carousel content.
+This step transforms the agent from "prompt formatter" to "content researcher."
+
+**4a) Research 3-5 Additional Angles:**
+Web-search each of these lenses for the topic:
+
+| Angle | Search Query Pattern | Example (cockroach drone) |
+|-------|---------------------|--------------------------|
+| How it works | "[topic] how it works mechanism" | "cyborg cockroach drone mechanism chip implant" |
+| Comparison | "[topic] vs [alternative] comparison" | "cyborg insect drone vs traditional micro drone comparison" |
+| Fun facts | "[topic] surprising facts most people don't know" | "cockroach cyborg military surprising facts" |
+| Controversy | "[topic] controversy ethical concerns debate" | "SWARM Biotactics ethical concerns animal rights" |
+| Impact | "[topic] real world impact applications who benefits" | "cyborg insect drone military applications search rescue" |
+
+**4b) Present Research Brief:**
+```
+Research Expansion — [Topic]:
+
+1. HOW IT WORKS: [2-3 sentence summary of mechanism]
+2. VS ALTERNATIVES: [comparison with existing tech — e.g., drone darat vs drone udara vs insect drone]
+3. FUN FACTS: [2-3 surprising details]
+4. CONTROVERSY: [ethical/social concerns]
+5. IMPACT: [real-world applications, who benefits]
+
+Angle mana yang mau dipakai di carousel? (bisa pilih beberapa)
+```
+
+**4c) User Selection:**
+- User picks which angles to include in body slides
+- Selected angles inform slide content, comparison slides, fun fact callouts
+- Unselected angles are discarded (YAGNI)
+
+### Step 5: Plot Emotional Arc
 - Assign emotional beat + intensity to each slide (see Emotional Arc Visual Map in `references/prompt-formulas.md`)
 - Beats: HIGH (hook) → DIP (foreshadow) → BUILD (body) → MINI-HOOK (mid-carousel) → CLIMAX (reveal) → WARM (CTA)
 - Each slide gets tagged: `Emotion: [BEAT] ([intensity]/6)`
 
-### Step 4: Interactive Design
+### Step 6: Interactive Design
 - Check each slide for ambiguity triggers
 - Ask user for decisions on ambiguous slides
 - Wait for answers before generating those slides
 
-### Step 4b: Hook Clarification (MANDATORY — present to user before generating)
+### Step 6b: Hook Clarification (MANDATORY — present to user before generating)
 
 Read Topic → Hook Category Mapping from `references/hook-science.md`. Generate 3 hook options:
 
@@ -357,11 +436,21 @@ Atau mau kasih hook sendiri?
 
 - User picks A/B/C or provides custom hook/category
 - If custom → validate against Avoid list for the topic
-- Store confirmed hook category for Step 4c and Step 5
+- Store confirmed hook category for Step 6c and Step 7
 
-### Step 4c: Visual Hook Idea (MANDATORY — present to user after hook confirmed)
+### Step 6c: Visual Hook Idea (MANDATORY — present to user after hook confirmed)
 
 Generate 3 **vivid scene concepts** — absurd, funny, eye-catching scenarios the user can immediately visualize. Each idea is a creative pitch (2-3 sentences) describing what the hook image looks like, NOT a technical component list.
+
+   **BRAINSTORM QUALITY RULES:**
+   - Each scene pitch must read like a MOVIE SCENE DESCRIPTION — vivid, specific, cinematic
+   - Include: what creator is wearing, what they're doing, their expression, the environment, 1 comedy detail
+   - BAD: "Creator in absurd situation with food" (generic, boring)
+   - GOOD: "Lo lagi pakai armor gladiator romawi, teriak sambil nahan perisai perunggu dari tembakan peluru modern — percikan api di mana-mana, peluru nyangkut di perisai, tapi lo tetap push forward kayak spartan. Comedy: satu peluru nyangkut di perisai kayak dart di dartboard"
+   - Think: "What would make ME stop scrolling if I saw this thumbnail?"
+   - Reference successful hooks: gladiator blocking bullets (3000+ viewers), riding US Air Force missile with wig flying off (3000+ viewers)
+   - Include 1 unexpected comedy detail per idea (wig copot, kacamata miring, sandal terbang, kucing duduk santai di bahu, kopi masih penuh di tengah chaos, dll.)
+   - The visual action and the headline are INDEPENDENT — visual grabs eyeballs, headline delivers topic promise (see Headline-Visual Independence Rule in prompt-formulas.md)
 
 **Data sources for building ideas:**
 - Visual Action: Topic → Visual Action Mapping (`references/hook-science.md`)
@@ -399,18 +488,18 @@ C) 🎬 Lo duduk santai di kursi pantai di tengah medan perang, nyeruput es kela
 
 - User picks A/B/C or provides their own visual idea
 - User can also modify: "A tapi ganti rudal jadi tank" or combine: "A tapi pakai kostum dari B"
-- Store confirmed visual concept for Step 5 and prompt generation
+- Store confirmed visual concept for Step 7 and prompt generation
 
-### Step 5: Score Hook Headline
-- Use the **confirmed hook category** from Step 4b (NOT auto-select)
-- Use the **confirmed visual direction** from Step 4c
+### Step 7: Score Hook Headline
+- Use the **confirmed hook category** from Step 6b (NOT auto-select)
+- Use the **confirmed visual direction** from Step 6c
 - Read visual profile from `references/hook-visual-library.md` for the confirmed category
 - Load costume + prop from confirmed visual direction
-- Write headline using Hook Headline Formula (see `references/prompt-formulas.md`), or use user's custom headline from Step 4b
+- Write headline using Hook Headline Formula (see `references/prompt-formulas.md`), or use user's custom headline from Step 6b
 - Verify 3/5 on Hook Scoring Gate
 - If < 3/5: REWRITE until passing
 
-### Step 6: Generate Prompts (Engagement Funnel Order)
+### Step 8: Generate Prompts (Engagement Funnel Order)
 1. **Slide 1 (HOOK)** — Hook Slide template, expression + scene matching hook category
 2. **Slide 2 (FORESHADOW, mandatory)** — Foreshadow template, type matching topic. **Visual continuity from hook is MANDATORY** — use one of: Aftermath, Zoom Shift, Narrative Continue, or Context Reveal strategy (see `references/prompt-formulas.md` Foreshadow section). Same wardrobe, connected scene — must feel like the next panel of a comic book. **Use the generated hook image (slide 1) as scene reference input** in Nano Banana Pro for wardrobe/setting consistency
 3. **Slides 3-N (BODY)** — Standard templates with visual treatment matching emotional arc beat
@@ -420,18 +509,38 @@ C) 🎬 Lo duduk santai di kursi pantai di tengah medan perang, nyeruput es kela
 6. 80-200 words per prompt, natural language
 7. All 8 WOW elements in every prompt
 
-### Step 7: Score & Verify
+### Step 9: Score & Verify
 - Score each prompt via WOW gate (min 6/8)
 - Verify continuity checklist (including hook score, foreshadow, emotional arc, CTA type)
 
-### Step 8: Generate Captions
+### Step 10: Generate Captions
 - Generate captions for all 4 platforms (IG + TikTok + LinkedIn + Threads)
 - English default
 - Follow character limits and hashtag rules
 
-### Step 9: Output
+### Step 11: Generate Video Handover Brief
+
+Auto-generate `video-handover.md` in the same output folder as `carousel-prompt.md`.
+This file provides the downstream video agent with full creative context.
+
+Use the Video Handover Brief Template from `references/prompt-formulas.md`:
+- Storyline summary (1-2 paragraphs — narrative arc, key message, emotional journey)
+- **Hook Visual Concept (DETAILED)** — full vivid scene description + motion opportunities + comedy detail. This section must be detailed enough for a video agent to animate the creative hook properly
+- Per-slide scene descriptions (visual setting, mood, key elements — NOT the raw prompt)
+- Emotional arc map (beat + intensity per slide)
+- Text elements inventory (everything that must stay readable in video)
+- Reference images used (filenames + descriptions + which slides)
+- Creative context (hook category, visual idea, tone, target audience)
+- Source material notes (URL, type, extraction notes)
+
+**Output:**
+- If output folder provided → write to `{path}/video-handover.md`
+- If no folder → print to console after carousel output
+- Print brief confirmation: "Video handover brief saved to {path}/video-handover.md"
+
+### Step 12: Output
 - If output folder was provided in Step 0 → write ALL output to `{folder-path}/carousel-prompt.md`:
-  - Creative Direction summary (confirmed hook category + visual direction from Steps 4b/4c)
+  - Creative Direction summary (confirmed hook category + visual direction from Steps 6b/6c)
   - All slide prompts with WOW scores
   - Captions for all 4 platforms
   - Continuity checklist
@@ -480,7 +589,7 @@ C) 🎬 Lo duduk santai di kursi pantai di tengah medan perang, nyeruput es kela
 - **Multi-keyword highlighting**: 2-4 emotionally impactful keywords per headline in accent color — NEVER just 1 word. Hook: power word at 120% + 1-3 more keywords
 - **Subtitle**: Per global-config.md Language section — translation below main headline in [config: subtitle_color] at slightly smaller size — NEVER white like main headline
 - **Brand icon + watermark both at thirty percent opacity** — spell out "thirty percent opacity" in prompt body, NEVER "30%"
-- **Visual Action Hook**: Hook slide MUST use a visual action from the Visual Action Hook Bank (12 categories in `references/hook-science.md`). Select using Topic → Visual Action Mapping. The absurd mundane action IS the pattern interrupt
+- **Visual Action Hook**: Hook slide MUST use a visual action from the Visual Action Hook Bank (16 categories in `references/hook-science.md`). Select using Topic → Visual Action Mapping. The absurd mundane action IS the pattern interrupt
 - Negative constraints at END: "no third-party branding"
 - Include **suggested filename** per slide: `{N}-{topic-keywords}-{brand-handle}-{slide-type}.png` (see `references/prompt-formulas.md` Filename Convention section)
 
@@ -546,7 +655,7 @@ Source: [URL or "Well-established fact"]
 - [ ] Subject brand (logo/UI) visible on slides discussing that brand's data
 - [ ] Hook headline scored 3/5+ on Hook Scoring Gate
 - [ ] Hook visual matches hook category (expression + scene + lighting)
-- [ ] Hook slide uses a Visual Action from the Hook Bank (12 absurd action types — see hook-science.md)
+- [ ] Hook slide uses a Visual Action from the Hook Bank (16 absurd action types — see hook-science.md)
 - [ ] Slide 2 is FORESHADOW type (Steps Tease / Fear Urgency / Quiz / Visual Tease)
 - [ ] Foreshadow visually connects to hook (Aftermath / Zoom Shift / Narrative Continue / Context Reveal)
 - [ ] Foreshadow uses same wardrobe as hook — feels like next panel, not different movie
@@ -642,10 +751,14 @@ When invoked, you will:
 2. Read relevant reference files from disk
 3. Extract source metadata if URL provided (caption, account, engagement)
 4. Verify all factual claims via web search
-5. Ask user about ambiguous slides (interactive design)
-6. Generate all prompts with WOW scoring (min 6/8)
-7. Generate captions for all 4 platforms (enriched with source caption context if available)
-8. Write output to a specified file path
-9. Return summary of what was generated
+5. Plan subject reference images (if topic has specific objects)
+6. Deep research expansion (3-5 additional angles — present to user)
+7. Ask user about ambiguous slides (interactive design)
+8. Creative clarification (hook category + visual hook idea — user picks)
+9. Generate all prompts with WOW scoring (min 6/8)
+10. Generate captions for all 4 platforms (enriched with source caption context if available)
+11. Generate video handover brief (`video-handover.md`)
+12. Write output to a specified file path
+13. Return summary of what was generated
 
-Always write your output to a file (e.g., `output/carousel-prompts.md`) so the parent agent can access it.
+Always write your output to files (e.g., `carousel-prompt.md` + `video-handover.md`) so the parent agent can access them.
