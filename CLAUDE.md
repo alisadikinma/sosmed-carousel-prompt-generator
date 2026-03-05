@@ -41,7 +41,12 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 
 - **Image Plugin**: Nano Banana Pro for image generation (exclusive)
 - **Text-in-Image**: All text (headlines, accent words, branding, SWIPE CTA) rendered directly in the AI-generated image via prompt — NOT post-production. Font must be **largest possible billboard-scale, extra bold/black weight**
-- **WOW Quality Gate**: 8-point scoring (lighting, depth, atmosphere, color, emotion, camera, texture, cinematic ref). **All 8 mandatory, minimum 6/8 for ALL slide types**
+- **Image Style**: Per `global-config.md` `image_style` (hyperrealistic). Every prompt MUST include micro-imperfections from 6 categories (skin, hair, fabric, surfaces, composition, light) to avoid AI-perfect look. See global-config.md Hyperrealistic Standard
+- **WOW Quality Gate**: 8-point scoring (lighting, depth, atmosphere, color, emotion, camera, texture, cinematic ref). **All 8 mandatory, minimum 6/8 for ALL slide types**. WOW output MUST use parenthetical detail format — one-line checklist without detail = REJECTED
+- **Prompt Paragraph Structure**: Every prompt MUST use paragraph breaks between 5 sections (subject, scene, camera/lighting, text overlay, constraints). Single-block prompts = REJECTED
+- **Text Overlay Enforcement**: Three mandatory rules in every text overlay block: (1) "remaining text in white", (2) "not crammed at the very bottom", (3) "subtitle must not be white". Missing any = REJECTED
+- **Camera Specs Format**: MUST start with "lens:" prefix on its own line — never embedded in scene prose
+- **Creative Direction Block**: Every `carousel-prompt.md` MUST open with Creative Direction summary (concept, visual DNA, style, data pattern, face rules, hook/CTA type) before slide prompts
 - **Platform-Specific Aspect Ratios**: IG Feed 4:5, TikTok/Reels 9:16, LinkedIn 4:5/1:1, Default 4:5
 - **Subject Brand Context**: When discussing a specific company (Google, WhatsApp, etc.), their brand elements MUST be visible in the image for context. Without it, factual claims are meaningless
 - **No Competitor Branding**: No other creator badges, watermarks, handles, or source category tags (e.g., "TECHNOLOGY" badge from source = competitor branding)
@@ -150,6 +155,7 @@ Claude Code plugin that generates cinematic AI image prompts for social media ca
 
 | Setting | Source |
 |---------|--------|
+| Image style | Per global-config.md `image_style` (hyperrealistic + micro-imperfection rules) |
 | Aspect ratio | Per global-config.md Platform Specs (platform-specific) |
 | Film stock | Per global-config.md `film_stock` |
 | Color temp | Per global-config.md `color_temp` |
@@ -252,8 +258,16 @@ To change any configurable value (language, color, handle, film stock, etc.):
 | Source not mentioned in caption | ALL 4 platform captions must include source attribution for verified facts. Check caption rules |
 | Video agent has no context | Video handover brief (`video-handover.md`) should be auto-generated with DETAILED hook visual concept. Check if file exists in output folder |
 | Hook visual can't be animated | video-handover.md must include Hook Visual Concept section with motion opportunities and comedy detail. Video agent needs to know what moves |
+| Image looks AI-perfect | Missing micro-imperfections — check global-config.md Hyperrealistic Standard (6 categories: skin, hair, fabric, surfaces, composition, light). Prompt must include imperfection details |
+| Inconsistent image style | `image_style` not in prompt — check global-config.md Section 4 for configured style. Templates use `[config: image_style]` |
+| Prompt is one giant block | Prompt paragraph structure MANDATORY — 5 sections with breaks (subject, scene, camera, text, constraints). Check prompt-formulas.md Prompt Formatting Rule |
+| WOW is rubber-stamp checklist | WOW output MUST use parenthetical detail format. One-line checklist = REJECTED. Check prompt-formulas.md WOW Output Format |
+| Missing "remaining text in white" | Text overlay block missing explicit white default — accent keywords specified but rest of text color undefined. Check Text Overlay Enforcement in prompt-formulas.md |
+| Text crammed at bottom | Missing "not crammed at the very bottom" in text overlay. Check Text Overlay Enforcement in prompt-formulas.md |
+| Lens info buried in prose | Camera specs MUST use "lens:" prefix on own line. Check Camera Specs Format in prompt-formulas.md |
+| No Creative Direction header | `carousel-prompt.md` missing Creative Direction block at top (concept, visual DNA, style, data pattern, face rules, hook/CTA type). Check prompt-formulas.md Creative Direction template |
 
 ---
 
-**Version:** 2.17.0
+**Version:** 2.18.0
 **Last Updated:** March 2026

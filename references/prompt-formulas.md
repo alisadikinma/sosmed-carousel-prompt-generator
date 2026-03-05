@@ -37,6 +37,41 @@ Nano Banana Pro renders ALL text in the prompt as visible image content. To prev
 
 ---
 
+## Prompt Formatting Rule (MANDATORY)
+
+Every prompt MUST use paragraph breaks between these sections:
+1. Subject + expression + wardrobe + action (paragraph 1)
+2. Scene/environment + spatial layers (paragraph 2)
+3. Lens + lighting + film stock + atmosphere + texture (paragraph 3)
+4. Text overlay block (paragraph 4)
+5. Aspect ratio + constraints (paragraph 5)
+
+Single-block prompts = REJECTED. Paragraph structure improves AI model comprehension and makes prompts auditable.
+
+---
+
+## Camera Specs Format (MANDATORY)
+
+Camera specifications MUST start with "lens:" prefix on its own line/section:
+```
+lens: [focal]mm f/[aperture], [angle], [depth of field].
+```
+Do NOT embed lens specs inside scene description prose.
+
+---
+
+## Text Overlay Enforcement (MANDATORY)
+
+Every text overlay block MUST include ALL three of these rules — omitting any one causes rendering failures:
+
+1. **Remaining text in white** — after specifying accent-colored keywords, explicitly state "remaining text in white"
+2. **Not crammed at the very bottom** — include "positioned starting from the vertical center of the image extending downward, not crammed at the very bottom"
+3. **Subtitle must not be white** — include "subtitle must not be white" after the subtitle line specification
+
+Missing any of these three = REJECTED. These are the top causes of bad text hierarchy in generated images.
+
+---
+
 ## Nano Banana Pro — Structure (8-Element Priority Order)
 ```
 1. Subject (who/what) — always first
@@ -200,7 +235,7 @@ The agent MUST scan the topic for these 4 categories and plan reference images f
 ### Reference Image Prompt Template
 
 ```
-A photorealistic product/object reference image on a clean white background.
+A [config: image_style] product/object reference image on a clean white background.
 [Detailed description of the object — shape, color, material, distinctive features, scale context].
 Studio lighting, soft even illumination, no harsh shadows. Sharp focus on every detail.
 No text, no branding, no background elements — isolated object only.
@@ -387,7 +422,7 @@ The text uses the largest possible font size that fills the width, extra bold we
 **Anti-repetition:** If this topic has been used before this session, select a different camera variant (A/B/C) from `references/hook-visual-library.md` Section 5. Check the synergy matrix (Section 7) for expression modifications when combining category + visual action.
 
 ```
-A photorealistic cinematic [shot type — from hook-visual-library.md Camera Angle Bank, variant A/B/C] of [CHARACTER from reference image: creator-face.png].
+A [config: image_style] cinematic [shot type — from hook-visual-library.md Camera Angle Bank, variant A/B/C] of [CHARACTER from reference image: creator-face.png].
 [Expression from hook-visual-library.md Expression Library — use FULL prompt phrases for eyes, mouth, head, hands, body, emotion. NOT generic "shocked face"].
 [Wardrobe — from hook-visual-library.md Section 10 Costume Library, matched to topic category].
 [Action/pose from Visual Action Hook Bank + prop from Section 11 with interaction detail from Section 11b — e.g., mid-bite into golden coin, holding raw fish with deadpan].
@@ -426,7 +461,7 @@ See "Template — CTA Slide" section below for the 4 CTA visual types.
 
 ### Template — Creator Shot (General — Non-Hook, Non-CTA)
 ```
-A photorealistic cinematic [shot type] of [CHARACTER from reference image: creator-face.png].
+A [config: image_style] cinematic [shot type] of [CHARACTER from reference image: creator-face.png].
 [Expression keywords from cinematography-lut.md]. [Wardrobe]. [Action/pose].
 
 [Setting/environment with specific details].
@@ -480,7 +515,7 @@ The foreshadow should feel like swiping to the next panel of a comic book, not j
 | **Visual Tease** | Story, reveal, transformation, case study | "[Preview of reveal] — tapi tunggu sampai slide [N]..." | Partial/blurred preview of climax — **hook's absurd element in background, energy shifting from chaos to curiosity** |
 
 ```
-A photorealistic cinematic MCU of [CHARACTER from reference image: creator-face.png].
+A [config: image_style] cinematic MCU of [CHARACTER from reference image: creator-face.png].
 [Expression: concerned urgency or teasing "I know something" smirk — matching foreshadow type].
 [Same wardrobe as hook slide — visual continuity]. [Pose: leaning slightly forward, creating intimacy and urgency].
 
@@ -538,7 +573,7 @@ same wardrobe, connected setting, consistent lighting temperature.
 
 ### Template — B-Roll / Topic Visual (No Creator Face)
 ```
-A photorealistic cinematic [shot type] of [subject/scene].
+A [config: image_style] cinematic [shot type] of [subject/scene].
 [Detailed scene description]. [Context-specific elements].
 [If slide discusses a specific brand/product: include recognizable brand elements
 (logo, UI, interface, color scheme) of the subject being discussed for viewer context.]
@@ -567,7 +602,7 @@ thirty percent opacity, subtle background mark only.
 
 ### Template — B-Roll with Human Figure (Creator Face ALWAYS)
 ```
-A photorealistic cinematic [shot type] of [CHARACTER from reference image: creator-face.png] as a prominent figure in [scene].
+A [config: image_style] cinematic [shot type] of [CHARACTER from reference image: creator-face.png] as a prominent figure in [scene].
 [Context-appropriate expression]. [Profession-specific wardrobe or creator default wardrobe].
 [Scene description with creator clearly identifiable among other figures.
 For crowd scenes: creator in center-foreground, slightly closer to camera, clearly the most recognizable face.
@@ -599,7 +634,7 @@ Maintain exact appearance from reference image: creator-face.png.
 
 ### Template — Thumbnail
 ```
-A photorealistic cinematic thumbnail composition:
+A [config: image_style] cinematic thumbnail composition:
 
 Primary subject: [CHARACTER from reference image: creator-face.png], [exaggerated hook expression].
 Expression: [specific exaggerated emotion] — wide eyes, raised brows,
@@ -634,7 +669,7 @@ Maintain exact appearance from reference image: creator-face.png.
 
 ### Template — Split-Panel
 ```
-A photorealistic split-panel composition divided vertically into two halves.
+A [config: image_style] split-panel composition divided vertically into two halves.
 
 Left half ("[LABEL A IN BAHASA]"): [Scene A] featuring [CREATOR].
 [Context-appropriate setting]. Natural warm daylight, [config: film_stock].
@@ -728,7 +763,7 @@ The CTA slide must CONVERT attention into action. A generic "follow me" composit
 **Best stat:** Debate-driven CTAs generate highest comment volume per impression.
 
 ```
-A photorealistic cinematic MS of [CHARACTER from reference image: creator-face.png].
+A [config: image_style] cinematic MS of [CHARACTER from reference image: creator-face.png].
 Expression: confident, playful challenge — one eyebrow raised, slight smirk,
 "I want to hear your take" energy. Arms open, gesturing to both sides.
 [Wardrobe: default creator wardrobe].
@@ -766,7 +801,7 @@ Maintain exact appearance from reference image: creator-face.png.
 **Best stat:** "Which one?" CTAs get +25% more comments than open-ended questions.
 
 ```
-A photorealistic cinematic CU of [CHARACTER from reference image: creator-face.png].
+A [config: image_style] cinematic CU of [CHARACTER from reference image: creator-face.png].
 Expression: warm curiosity, direct eye contact, slight head tilt —
 "I'm genuinely asking you" energy. One hand near chin (thinking pose)
 or pointing directly at camera (breaking fourth wall).
@@ -804,7 +839,7 @@ Maintain exact appearance from reference image: creator-face.png.
 **Best stat:** IG DM shares = 3-5x heavier algorithm weight than likes.
 
 ```
-A photorealistic cinematic MWS of [CHARACTER from reference image: creator-face.png]
+A [config: image_style] cinematic MWS of [CHARACTER from reference image: creator-face.png]
 with a second person (friend/colleague energy — similar age, casual interaction).
 Expression: both laughing/smiling warmly, creator nudging/pointing at the other person
 as if saying "this is for you." Natural, candid friendship moment.
@@ -842,7 +877,7 @@ Maintain exact appearance from reference image: creator-face.png.
 **Best stat:** Comment-to-DM funnels can generate 1,000+ leads/month.
 
 ```
-A photorealistic cinematic MCU of [CHARACTER from reference image: creator-face.png].
+A [config: image_style] cinematic MCU of [CHARACTER from reference image: creator-face.png].
 Expression: generous, excited to give — bright smile, eyes lit up,
 one hand extended toward camera holding/presenting [reward visual:
 a glowing guide/book/template/phone showing the resource].
@@ -950,7 +985,42 @@ Mini-hook triggers:
 
 ---
 
+## Creative Direction Summary Template (MANDATORY — Top of File)
+
+Every `carousel-prompt.md` MUST open with a Creative Direction block before slide prompts:
+
+```
+## Creative Direction
+
+1. **Concept** — 2-3 sentence creative pitch (what is this carousel about, what makes it compelling)
+2. **Visual DNA** — color palette per slide type (hook: [colors], body: [colors], CTA: [colors]), recurring visual motifs
+3. **Style** — hyperrealistic + micro-imperfection mandate (per global-config.md Section 4)
+4. **Data Pattern** — if applicable (descending counts, timeline progression, comparison structure, etc.)
+5. **Face Rules** — who appears where (creator vs public figure allocation per slide)
+6. **Hook/CTA Type** — confirmed hook category + CTA visual type from creative clarification
+```
+
+Missing Creative Direction block = REJECTED. This block ensures visual consistency across all slides.
+
+---
+
 ## Quality Checklists
+
+### WOW Output Format (MANDATORY)
+
+Each WOW element MUST include parenthetical detail explaining WHERE in the prompt it's fulfilled. One-line checklist without parenthetical detail = REJECTED.
+
+```
+### WOW: [score]/8
+✓ Lighting Drama (what pattern, what ratio, what Kelvin, what accent)
+✓ Depth Layers (what foreground + what mid + what background)
+✓ Atmosphere (what particles/haze/volumetric)
+✓ Color Contrast (what warm vs cool tension)
+✓ Emotional Peak (what expression keywords or scene emotion)
+✓ Camera Intention (what lens, aperture, angle, why)
+✓ Texture Realism (what textures — skin, fabric, surface)
+✓ Cinematic Ref (what film stock + what DP reference)
+```
 
 ### Image Prompt Checklist (All 8 WOW Elements)
 Before finalizing each image prompt, verify ALL 8 are present:

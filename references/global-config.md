@@ -60,10 +60,24 @@ No need to edit 10+ files. The skill, agent, and reference docs all read this fi
 | `color_temp` | 3200-3500K |
 | `color_grade` | Warm golden amber |
 | `image_resolution` | 4K |
+| `image_style` | hyperrealistic |
 | `prompt_length` | 80-200 words (up to 250 for complex) |
 | `wow_minimum` | 6/8 (all 8 elements mandatory) |
 | `font_weight` | Extra Bold / Black weight (billboard-scale) |
 | `gradient_zone` | Bottom half (bottom third for thumbnails) |
+
+### Hyperrealistic Standard (Anti-AI-Look)
+
+Every prompt MUST include micro-imperfections from these 6 categories to avoid the "AI-perfect" look:
+
+| Category | Required Imperfections |
+|----------|----------------------|
+| Skin | visible pores, subtle under-eye texture, micro-sweat, natural color variation |
+| Hair | stray hairs catching light, not perfectly groomed |
+| Fabric | natural creases, slight wrinkles, not perfectly pressed |
+| Surfaces | scuff marks, fingerprints on metal, dust on shelves |
+| Composition | slight asymmetry preferred, avoid perfect centering |
+| Light | natural falloff, slight color fringing at edges, realistic shadow gradients, subtle lens vignetting |
 | `brand_icon_position` | Center of image, above watermark |
 | `watermark_position` | Center of image, below brand icon |
 | `opacity` | Thirty percent opacity (spell out in prompt — NEVER "30%") |
