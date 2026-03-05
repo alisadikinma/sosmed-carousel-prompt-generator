@@ -160,6 +160,9 @@ When the topic involves specific objects that need visual consistency across sli
 |------|-----------------|---------|
 | Creator face | `creator-face.png` | Always — standard |
 | Creator brand | `creator-brand.png` | Always — standard |
+| Company/brand logo | `ref-{company}-logo.png` | `ref-apple-logo.png`, `ref-whatsapp-logo.png` |
+| Specific product | `ref-{product-model}.png` | `ref-iphone-16-pro-titanium.png` |
+| Source/publication logo | `ref-source-{publication}-logo.png` | `ref-source-sipri-logo.png`, `ref-source-janes-defence-logo.png` |
 | Subject reference | `ref-{object-description}.png` | `ref-cyborg-cockroach-teal-casing.png` |
 | Subject variant | `ref-{object-variant}.png` | `ref-sate-kecoa-skewer-with-sauce.png` |
 
@@ -169,14 +172,30 @@ When the topic involves specific objects that need visual consistency across sli
 - Same filename used in ALL slide prompts that reference that object
 - All stored in `ref/` folder inside topic folder
 
+### Auto-Detection Categories (Mandatory)
+
+The agent MUST scan the topic for these 4 categories and plan reference images for ALL matches:
+
+| Category | Detection Trigger | Why Reference Needed | Example |
+|----------|------------------|---------------------|---------|
+| **Specific product** | Named model/series/version (iPhone 16, Galaxy S25, Tesla Model Y, PS5 Pro) | AI generates wrong product design, wrong color, wrong shape | `ref-iphone-16-pro-titanium.png` |
+| **Company/brand logo** | Topic discusses or mentions a specific company (Google, Apple, WhatsApp, Toyota) | AI generates wrong logo — wrong colors, wrong shape, extra elements | `ref-apple-logo.png`, `ref-google-logo.png` |
+| **Source/publication logo** | Fact verification identifies a trusted source with a recognizable logo (SIPRI, Jane's Defence, Reuters, WHO) | Source logo rendered in-image for credibility. AI generates wrong publication logos | `ref-source-sipri-logo.png`, `ref-source-janes-defence-logo.png` |
+| **Unique object** | Custom/niche item not widely known (cyborg cockroach, specific food dish, prototype device) | AI has no training data for this specific object | `ref-cyborg-cockroach-teal-casing.png` |
+
+**Detection is MANDATORY** — if the topic mentions ANY named product model, company, or uses data from a named publication, the agent MUST plan reference images. Do not assume the AI "knows" what an iPhone 16 Pro or a SIPRI logo looks like.
+
 ### Workflow
 
-1. **Identify** — Agent analyzes topic, identifies objects needing consistent visual representation
-2. **Name** — Agent assigns descriptive filenames for each reference (e.g., `ref-cyborg-cockroach-teal-casing.png`)
+1. **Identify** — Agent analyzes topic, scans for all 4 auto-detection categories (specific products, company logos, source logos, unique objects)
+2. **Name** — Agent assigns descriptive filenames for each reference (e.g., `ref-cyborg-cockroach-teal-casing.png`, `ref-apple-logo.png`, `ref-source-sipri-logo.png`)
 3. **Present** — Agent shows user the planned reference list with filenames and descriptions
-4. **Source photos** — Agent asks: "Do you have source photos for any of these? Save to `ref/` with these exact names"
-5. **Generate** — Agent generates reference image prompts (clean, isolated, white/neutral background, detailed object only)
-6. **Use** — ALL subsequent slide prompts reference the exact filenames: `[from reference image: ref-cyborg-cockroach-teal-casing.png]`
+4. **Upload (MANDATORY)** — Agent requests user to upload reference images. Upload is WAJIB — agent does NOT proceed to prompt generation until user confirms all refs are in `ref/` folder. Present:
+   "Reference image ini WAJIB untuk hasil yang akurat:
+   [list of ref files with descriptions]
+   Save semua ke folder `ref/` pakai nama file di atas. Kalau nggak punya, saya generate reference prompt — tapi hasilnya kurang presisi."
+5. **Fallback** — If user cannot provide source photos for specific items: generate reference image prompts (isolated, white background). Warn user: "AI-generated reference = lower accuracy for product/logo details. Upload foto asli kalau bisa."
+6. **Use** — ALL subsequent slide prompts reference the exact filenames: `[from reference image: ref-xxx.png]`
 
 ### Reference Image Prompt Template
 
@@ -194,6 +213,25 @@ When a subject reference exists, insert in the relevant slide prompt:
 ```
 [Object/creature rendered from reference image: ref-{filename}.png — maintain exact visual details: color, shape, texture, markings]
 ```
+
+### Source Credibility In-Image (Factual Slides)
+
+When a slide contains verified factual claims from a named source, the source attribution MUST be rendered in-image:
+
+**In-Image Format:**
+- Small text in bottom gradient zone (below headline, above SWIPE): `"Source: [Publication Name], [Year]"`
+- If source has a recognizable logo AND user uploaded `ref-source-{publication}-logo.png`: render logo as small icon (similar size to page number) next to source text
+- Text style: small, [config: subtitle_color], not dominant — informational, not decorative
+- Multiple sources on one slide: list side by side or stack vertically
+
+**In-Caption Format:**
+- ALL 4 platform captions include: `"Data: [Publication Name], [Year]"` or `"Source: [Publication Name]"`
+- Placed after body text, before CTA line
+- Multiple sources: most authoritative first
+
+**Example:**
+- In-image: `"Source: SIPRI, 2025"` with SIPRI logo icon from `ref-source-sipri-logo.png`
+- In caption: `"Data: Stockholm International Peace Research Institute (SIPRI), 2025"`
 
 ---
 

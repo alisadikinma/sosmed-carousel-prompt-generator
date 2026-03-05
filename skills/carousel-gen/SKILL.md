@@ -177,7 +177,7 @@ This step is OPTIONAL — user can skip.
 1. ANALYZE source slides — extract topic, data, visual concept per slide
 2. IDENTIFY third-party elements to REMOVE
 3. **VERIFY** — web-search factual claims, confirm accuracy
-4. **SUBJECT REFERENCE PLANNING** (if topic has specific objects) — identify objects needing visual consistency, assign filenames (`ref-{object-description}.png`), present to user, generate reference image prompts if needed. See Subject Reference Image System in `references/prompt-formulas.md`
+4. **SUBJECT REFERENCE PLANNING** (MANDATORY — auto-detect 4 categories) — scan for: (a) specific product models, (b) company/brand logos, (c) source/publication logos, (d) unique objects. Assign filenames, present to user, **upload is WAJIB** — do not proceed until confirmed. Fallback: generate reference prompts with accuracy warning. See Subject Reference Image System in `references/prompt-formulas.md`
 5. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
 6. **INTERACTIVE** — check each slide for ambiguity triggers, ask user
 7. CONVERT style to user's brand palette (warm, cinematic)
@@ -196,7 +196,7 @@ This step is OPTIONAL — user can skip.
 0. **SOURCE URL + REF CONFIRMATION + OUTPUT FOLDER** — ask for source/inspiration post URL (extract metadata if provided) + confirm `ref/creator-face.png` + `ref/creator-brand.png` exist in topic folder + ask for topic folder path (optional — if provided, output to `{path}/carousel-prompt.md`; if skipped, print to console)
 1. ANALYZE brief/topic — identify key messages, slide structure, emotions (enrich with source caption if available)
 2. **VERIFY** — web-search each factual claim, collect sources
-3. **SUBJECT REFERENCE PLANNING** (if topic has specific objects) — identify objects needing visual consistency (products, creatures, devices, food items), assign descriptive filenames (`ref-{object-description}.png`), present reference list to user, ask for source photos (optional), generate reference image prompts (isolated, white background). ALL subsequent slide prompts use these exact filenames. See Subject Reference Image System in `references/prompt-formulas.md`
+3. **SUBJECT REFERENCE PLANNING** (MANDATORY — auto-detect 4 categories) — scan for: (a) specific product models, (b) company/brand logos, (c) source/publication logos, (d) unique objects. Assign filenames, present to user, **upload is WAJIB** — do not proceed until confirmed. Fallback: generate reference prompts with accuracy warning. ALL subsequent slide prompts use these exact filenames. See Subject Reference Image System in `references/prompt-formulas.md`
 4. **DEEP RESEARCH EXPANSION** — after verifying core facts, proactively web-search 3-5 additional angles: (a) How does it actually work? (mechanism, technology, process), (b) What can it be compared to? (vs existing tech/solutions/competitors), (c) Fun facts / surprising details most people don't know, (d) Controversy / ethical concerns / public debate, (e) Real-world impact / who benefits / who's affected. Present findings as "Research Expansion" brief to user. User picks which angles to include in body slides
 5. DETERMINE target platform and set aspect ratio (read `references/platform-specs.md`)
 6. **PLOT EMOTIONAL ARC** — assign emotional beat + intensity to each slide (see Emotional Arc section)
@@ -299,12 +299,20 @@ Type: Hook / Foreshadow / Content / CTA | Creator Face: YES/NO | Platform: Nano 
 ### Suggested Filename
 `[N]-[topic-keywords]-[brand-handle]-[slide-type].png`
 
+### Reference Images
+| Filename | Content | Usage |
+|----------|---------|-------|
+| creator-face.png | Creator's face reference | [Context-specific usage for this slide] |
+| creator-brand.png | Brand icon | Center of image, thirty percent opacity, above watermark |
+| [ref-xxx.png if applicable] | [Object/logo/source description] | [Slide-specific usage] |
+
 ### Nano Banana Pro Prompt
 [Full merged prompt: scene + cinematography + all 8 WOW elements + text rendering + branding, 80-200 words]
 
 ### Verified Fact
 "[Claim as stated]" — ✓ Verified
-Source: [URL or "Well-established fact"]
+Source: [Publication name], [Year] | [URL]
+Source Logo: [ref-source-{publication}-logo.png] (rendered in-image alongside source text, if applicable)
 Note: [Any correction or nuance, if applicable]
 
 ### WOW: [N]/8
@@ -353,6 +361,13 @@ Note: [Any correction or nuance, if applicable]
 - [ ] Hook category confirmed by user (Step 5b) — not auto-selected
 - [ ] Visual direction confirmed by user (Step 5c) — not auto-selected
 - [ ] Output saved to folder (if path provided) or printed to console
+- [ ] Per-slide Reference Images table present on every slide (Filename | Content | Usage)
+- [ ] All ref files listed in per-slide tables match files in ref/ folder
+- [ ] Company logos use uploaded reference images (not AI-generated)
+- [ ] Specific products use uploaded reference images (not AI-generated)
+- [ ] Factual slides have source citation rendered in-image ("Source: [Publication], [Year]")
+- [ ] Source logos (if applicable) use uploaded reference images
+- [ ] Captions include source attribution for all verified facts
 
 ---
 
@@ -416,3 +431,11 @@ Per global-config.md LinkedIn Cross-Promotion Block
 - **Output format**: One continuous caption per platform — NO section labels (Hook/Body/CTA/Hashtags)
 - **LinkedIn cross-promotion (MANDATORY)**: Every LinkedIn caption includes cross-promotion block from `global-config.md` before hashtags
 - Each caption follows platform-specific rules from `references/caption-copywriting.md`
+
+### Source Attribution in Captions (Factual Carousels)
+When carousel contains verified factual claims from named sources:
+- **ALL 4 platform captions** must include source attribution
+- Format: "Source: [Publication Name], [Year]" or "Data: [Publication Name]"
+- Place after body text, before CTA
+- Multiple sources: list all, most authoritative first
+- Example: "Data: Stockholm International Peace Research Institute (SIPRI), 2025"
